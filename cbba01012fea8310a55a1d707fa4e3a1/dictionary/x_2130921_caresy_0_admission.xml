@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element attributes="enforce_dot_walk_cross_scope_access=true" db_object_id="f1ba8f122f6e0310a55a1d707fa4e33d" label="Admission" max_length="40" name="x_2130921_caresy_0_admission" type="collection">
+        <element choice="1" default="Pending" label="Admission Status" mandatory="true" max_length="255" name="admission_status" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Discharged" sequence="2" value="Discharged"/>
+                <element inactive_on_update="false" label="Cancelled" sequence="3" value="Cancelled"/>
+                <element inactive_on_update="false" label="Admitted" sequence="1" value="Admitted"/>
+                <element inactive_on_update="false" label="Pending" sequence="0" value="Pending"/>
+            </choice>
+        </element>
+        <element label="Bed" mandatory="true" max_length="32" name="bed" reference="x_2130921_caresy_0_bed" type="reference"/>
+        <element label="Reason for Admission" mandatory="true" max_length="500" name="reason_for_admission" type="string"/>
+        <element label="Admission Notes" max_length="1000" name="admission_notes" type="string"/>
+        <element label="Admission Date" mandatory="true" max_length="255" name="admission_date" type="glide_date_time"/>
+        <element label="Patient" mandatory="true" max_length="32" name="patient" reference="x_2130921_caresy_0_patient" type="reference"/>
+        <element label="Active" mandatory="true" max_length="255" name="active" type="boolean"/>
+        <element choice="1" label="Admission Type" mandatory="true" max_length="255" name="admission_type" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Transfer" sequence="2" value="Transfer"/>
+                <element inactive_on_update="false" label="Emergency" sequence="0" value="Emergency"/>
+                <element inactive_on_update="false" label="Planned" sequence="1" value="Planned"/>
+            </choice>
+        </element>
+        <element attributes="ignore_filter_on_new=true" default="javascript:global.getNextObjNumberPadded();" label="Admission Number" max_length="40" name="number" type="string"/>
+        <element label="Department" mandatory="true" max_length="32" name="department" reference="x_2130921_caresy_0_department" type="reference"/>
+        <element label="Discharge Date" max_length="255" name="discharge_date" type="glide_date_time"/>
+        <element label="Ward" mandatory="true" max_length="32" name="ward" reference="x_2130921_caresy_0_ward" type="reference"/>
+        <element label="Expected Discharge Date" max_length="255" name="expected_discharge_date" type="glide_date_time"/>
+        <index name="index">
+            <element name="bed"/>
+        </index>
+        <index name="index2">
+            <element name="department"/>
+        </index>
+        <index name="index3">
+            <element name="patient"/>
+        </index>
+        <index name="index4">
+            <element name="ward"/>
+        </index>
+    </element>
+</database>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element attributes="enforce_dot_walk_cross_scope_access=true" db_object_id="aba012d62f660310a55a1d707fa4e37c" label="Ward" max_length="40" name="x_2130921_caresy_0_ward" type="collection">
+        <element label="Floor" max_length="255" name="floor" type="integer"/>
+        <element label="Ward Name" mandatory="true" max_length="100" name="ward_name" type="string"/>
+        <element label="Ward Code" mandatory="true" max_length="20" name="ward_code" type="string"/>
+        <element attributes="ignore_filter_on_new=true" default="javascript:global.getNextObjNumberPadded();" label="Ward Number" mandatory="true" max_length="40" name="number" type="string"/>
+        <element label="Department" mandatory="true" max_length="32" name="department" reference="x_2130921_caresy_0_department" type="reference"/>
+        <element default="True" function_definition="True" label="Active" mandatory="true" max_length="255" name="active" type="boolean"/>
+        <element default="0" function_definition="0" label="Capacity" mandatory="true" max_length="255" name="capacity" type="integer"/>
+        <element label="Location" max_length="32" name="location" reference="cmn_location" type="reference"/>
+        <element choice="1" label="Ward Type" mandatory="true" max_length="255" name="ward_type" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="ICU" sequence="1" value="ICU"/>
+                <element inactive_on_update="false" label="Surgical" sequence="3" value="Surgical"/>
+                <element inactive_on_update="false" label="Other" sequence="7" value="Other"/>
+                <element inactive_on_update="false" label="Maternity" sequence="5" value="Maternity"/>
+                <element inactive_on_update="false" label="General" sequence="0" value="General"/>
+                <element inactive_on_update="false" label="Isolation" sequence="6" value="Isolation"/>
+                <element inactive_on_update="false" label="Pediatric" sequence="4" value="Pediatric"/>
+                <element inactive_on_update="false" label="Emergency" sequence="2" value="Emergency"/>
+            </choice>
+        </element>
+        <index name="index">
+            <element name="department"/>
+        </index>
+        <index name="index2">
+            <element name="location"/>
+        </index>
+    </element>
+</database>

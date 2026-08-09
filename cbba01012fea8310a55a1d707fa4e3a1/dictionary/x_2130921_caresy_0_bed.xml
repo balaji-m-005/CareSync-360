@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element attributes="enforce_dot_walk_cross_scope_access=true" db_object_id="687dea5a2fa60310a55a1d707fa4e35a" label="Bed" max_length="40" name="x_2130921_caresy_0_bed" type="collection">
+        <element default="True" function_definition="True" label="Active" mandatory="true" max_length="255" name="active" type="boolean"/>
+        <element dependent="department.department_name" dependent_on_field="department.department_name" label="Department" mandatory="true" max_length="32" name="department" reference="x_2130921_caresy_0_department" type="reference" use_dependent_field="true"/>
+        <element choice="1" default="Standard" function_definition="Standard" label="Bed Type" mandatory="true" max_length="255" name="bed_type" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="ICU" sequence="1" value="ICU"/>
+                <element inactive_on_update="false" label="Isolation" sequence="3" value="Isolation"/>
+                <element inactive_on_update="false" label="Bariatric" sequence="5" value="Bariatric"/>
+                <element inactive_on_update="false" label="Standard" sequence="0" value="Standard"/>
+                <element inactive_on_update="false" label="Emergency" sequence="2" value="Emergency"/>
+                <element inactive_on_update="false" label="Pediatric" sequence="4" value="Pediatric"/>
+            </choice>
+        </element>
+        <element label="Bed Number" mandatory="true" max_length="30" name="bed_number" type="string"/>
+        <element label="Bed Name" mandatory="true" max_length="100" name="bed_name" type="string"/>
+        <element label="Floor" mandatory="true" max_length="255" name="floor" type="integer"/>
+        <element label="Location" mandatory="true" max_length="32" name="location" reference="cmn_location" type="reference"/>
+        <element dependent="ward.ward_name" dependent_on_field="ward.ward_name" label="Ward" mandatory="true" max_length="32" name="ward" reference="x_2130921_caresy_0_ward" type="reference" use_dependent_field="true"/>
+        <element attributes="ignore_filter_on_new=true" default="javascript:global.getNextObjNumberPadded();" label="Number" max_length="40" name="number" type="string"/>
+        <element choice="1" default="Available" function_definition="Available" label="Bed Status" mandatory="true" max_length="255" name="bed_status" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Maintenance" sequence="4" value="Maintenance"/>
+                <element inactive_on_update="false" label="Reserved" sequence="2" value="Reserved"/>
+                <element inactive_on_update="false" label="Blocked" sequence="5" value="Blocked"/>
+                <element inactive_on_update="false" label="Available" sequence="0" value="Available"/>
+                <element inactive_on_update="false" label="Cleaning" sequence="3" value="Cleaning"/>
+                <element inactive_on_update="false" label="Occupied" sequence="1" value="Occupied"/>
+            </choice>
+        </element>
+        <index name="index">
+            <element name="department"/>
+        </index>
+        <index name="index2">
+            <element name="location"/>
+        </index>
+        <index name="index3">
+            <element name="ward"/>
+        </index>
+    </element>
+</database>
