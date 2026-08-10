@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_documentation element="care_plan_status" label="Care Plan Status" language="en" table="x_2130921_caresy_0_care_plan">
+        <sys_documentation action="INSERT_OR_UPDATE">
+            <element>care_plan_status</element>
+            <help/>
+            <hint/>
+            <label>Care Plan Status</label>
+            <language>en</language>
+            <name>x_2130921_caresy_0_care_plan</name>
+            <plural/>
+            <sys_class_name>sys_documentation</sys_class_name>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-10 03:39:16</sys_created_on>
+            <sys_mod_count>5</sys_mod_count>
+            <sys_name>Care Plan Status</sys_name>
+            <sys_package display_value="CareSync 360" source="x_2130921_caresy_0">cbba01012fea8310a55a1d707fa4e3a1</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="CareSync 360">cbba01012fea8310a55a1d707fa4e3a1</sys_scope>
+            <sys_update_name>sys_documentation_x_2130921_caresy_0_care_plan_care_plan_status_en</sys_update_name>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-10 03:43:32</sys_updated_on>
+            <url/>
+            <url_target/>
+        </sys_documentation>
+    </sys_documentation>
+</record_update>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element attributes="enforce_dot_walk_cross_scope_access=true" db_object_id="ba75c0f22f26c310a55a1d707fa4e3c6" label="Medication" max_length="40" name="x_2130921_caresy_0_medication" type="collection">
+        <element label="Patient" mandatory="true" max_length="32" name="patient" reference="x_2130921_caresy_0_patient" type="reference"/>
+        <element label="Prescribed By" max_length="32" name="prescribed_by" reference="sys_user" type="reference"/>
+        <element choice="1" label="Frequency" mandatory="true" max_length="255" name="frequency" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="As Needed" sequence="4" value="As Needed"/>
+                <element inactive_on_update="false" label="Three Times Daily" sequence="2" value="Three Times Daily"/>
+                <element inactive_on_update="false" label="Once Daily" sequence="0" value="Once Daily"/>
+                <element inactive_on_update="false" label="Other" sequence="5" value="Other"/>
+                <element inactive_on_update="false" label="Four Times Daily" sequence="3" value="Four Times Daily"/>
+                <element inactive_on_update="false" label="Twice Daily" sequence="1" value="Twice Daily"/>
+            </choice>
+        </element>
+        <element choice="1" label="Medication Type" mandatory="true" max_length="255" name="medication_type" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Injection" sequence="2" value="Injection"/>
+                <element inactive_on_update="false" label="Other" sequence="6" value="Other"/>
+                <element inactive_on_update="false" label="Inhaler" sequence="4" value="Inhaler"/>
+                <element inactive_on_update="false" label="Cream" sequence="5" value="Cream"/>
+                <element inactive_on_update="false" label="Syrup" sequence="3" value="Syrup"/>
+                <element inactive_on_update="false" label="Capsule" sequence="1" value="Capsule"/>
+                <element inactive_on_update="false" label="Tablet" sequence="0" value="Tablet"/>
+            </choice>
+        </element>
+        <element label="Dosage" mandatory="true" max_length="50" name="dosage" type="string"/>
+        <element default="True" function_definition="True" label="Active" mandatory="true" max_length="255" name="active" type="boolean"/>
+        <element label="Care Plan" max_length="32" name="care_plan" reference="x_2130921_caresy_0_care_plan" type="reference"/>
+        <element choice="1" label="Route" mandatory="true" max_length="255" name="route" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Inhalation" sequence="5" value="Inhalation"/>
+                <element inactive_on_update="false" label="Subcutaneous" sequence="3" value="Subcutaneous"/>
+                <element inactive_on_update="false" label="Intravenous" sequence="1" value="Intravenous"/>
+                <element inactive_on_update="false" label="Oral" sequence="0" value="Oral"/>
+                <element inactive_on_update="false" label="Other" sequence="6" value="Other"/>
+                <element inactive_on_update="false" label="Topical" sequence="4" value="Topical"/>
+                <element inactive_on_update="false" label="Intramuscular" sequence="2" value="Intramuscular"/>
+            </choice>
+        </element>
+        <element label="End Date" max_length="255" name="end_date" type="glide_date"/>
+        <element choice="1" default="Prescribed" label="Medication Status" mandatory="true" max_length="255" name="medication_status" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Completed" sequence="3" value="Completed"/>
+                <element inactive_on_update="false" label="Active" sequence="1" value="Active"/>
+                <element inactive_on_update="false" label="Prescribed" sequence="0" value="Prescribed"/>
+                <element inactive_on_update="false" label="Discontinued" sequence="4" value="Discontinued"/>
+                <element inactive_on_update="false" label="Held" sequence="2" value="Held"/>
+            </choice>
+        </element>
+        <element label="Medication Name" mandatory="true" max_length="150" name="medication_name" type="string"/>
+        <element label="Instructions" max_length="500" name="instructions" type="string"/>
+        <element label="Admission" mandatory="true" max_length="32" name="admission" reference="x_2130921_caresy_0_admission" type="reference"/>
+        <element attributes="ignore_filter_on_new=true" default="javascript:global.getNextObjNumberPadded();" label="Medication Number" mandatory="true" max_length="40" name="number" type="string"/>
+        <element label="Start Date" mandatory="true" max_length="255" name="start_date" type="glide_date"/>
+        <index name="index">
+            <element name="admission"/>
+        </index>
+        <index name="index2">
+            <element name="care_plan"/>
+        </index>
+        <index name="index3">
+            <element name="patient"/>
+        </index>
+        <index name="index4">
+            <element name="prescribed_by"/>
+        </index>
+    </element>
+</database>

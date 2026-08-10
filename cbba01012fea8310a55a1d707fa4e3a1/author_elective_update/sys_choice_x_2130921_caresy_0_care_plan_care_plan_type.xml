@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_choice action="INSERT_OR_UPDATE" field="care_plan_type" table="x_2130921_caresy_0_care_plan" version="3">
+        <sys_choice_set action="INSERT_OR_UPDATE">
+            <element>care_plan_type</element>
+            <name>x_2130921_caresy_0_care_plan</name>
+            <sys_class_name>sys_choice_set</sys_class_name>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-10 03:39:18</sys_created_on>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>care_plan_type</sys_name>
+            <sys_package display_value="CareSync 360" source="x_2130921_caresy_0">cbba01012fea8310a55a1d707fa4e3a1</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="CareSync 360">cbba01012fea8310a55a1d707fa4e3a1</sys_scope>
+            <sys_update_name>sys_choice_x_2130921_caresy_0_care_plan_care_plan_type</sys_update_name>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-10 03:39:18</sys_updated_on>
+        </sys_choice_set>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>care_plan_type</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Medical</label>
+            <language>en</language>
+            <name>x_2130921_caresy_0_care_plan</name>
+            <sequence>0</sequence>
+            <synonyms/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-10 03:39:18</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-10 03:39:18</sys_updated_on>
+            <value>Medical</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>care_plan_type</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Surgical</label>
+            <language>en</language>
+            <name>x_2130921_caresy_0_care_plan</name>
+            <sequence>1</sequence>
+            <synonyms/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-10 03:39:18</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-10 03:39:18</sys_updated_on>
+            <value>Surgical</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>care_plan_type</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Rehabilitation</label>
+            <language>en</language>
+            <name>x_2130921_caresy_0_care_plan</name>
+            <sequence>2</sequence>
+            <synonyms/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-10 03:39:18</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-10 03:39:18</sys_updated_on>
+            <value>Rehabilitation</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>care_plan_type</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Preventive</label>
+            <language>en</language>
+            <name>x_2130921_caresy_0_care_plan</name>
+            <sequence>3</sequence>
+            <synonyms/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-10 03:39:18</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-10 03:39:18</sys_updated_on>
+            <value>Preventive</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>care_plan_type</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Chronic Care</label>
+            <language>en</language>
+            <name>x_2130921_caresy_0_care_plan</name>
+            <sequence>4</sequence>
+            <synonyms/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-10 03:39:18</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-10 03:39:18</sys_updated_on>
+            <value>Chronic Care</value>
+        </sys_choice>
+    </sys_choice>
+</record_update>

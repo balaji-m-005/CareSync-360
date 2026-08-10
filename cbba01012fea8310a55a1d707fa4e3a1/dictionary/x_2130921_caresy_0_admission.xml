@@ -21,7 +21,7 @@
                 <element inactive_on_update="false" label="Planned" sequence="1" value="Planned"/>
             </choice>
         </element>
-        <element attributes="ignore_filter_on_new=true" default="javascript:global.getNextObjNumberPadded();" label="Admission Number" max_length="40" name="number" type="string"/>
+        <element attributes="ignore_filter_on_new=true" default="javascript:global.getNextObjNumberPadded();" label="Admission Number" mandatory="true" max_length="40" name="number" type="string"/>
         <element label="Department" mandatory="true" max_length="32" name="department" reference="x_2130921_caresy_0_department" type="reference"/>
         <element label="Discharge Date" max_length="255" name="discharge_date" type="glide_date_time"/>
         <element label="Ward" mandatory="true" max_length="32" name="ward" reference="x_2130921_caresy_0_ward" type="reference"/>

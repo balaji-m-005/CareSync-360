@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element attributes="enforce_dot_walk_cross_scope_access=true" db_object_id="9a8a5cfe2fa6c310a55a1d707fa4e39d" label="Patient Timeline" max_length="40" name="x_2130921_caresy_0_patient_timeline" type="collection">
+        <element label="Admission" max_length="32" name="admission" reference="x_2130921_caresy_0_admission" type="reference"/>
+        <element label="Description" max_length="40" name="description" type="string"/>
+        <element label="Patient" mandatory="true" max_length="32" name="patient" reference="x_2130921_caresy_0_patient" type="reference"/>
+        <element attributes="ignore_filter_on_new=true" default="javascript:global.getNextObjNumberPadded();" label="Patient Timeline Number" mandatory="true" max_length="40" name="number" type="string"/>
+        <element choice="1" label="Status" mandatory="true" max_length="255" name="status" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Cancelled" sequence="3" value="Cancelled"/>
+                <element inactive_on_update="false" label="In Progress" sequence="1" value="In Progress"/>
+                <element inactive_on_update="false" label="Pending" sequence="0" value="Pending"/>
+                <element inactive_on_update="false" label="Completed" sequence="2" value="Completed"/>
+            </choice>
+        </element>
+        <element label="Event Date" mandatory="true" max_length="255" name="event_date" type="glide_date_time"/>
+        <element choice="1" label="Event Type" mandatory="true" max_length="255" name="event_type" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Care Milestone" sequence="5" value="Care Milestone"/>
+                <element inactive_on_update="false" label="Clinical Task" sequence="3" value="Clinical Task"/>
+                <element inactive_on_update="false" label="Admission" sequence="1" value="Admission"/>
+                <element inactive_on_update="false" label="Patient Registration" sequence="0" value="Patient Registration"/>
+                <element inactive_on_update="false" label="Discharge" sequence="7" value="Discharge"/>
+                <element inactive_on_update="false" label="Other" sequence="8" value="Other"/>
+                <element inactive_on_update="false" label="Patient Handoff" sequence="6" value="Patient Handoff"/>
+                <element inactive_on_update="false" label="Medication" sequence="4" value="Medication"/>
+                <element inactive_on_update="false" label="Care Plan" sequence="2" value="Care Plan"/>
+            </choice>
+        </element>
+        <element default="True" function_definition="True" label="Active" mandatory="true" max_length="255" name="active" type="boolean"/>
+        <element label="Event Title" mandatory="true" max_length="150" name="event_title" type="string"/>
+        <index name="index">
+            <element name="admission"/>
+        </index>
+        <index name="index2">
+            <element name="patient"/>
+        </index>
+    </element>
+</database>

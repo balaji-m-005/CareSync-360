@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element attributes="enforce_dot_walk_cross_scope_access=true" db_object_id="394bc8fe2f26c310a55a1d707fa4e308" label="Care Milestone" max_length="40" name="x_2130921_caresy_0_care_milestone" type="collection">
+        <element label="Admission" mandatory="true" max_length="32" name="admission" reference="x_2130921_caresy_0_admission" type="reference"/>
+        <element label="Milestone Name" mandatory="true" max_length="100" name="milestone_name" type="string"/>
+        <element choice="1" default="Medium" function_definition="Medium" label="Priority" mandatory="true" max_length="255" name="priority" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Critical" sequence="3" value="Critical"/>
+                <element inactive_on_update="false" label="Medium" sequence="1" value="Medium"/>
+                <element inactive_on_update="false" label="Low" sequence="0" value="Low"/>
+                <element inactive_on_update="false" label="High" sequence="2" value="High"/>
+            </choice>
+        </element>
+        <element attributes="ignore_filter_on_new=true" default="javascript:global.getNextObjNumberPadded();" label="Care Milestone Number" mandatory="true" max_length="40" name="number" type="string"/>
+        <element default="True" function_definition="True" label="Active" mandatory="true" max_length="255" name="active" type="boolean"/>
+        <element label="Patient" mandatory="true" max_length="32" name="patient" reference="x_2130921_caresy_0_patient" type="reference"/>
+        <element label="Target Date" mandatory="true" max_length="255" name="target_date" type="glide_date_time"/>
+        <element label="Completion Date" max_length="255" name="completion_date" type="glide_date_time"/>
+        <element choice="1" label="Milestone Type" mandatory="true" max_length="255" name="milestone_type" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Review" sequence="3" value="Review"/>
+                <element inactive_on_update="false" label="Treatment" sequence="1" value="Treatment"/>
+                <element inactive_on_update="false" label="Assessment" sequence="0" value="Assessment"/>
+                <element inactive_on_update="false" label="Discharge" sequence="4" value="Discharge"/>
+                <element inactive_on_update="false" label="Monitoring" sequence="2" value="Monitoring"/>
+            </choice>
+        </element>
+        <element label="Description" max_length="500" name="description" type="string"/>
+        <element choice="1" default="Pending" label="Milestone Status" mandatory="true" max_length="255" name="milestone_status" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="In Progress" sequence="1" value="In Progress"/>
+                <element inactive_on_update="false" label="Pending" sequence="0" value="Pending"/>
+                <element inactive_on_update="false" label="Cancelled" sequence="3" value="Cancelled"/>
+                <element inactive_on_update="false" label="Completed" sequence="2" value="Completed"/>
+            </choice>
+        </element>
+        <element label="Care Plan" mandatory="true" max_length="32" name="care_plan" reference="x_2130921_caresy_0_care_plan" type="reference"/>
+        <index name="index">
+            <element name="admission"/>
+        </index>
+        <index name="index2">
+            <element name="care_plan"/>
+        </index>
+        <index name="index3">
+            <element name="patient"/>
+        </index>
+    </element>
+</database>

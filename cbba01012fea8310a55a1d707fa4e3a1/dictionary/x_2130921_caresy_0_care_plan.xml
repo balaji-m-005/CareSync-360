@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element attributes="enforce_dot_walk_cross_scope_access=true" db_object_id="28a6b2622faa8310a55a1d707fa4e301" label="Care Plan" max_length="40" name="x_2130921_caresy_0_care_plan" type="collection">
+        <element label="Patient" mandatory="true" max_length="32" name="patient" reference="x_2130921_caresy_0_patient" type="reference"/>
+        <element attributes="ignore_filter_on_new=true" default="javascript:global.getNextObjNumberPadded();" label="Care Plan Number" mandatory="true" max_length="40" name="number" type="string"/>
+        <element label="End Date" max_length="255" name="end_date" type="glide_date"/>
+        <element label="Notes" max_length="1000" name="notes" type="string"/>
+        <element label="Admission" mandatory="true" max_length="32" name="admission" reference="x_2130921_caresy_0_admission" type="reference"/>
+        <element label="Primary Goal" mandatory="true" max_length="500" name="primary_goal" type="string"/>
+        <element label="Care Plan Name" mandatory="true" max_length="100" name="care_plan_name" type="string"/>
+        <element default="True" label="Active" mandatory="true" max_length="255" name="active" type="boolean"/>
+        <element label="Start Date" mandatory="true" max_length="255" name="start_date" type="glide_date"/>
+        <element choice="1" label="Care Plan Type" mandatory="true" max_length="255" name="care_plan_type" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Surgical" sequence="1" value="Surgical"/>
+                <element inactive_on_update="false" label="Chronic Care" sequence="4" value="Chronic Care"/>
+                <element inactive_on_update="false" label="Medical" sequence="0" value="Medical"/>
+                <element inactive_on_update="false" label="Rehabilitation" sequence="2" value="Rehabilitation"/>
+                <element inactive_on_update="false" label="Preventive" sequence="3" value="Preventive"/>
+            </choice>
+        </element>
+        <element choice="1" label="Care Plan Status" mandatory="true" max_length="255" name="care_plan_status" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Cancelled" sequence="4" value="Cancelled"/>
+                <element inactive_on_update="false" label="On Hold" sequence="2" value="On Hold"/>
+                <element inactive_on_update="false" label="Active" sequence="1" value="Active"/>
+                <element inactive_on_update="false" label="Draft" sequence="0" value="Draft"/>
+                <element inactive_on_update="false" label="Completed" sequence="3" value="Completed"/>
+            </choice>
+        </element>
+        <index name="index">
+            <element name="admission"/>
+        </index>
+        <index name="index2">
+            <element name="patient"/>
+        </index>
+    </element>
+</database>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_user_role">
+    <sys_user_role action="INSERT_OR_UPDATE">
+        <assignable_by/>
+        <can_delegate>true</can_delegate>
+        <description/>
+        <elevated_privilege>false</elevated_privilege>
+        <federated_id>kzuIRZmJ1Xm/gcG2NZnYz0hbD/ondmkzmHOD8+0XLnc=</federated_id>
+        <grantable>true</grantable>
+        <includes_roles/>
+        <name>x_2130921_caresy_0.care_plan_user</name>
+        <scoped_admin>false</scoped_admin>
+        <suffix>care_plan_user</suffix>
+        <sys_class_name>sys_user_role</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-10 03:32:31</sys_created_on>
+        <sys_id>4cc676622faa8310a55a1d707fa4e3fc</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_2130921_caresy_0.care_plan_user</sys_name>
+        <sys_package display_value="CareSync 360" source="x_2130921_caresy_0">cbba01012fea8310a55a1d707fa4e3a1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="CareSync 360">cbba01012fea8310a55a1d707fa4e3a1</sys_scope>
+        <sys_update_name>sys_user_role_4cc676622faa8310a55a1d707fa4e3fc</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-10 03:32:31</sys_updated_on>
+    </sys_user_role>
+</record_update>

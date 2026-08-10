@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element attributes="enforce_dot_walk_cross_scope_access=true" db_object_id="4b2c326e2faa8310a55a1d707fa4e381" label="Clinical Task" max_length="40" name="x_2130921_caresy_0_clinical_task" type="collection">
+        <element label="Task Name" mandatory="true" max_length="150" name="task_name" type="string"/>
+        <element choice="1" default="Pending" label="Task Status" mandatory="true" max_length="255" name="task_status" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Cancelled" sequence="4" value="Cancelled"/>
+                <element inactive_on_update="false" label="In Progress" sequence="2" value="In Progress"/>
+                <element inactive_on_update="false" label="Pending" sequence="0" value="Pending"/>
+                <element inactive_on_update="false" label="Completed" sequence="3" value="Completed"/>
+                <element inactive_on_update="false" label="Assigned" sequence="1" value="Assigned"/>
+            </choice>
+        </element>
+        <element label="Completion Date" max_length="255" name="completion_date" type="glide_date_time"/>
+        <element choice="1" default="Medium" label="Priority" mandatory="true" max_length="255" name="priority" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Critical" sequence="3" value="Critical"/>
+                <element inactive_on_update="false" label="Medium" sequence="1" value="Medium"/>
+                <element inactive_on_update="false" label="Low" sequence="0" value="Low"/>
+                <element inactive_on_update="false" label="High" sequence="2" value="High"/>
+            </choice>
+        </element>
+        <element choice="1" label="Task Type" mandatory="true" max_length="255" name="task_type" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Follow-up" sequence="6" value="Follow-up"/>
+                <element inactive_on_update="false" label="Imaging" sequence="4" value="Imaging"/>
+                <element inactive_on_update="false" label="Vital Check" sequence="2" value="Vital Check"/>
+                <element inactive_on_update="false" label="Medication" sequence="1" value="Medication"/>
+                <element inactive_on_update="false" label="Assessment" sequence="0" value="Assessment"/>
+                <element inactive_on_update="false" label="Other" sequence="7" value="Other"/>
+                <element inactive_on_update="false" label="Procedure" sequence="5" value="Procedure"/>
+                <element inactive_on_update="false" label="Laboratory" sequence="3" value="Laboratory"/>
+            </choice>
+        </element>
+        <element label=" Admission " mandatory="true" max_length="32" name="admission" reference="x_2130921_caresy_0_admission" type="reference"/>
+        <element label="Assigned To" max_length="32" name="assigned_to" reference="sys_user" type="reference"/>
+        <element label="Description" max_length="500" name="description" type="string"/>
+        <element label="Care Plan" mandatory="true" max_length="32" name="care_plan" reference="x_2130921_caresy_0_care_plan" type="reference"/>
+        <element default="True" function_definition="True" label="Active" mandatory="true" max_length="255" name="active" type="boolean"/>
+        <element label="Patient                    " mandatory="true" max_length="32" name="patient" reference="x_2130921_caresy_0_patient" type="reference"/>
+        <element label="Due Date" max_length="255" name="due_date" type="glide_date_time"/>
+        <element attributes="ignore_filter_on_new=true" default="javascript:global.getNextObjNumberPadded();" label="Clinical Task Number" mandatory="true" max_length="40" name="number" type="string"/>
+        <index name="index">
+            <element name="admission"/>
+        </index>
+        <index name="index2">
+            <element name="assigned_to"/>
+        </index>
+        <index name="index3">
+            <element name="care_plan"/>
+        </index>
+        <index name="index4">
+            <element name="patient"/>
+        </index>
+    </element>
+</database>
