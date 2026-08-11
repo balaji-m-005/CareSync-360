@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element attributes="enforce_dot_walk_cross_scope_access=true" db_object_id="793a160b2fa68710a55a1d707fa4e383" label="AI Insight" max_length="40" name="x_2130921_caresy_0_ai_insight" type="collection">
+        <element label="Care Plan" max_length="32" name="care_plan" reference="x_2130921_caresy_0_care_plan" type="reference"/>
+        <element label="Review Notes" max_length="40" name="review_notes" type="string"/>
+        <element choice="1" default="New" label="Insight Status" mandatory="true" max_length="255" name="insight_status" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Resolved" sequence="4" value="Resolved"/>
+                <element inactive_on_update="false" label="Accepted" sequence="2" value="Accepted"/>
+                <element inactive_on_update="false" label="Reviewed" sequence="1" value="Reviewed"/>
+                <element inactive_on_update="false" label="New" sequence="0" value="New"/>
+                <element inactive_on_update="false" label="Rejected" sequence="3" value="Rejected"/>
+            </choice>
+        </element>
+        <element label="Patient" mandatory="true" max_length="32" name="patient" reference="x_2130921_caresy_0_patient" type="reference"/>
+        <element label="Insight Title" mandatory="true" max_length="40" name="insight_title" type="string"/>
+        <element label="Reviewed By" max_length="32" name="reviewed_by" reference="sys_user" type="reference"/>
+        <element label="Confidence Score" max_length="38" name="confidence_score" type="decimal"/>
+        <element choice="1" label="Insight Type" mandatory="true" max_length="255" name="insight_type" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Care Gap" sequence="3" value="Care Gap"/>
+                <element inactive_on_update="false" label="Clinical Recommendation" sequence="1" value="Clinical Recommendation"/>
+                <element inactive_on_update="false" label="Risk Alert" sequence="0" value="Risk Alert"/>
+                <element inactive_on_update="false" label="Trend" sequence="5" value="Trend"/>
+                <element inactive_on_update="false" label="General" sequence="6" value="General"/>
+                <element inactive_on_update="false" label="Patient Status" sequence="4" value="Patient Status"/>
+                <element inactive_on_update="false" label="Medication Alert" sequence="2" value="Medication Alert"/>
+            </choice>
+        </element>
+        <element attributes="ignore_filter_on_new=true" default="javascript:global.getNextObjNumberPadded();" label="AI Insight Number" mandatory="true" max_length="40" name="number" type="string"/>
+        <element default="True" function_definition="True" label="Active" mandatory="true" max_length="255" name="active" type="boolean"/>
+        <element label="Insight" mandatory="true" max_length="150" name="insight" type="string"/>
+        <element label="Admission" max_length="32" name="admission" reference="x_2130921_caresy_0_admission" type="reference"/>
+        <element choice="1" label="Severity" mandatory="true" max_length="255" name="severity" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Critical" sequence="3" value="Critical"/>
+                <element inactive_on_update="false" label="Medium" sequence="1" value="Medium"/>
+                <element inactive_on_update="false" label="Low" sequence="0" value="Low"/>
+                <element inactive_on_update="false" label="High" sequence="2" value="High"/>
+            </choice>
+        </element>
+        <element label="Recommendation" max_length="150" name="recommendation" type="string"/>
+        <element label="Generated Date" mandatory="true" max_length="255" name="generated_date" type="glide_date_time"/>
+        <index name="index">
+            <element name="admission"/>
+        </index>
+        <index name="index2">
+            <element name="care_plan"/>
+        </index>
+        <index name="index3">
+            <element name="patient"/>
+        </index>
+        <index name="index4">
+            <element name="reviewed_by"/>
+        </index>
+    </element>
+</database>

@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_choice action="INSERT_OR_UPDATE" field="insight_type" table="x_2130921_caresy_0_ai_insight" version="3">
+        <sys_choice_set action="INSERT_OR_UPDATE">
+            <element>insight_type</element>
+            <name>x_2130921_caresy_0_ai_insight</name>
+            <sys_class_name>sys_choice_set</sys_class_name>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-11 14:48:17</sys_created_on>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>insight_type</sys_name>
+            <sys_package display_value="CareSync 360" source="x_2130921_caresy_0">cbba01012fea8310a55a1d707fa4e3a1</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="CareSync 360">cbba01012fea8310a55a1d707fa4e3a1</sys_scope>
+            <sys_update_name>sys_choice_x_2130921_caresy_0_ai_insight_insight_type</sys_update_name>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-11 14:48:17</sys_updated_on>
+        </sys_choice_set>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>insight_type</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Risk Alert</label>
+            <language>en</language>
+            <name>x_2130921_caresy_0_ai_insight</name>
+            <sequence>0</sequence>
+            <synonyms/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-11 14:48:17</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-11 14:48:17</sys_updated_on>
+            <value>Risk Alert</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>insight_type</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Clinical Recommendation</label>
+            <language>en</language>
+            <name>x_2130921_caresy_0_ai_insight</name>
+            <sequence>1</sequence>
+            <synonyms/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-11 14:48:17</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-11 14:48:17</sys_updated_on>
+            <value>Clinical Recommendation</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>insight_type</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Medication Alert</label>
+            <language>en</language>
+            <name>x_2130921_caresy_0_ai_insight</name>
+            <sequence>2</sequence>
+            <synonyms/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-11 14:48:17</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-11 14:48:17</sys_updated_on>
+            <value>Medication Alert</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>insight_type</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Care Gap</label>
+            <language>en</language>
+            <name>x_2130921_caresy_0_ai_insight</name>
+            <sequence>3</sequence>
+            <synonyms/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-11 14:48:17</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-11 14:48:17</sys_updated_on>
+            <value>Care Gap</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>insight_type</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Patient Status</label>
+            <language>en</language>
+            <name>x_2130921_caresy_0_ai_insight</name>
+            <sequence>4</sequence>
+            <synonyms/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-11 14:48:17</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-11 14:48:17</sys_updated_on>
+            <value>Patient Status</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>insight_type</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Trend</label>
+            <language>en</language>
+            <name>x_2130921_caresy_0_ai_insight</name>
+            <sequence>5</sequence>
+            <synonyms/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-11 14:48:17</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-11 14:48:17</sys_updated_on>
+            <value>Trend</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>insight_type</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>General</label>
+            <language>en</language>
+            <name>x_2130921_caresy_0_ai_insight</name>
+            <sequence>6</sequence>
+            <synonyms/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-11 14:48:17</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-11 14:48:17</sys_updated_on>
+            <value>General</value>
+        </sys_choice>
+    </sys_choice>
+</record_update>

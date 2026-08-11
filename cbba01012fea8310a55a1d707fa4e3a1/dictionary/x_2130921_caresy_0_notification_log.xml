@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element attributes="enforce_dot_walk_cross_scope_access=true" db_object_id="0345de0f2f668710a55a1d707fa4e3f1" label="Notification Log" max_length="40" name="x_2130921_caresy_0_notification_log" type="collection">
+        <element label="Admission" max_length="32" name="admission" reference="x_2130921_caresy_0_admission" type="reference"/>
+        <element label="Error Message" max_length="40" name="error_message" type="string"/>
+        <element attributes="ignore_filter_on_new=true" default="javascript:global.getNextObjNumberPadded();" label="Notification Log Number" mandatory="true" max_length="40" name="number" type="string"/>
+        <element choice="1" label="Channel" mandatory="true" max_length="255" name="channel" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="SMS" sequence="1" value="SMS"/>
+                <element inactive_on_update="false" label="Email" sequence="0" value="Email"/>
+                <element inactive_on_update="false" label="Push" sequence="3" value="Push"/>
+                <element inactive_on_update="false" label="System" sequence="4" value="System"/>
+                <element inactive_on_update="false" label="In-App" sequence="2" value="In-App"/>
+            </choice>
+        </element>
+        <element label="Patient" mandatory="true" max_length="32" name="patient" reference="x_2130921_caresy_0_patient" type="reference"/>
+        <element choice="1" default="Pending" label="Notification Status" mandatory="true" max_length="255" name="notification_status" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Failed" sequence="2" value="Failed"/>
+                <element inactive_on_update="false" label="Cancelled" sequence="3" value="Cancelled"/>
+                <element inactive_on_update="false" label="Sent" sequence="1" value="Sent"/>
+                <element inactive_on_update="false" label="Pending" sequence="0" value="Pending"/>
+            </choice>
+        </element>
+        <element label="Recipient" max_length="32" name="recipient" reference="sys_user" type="reference"/>
+        <element label="Sent Date" max_length="255" name="sent_date" type="glide_date_time"/>
+        <element label="Message" mandatory="true" max_length="40" name="message" type="string"/>
+        <element default="True" function_definition="True" label="Active" mandatory="true" max_length="255" name="active" type="boolean"/>
+        <element choice="1" label="Notification Type" mandatory="true" max_length="255" name="notification_type" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Care Plan" sequence="5" value="Care Plan"/>
+                <element inactive_on_update="false" label="Care Milestone" sequence="3" value="Care Milestone"/>
+                <element inactive_on_update="false" label="Medication" sequence="1" value="Medication"/>
+                <element inactive_on_update="false" label="Admission" sequence="0" value="Admission"/>
+                <element inactive_on_update="false" label="General" sequence="6" value="General"/>
+                <element inactive_on_update="false" label="Patient Handoff" sequence="4" value="Patient Handoff"/>
+                <element inactive_on_update="false" label="Clinical Task" sequence="2" value="Clinical Task"/>
+            </choice>
+        </element>
+        <element label="Subject" mandatory="true" max_length="40" name="subject" type="string"/>
+        <index name="index">
+            <element name="admission"/>
+        </index>
+        <index name="index2">
+            <element name="patient"/>
+        </index>
+        <index name="index3">
+            <element name="recipient"/>
+        </index>
+    </element>
+</database>

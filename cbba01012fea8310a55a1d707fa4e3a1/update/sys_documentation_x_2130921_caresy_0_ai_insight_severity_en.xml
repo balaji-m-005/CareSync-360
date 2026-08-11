@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_documentation element="severity" label="Severity" language="en" table="x_2130921_caresy_0_ai_insight">
+        <sys_documentation action="INSERT_OR_UPDATE">
+            <element>severity</element>
+            <help/>
+            <hint/>
+            <label>Severity</label>
+            <language>en</language>
+            <name>x_2130921_caresy_0_ai_insight</name>
+            <plural/>
+            <sys_class_name>sys_documentation</sys_class_name>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-11 14:48:16</sys_created_on>
+            <sys_mod_count>5</sys_mod_count>
+            <sys_name>Severity</sys_name>
+            <sys_package display_value="CareSync 360" source="x_2130921_caresy_0">cbba01012fea8310a55a1d707fa4e3a1</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="CareSync 360">cbba01012fea8310a55a1d707fa4e3a1</sys_scope>
+            <sys_update_name>sys_documentation_x_2130921_caresy_0_ai_insight_severity_en</sys_update_name>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-11 14:50:43</sys_updated_on>
+            <url/>
+            <url_target/>
+        </sys_documentation>
+    </sys_documentation>
+</record_update>
