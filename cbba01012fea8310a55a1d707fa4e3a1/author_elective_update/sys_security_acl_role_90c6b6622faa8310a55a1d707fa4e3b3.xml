@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_security_acl_role">
+    <sys_security_acl_role action="DELETE">
+        <sys_class_name>sys_security_acl_role</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-10 03:32:33</sys_created_on>
+        <sys_id>90c6b6622faa8310a55a1d707fa4e3b3</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_2130921_caresy_0_care_plan.x_2130921_caresy_0.care_plan_user</sys_name>
+        <sys_package display_value="CareSync 360" source="x_2130921_caresy_0">cbba01012fea8310a55a1d707fa4e3a1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="CareSync 360">cbba01012fea8310a55a1d707fa4e3a1</sys_scope>
+        <sys_security_acl display_value="x_2130921_caresy_0_care_plan">10c6b6622faa8310a55a1d707fa4e3ad</sys_security_acl>
+        <sys_update_name>sys_security_acl_role_90c6b6622faa8310a55a1d707fa4e3b3</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-10 03:32:33</sys_updated_on>
+        <sys_user_role display_value="x_2130921_caresy_0.care_plan_user" name="x_2130921_caresy_0.care_plan_user">4cc676622faa8310a55a1d707fa4e3fc</sys_user_role>
+    </sys_security_acl_role>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="CareSync 360">cbba01012fea8310a55a1d707fa4e3a1</application>
+        <file_path/>
+        <instance_id>ad8bc6ab93390f10c4e8ddd548373c98</instance_id>
+        <instance_name>dev425408</instance_name>
+        <name>sys_security_acl_role_90c6b6622faa8310a55a1d707fa4e3b3</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_security_acl_role"><sys_security_acl_role action="INSERT_OR_UPDATE"><sys_class_name>sys_security_acl_role</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2026-08-10 03:32:33</sys_created_on><sys_id>90c6b6622faa8310a55a1d707fa4e3b3</sys_id><sys_mod_count>0</sys_mod_count><sys_name>x_2130921_caresy_0_care_plan.x_2130921_caresy_0.care_plan_user</sys_name><sys_package display_value="CareSync 360" source="x_2130921_caresy_0">cbba01012fea8310a55a1d707fa4e3a1</sys_package><sys_policy/><sys_scope display_value="CareSync 360">cbba01012fea8310a55a1d707fa4e3a1</sys_scope><sys_security_acl display_value="x_2130921_caresy_0_care_plan">10c6b6622faa8310a55a1d707fa4e3ad</sys_security_acl><sys_update_name>sys_security_acl_role_90c6b6622faa8310a55a1d707fa4e3b3</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2026-08-10 03:32:33</sys_updated_on><sys_user_role display_value="x_2130921_caresy_0.care_plan_user" name="x_2130921_caresy_0.care_plan_user">4cc676622faa8310a55a1d707fa4e3fc</sys_user_role></sys_security_acl_role></record_update>]]></payload>
+        <payload_hash>823496428</payload_hash>
+        <record_name>x_2130921_caresy_0_care_plan.x_2130921_caresy_0.care_plan_user</record_name>
+        <reverted_from/>
+        <source>5098154d2f2e8310a55a1d707fa4e303</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-10 03:32:33</sys_created_on>
+        <sys_id>54c6b6622faa8310a55a1d707fa4e3bc</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>19fe9baad290000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-10 03:32:33</sys_updated_on>
+        <type>Access Roles</type>
+        <update_guid>14c6b66221aa8310260276aff4ff97bb</update_guid>
+        <update_guid_history>14c6b66221aa8310260276aff4ff97bb:823496428</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="x_2130921_caresy_0_care_plan.x_2130921_caresy_0.care_plan_user">de2109942f7acf10a55a1d707fa4e3af</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-15 05:28:09</sys_created_on>
+        <sys_db_object display_value="" name="sys_security_acl_role">sys_security_acl_role</sys_db_object>
+        <sys_id>7497506a4a644924b56d19646e093e10</sys_id>
+        <sys_metadata>90c6b6622faa8310a55a1d707fa4e3b3</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_2130921_caresy_0_care_plan.x_2130921_caresy_0.care_plan_user</sys_name>
+        <sys_package display_value="CareSync 360" source="x_2130921_caresy_0">cbba01012fea8310a55a1d707fa4e3a1</sys_package>
+        <sys_parent display_value="x_2130921_caresy_0_care_plan">10c6b6622faa8310a55a1d707fa4e3ad</sys_parent>
+        <sys_policy/>
+        <sys_scope display_value="CareSync 360">cbba01012fea8310a55a1d707fa4e3a1</sys_scope>
+        <sys_scope_delete display_value="">7d5d093a5556490eb41eedeb8cf49ea4</sys_scope_delete>
+        <sys_update_name>sys_security_acl_role_90c6b6622faa8310a55a1d707fa4e3b3</sys_update_name>
+        <sys_update_version display_value="sys_security_acl_role_90c6b6622faa8310a55a1d707fa4e3b3">54c6b6622faa8310a55a1d707fa4e3bc</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-15 05:28:09</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>
