@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_app_module">
     <sys_app_module action="INSERT_OR_UPDATE">
         <active>true</active>
-        <application display_value="Care Plan">88c6b6622faa8310a55a1d707fa4e330</application>
+        <application display_value="CareSync 360">87e6e8dc2f76cf10a55a1d707fa4e3cf</application>
         <assessment/>
         <device_type/>
         <filter/>
@@ -13,7 +13,7 @@
         <mobile_title>Care Plans</mobile_title>
         <mobile_view_name>Mobile</mobile_view_name>
         <name>x_2130921_caresy_0_care_plan</name>
-        <order/>
+        <order>600</order>
         <override_menu_roles>false</override_menu_roles>
         <query/>
         <report/>
@@ -27,7 +27,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>c4c6b6622faa8310a55a1d707fa4e336</sys_id>
-        <sys_mod_count>0</sys_mod_count>
+        <sys_mod_count>2</sys_mod_count>
         <sys_name>Care Plans</sys_name>
         <sys_overrides/>
         <sys_package display_value="CareSync 360" source="x_2130921_caresy_0">cbba01012fea8310a55a1d707fa4e3a1</sys_package>
@@ -35,7 +35,7 @@
         <sys_scope display_value="CareSync 360">cbba01012fea8310a55a1d707fa4e3a1</sys_scope>
         <sys_update_name>sys_app_module_c4c6b6622faa8310a55a1d707fa4e336</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-08-10 03:32:32</sys_updated_on>
+        <sys_updated_on>2026-08-15 03:46:27</sys_updated_on>
         <timeline_page/>
         <title>Care Plans</title>
         <uncancelable>false</uncancelable>
