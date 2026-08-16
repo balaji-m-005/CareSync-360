@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_data_policy_rule">
+    <sys_data_policy_rule action="INSERT_OR_UPDATE">
+        <disabled>ignore</disabled>
+        <field>bed</field>
+        <mandatory>true</mandatory>
+        <sys_class_name>sys_data_policy_rule</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-16 04:41:11</sys_created_on>
+        <sys_data_policy display_value="Admission - Bed Required">b2af796c2f328350a55a1d707fa4e351</sys_data_policy>
+        <sys_id>4eef71ac2f328350a55a1d707fa4e388</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>bed</sys_name>
+        <sys_package display_value="CareSync 360" source="x_2130921_caresy_0">cbba01012fea8310a55a1d707fa4e3a1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="CareSync 360">cbba01012fea8310a55a1d707fa4e3a1</sys_scope>
+        <sys_update_name>sys_data_policy_rule_4eef71ac2f328350a55a1d707fa4e388</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-16 04:41:11</sys_updated_on>
+        <table>x_2130921_caresy_0_admission</table>
+    </sys_data_policy_rule>
+</record_update>
