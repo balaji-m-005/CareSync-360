@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_script">
+    <sys_script action="INSERT_OR_UPDATE">
+        <abort_action>false</abort_action>
+        <access>package_private</access>
+        <action_delete>false</action_delete>
+        <action_insert>true</action_insert>
+        <action_query>false</action_query>
+        <action_update>true</action_update>
+        <active>true</active>
+        <add_message>false</add_message>
+        <advanced>true</advanced>
+        <change_fields>false</change_fields>
+        <client_callable>false</client_callable>
+        <collection>x_2130921_caresy_0_care_milestone</collection>
+        <condition/>
+        <description/>
+        <execute_function>false</execute_function>
+        <filter_condition/>
+        <is_rest>false</is_rest>
+        <message/>
+        <name>BR-MILE-05 - Milstne Sts and Actv valid</name>
+        <order>500</order>
+        <priority>100</priority>
+        <rest_method/>
+        <rest_method_text/>
+        <rest_service/>
+        <rest_service_text/>
+        <rest_variables/>
+        <role_conditions/>
+        <script><![CDATA[(function executeRule(current, previous) {
+
+    var status = current.getValue('milestone_status');
+    var isActive = current.active == true;
+
+    // Pending and In Progress milestones must remain Active.
+    if ((status == 'Pending' || status == 'In Progress') &&
+        !isActive) {
+
+        gs.addErrorMessage(
+            'Pending or In Progress milestones must be Active.'
+        );
+
+        current.setAbortAction(true);
+        return;
+    }
+
+    // Completed and Cancelled milestones must be Inactive.
+    if ((status == 'Completed' || status == 'Cancelled') &&
+        isActive) {
+
+        gs.addErrorMessage(
+            'Completed or Cancelled milestones must be Inactive.'
+        );
+
+        current.setAbortAction(true);
+        return;
+    }
+
+})(current, previous);]]></script>
+        <sys_class_name>sys_script</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-23 05:01:25</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>ce6746362f3ac390a55a1d707fa4e34d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>BR-MILE-05 - Milstne Sts and Actv valid</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="CareSync 360" source="x_2130921_caresy_0">cbba01012fea8310a55a1d707fa4e3a1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="CareSync 360">cbba01012fea8310a55a1d707fa4e3a1</sys_scope>
+        <sys_update_name>sys_script_ce6746362f3ac390a55a1d707fa4e34d</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-23 05:01:25</sys_updated_on>
+        <template/>
+        <when>before</when>
+    </sys_script>
+    <sys_translated_text action="delete_multiple" query="documentkey=ce6746362f3ac390a55a1d707fa4e34d"/>
+</record_update>

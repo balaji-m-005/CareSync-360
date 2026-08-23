@@ -6,7 +6,7 @@
         <element attributes="ignore_filter_on_new=true" default="javascript:global.getNextObjNumberPadded();" label="Ward Number" mandatory="true" max_length="40" name="number" type="string"/>
         <element label="Department" mandatory="true" max_length="32" name="department" reference="x_2130921_caresy_0_department" type="reference"/>
         <element default="True" function_definition="True" label="Active" mandatory="true" max_length="255" name="active" type="boolean"/>
-        <element default="0" function_definition="0" label="Capacity" mandatory="true" max_length="255" name="capacity" type="integer"/>
+        <element default="0" function_definition="0" label="Capacity" max_length="255" name="capacity" type="integer"/>
         <element label="Location" max_length="32" name="location" reference="cmn_location" type="reference"/>
         <element choice="1" label="Ward Type" mandatory="true" max_length="255" name="ward_type" type="choice">
             <choice>

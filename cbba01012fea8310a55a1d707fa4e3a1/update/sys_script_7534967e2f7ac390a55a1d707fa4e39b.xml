@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_script">
+    <sys_script action="INSERT_OR_UPDATE">
+        <abort_action>false</abort_action>
+        <access>package_private</access>
+        <action_delete>false</action_delete>
+        <action_insert>true</action_insert>
+        <action_query>false</action_query>
+        <action_update>true</action_update>
+        <active>true</active>
+        <add_message>false</add_message>
+        <advanced>true</advanced>
+        <change_fields>false</change_fields>
+        <client_callable>false</client_callable>
+        <collection>x_2130921_caresy_0_patient_timeline</collection>
+        <condition/>
+        <description/>
+        <execute_function>false</execute_function>
+        <filter_condition/>
+        <is_rest>false</is_rest>
+        <message/>
+        <name>BR-TIMELINE-03 - Evt Date Cant Be Future</name>
+        <order>300</order>
+        <priority>100</priority>
+        <rest_method/>
+        <rest_method_text/>
+        <rest_service/>
+        <rest_service_text/>
+        <rest_variables/>
+        <role_conditions/>
+        <script><![CDATA[(function executeRule(current, previous /* null when async */) {
+
+    // Nothing to validate if Event Date is empty.
+    // Dictionary-level mandatory validation handles empty values.
+    if (current.event_date.nil())
+        return;
+
+    var eventDateTime = new GlideDateTime(current.event_date);
+    var nowDateTime = new GlideDateTime();
+
+    // Event Date cannot be later than the current server date/time.
+    if (eventDateTime.getNumericValue() > nowDateTime.getNumericValue()) {
+
+        gs.addErrorMessage(
+            'Patient Timeline: Event Date cannot be in the future. ' +
+            'Enter a date/time that is now or earlier.'
+        );
+
+        current.setAbortAction(true);
+    }
+
+})(current, previous);]]></script>
+        <sys_class_name>sys_script</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-23 05:57:03</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>7534967e2f7ac390a55a1d707fa4e39b</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>BR-TIMELINE-03 - Evt Date Cant Be Future</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="CareSync 360" source="x_2130921_caresy_0">cbba01012fea8310a55a1d707fa4e3a1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="CareSync 360">cbba01012fea8310a55a1d707fa4e3a1</sys_scope>
+        <sys_update_name>sys_script_7534967e2f7ac390a55a1d707fa4e39b</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-23 05:57:03</sys_updated_on>
+        <template/>
+        <when>before</when>
+    </sys_script>
+    <sys_translated_text action="delete_multiple" query="documentkey=7534967e2f7ac390a55a1d707fa4e39b"/>
+</record_update>

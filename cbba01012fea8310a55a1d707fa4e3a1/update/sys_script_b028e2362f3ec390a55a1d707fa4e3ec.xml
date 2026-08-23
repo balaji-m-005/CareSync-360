@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_script">
+    <sys_script action="INSERT_OR_UPDATE">
+        <abort_action>false</abort_action>
+        <access>package_private</access>
+        <action_delete>false</action_delete>
+        <action_insert>true</action_insert>
+        <action_query>false</action_query>
+        <action_update>true</action_update>
+        <active>true</active>
+        <add_message>false</add_message>
+        <advanced>true</advanced>
+        <change_fields>false</change_fields>
+        <client_callable>false</client_callable>
+        <collection>x_2130921_caresy_0_ai_insight</collection>
+        <condition/>
+        <description/>
+        <execute_function>false</execute_function>
+        <filter_condition/>
+        <is_rest>false</is_rest>
+        <message/>
+        <name>03 - AI - Validate Patient Relationships</name>
+        <order>300</order>
+        <priority>100</priority>
+        <rest_method/>
+        <rest_method_text/>
+        <rest_service/>
+        <rest_service_text/>
+        <rest_variables/>
+        <role_conditions/>
+        <script><![CDATA[(function executeRule(current, previous /* null when async */) {
+
+    var patientSysId = current.getValue('patient');
+
+    // Patient itself is mandatory on the form, but this protects
+    // the server-side rule as well.
+    if (gs.nil(patientSysId)) {
+        gs.addErrorMessage('Patient is required for an AI Insight.');
+        current.setAbortAction(true);
+        return;
+    }
+
+    /*
+     * Validate Admission → Patient relationship.
+     */
+    if (!gs.nil(current.getValue('admission'))) {
+
+        var admission = current.admission.getRefRecord();
+
+        if (!admission.isValidRecord()) {
+            gs.addErrorMessage(
+                'The selected Admission is not valid.'
+            );
+
+            current.setAbortAction(true);
+            return;
+        }
+
+        var admissionPatient = admission.getValue('patient');
+
+        if (!gs.nil(admissionPatient) &&
+            admissionPatient != patientSysId) {
+
+            gs.addErrorMessage(
+                'The selected Admission does not belong to the selected Patient.'
+            );
+
+            current.setAbortAction(true);
+            return;
+        }
+    }
+
+    /*
+     * Validate Care Plan → Patient relationship.
+     */
+    if (!gs.nil(current.getValue('care_plan'))) {
+
+        var carePlan = current.care_plan.getRefRecord();
+
+        if (!carePlan.isValidRecord()) {
+            gs.addErrorMessage(
+                'The selected Care Plan is not valid.'
+            );
+
+            current.setAbortAction(true);
+            return;
+        }
+
+        var carePlanPatient = carePlan.getValue('patient');
+
+        if (!gs.nil(carePlanPatient) &&
+            carePlanPatient != patientSysId) {
+
+            gs.addErrorMessage(
+                'The selected Care Plan does not belong to the selected Patient.'
+            );
+
+            current.setAbortAction(true);
+            return;
+        }
+    }
+
+})(current, previous);]]></script>
+        <sys_class_name>sys_script</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-23 07:23:39</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>b028e2362f3ec390a55a1d707fa4e3ec</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>03 - AI - Validate Patient Relationships</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="CareSync 360" source="x_2130921_caresy_0">cbba01012fea8310a55a1d707fa4e3a1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="CareSync 360">cbba01012fea8310a55a1d707fa4e3a1</sys_scope>
+        <sys_update_name>sys_script_b028e2362f3ec390a55a1d707fa4e3ec</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-23 07:23:39</sys_updated_on>
+        <template/>
+        <when>before</when>
+    </sys_script>
+    <sys_translated_text action="delete_multiple" query="documentkey=b028e2362f3ec390a55a1d707fa4e3ec"/>
+</record_update>

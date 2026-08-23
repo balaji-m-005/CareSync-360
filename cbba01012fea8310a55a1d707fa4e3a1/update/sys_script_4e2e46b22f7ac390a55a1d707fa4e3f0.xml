@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_script">
+    <sys_script action="INSERT_OR_UPDATE">
+        <abort_action>false</abort_action>
+        <access>package_private</access>
+        <action_delete>false</action_delete>
+        <action_insert>true</action_insert>
+        <action_query>false</action_query>
+        <action_update>true</action_update>
+        <active>true</active>
+        <add_message>false</add_message>
+        <advanced>true</advanced>
+        <change_fields>false</change_fields>
+        <client_callable>false</client_callable>
+        <collection>x_2130921_caresy_0_patient_handoff</collection>
+        <condition/>
+        <description/>
+        <execute_function>false</execute_function>
+        <filter_condition/>
+        <is_rest>false</is_rest>
+        <message/>
+        <name>BR-HANDOFF-05 - Source Destination Valid</name>
+        <order>500</order>
+        <priority>100</priority>
+        <rest_method/>
+        <rest_method_text/>
+        <rest_service/>
+        <rest_service_text/>
+        <rest_variables/>
+        <role_conditions/>
+        <script><![CDATA[(function executeRule(current, previous /* null when async */) {
+
+    var handoffType = current.getValue('handoff_type');
+
+    // Department Transfer
+    if (handoffType == 'Department Transfer') {
+
+        if (!current.from_department.nil() &&
+            !current.to_department.nil() &&
+            current.from_department.getValue() ==
+            current.to_department.getValue()) {
+
+            gs.addErrorMessage(
+                'From Department and To Department cannot be the same for a Department Transfer.'
+            );
+
+            current.setAbortAction(true);
+            return;
+        }
+    }
+
+    // Ward Transfer
+    if (handoffType == 'Ward Transfer') {
+
+        if (!current.from_ward.nil() &&
+            !current.to_ward.nil() &&
+            current.from_ward.getValue() ==
+            current.to_ward.getValue()) {
+
+            gs.addErrorMessage(
+                'From Ward and To Ward cannot be the same for a Ward Transfer.'
+            );
+
+            current.setAbortAction(true);
+            return;
+        }
+    }
+
+    // Bed movement
+    if (!current.from_bed.nil() &&
+        !current.to_bed.nil() &&
+        current.from_bed.getValue() ==
+        current.to_bed.getValue()) {
+
+        gs.addErrorMessage(
+            'From Bed and To Bed cannot be the same.'
+        );
+
+        current.setAbortAction(true);
+        return;
+    }
+
+})(current, previous);]]></script>
+        <sys_class_name>sys_script</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-23 05:30:12</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>4e2e46b22f7ac390a55a1d707fa4e3f0</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>BR-HANDOFF-05 - Source Destination Valid</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="CareSync 360" source="x_2130921_caresy_0">cbba01012fea8310a55a1d707fa4e3a1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="CareSync 360">cbba01012fea8310a55a1d707fa4e3a1</sys_scope>
+        <sys_update_name>sys_script_4e2e46b22f7ac390a55a1d707fa4e3f0</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-23 05:30:12</sys_updated_on>
+        <template/>
+        <when>before</when>
+    </sys_script>
+    <sys_translated_text action="delete_multiple" query="documentkey=4e2e46b22f7ac390a55a1d707fa4e3f0"/>
+</record_update>

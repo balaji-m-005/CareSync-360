@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_script">
+    <sys_script action="INSERT_OR_UPDATE">
+        <abort_action>false</abort_action>
+        <access>package_private</access>
+        <action_delete>false</action_delete>
+        <action_insert>true</action_insert>
+        <action_query>false</action_query>
+        <action_update>true</action_update>
+        <active>true</active>
+        <add_message>false</add_message>
+        <advanced>true</advanced>
+        <change_fields>false</change_fields>
+        <client_callable>false</client_callable>
+        <collection>x_2130921_caresy_0_integration_log</collection>
+        <condition/>
+        <description/>
+        <execute_function>false</execute_function>
+        <filter_condition/>
+        <is_rest>false</is_rest>
+        <message/>
+        <name>CS360 - INTLOG - Dirctn and Intgrtn Dtls</name>
+        <order>500</order>
+        <priority>100</priority>
+        <rest_method/>
+        <rest_method_text/>
+        <rest_service/>
+        <rest_service_text/>
+        <rest_variables/>
+        <role_conditions/>
+        <script><![CDATA[(function executeRule(current, previous /* null when async */) {
+
+    var direction = current.direction.toString();
+    var integrationType = current.integration_type.toString();
+
+    // Endpoint is required for every integration record.
+    if (current.endpoint.nil()) {
+
+        gs.addErrorMessage(
+            'Endpoint is required for an Integration Log record.'
+        );
+
+        current.setAbortAction(true);
+        return;
+    }
+
+    // REST API integrations must specify the HTTP method.
+    if (
+        integrationType == 'REST API' &&
+        current.http_method.nil()
+    ) {
+
+        gs.addErrorMessage(
+            'HTTP Method is required when Integration Type is REST API.'
+        );
+
+        current.setAbortAction(true);
+        return;
+    }
+
+    // Outbound integrations must contain request data.
+    if (
+        direction == 'Outbound' &&
+        current.request_data.nil()
+    ) {
+
+        gs.addErrorMessage(
+            'Request Data is required for Outbound integrations.'
+        );
+
+        current.setAbortAction(true);
+        return;
+    }
+
+    // Inbound integrations must contain response data.
+    if (
+        direction == 'Inbound' &&
+        current.response_data.nil()
+    ) {
+
+        gs.addErrorMessage(
+            'Response Data is required for Inbound integrations.'
+        );
+
+        current.setAbortAction(true);
+        return;
+    }
+
+    // Bidirectional integrations require both request and response data.
+    if (direction == 'Bidirectional') {
+
+        if (current.request_data.nil()) {
+
+            gs.addErrorMessage(
+                'Request Data is required for Bidirectional integrations.'
+            );
+
+            current.setAbortAction(true);
+            return;
+        }
+
+        if (current.response_data.nil()) {
+
+            gs.addErrorMessage(
+                'Response Data is required for Bidirectional integrations.'
+            );
+
+            current.setAbortAction(true);
+            return;
+        }
+    }
+
+})(current, previous);]]></script>
+        <sys_class_name>sys_script</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-23 06:57:08</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>52e1623a2ffac390a55a1d707fa4e31d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>CS360 - INTLOG - Dirctn and Intgrtn Dtls</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="CareSync 360" source="x_2130921_caresy_0">cbba01012fea8310a55a1d707fa4e3a1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="CareSync 360">cbba01012fea8310a55a1d707fa4e3a1</sys_scope>
+        <sys_update_name>sys_script_52e1623a2ffac390a55a1d707fa4e31d</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-23 06:57:08</sys_updated_on>
+        <template/>
+        <when>before</when>
+    </sys_script>
+    <sys_translated_text action="delete_multiple" query="documentkey=52e1623a2ffac390a55a1d707fa4e31d"/>
+</record_update>

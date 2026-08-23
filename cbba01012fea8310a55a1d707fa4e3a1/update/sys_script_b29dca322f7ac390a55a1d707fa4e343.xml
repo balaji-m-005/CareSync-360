@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_script">
+    <sys_script action="INSERT_OR_UPDATE">
+        <abort_action>false</abort_action>
+        <access>package_private</access>
+        <action_delete>false</action_delete>
+        <action_insert>false</action_insert>
+        <action_query>false</action_query>
+        <action_update>true</action_update>
+        <active>true</active>
+        <add_message>false</add_message>
+        <advanced>true</advanced>
+        <change_fields>false</change_fields>
+        <client_callable>false</client_callable>
+        <collection>x_2130921_caresy_0_patient_handoff</collection>
+        <condition/>
+        <description/>
+        <execute_function>false</execute_function>
+        <filter_condition/>
+        <is_rest>false</is_rest>
+        <message/>
+        <name>BR-HANDOFF-04 - Handoff Sts Trnsitn vali</name>
+        <order>400</order>
+        <priority>100</priority>
+        <rest_method/>
+        <rest_method_text/>
+        <rest_service/>
+        <rest_service_text/>
+        <rest_variables/>
+        <role_conditions/>
+        <script><![CDATA[(function executeRule(current, previous /* null when async */) {
+
+    // Only validate an existing record whose status is actually changing
+    if (!previous || !current.handoff_status.changes()) {
+        return;
+    }
+
+    var oldStatus = previous.getValue('handoff_status');
+    var newStatus = current.getValue('handoff_status');
+
+    // Completed and Cancelled are terminal states
+    if (oldStatus == 'Completed' || oldStatus == 'Cancelled') {
+
+        gs.addErrorMessage(
+            'A handoff that is already ' +
+            oldStatus +
+            ' cannot be moved to another status.'
+        );
+
+        current.setAbortAction(true);
+        return;
+    }
+
+    // Pending can move to In Progress or Cancelled
+    if (oldStatus == 'Pending') {
+
+        if (newStatus != 'In Progress' &&
+            newStatus != 'Cancelled') {
+
+            gs.addErrorMessage(
+                'A Pending handoff can move only to In Progress or Cancelled.'
+            );
+
+            current.setAbortAction(true);
+            return;
+        }
+    }
+
+    // In Progress can move to Completed or Cancelled
+    if (oldStatus == 'In Progress') {
+
+        if (newStatus != 'Completed' &&
+            newStatus != 'Cancelled') {
+
+            gs.addErrorMessage(
+                'An In Progress handoff can move only to Completed or Cancelled.'
+            );
+
+            current.setAbortAction(true);
+            return;
+        }
+    }
+
+})(current, previous);]]></script>
+        <sys_class_name>sys_script</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-23 05:28:19</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>b29dca322f7ac390a55a1d707fa4e343</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>BR-HANDOFF-04 - Handoff Sts Trnsitn vali</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="CareSync 360" source="x_2130921_caresy_0">cbba01012fea8310a55a1d707fa4e3a1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="CareSync 360">cbba01012fea8310a55a1d707fa4e3a1</sys_scope>
+        <sys_update_name>sys_script_b29dca322f7ac390a55a1d707fa4e343</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-23 05:28:19</sys_updated_on>
+        <template/>
+        <when>before</when>
+    </sys_script>
+    <sys_translated_text action="delete_multiple" query="documentkey=b29dca322f7ac390a55a1d707fa4e343"/>
+</record_update>
