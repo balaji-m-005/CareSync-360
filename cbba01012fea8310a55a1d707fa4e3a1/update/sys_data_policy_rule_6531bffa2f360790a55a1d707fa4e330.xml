@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_data_policy_rule">
+    <sys_data_policy_rule action="INSERT_OR_UPDATE">
+        <disabled>false</disabled>
+        <field>gender</field>
+        <mandatory>true</mandatory>
+        <sys_class_name>sys_data_policy_rule</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-23 12:42:07</sys_created_on>
+        <sys_data_policy display_value="Patient - Mandatory Core Information">4f803ffa2f360790a55a1d707fa4e3bc</sys_data_policy>
+        <sys_id>6531bffa2f360790a55a1d707fa4e330</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>gender</sys_name>
+        <sys_package display_value="CareSync 360" source="x_2130921_caresy_0">cbba01012fea8310a55a1d707fa4e3a1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="CareSync 360">cbba01012fea8310a55a1d707fa4e3a1</sys_scope>
+        <sys_update_name>sys_data_policy_rule_6531bffa2f360790a55a1d707fa4e330</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-23 12:42:07</sys_updated_on>
+        <table>x_2130921_caresy_0_patient</table>
+    </sys_data_policy_rule>
+</record_update>
