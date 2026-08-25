@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_script_client">
+    <sys_script_client action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <applies_extended>false</applies_extended>
+        <condition/>
+        <description/>
+        <field/>
+        <global>true</global>
+        <isolate_script>true</isolate_script>
+        <messages/>
+        <name>Clinical Task Form Validation</name>
+        <order/>
+        <script><![CDATA[function onSubmit() {
+
+    /*
+     * ============================================================
+     * CARESYNC 360 - CLINICAL TASK MASTER CLIENT VALIDATION
+     * ============================================================
+     *
+     * Purpose:
+     * Validate Clinical Task data before INSERT or UPDATE.
+     *
+     * Important:
+     * Returning false prevents the form from being submitted.
+     * Therefore invalid records are NOT saved or updated.
+     */
+
+
+    var patient = (g_form.getValue('patient') || '').trim();
+    var admission = (g_form.getValue('admission') || '').trim();
+    var carePlan = (g_form.getValue('care_plan') || '').trim();
+
+    var taskName = (g_form.getValue('task_name') || '').trim();
+    var taskType = (g_form.getValue('task_type') || '').trim();
+
+    var taskStatus = (g_form.getValue('task_status') || '').trim();
+    var priority = (g_form.getValue('priority') || '').trim();
+
+    var dueDate = (g_form.getValue('due_date') || '').trim();
+    var completionDate = (g_form.getValue('completion_date') || '').trim();
+
+
+    /*
+     * ------------------------------------------------------------
+     * 1. Patient validation
+     * ------------------------------------------------------------
+     */
+
+    if (!patient) {
+
+        g_form.showFieldMsg(
+            'patient',
+            'Patient is required.',
+            'error'
+        );
+
+        return false;
+    }
+
+
+    /*
+     * ------------------------------------------------------------
+     * 2. Admission validation
+     * ------------------------------------------------------------
+     */
+
+    if (!admission) {
+
+        g_form.showFieldMsg(
+            'admission',
+            'Admission is required.',
+            'error'
+        );
+
+        return false;
+    }
+
+
+    /*
+     * ------------------------------------------------------------
+     * 3. Care Plan validation
+     * ------------------------------------------------------------
+     */
+
+    if (!carePlan) {
+
+        g_form.showFieldMsg(
+            'care_plan',
+            'Care Plan is required.',
+            'error'
+        );
+
+        return false;
+    }
+
+
+    /*
+     * ------------------------------------------------------------
+     * 4. Task Name validation
+     * ------------------------------------------------------------
+     */
+
+    if (!taskName) {
+
+        g_form.showFieldMsg(
+            'task_name',
+            'Task Name is required.',
+            'error'
+        );
+
+        return false;
+    }
+
+
+    /*
+     * Task Name should contain at least 2 characters.
+     */
+
+    if (taskName.length < 2) {
+
+        g_form.showFieldMsg(
+            'task_name',
+            'Task Name must contain at least 2 characters.',
+            'error'
+        );
+
+        return false;
+    }
+
+
+    /*
+     * ------------------------------------------------------------
+     * 5. Task Type validation
+     * ------------------------------------------------------------
+     */
+
+    if (!taskType) {
+
+        g_form.showFieldMsg(
+            'task_type',
+            'Please select a Task Type.',
+            'error'
+        );
+
+        return false;
+    }
+
+
+    /*
+     * ------------------------------------------------------------
+     * 6. Task Status validation
+     * ------------------------------------------------------------
+     */
+
+    if (!taskStatus) {
+
+        g_form.showFieldMsg(
+            'task_status',
+            'Please select a Task Status.',
+            'error'
+        );
+
+        return false;
+    }
+
+
+    /*
+     * ------------------------------------------------------------
+     * 7. Priority validation
+     * ------------------------------------------------------------
+     */
+
+    if (!priority) {
+
+        g_form.showFieldMsg(
+            'priority',
+            'Please select a Priority.',
+            'error'
+        );
+
+        return false;
+    }
+
+
+    /*
+     * ------------------------------------------------------------
+     * 8. Due Date validation
+     * ------------------------------------------------------------
+     *
+     * Due Date is optional.
+     *
+     * If supplied, ServiceNow date/time field handling is allowed.
+     * No artificial date format conversion is performed here.
+     */
+
+    if (dueDate !== '') {
+
+        if (!dueDate) {
+
+            g_form.showFieldMsg(
+                'due_date',
+                'Please enter a valid Due Date.',
+                'error'
+            );
+
+            return false;
+        }
+    }
+
+
+    /*
+     * ------------------------------------------------------------
+     * 9. Completion Date validation
+     * ------------------------------------------------------------
+     *
+     * Completion Date is optional.
+     *
+     * If supplied, allow the ServiceNow date/time control
+     * to provide the entered date/time value.
+     */
+
+    if (completionDate !== '') {
+
+        if (!completionDate) {
+
+            g_form.showFieldMsg(
+                'completion_date',
+                'Please enter a valid Completion Date.',
+                'error'
+            );
+
+            return false;
+        }
+    }
+
+
+    /*
+     * ------------------------------------------------------------
+     * 10. Final validation result
+     * ------------------------------------------------------------
+     *
+     * If execution reaches this point, all required validations
+     * have passed.
+     *
+     * Returning true allows:
+     * - Insert
+     * - Update
+     */
+
+    return true;
+}]]></script>
+        <sys_class_name>sys_script_client</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-25 08:47:08</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>0a7e05632ffa0b90a55a1d707fa4e30e</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Clinical Task Form Validation</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="CareSync 360" source="x_2130921_caresy_0">cbba01012fea8310a55a1d707fa4e3a1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="CareSync 360">cbba01012fea8310a55a1d707fa4e3a1</sys_scope>
+        <sys_update_name>sys_script_client_0a7e05632ffa0b90a55a1d707fa4e30e</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-25 08:47:08</sys_updated_on>
+        <table>x_2130921_caresy_0_clinical_task</table>
+        <type>onSubmit</type>
+        <ui_type>10</ui_type>
+        <view/>
+    </sys_script_client>
+</record_update>

@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_script_client">
+    <sys_script_client action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <applies_extended>false</applies_extended>
+        <condition/>
+        <description/>
+        <field/>
+        <global>true</global>
+        <isolate_script>true</isolate_script>
+        <messages/>
+        <name>Medication - Form Validation</name>
+        <order/>
+        <script><![CDATA[function onSubmit() {
+
+    /*
+     * ============================================================
+     * CARESYNC 360 - MEDICATION MASTER CLIENT VALIDATION
+     * ============================================================
+     *
+     * Purpose:
+     * Validate Medication data before INSERT or UPDATE.
+     *
+     * Important:
+     * Returning false prevents the form from being submitted.
+     * Therefore invalid records are NOT saved.
+     */
+
+
+    var patient = (g_form.getValue('patient') || '').trim();
+    var admission = (g_form.getValue('admission') || '').trim();
+    var medicationName = (g_form.getValue('medication_name') || '').trim();
+    var medicationType = (g_form.getValue('medication_type') || '').trim();
+    var dosage = (g_form.getValue('dosage') || '').trim();
+    var frequency = (g_form.getValue('frequency') || '').trim();
+    var route = (g_form.getValue('route') || '').trim();
+    var startDate = (g_form.getValue('start_date') || '').trim();
+    var endDate = (g_form.getValue('end_date') || '').trim();
+    var medicationStatus = (g_form.getValue('medication_status') || '').trim();
+
+
+    /*
+     * ------------------------------------------------------------
+     * 1. Patient validation
+     * ------------------------------------------------------------
+     */
+
+    if (!patient) {
+
+        g_form.showFieldMsg(
+            'patient',
+            'Patient is required.',
+            'error'
+        );
+
+        return false;
+    }
+
+
+    /*
+     * ------------------------------------------------------------
+     * 2. Admission validation
+     * ------------------------------------------------------------
+     */
+
+    if (!admission) {
+
+        g_form.showFieldMsg(
+            'admission',
+            'Admission is required.',
+            'error'
+        );
+
+        return false;
+    }
+
+
+    /*
+     * ------------------------------------------------------------
+     * 3. Medication Name validation
+     * ------------------------------------------------------------
+     */
+
+    if (!medicationName) {
+
+        g_form.showFieldMsg(
+            'medication_name',
+            'Medication Name is required.',
+            'error'
+        );
+
+        return false;
+    }
+
+
+    if (medicationName.length < 2) {
+
+        g_form.showFieldMsg(
+            'medication_name',
+            'Medication Name must contain at least 2 characters.',
+            'error'
+        );
+
+        return false;
+    }
+
+
+    /*
+     * ------------------------------------------------------------
+     * 4. Medication Type validation
+     * ------------------------------------------------------------
+     */
+
+    if (!medicationType) {
+
+        g_form.showFieldMsg(
+            'medication_type',
+            'Please select a Medication Type.',
+            'error'
+        );
+
+        return false;
+    }
+
+
+    /*
+     * ------------------------------------------------------------
+     * 5. Dosage validation
+     * ------------------------------------------------------------
+     */
+
+    if (!dosage) {
+
+        g_form.showFieldMsg(
+            'dosage',
+            'Dosage is required.',
+            'error'
+        );
+
+        return false;
+    }
+
+
+    /*
+     * ------------------------------------------------------------
+     * 6. Frequency validation
+     * ------------------------------------------------------------
+     */
+
+    if (!frequency) {
+
+        g_form.showFieldMsg(
+            'frequency',
+            'Please select a Frequency.',
+            'error'
+        );
+
+        return false;
+    }
+
+
+    /*
+     * ------------------------------------------------------------
+     * 7. Route validation
+     * ------------------------------------------------------------
+     */
+
+    if (!route) {
+
+        g_form.showFieldMsg(
+            'route',
+            'Please select a Route.',
+            'error'
+        );
+
+        return false;
+    }
+
+
+    /*
+     * ------------------------------------------------------------
+     * 8. Start Date validation
+     * ------------------------------------------------------------
+     */
+
+    if (!startDate) {
+
+        g_form.showFieldMsg(
+            'start_date',
+            'Start Date is required.',
+            'error'
+        );
+
+        return false;
+    }
+
+
+    /*
+     * ------------------------------------------------------------
+     * 9. End Date validation
+     * ------------------------------------------------------------
+     *
+     * End Date is optional.
+     *
+     * If supplied:
+     * End Date cannot be earlier than Start Date.
+     */
+
+    if (endDate && startDate) {
+
+        var startDateObj = new Date(startDate);
+        var endDateObj = new Date(endDate);
+
+        if (endDateObj < startDateObj) {
+
+            g_form.showFieldMsg(
+                'end_date',
+                'End Date cannot be earlier than Start Date.',
+                'error'
+            );
+
+            return false;
+        }
+    }
+
+
+    /*
+     * ------------------------------------------------------------
+     * 10. Medication Status validation
+     * ------------------------------------------------------------
+     */
+
+    if (!medicationStatus) {
+
+        g_form.showFieldMsg(
+            'medication_status',
+            'Please select a Medication Status.',
+            'error'
+        );
+
+        return false;
+    }
+
+
+    /*
+     * ------------------------------------------------------------
+     * 11. Final validation result
+     * ------------------------------------------------------------
+     *
+     * If execution reaches this point, all validations passed.
+     *
+     * Returning true allows:
+     * - Insert
+     * - Update
+     */
+
+    return true;
+}]]></script>
+        <sys_class_name>sys_script_client</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-25 09:56:19</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>572eddef2f3e0b90a55a1d707fa4e32e</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>Medication - Form Validation</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="CareSync 360" source="x_2130921_caresy_0">cbba01012fea8310a55a1d707fa4e3a1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="CareSync 360">cbba01012fea8310a55a1d707fa4e3a1</sys_scope>
+        <sys_update_name>sys_script_client_572eddef2f3e0b90a55a1d707fa4e32e</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-25 09:56:53</sys_updated_on>
+        <table>x_2130921_caresy_0_medication</table>
+        <type>onSubmit</type>
+        <ui_type>10</ui_type>
+        <view/>
+    </sys_script_client>
+</record_update>

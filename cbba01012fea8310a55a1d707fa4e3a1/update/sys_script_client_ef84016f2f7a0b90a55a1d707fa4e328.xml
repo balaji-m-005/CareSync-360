@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_script_client">
+    <sys_script_client action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <applies_extended>false</applies_extended>
+        <condition/>
+        <description>Master client-side validation for Ward records. Validates mandatory Ward information, Ward Code format, Ward Type, Capacity, and Floor before allowing insert or update.</description>
+        <field/>
+        <global>true</global>
+        <isolate_script>true</isolate_script>
+        <messages/>
+        <name>Ward - Validate Form</name>
+        <order/>
+        <script><![CDATA[function onSubmit() {
+
+    /*
+     * ============================================================
+     * CARESYNC 360 - WARD MASTER CLIENT VALIDATION
+     * ============================================================
+     *
+     * Purpose:
+     * Validate Ward data before INSERT or UPDATE.
+     *
+     * Important:
+     * Returning false prevents the form from being submitted.
+     * Therefore invalid records are NOT saved.
+     */
+
+    var wardName = (g_form.getValue('ward_name') || '').trim();
+    var wardCode = (g_form.getValue('ward_code') || '').trim();
+    var department = (g_form.getValue('department') || '').trim();
+    var wardType = (g_form.getValue('ward_type') || '').trim();
+
+    var capacityValue = (g_form.getValue('capacity') || '').trim();
+    var floorValue = (g_form.getValue('floor') || '').trim();
+
+
+    /*
+     * ------------------------------------------------------------
+     * 1. Ward Name validation
+     * ------------------------------------------------------------
+     */
+
+    if (!wardName) {
+
+        g_form.showFieldMsg(
+            'ward_name',
+            'Ward Name is required.',
+            'error'
+        );
+
+        return false;
+    }
+
+
+    /*
+     * Ward Name should not be only spaces.
+     */
+
+    if (wardName.length < 2) {
+
+        g_form.showFieldMsg(
+            'ward_name',
+            'Ward Name must contain at least 2 characters.',
+            'error'
+        );
+
+        return false;
+    }
+
+
+    /*
+     * ------------------------------------------------------------
+     * 2. Ward Code validation
+     * ------------------------------------------------------------
+     */
+
+    if (!wardCode) {
+
+        g_form.showFieldMsg(
+            'ward_code',
+            'Ward Code is required.',
+            'error'
+        );
+
+        return false;
+    }
+
+
+    /*
+     * Ward Code:
+     * Allow letters, numbers, hyphen and underscore.
+     */
+
+    var wardCodePattern = /^[A-Za-z0-9_-]+$/;
+
+    if (!wardCodePattern.test(wardCode)) {
+
+        g_form.showFieldMsg(
+            'ward_code',
+            'Ward Code may contain only letters, numbers, hyphens, and underscores.',
+            'error'
+        );
+
+        return false;
+    }
+
+
+    /*
+     * ------------------------------------------------------------
+     * 3. Department validation
+     * ------------------------------------------------------------
+     */
+
+    if (!department) {
+
+        g_form.showFieldMsg(
+            'department',
+            'Department is required.',
+            'error'
+        );
+
+        return false;
+    }
+
+
+    /*
+     * ------------------------------------------------------------
+     * 4. Ward Type validation
+     * ------------------------------------------------------------
+     */
+
+    if (!wardType) {
+
+        g_form.showFieldMsg(
+            'ward_type',
+            'Please select a Ward Type.',
+            'error'
+        );
+
+        return false;
+    }
+
+
+    /*
+     * ------------------------------------------------------------
+     * 5. Capacity validation
+     * ------------------------------------------------------------
+     *
+     * Capacity is optional.
+     *
+     * If supplied:
+     * - Must be a whole number
+     * - Cannot be negative
+     */
+
+    if (capacityValue !== '') {
+
+        if (!/^\d+$/.test(capacityValue)) {
+
+            g_form.showFieldMsg(
+                'capacity',
+                'Capacity must be a whole number.',
+                'error'
+            );
+
+            return false;
+        }
+
+        var capacity = parseInt(capacityValue, 10);
+
+        if (capacity < 0) {
+
+            g_form.showFieldMsg(
+                'capacity',
+                'Capacity cannot be negative.',
+                'error'
+            );
+
+            return false;
+        }
+    }
+
+
+    /*
+     * ------------------------------------------------------------
+     * 6. Floor validation
+     * ------------------------------------------------------------
+     *
+     * Floor is optional.
+     *
+     * If supplied:
+     * - Must be a whole number
+     * - Cannot be negative
+     */
+
+    if (floorValue !== '') {
+
+        if (!/^\d+$/.test(floorValue)) {
+
+            g_form.showFieldMsg(
+                'floor',
+                'Floor must be a whole number.',
+                'error'
+            );
+
+            return false;
+        }
+
+        var floor = parseInt(floorValue, 10);
+
+        if (floor < 0) {
+
+            g_form.showFieldMsg(
+                'floor',
+                'Floor cannot be negative.',
+                'error'
+            );
+
+            return false;
+        }
+    }
+
+
+    /*
+     * ------------------------------------------------------------
+     * 7. Final validation result
+     * ------------------------------------------------------------
+     *
+     * If execution reaches this point, all validations passed.
+     *
+     * Returning true allows:
+     * - Insert
+     * - Update
+     */
+
+    return true;
+}]]></script>
+        <sys_class_name>sys_script_client</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-25 08:04:12</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>ef84016f2f7a0b90a55a1d707fa4e328</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>Ward - Validate Form</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="CareSync 360" source="x_2130921_caresy_0">cbba01012fea8310a55a1d707fa4e3a1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="CareSync 360">cbba01012fea8310a55a1d707fa4e3a1</sys_scope>
+        <sys_update_name>sys_script_client_ef84016f2f7a0b90a55a1d707fa4e328</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-25 08:22:17</sys_updated_on>
+        <table>x_2130921_caresy_0_ward</table>
+        <type>onSubmit</type>
+        <ui_type>10</ui_type>
+        <view/>
+    </sys_script_client>
+</record_update>

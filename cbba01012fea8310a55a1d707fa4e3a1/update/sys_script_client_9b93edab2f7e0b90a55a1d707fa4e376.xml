@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_script_client">
+    <sys_script_client action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <applies_extended>false</applies_extended>
+        <condition/>
+        <description/>
+        <field/>
+        <global>true</global>
+        <isolate_script>true</isolate_script>
+        <messages/>
+        <name>Patient Handoff - Master Validation</name>
+        <order/>
+        <script><![CDATA[function onSubmit() {
+
+    // --------------------------------------------------
+    // 1. Mandatory field validation
+    // --------------------------------------------------
+
+    if (!g_form.getValue('patient')) {
+        g_form.addErrorMessage('Patient is required.');
+        return false;
+    }
+
+    if (!g_form.getValue('admission')) {
+        g_form.addErrorMessage('Admission is required.');
+        return false;
+    }
+
+    if (!g_form.getValue('handoff_type')) {
+        g_form.addErrorMessage('Handoff Type is required.');
+        return false;
+    }
+
+    if (!g_form.getValue('from_department')) {
+        g_form.addErrorMessage('From Department is required.');
+        return false;
+    }
+
+    if (!g_form.getValue('handoff_date')) {
+        g_form.addErrorMessage('Handoff Date is required.');
+        return false;
+    }
+
+    if (!g_form.getValue('handed_over_by')) {
+        g_form.addErrorMessage('Handed Over By is required.');
+        return false;
+    }
+
+    if (!g_form.getValue('received_by')) {
+        g_form.addErrorMessage('Received By is required.');
+        return false;
+    }
+
+    if (!g_form.getValue('handoff_notes')) {
+        g_form.addErrorMessage('Handoff Notes are required.');
+        return false;
+    }
+
+
+    // --------------------------------------------------
+    // 2. Handed Over By and Received By validation
+    // --------------------------------------------------
+
+    if (g_form.getValue('handed_over_by') ==
+        g_form.getValue('received_by')) {
+
+        g_form.addErrorMessage(
+            'Handed Over By and Received By must be different users.'
+        );
+
+        return false;
+    }
+
+
+    // --------------------------------------------------
+    // 3. Department validation
+    // --------------------------------------------------
+
+    if (g_form.getValue('to_department') &&
+        g_form.getValue('to_department') ==
+        g_form.getValue('from_department')) {
+
+        g_form.addErrorMessage(
+            'To Department must be different from From Department.'
+        );
+
+        return false;
+    }
+
+
+    // --------------------------------------------------
+    // 4. Ward validation
+    // --------------------------------------------------
+
+    if (g_form.getValue('from_ward') &&
+        g_form.getValue('to_ward') &&
+        g_form.getValue('from_ward') ==
+        g_form.getValue('to_ward')) {
+
+        g_form.addErrorMessage(
+            'To Ward must be different from From Ward.'
+        );
+
+        return false;
+    }
+
+
+    // --------------------------------------------------
+    // 5. Bed validation
+    // --------------------------------------------------
+
+    if (g_form.getValue('from_bed') &&
+        g_form.getValue('to_bed') &&
+        g_form.getValue('from_bed') ==
+        g_form.getValue('to_bed')) {
+
+        g_form.addErrorMessage(
+            'To Bed must be different from From Bed.'
+        );
+
+        return false;
+    }
+
+
+    // --------------------------------------------------
+    // 6. Handoff Type validation
+    // --------------------------------------------------
+
+    var handoffType = g_form.getValue('handoff_type');
+
+    if (handoffType == 'Department Transfer' &&
+        !g_form.getValue('to_department')) {
+
+        g_form.addErrorMessage(
+            'To Department is required for a Department Transfer.'
+        );
+
+        return false;
+    }
+
+    if (handoffType == 'Ward Transfer' &&
+        !g_form.getValue('to_ward')) {
+
+        g_form.addErrorMessage(
+            'To Ward is required for a Ward Transfer.'
+        );
+
+        return false;
+    }
+
+
+    // --------------------------------------------------
+    // 7. Handoff Status validation
+    // --------------------------------------------------
+
+    var handoffStatus = g_form.getValue('handoff_status');
+
+    if ((handoffStatus == 'Completed' ||
+         handoffStatus == 'Cancelled') &&
+        !g_form.getValue('handoff_notes')) {
+
+        g_form.addErrorMessage(
+            'Handoff Notes are required when Handoff Status is Completed or Cancelled.'
+        );
+
+        return false;
+    }
+
+
+    // --------------------------------------------------
+    // All validations passed
+    // --------------------------------------------------
+
+    return true;
+}]]></script>
+        <sys_class_name>sys_script_client</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-25 10:19:34</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>9b93edab2f7e0b90a55a1d707fa4e376</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Patient Handoff - Master Validation</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="CareSync 360" source="x_2130921_caresy_0">cbba01012fea8310a55a1d707fa4e3a1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="CareSync 360">cbba01012fea8310a55a1d707fa4e3a1</sys_scope>
+        <sys_update_name>sys_script_client_9b93edab2f7e0b90a55a1d707fa4e376</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-25 10:19:34</sys_updated_on>
+        <table>x_2130921_caresy_0_patient_handoff</table>
+        <type>onSubmit</type>
+        <ui_type>10</ui_type>
+        <view/>
+    </sys_script_client>
+</record_update>

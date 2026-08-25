@@ -1,0 +1,392 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_script_client">
+    <sys_script_client action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <applies_extended>false</applies_extended>
+        <condition/>
+        <description/>
+        <field/>
+        <global>true</global>
+        <isolate_script>true</isolate_script>
+        <messages/>
+        <name>Admission - Master Validation</name>
+        <order/>
+        <script><![CDATA[function onSubmit() {
+
+    /*
+     * ============================================================
+     * CARESYNC 360 - ADMISSION MASTER VALIDATION
+     * ============================================================
+     *
+     * Purpose:
+     * Validate Admission records before INSERT or UPDATE.
+     *
+     * IMPORTANT:
+     * return false = BLOCK SAVE
+     * return true  = ALLOW SAVE
+     *
+     * This script is the final client-side validation gate.
+     * ============================================================
+     */
+
+    var patient = g_form.getValue('patient');
+    var admissionDate = g_form.getValue('admission_date');
+    var expectedDischargeDate = g_form.getValue('expected_discharge_date');
+    var department = g_form.getValue('department');
+    var ward = g_form.getValue('ward');
+    var bed = g_form.getValue('bed');
+    var admissionType = g_form.getValue('admission_type');
+    var admissionStatus = g_form.getValue('admission_status');
+    var reason = g_form.getValue('reason_for_admission');
+    var dischargeDate = g_form.getValue('discharge_date');
+
+    /*
+     * ------------------------------------------------------------
+     * Helper function
+     * ------------------------------------------------------------
+     */
+
+    function isBlank(value) {
+        return value === null ||
+               value === undefined ||
+               value.trim() === '';
+    }
+
+    /*
+     * ------------------------------------------------------------
+     * Clear previous validation messages
+     * ------------------------------------------------------------
+     */
+
+    g_form.hideFieldMsg('patient', true);
+    g_form.hideFieldMsg('admission_date', true);
+    g_form.hideFieldMsg('expected_discharge_date', true);
+    g_form.hideFieldMsg('department', true);
+    g_form.hideFieldMsg('ward', true);
+    g_form.hideFieldMsg('bed', true);
+    g_form.hideFieldMsg('admission_type', true);
+    g_form.hideFieldMsg('admission_status', true);
+    g_form.hideFieldMsg('reason_for_admission', true);
+    g_form.hideFieldMsg('discharge_date', true);
+
+    /*
+     * ------------------------------------------------------------
+     * 1. Patient validation
+     * ------------------------------------------------------------
+     */
+
+    if (isBlank(patient)) {
+
+        g_form.showFieldMsg(
+            'patient',
+            'Patient is required for an Admission.',
+            'error'
+        );
+
+        return false;
+    }
+
+    /*
+     * ------------------------------------------------------------
+     * 2. Admission Date validation
+     * ------------------------------------------------------------
+     */
+
+    if (isBlank(admissionDate)) {
+
+        g_form.showFieldMsg(
+            'admission_date',
+            'Admission Date is required.',
+            'error'
+        );
+
+        return false;
+    }
+
+    /*
+     * ------------------------------------------------------------
+     * 3. Department validation
+     * ------------------------------------------------------------
+     */
+
+    if (isBlank(department)) {
+
+        g_form.showFieldMsg(
+            'department',
+            'Department is required.',
+            'error'
+        );
+
+        return false;
+    }
+
+    /*
+     * ------------------------------------------------------------
+     * 4. Ward validation
+     * ------------------------------------------------------------
+     */
+
+    if (isBlank(ward)) {
+
+        g_form.showFieldMsg(
+            'ward',
+            'Ward is required.',
+            'error'
+        );
+
+        return false;
+    }
+
+    /*
+     * ------------------------------------------------------------
+     * 5. Bed validation
+     * ------------------------------------------------------------
+     */
+
+    if (isBlank(bed)) {
+
+        g_form.showFieldMsg(
+            'bed',
+            'Bed is required.',
+            'error'
+        );
+
+        return false;
+    }
+
+    /*
+     * ------------------------------------------------------------
+     * 6. Admission Type validation
+     * ------------------------------------------------------------
+     */
+
+    if (isBlank(admissionType)) {
+
+        g_form.showFieldMsg(
+            'admission_type',
+            'Admission Type is required.',
+            'error'
+        );
+
+        return false;
+    }
+
+    /*
+     * ------------------------------------------------------------
+     * 7. Reason for Admission validation
+     * ------------------------------------------------------------
+     */
+
+    if (isBlank(reason)) {
+
+        g_form.showFieldMsg(
+            'reason_for_admission',
+            'Reason for Admission is required.',
+            'error'
+        );
+
+        return false;
+    }
+
+    /*
+     * ------------------------------------------------------------
+     * 8. Admission Status validation
+     * ------------------------------------------------------------
+     */
+
+    if (isBlank(admissionStatus)) {
+
+        g_form.showFieldMsg(
+            'admission_status',
+            'Admission Status is required.',
+            'error'
+        );
+
+        return false;
+    }
+
+    /*
+     * ------------------------------------------------------------
+     * 9. Expected Discharge Date validation
+     *
+     * If provided, it must not be earlier than Admission Date.
+     * ServiceNow internal GlideDateTime values use:
+     *
+     * YYYY-MM-DD HH:mm:ss
+     *
+     * Therefore lexical comparison is safe here.
+     * ------------------------------------------------------------
+     */
+
+    if (!isBlank(expectedDischargeDate)) {
+
+        if (expectedDischargeDate < admissionDate) {
+
+            g_form.showFieldMsg(
+                'expected_discharge_date',
+                'Expected Discharge Date cannot be earlier than Admission Date.',
+                'error'
+            );
+
+            return false;
+        }
+    }
+
+    /*
+     * ------------------------------------------------------------
+     * 10. Discharge Date validation
+     *
+     * Discharge Date cannot be earlier than Admission Date.
+     * ------------------------------------------------------------
+     */
+
+    if (!isBlank(dischargeDate)) {
+
+        if (dischargeDate < admissionDate) {
+
+            g_form.showFieldMsg(
+                'discharge_date',
+                'Discharge Date cannot be earlier than Admission Date.',
+                'error'
+            );
+
+            return false;
+        }
+    }
+
+    /*
+     * ------------------------------------------------------------
+     * 11. Discharge Date cannot be later than Expected
+     * Discharge Date when Expected Discharge Date exists.
+     * ------------------------------------------------------------
+     */
+
+    if (!isBlank(dischargeDate) &&
+        !isBlank(expectedDischargeDate)) {
+
+        if (dischargeDate > expectedDischargeDate) {
+
+            g_form.showFieldMsg(
+                'discharge_date',
+                'Discharge Date cannot be later than Expected Discharge Date.',
+                'error'
+            );
+
+            return false;
+        }
+    }
+
+    /*
+     * ------------------------------------------------------------
+     * 12. Discharged status requires Discharge Date
+     * ------------------------------------------------------------
+     */
+
+    if (admissionStatus == 'Discharged') {
+
+        if (isBlank(dischargeDate)) {
+
+            g_form.showFieldMsg(
+                'discharge_date',
+                'Discharge Date is required when Admission Status is Discharged.',
+                'error'
+            );
+
+            return false;
+        }
+    }
+
+    /*
+     * ------------------------------------------------------------
+     * 13. Non-discharged Admission should not have a
+     * Discharge Date.
+     *
+     * This prevents inconsistent data such as:
+     *
+     * Status = Pending
+     * Discharge Date = populated
+     * ------------------------------------------------------------
+     */
+
+    if (admissionStatus != 'Discharged' &&
+        !isBlank(dischargeDate)) {
+
+        g_form.showFieldMsg(
+            'discharge_date',
+            'Discharge Date should only be entered when Admission Status is Discharged.',
+            'error'
+        );
+
+        return false;
+    }
+
+    /*
+     * ------------------------------------------------------------
+     * 14. Admission Type must contain a valid configured choice.
+     * ------------------------------------------------------------
+     */
+
+    if (admissionType != 'Emergency' &&
+        admissionType != 'Planned' &&
+        admissionType != 'Transfer') {
+
+        g_form.showFieldMsg(
+            'admission_type',
+            'Please select a valid Admission Type.',
+            'error'
+        );
+
+        return false;
+    }
+
+    /*
+     * ------------------------------------------------------------
+     * 15. Admission Status must contain a valid configured choice.
+     * ------------------------------------------------------------
+     */
+
+    if (admissionStatus != 'Pending' &&
+        admissionStatus != 'Admitted' &&
+        admissionStatus != 'Discharged' &&
+        admissionStatus != 'Cancelled') {
+
+        g_form.showFieldMsg(
+            'admission_status',
+            'Please select a valid Admission Status.',
+            'error'
+        );
+
+        return false;
+    }
+
+    /*
+     * ------------------------------------------------------------
+     * ALL VALIDATIONS PASSED
+     * ------------------------------------------------------------
+     *
+     * Allow INSERT / UPDATE.
+     * ------------------------------------------------------------
+     */
+
+    return true;
+}]]></script>
+        <sys_class_name>sys_script_client</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-24 06:31:45</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>cfb56fc32f728790a55a1d707fa4e354</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Admission - Master Validation</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="CareSync 360" source="x_2130921_caresy_0">cbba01012fea8310a55a1d707fa4e3a1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="CareSync 360">cbba01012fea8310a55a1d707fa4e3a1</sys_scope>
+        <sys_update_name>sys_script_client_cfb56fc32f728790a55a1d707fa4e354</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-24 06:31:45</sys_updated_on>
+        <table>x_2130921_caresy_0_admission</table>
+        <type>onSubmit</type>
+        <ui_type>10</ui_type>
+        <view/>
+    </sys_script_client>
+</record_update>

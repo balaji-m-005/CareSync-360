@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_script_client">
+    <sys_script_client action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <applies_extended>false</applies_extended>
+        <condition/>
+        <description/>
+        <field/>
+        <global>true</global>
+        <isolate_script>true</isolate_script>
+        <messages/>
+        <name>AI Insight - Master Validation</name>
+        <order/>
+        <script><![CDATA[function onSubmit() {
+
+    // --------------------------------------------------
+    // 1. Mandatory field validation
+    // --------------------------------------------------
+
+    if (!g_form.getValue('patient')) {
+        g_form.addErrorMessage('Patient is required.');
+        return false;
+    }
+
+    if (!g_form.getValue('insight_type')) {
+        g_form.addErrorMessage('Insight Type is required.');
+        return false;
+    }
+
+    if (!g_form.getValue('severity')) {
+        g_form.addErrorMessage('Severity is required.');
+        return false;
+    }
+
+    if (!g_form.getValue('insight_title')) {
+        g_form.addErrorMessage('Insight Title is required.');
+        return false;
+    }
+
+    if (!g_form.getValue('insight')) {
+        g_form.addErrorMessage('Insight is required.');
+        return false;
+    }
+
+    if (!g_form.getValue('generated_date')) {
+        g_form.addErrorMessage('Generated Date is required.');
+        return false;
+    }
+
+
+    // --------------------------------------------------
+    // 2. Reviewed workflow validation
+    // --------------------------------------------------
+
+    var insightStatus = g_form.getValue('insight_status');
+
+    if (insightStatus == 'Reviewed' ||
+        insightStatus == 'Accepted' ||
+        insightStatus == 'Rejected' ||
+        insightStatus == 'Resolved') {
+
+        if (!g_form.getValue('reviewed_by')) {
+            g_form.addErrorMessage(
+                'Reviewed By is required when Insight Status is Reviewed, Accepted, Rejected, or Resolved.'
+            );
+
+            return false;
+        }
+
+        if (!g_form.getValue('review_notes')) {
+            g_form.addErrorMessage(
+                'Review Notes are required when Insight Status is Reviewed, Accepted, Rejected, or Resolved.'
+            );
+
+            return false;
+        }
+    }
+
+
+    // --------------------------------------------------
+    // 3. Confidence Score validation
+    // --------------------------------------------------
+
+    var confidenceScore = g_form.getValue('confidence_score');
+
+    if (confidenceScore) {
+
+        if (isNaN(parseFloat(confidenceScore))) {
+
+            g_form.addErrorMessage(
+                'Confidence Score must contain a valid numeric value.'
+            );
+
+            return false;
+        }
+    }
+
+
+    // --------------------------------------------------
+    // All validations passed
+    // --------------------------------------------------
+
+    return true;
+}]]></script>
+        <sys_class_name>sys_script_client</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-25 10:32:48</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>7da665632fbe0b90a55a1d707fa4e386</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>AI Insight - Master Validation</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="CareSync 360" source="x_2130921_caresy_0">cbba01012fea8310a55a1d707fa4e3a1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="CareSync 360">cbba01012fea8310a55a1d707fa4e3a1</sys_scope>
+        <sys_update_name>sys_script_client_7da665632fbe0b90a55a1d707fa4e386</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-25 10:32:48</sys_updated_on>
+        <table>x_2130921_caresy_0_ai_insight</table>
+        <type>onSubmit</type>
+        <ui_type>10</ui_type>
+        <view/>
+    </sys_script_client>
+</record_update>

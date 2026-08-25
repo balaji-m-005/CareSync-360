@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_script_client">
+    <sys_script_client action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <applies_extended>false</applies_extended>
+        <condition/>
+        <description/>
+        <field>phone_number</field>
+        <global>true</global>
+        <isolate_script>true</isolate_script>
+        <messages/>
+        <name>Patient - Validate Phone Number</name>
+        <order/>
+        <script><![CDATA[function onChange(control, oldValue, newValue, isLoading, isTemplate) {
+
+    if (isLoading || isTemplate) {
+        return;
+    }
+
+    if (!newValue) {
+        g_form.hideFieldMsg('phone_number');
+        return;
+    }
+
+    var phone = newValue.trim();
+
+    /*
+     * Allows:
+     * 9876543210
+     * +919876543210
+     * +91 9876543210
+     * 98765-43210
+     * (987) 654-3210
+     */
+    var phonePattern = /^[+]?[0-9()\- ]{7,20}$/;
+
+    if (!phonePattern.test(phone)) {
+
+        g_form.showFieldMsg(
+            'phone_number',
+            'Please enter a valid phone number.',
+            'error'
+        );
+
+        return;
+    }
+
+    var digitsOnly = phone.replace(/\D/g, '');
+
+    if (digitsOnly.length < 7 || digitsOnly.length > 15) {
+
+        g_form.showFieldMsg(
+            'phone_number',
+            'Phone number must contain between 7 and 15 digits.',
+            'error'
+        );
+
+        return;
+    }
+
+    g_form.hideFieldMsg('phone_number');
+}]]></script>
+        <sys_class_name>sys_script_client</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-24 04:43:19</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>613d4b832fbe4790a55a1d707fa4e3c2</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Patient - Validate Phone Number</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="CareSync 360" source="x_2130921_caresy_0">cbba01012fea8310a55a1d707fa4e3a1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="CareSync 360">cbba01012fea8310a55a1d707fa4e3a1</sys_scope>
+        <sys_update_name>sys_script_client_613d4b832fbe4790a55a1d707fa4e3c2</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-24 04:43:19</sys_updated_on>
+        <table>x_2130921_caresy_0_patient</table>
+        <type>onChange</type>
+        <ui_type>10</ui_type>
+        <view/>
+    </sys_script_client>
+</record_update>

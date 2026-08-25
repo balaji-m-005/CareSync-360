@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_script_client">
+    <sys_script_client action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <applies_extended>false</applies_extended>
+        <condition/>
+        <description/>
+        <field/>
+        <global>true</global>
+        <isolate_script>true</isolate_script>
+        <messages/>
+        <name>Patient - Validate Before Submit</name>
+        <order/>
+        <script><![CDATA[function onSubmit() {
+
+    /*
+     * ============================================================
+     * CARESYNC 360 - PATIENT MASTER SUBMIT VALIDATION
+     * ============================================================
+     *
+     * Purpose:
+     * Perform final client-side validation before a Patient
+     * record is inserted or updated through the ServiceNow form.
+     *
+     * IMPORTANT:
+     * onChange scripts provide immediate feedback.
+     * This onSubmit script is the final client-side gate.
+     *
+     * Invalid data  -> return false -> block submission
+     * Valid data    -> return true  -> allow submission
+     * ============================================================
+     */
+
+    var isValid = true;
+
+
+    /*
+     * ============================================================
+     * 1. EMAIL VALIDATION
+     * ============================================================
+     */
+
+    var email = g_form.getValue('email');
+
+    if (email) {
+
+        email = email.trim();
+
+        var emailPattern =
+            /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
+
+        if (!emailPattern.test(email)) {
+
+            g_form.showFieldMsg(
+                'email',
+                'Please enter a valid email address.',
+                'error'
+            );
+
+            isValid = false;
+        }
+    }
+
+
+    /*
+     * ============================================================
+     * 2. PRIMARY PHONE VALIDATION
+     * ============================================================
+     */
+
+    var phone = g_form.getValue('phone_number');
+
+    if (phone) {
+
+        phone = phone.trim();
+
+        var phonePattern =
+            /^[+]?[0-9()\- ]{7,20}$/;
+
+        var phoneValid =
+            phonePattern.test(phone);
+
+        var phoneDigits =
+            phone.replace(/\D/g, '');
+
+        if (!phoneValid ||
+            phoneDigits.length < 7 ||
+            phoneDigits.length > 15) {
+
+            g_form.showFieldMsg(
+                'phone_number',
+                'Please enter a valid phone number containing 7 to 15 digits.',
+                'error'
+            );
+
+            isValid = false;
+        }
+    }
+
+
+    /*
+     * ============================================================
+     * 3. EMERGENCY CONTACT PHONE VALIDATION
+     * ============================================================
+     */
+
+    var emergencyPhone =
+        g_form.getValue('emergency_contact_phone');
+
+    if (emergencyPhone) {
+
+        emergencyPhone = emergencyPhone.trim();
+
+        var emergencyPhonePattern =
+            /^[+]?[0-9()\- ]{7,20}$/;
+
+        var emergencyPhoneValid =
+            emergencyPhonePattern.test(emergencyPhone);
+
+        var emergencyPhoneDigits =
+            emergencyPhone.replace(/\D/g, '');
+
+        if (!emergencyPhoneValid ||
+            emergencyPhoneDigits.length < 7 ||
+            emergencyPhoneDigits.length > 15) {
+
+            g_form.showFieldMsg(
+                'emergency_contact_phone',
+                'Please enter a valid emergency contact phone number containing 7 to 15 digits.',
+                'error'
+            );
+
+            isValid = false;
+        }
+    }
+
+
+    /*
+     * ============================================================
+     * 4. DATE OF BIRTH VALIDATION
+     * ============================================================
+     *
+     * Date of Birth:
+     * - Valid date -> accepted
+     * - Today/past -> accepted
+     * - Future date -> rejected
+     */
+
+    var dob = g_form.getValue('date_of_birth');
+
+    if (dob) {
+
+        var dobValue =
+            getDateFromFormat(dob, g_user_date_format);
+
+        if (!dobValue) {
+
+            g_form.showFieldMsg(
+                'date_of_birth',
+                'Please enter a valid date of birth.',
+                'error'
+            );
+
+            isValid = false;
+
+        } else {
+
+            var enteredDate =
+                new Date(dobValue);
+
+            var today =
+                new Date();
+
+            enteredDate.setHours(0, 0, 0, 0);
+            today.setHours(0, 0, 0, 0);
+
+            if (enteredDate > today) {
+
+                g_form.showFieldMsg(
+                    'date_of_birth',
+                    'Date of Birth cannot be in the future.',
+                    'error'
+                );
+
+                isValid = false;
+            }
+        }
+    }
+
+
+    /*
+     * ============================================================
+     * 5. EMERGENCY CONTACT COMPLETENESS
+     * ============================================================
+     *
+     * If any emergency contact information is entered,
+     * all three fields must be provided.
+     */
+
+    var emergencyName =
+        g_form.getValue('emergency_contact_name');
+
+    var emergencyRelationship =
+        g_form.getValue('emergency_contact_relationship');
+
+    var hasEmergencyName =
+        !!emergencyName;
+
+    var hasEmergencyPhone =
+        !!emergencyPhone;
+
+    var hasEmergencyRelationship =
+        !!emergencyRelationship;
+
+
+    /*
+     * If ANY emergency contact information exists,
+     * require all three fields.
+     */
+
+    if (hasEmergencyName ||
+        hasEmergencyPhone ||
+        hasEmergencyRelationship) {
+
+        if (!hasEmergencyName) {
+
+            g_form.showFieldMsg(
+                'emergency_contact_name',
+                'Emergency Contact Name is required when emergency contact information is provided.',
+                'error'
+            );
+
+            isValid = false;
+        }
+
+        if (!hasEmergencyPhone) {
+
+            g_form.showFieldMsg(
+                'emergency_contact_phone',
+                'Emergency Contact Phone is required when emergency contact information is provided.',
+                'error'
+            );
+
+            isValid = false;
+        }
+
+        if (!hasEmergencyRelationship) {
+
+            g_form.showFieldMsg(
+                'emergency_contact_relationship',
+                'Emergency Contact Relationship is required when emergency contact information is provided.',
+                'error'
+            );
+
+            isValid = false;
+        }
+    }
+
+
+    /*
+     * ============================================================
+     * 6. PATIENT STATUS / ACTIVE CONSISTENCY
+     * ============================================================
+     *
+     * Active     -> active must be true
+     * Inactive   -> active must be false
+     * Deceased   -> active must be false
+     */
+
+    var patientStatus =
+        g_form.getValue('patient_status');
+
+    var active =
+        g_form.getValue('active');
+
+
+    if (patientStatus === 'Active' &&
+        active !== 'true') {
+
+        g_form.showFieldMsg(
+            'patient_status',
+            'Active patients must have the Active field enabled.',
+            'error'
+        );
+
+        isValid = false;
+    }
+
+
+    if ((patientStatus === 'Inactive' ||
+         patientStatus === 'Deceased') &&
+        active === 'true') {
+
+        g_form.showFieldMsg(
+            'patient_status',
+            'Inactive or Deceased patients cannot remain active.',
+            'error'
+        );
+
+        isValid = false;
+    }
+
+
+    /*
+     * ============================================================
+     * FINAL DECISION
+     * ============================================================
+     */
+
+    if (!isValid) {
+
+        g_form.addErrorMessage(
+            'Please correct the highlighted Patient information before submitting.'
+        );
+
+        return false;
+    }
+
+
+    /*
+     * All validations passed.
+     * Allow Insert / Update.
+     */
+
+    return true;
+}]]></script>
+        <sys_class_name>sys_script_client</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-24 06:06:52</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>3410e74b2f328790a55a1d707fa4e3ce</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Patient - Validate Before Submit</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="CareSync 360" source="x_2130921_caresy_0">cbba01012fea8310a55a1d707fa4e3a1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="CareSync 360">cbba01012fea8310a55a1d707fa4e3a1</sys_scope>
+        <sys_update_name>sys_script_client_3410e74b2f328790a55a1d707fa4e3ce</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-24 06:06:52</sys_updated_on>
+        <table>x_2130921_caresy_0_patient</table>
+        <type>onSubmit</type>
+        <ui_type>10</ui_type>
+        <view/>
+    </sys_script_client>
+</record_update>

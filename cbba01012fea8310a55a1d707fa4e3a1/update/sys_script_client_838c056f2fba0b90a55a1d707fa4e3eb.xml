@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_script_client">
+    <sys_script_client action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <applies_extended>false</applies_extended>
+        <condition/>
+        <description/>
+        <field/>
+        <global>true</global>
+        <isolate_script>true</isolate_script>
+        <messages/>
+        <name>Care Plan - Master Validation</name>
+        <order/>
+        <script><![CDATA[function onSubmit() {
+
+    /*
+     * ============================================================
+     * CARESYNC 360 - CARE PLAN MASTER CLIENT VALIDATION
+     * ============================================================
+     *
+     * Purpose:
+     * Validate Care Plan data before INSERT or UPDATE.
+     *
+     * Returning false prevents the form from being submitted.
+     * Therefore invalid records are NOT saved.
+     */
+
+
+    var patient = (g_form.getValue('patient') || '').trim();
+    var admission = (g_form.getValue('admission') || '').trim();
+
+    var carePlanName = (g_form.getValue('care_plan_name') || '').trim();
+    var carePlanType = (g_form.getValue('care_plan_type') || '').trim();
+
+    var startDate = (g_form.getValue('start_date') || '').trim();
+    var endDate = (g_form.getValue('end_date') || '').trim();
+
+    var carePlanStatus = (g_form.getValue('care_plan_status') || '').trim();
+    var primaryGoal = (g_form.getValue('primary_goal') || '').trim();
+
+
+    /*
+     * ------------------------------------------------------------
+     * 1. Patient validation
+     * ------------------------------------------------------------
+     */
+
+    if (!patient) {
+
+        g_form.showFieldMsg(
+            'patient',
+            'Patient is required.',
+            'error'
+        );
+
+        return false;
+    }
+
+
+    /*
+     * ------------------------------------------------------------
+     * 2. Admission validation
+     * ------------------------------------------------------------
+     */
+
+    if (!admission) {
+
+        g_form.showFieldMsg(
+            'admission',
+            'Admission is required.',
+            'error'
+        );
+
+        return false;
+    }
+
+
+    /*
+     * ------------------------------------------------------------
+     * 3. Care Plan Name validation
+     * ------------------------------------------------------------
+     */
+
+    if (!carePlanName) {
+
+        g_form.showFieldMsg(
+            'care_plan_name',
+            'Care Plan Name is required.',
+            'error'
+        );
+
+        return false;
+    }
+
+
+    if (carePlanName.length < 2) {
+
+        g_form.showFieldMsg(
+            'care_plan_name',
+            'Care Plan Name must contain at least 2 characters.',
+            'error'
+        );
+
+        return false;
+    }
+
+
+    /*
+     * ------------------------------------------------------------
+     * 4. Care Plan Type validation
+     * ------------------------------------------------------------
+     */
+
+    if (!carePlanType) {
+
+        g_form.showFieldMsg(
+            'care_plan_type',
+            'Please select a Care Plan Type.',
+            'error'
+        );
+
+        return false;
+    }
+
+
+    /*
+     * ------------------------------------------------------------
+     * 5. Start Date validation
+     * ------------------------------------------------------------
+     */
+
+    if (!startDate) {
+
+        g_form.showFieldMsg(
+            'start_date',
+            'Start Date is required.',
+            'error'
+        );
+
+        return false;
+    }
+
+
+    /*
+     * ------------------------------------------------------------
+     * 6. End Date validation
+     * ------------------------------------------------------------
+     *
+     * End Date is optional.
+     *
+     * If supplied:
+     * End Date cannot be earlier than Start Date.
+     */
+
+    if (endDate) {
+
+        if (startDate && endDate < startDate) {
+
+            g_form.showFieldMsg(
+                'end_date',
+                'End Date cannot be earlier than Start Date.',
+                'error'
+            );
+
+            return false;
+        }
+    }
+
+
+    /*
+     * ------------------------------------------------------------
+     * 7. Care Plan Status validation
+     * ------------------------------------------------------------
+     */
+
+    if (!carePlanStatus) {
+
+        g_form.showFieldMsg(
+            'care_plan_status',
+            'Please select a Care Plan Status.',
+            'error'
+        );
+
+        return false;
+    }
+
+
+    /*
+     * ------------------------------------------------------------
+     * 8. Primary Goal validation
+     * ------------------------------------------------------------
+     */
+
+    if (!primaryGoal) {
+
+        g_form.showFieldMsg(
+            'primary_goal',
+            'Primary Goal is required.',
+            'error'
+        );
+
+        return false;
+    }
+
+
+    /*
+     * Primary Goal should contain meaningful text.
+     */
+
+    if (primaryGoal.length < 2) {
+
+        g_form.showFieldMsg(
+            'primary_goal',
+            'Primary Goal must contain at least 2 characters.',
+            'error'
+        );
+
+        return false;
+    }
+
+
+    /*
+     * ------------------------------------------------------------
+     * 9. Final validation result
+     * ------------------------------------------------------------
+     *
+     * If execution reaches this point:
+     *
+     * - All mandatory fields are valid.
+     * - Care Plan Type is selected.
+     * - Care Plan Status is selected.
+     * - End Date is not before Start Date.
+     *
+     * Returning true allows:
+     *
+     * - INSERT
+     * - UPDATE
+     */
+
+    return true;
+}]]></script>
+        <sys_class_name>sys_script_client</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-25 08:38:43</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>838c056f2fba0b90a55a1d707fa4e3eb</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Care Plan - Master Validation</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="CareSync 360" source="x_2130921_caresy_0">cbba01012fea8310a55a1d707fa4e3a1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="CareSync 360">cbba01012fea8310a55a1d707fa4e3a1</sys_scope>
+        <sys_update_name>sys_script_client_838c056f2fba0b90a55a1d707fa4e3eb</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-25 08:38:43</sys_updated_on>
+        <table>x_2130921_caresy_0_care_plan</table>
+        <type>onSubmit</type>
+        <ui_type>10</ui_type>
+        <view/>
+    </sys_script_client>
+</record_update>

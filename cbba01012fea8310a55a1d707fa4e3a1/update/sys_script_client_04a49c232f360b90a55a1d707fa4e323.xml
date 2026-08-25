@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_script_client">
+    <sys_script_client action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <applies_extended>false</applies_extended>
+        <condition/>
+        <description>Master client-side validation for Department records. Validates required Department Name and Department Code, code format, and field lengths before allowing insert or update.</description>
+        <field/>
+        <global>true</global>
+        <isolate_script>true</isolate_script>
+        <messages/>
+        <name>Department - Master Validation</name>
+        <order/>
+        <script><![CDATA[function onSubmit() {
+
+    /*
+     * ============================================================
+     * Department - Master Validation
+     * ============================================================
+     * Purpose:
+     *  - Validate Department records before Insert/Update.
+     *  - Invalid data must NOT be saved.
+     *  - Valid data is allowed to continue.
+     * ============================================================
+     */
+
+    var departmentName = (g_form.getValue('department_name') || '').trim();
+    var departmentCode = (g_form.getValue('department_code') || '').trim();
+    var description = (g_form.getValue('description') || '').trim();
+
+    /*
+     * ------------------------------------------------------------
+     * 1. Department Name - Required
+     * ------------------------------------------------------------
+     */
+    if (!departmentName) {
+
+        g_form.showFieldMsg(
+            'department_name',
+            'Department Name is required.',
+            'error'
+        );
+
+        return false;
+    }
+
+    /*
+     * ------------------------------------------------------------
+     * 2. Department Name - Maximum Length
+     * ------------------------------------------------------------
+     */
+    if (departmentName.length > 100) {
+
+        g_form.showFieldMsg(
+            'department_name',
+            'Department Name cannot exceed 100 characters.',
+            'error'
+        );
+
+        return false;
+    }
+
+    /*
+     * ------------------------------------------------------------
+     * 3. Department Name - Basic Character Validation
+     * ------------------------------------------------------------
+     * Allows:
+     *  - Letters
+     *  - Numbers
+     *  - Spaces
+     *  - Hyphen
+     *  - Apostrophe
+     *  - Parentheses
+     *  - Ampersand
+     * ------------------------------------------------------------
+     */
+    var namePattern = /^[A-Za-z0-9][A-Za-z0-9 &'().-]*$/;
+
+    if (!namePattern.test(departmentName)) {
+
+        g_form.showFieldMsg(
+            'department_name',
+            'Department Name contains invalid characters.',
+            'error'
+        );
+
+        return false;
+    }
+
+    /*
+     * ------------------------------------------------------------
+     * 4. Department Code - Required
+     * ------------------------------------------------------------
+     */
+    if (!departmentCode) {
+
+        g_form.showFieldMsg(
+            'department_code',
+            'Department Code is required.',
+            'error'
+        );
+
+        return false;
+    }
+
+    /*
+     * ------------------------------------------------------------
+     * 5. Department Code - Maximum Length
+     * ------------------------------------------------------------
+     */
+    if (departmentCode.length > 20) {
+
+        g_form.showFieldMsg(
+            'department_code',
+            'Department Code cannot exceed 20 characters.',
+            'error'
+        );
+
+        return false;
+    }
+
+    /*
+     * ------------------------------------------------------------
+     * 6. Department Code - Format Validation
+     * ------------------------------------------------------------
+     * Allowed:
+     *  - Uppercase letters
+     *  - Numbers
+     *  - Hyphen
+     *  - Underscore
+     *
+     * Examples:
+     *  CARDIO
+     *  CARDIO-001
+     *  ICU_01
+     * ------------------------------------------------------------
+     */
+    var codePattern = /^[A-Z0-9_-]+$/;
+
+    if (!codePattern.test(departmentCode)) {
+
+        g_form.showFieldMsg(
+            'department_code',
+            'Department Code must contain only uppercase letters, numbers, hyphen, or underscore.',
+            'error'
+        );
+
+        return false;
+    }
+
+    /*
+     * ------------------------------------------------------------
+     * 7. Description - Maximum Length
+     * ------------------------------------------------------------
+     */
+    if (description.length > 500) {
+
+        g_form.showFieldMsg(
+            'description',
+            'Description cannot exceed 500 characters.',
+            'error'
+        );
+
+        return false;
+    }
+
+    /*
+     * ------------------------------------------------------------
+     * ALL VALIDATIONS PASSED
+     * ------------------------------------------------------------
+     *
+     * Returning true allows ServiceNow to continue with
+     * Insert or Update.
+     */
+    return true;
+}	]]></script>
+        <sys_class_name>sys_script_client</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-25 04:35:47</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>04a49c232f360b90a55a1d707fa4e323</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Department - Master Validation</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="CareSync 360" source="x_2130921_caresy_0">cbba01012fea8310a55a1d707fa4e3a1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="CareSync 360">cbba01012fea8310a55a1d707fa4e3a1</sys_scope>
+        <sys_update_name>sys_script_client_04a49c232f360b90a55a1d707fa4e323</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-25 04:35:47</sys_updated_on>
+        <table>x_2130921_caresy_0_department</table>
+        <type>onSubmit</type>
+        <ui_type>10</ui_type>
+        <view/>
+    </sys_script_client>
+</record_update>

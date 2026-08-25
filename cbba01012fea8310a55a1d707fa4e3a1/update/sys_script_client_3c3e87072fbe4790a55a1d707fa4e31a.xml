@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_script_client">
+    <sys_script_client action="INSERT_OR_UPDATE">
+        <active>false</active>
+        <applies_extended>false</applies_extended>
+        <condition/>
+        <description/>
+        <field>patient_status</field>
+        <global>true</global>
+        <isolate_script>true</isolate_script>
+        <messages/>
+        <name>Patient - Validate Emergency Contact</name>
+        <order/>
+        <script><![CDATA[function onSubmit() {
+
+    var name = g_form.getValue('emergency_contact_name');
+    var phone = g_form.getValue('emergency_contact_phone');
+    var relationship = g_form.getValue('emergency_contact_relationship');
+
+    var hasName = !!name;
+    var hasPhone = !!phone;
+    var hasRelationship = !!relationship;
+
+    /*
+     * If no emergency contact information was entered,
+     * allow submission.
+     */
+    if (!hasName && !hasPhone && !hasRelationship) {
+        return true;
+    }
+
+    /*
+     * Emergency contact name is required
+     * when any emergency contact information exists.
+     */
+    if (!hasName) {
+
+        g_form.showFieldMsg(
+            'emergency_contact_name',
+            'Emergency Contact Name is required when emergency contact information is provided.',
+            'error'
+        );
+
+        return false;
+    }
+
+    /*
+     * Emergency contact phone is required.
+     */
+    if (!hasPhone) {
+
+        g_form.showFieldMsg(
+            'emergency_contact_phone',
+            'Emergency Contact Phone is required.',
+            'error'
+        );
+
+        return false;
+    }
+
+    /*
+     * Emergency contact relationship is required.
+     */
+    if (!hasRelationship) {
+
+        g_form.showFieldMsg(
+            'emergency_contact_relationship',
+            'Emergency Contact Relationship is required.',
+            'error'
+        );
+
+        return false;
+    }
+
+    return true;
+}]]></script>
+        <sys_class_name>sys_script_client</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-24 04:47:38</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>3c3e87072fbe4790a55a1d707fa4e31a</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>Patient - Validate Emergency Contact</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="CareSync 360" source="x_2130921_caresy_0">cbba01012fea8310a55a1d707fa4e3a1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="CareSync 360">cbba01012fea8310a55a1d707fa4e3a1</sys_scope>
+        <sys_update_name>sys_script_client_3c3e87072fbe4790a55a1d707fa4e31a</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-24 06:14:04</sys_updated_on>
+        <table>x_2130921_caresy_0_patient</table>
+        <type>onSubmit</type>
+        <ui_type>10</ui_type>
+        <view/>
+    </sys_script_client>
+</record_update>
