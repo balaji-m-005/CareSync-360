@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_2130921_caresy_0.NotificationLogService</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description>CareSync 360 reusable server-side service for Notification Log-related operations.</description>
+        <mobile_callable>false</mobile_callable>
+        <name>NotificationLogService</name>
+        <sandbox_callable>false</sandbox_callable>
+        <script><![CDATA[var NotificationLogService = Class.create();
+
+NotificationLogService.prototype = {
+
+    initialize: function() {
+        this.validationUtils = new ValidationUtils();
+    },
+
+    /**
+     * Check whether a Notification Log record exists.
+     *
+     * @param {String} notificationSysId
+     * @return {Boolean}
+     */
+    notificationExists: function(notificationSysId) {
+
+        if (this.validationUtils.isEmpty(notificationSysId)) {
+            return false;
+        }
+
+        var notification = new GlideRecord(
+            'x_2130921_caresy_0_notification_log'
+        );
+
+        if (!notification.isValid()) {
+            gs.error(
+                'NotificationLogService: Notification Log table is invalid.'
+            );
+            return false;
+        }
+
+        return notification.get(notificationSysId);
+    },
+
+    /**
+     * Retrieve a Notification Log record.
+     *
+     * @param {String} notificationSysId
+     * @return {GlideRecord|null}
+     */
+    getNotification: function(notificationSysId) {
+
+        if (this.validationUtils.isEmpty(notificationSysId)) {
+            return null;
+        }
+
+        var notification = new GlideRecord(
+            'x_2130921_caresy_0_notification_log'
+        );
+
+        if (!notification.isValid()) {
+            gs.error(
+                'NotificationLogService: Notification Log table is invalid.'
+            );
+            return null;
+        }
+
+        if (notification.get(notificationSysId)) {
+            return notification;
+        }
+
+        return null;
+    },
+
+    /**
+     * Check whether a Notification Log record is active.
+     *
+     * @param {String} notificationSysId
+     * @return {Boolean}
+     */
+    isNotificationActive: function(notificationSysId) {
+
+        var notification = this.getNotification(notificationSysId);
+
+        if (!notification) {
+            return false;
+        }
+
+        return notification.getValue('active') == '1';
+    },
+
+    type: 'NotificationLogService'
+};]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-26 09:28:49</sys_created_on>
+        <sys_id>91a12ab32f36cb90a55a1d707fa4e3b4</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>NotificationLogService</sys_name>
+        <sys_package display_value="CareSync 360" source="x_2130921_caresy_0">cbba01012fea8310a55a1d707fa4e3a1</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="CareSync 360">cbba01012fea8310a55a1d707fa4e3a1</sys_scope>
+        <sys_update_name>sys_script_include_91a12ab32f36cb90a55a1d707fa4e3b4</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-26 09:28:49</sys_updated_on>
+    </sys_script_include>
+</record_update>

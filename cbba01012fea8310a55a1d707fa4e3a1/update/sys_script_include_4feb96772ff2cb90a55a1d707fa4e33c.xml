@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_2130921_caresy_0.BedService</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description>CareSync 360 reusable server-side service for Bed-related operations.</description>
+        <mobile_callable>false</mobile_callable>
+        <name>BedService</name>
+        <sandbox_callable>false</sandbox_callable>
+        <script><![CDATA[var BedService = Class.create();
+
+BedService.prototype = {
+
+    initialize: function() {
+        this.validationUtils = new ValidationUtils();
+    },
+
+    /**
+     * Check whether a Bed record exists.
+     *
+     * @param {String} bedSysId
+     * @return {Boolean}
+     */
+    bedExists: function(bedSysId) {
+
+        if (this.validationUtils.isEmpty(bedSysId)) {
+            return false;
+        }
+
+        var bed = new GlideRecord(
+            'x_2130921_caresy_0_bed'
+        );
+
+        if (!bed.isValid()) {
+            gs.error(
+                'BedService: Bed table is invalid.'
+            );
+            return false;
+        }
+
+        return bed.get(bedSysId);
+    },
+
+    /**
+     * Retrieve a Bed record.
+     *
+     * @param {String} bedSysId
+     * @return {GlideRecord|null}
+     */
+    getBed: function(bedSysId) {
+
+        if (this.validationUtils.isEmpty(bedSysId)) {
+            return null;
+        }
+
+        var bed = new GlideRecord(
+            'x_2130921_caresy_0_bed'
+        );
+
+        if (!bed.isValid()) {
+            gs.error(
+                'BedService: Bed table is invalid.'
+            );
+            return null;
+        }
+
+        if (bed.get(bedSysId)) {
+            return bed;
+        }
+
+        return null;
+    },
+
+    /**
+     * Check whether a Bed is currently available.
+     *
+     * @param {String} bedSysId
+     * @return {Boolean}
+     */
+    isBedAvailable: function(bedSysId) {
+
+        var bed = this.getBed(bedSysId);
+
+        if (!bed) {
+            return false;
+        }
+
+        return bed.getValue('bed_status') == 'Available';
+    },
+
+    type: 'BedService'
+};]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-26 09:03:51</sys_created_on>
+        <sys_id>4feb96772ff2cb90a55a1d707fa4e33c</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>BedService</sys_name>
+        <sys_package display_value="CareSync 360" source="x_2130921_caresy_0">cbba01012fea8310a55a1d707fa4e3a1</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="CareSync 360">cbba01012fea8310a55a1d707fa4e3a1</sys_scope>
+        <sys_update_name>sys_script_include_4feb96772ff2cb90a55a1d707fa4e33c</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-26 09:03:51</sys_updated_on>
+    </sys_script_include>
+</record_update>

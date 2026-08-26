@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_2130921_caresy_0.PatientTimelineService</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description>CareSync 360 reusable server-side service for Patient Timeline-related operations.</description>
+        <mobile_callable>false</mobile_callable>
+        <name>PatientTimelineService</name>
+        <sandbox_callable>false</sandbox_callable>
+        <script><![CDATA[var PatientTimelineService = Class.create();
+
+PatientTimelineService.prototype = {
+
+    initialize: function() {
+        this.validationUtils = new ValidationUtils();
+    },
+
+    /**
+     * Check whether a Patient Timeline record exists.
+     *
+     * @param {String} timelineSysId
+     * @return {Boolean}
+     */
+    timelineExists: function(timelineSysId) {
+
+        if (this.validationUtils.isEmpty(timelineSysId)) {
+            return false;
+        }
+
+        var timeline = new GlideRecord(
+            'x_2130921_caresy_0_patient_timeline'
+        );
+
+        if (!timeline.isValid()) {
+            gs.error(
+                'PatientTimelineService: Patient Timeline table is invalid.'
+            );
+            return false;
+        }
+
+        return timeline.get(timelineSysId);
+    },
+
+    /**
+     * Retrieve a Patient Timeline record.
+     *
+     * @param {String} timelineSysId
+     * @return {GlideRecord|null}
+     */
+    getTimeline: function(timelineSysId) {
+
+        if (this.validationUtils.isEmpty(timelineSysId)) {
+            return null;
+        }
+
+        var timeline = new GlideRecord(
+            'x_2130921_caresy_0_patient_timeline'
+        );
+
+        if (!timeline.isValid()) {
+            gs.error(
+                'PatientTimelineService: Patient Timeline table is invalid.'
+            );
+            return null;
+        }
+
+        if (timeline.get(timelineSysId)) {
+            return timeline;
+        }
+
+        return null;
+    },
+
+    /**
+     * Check whether a Patient Timeline record is active.
+     *
+     * @param {String} timelineSysId
+     * @return {Boolean}
+     */
+    isTimelineActive: function(timelineSysId) {
+
+        var timeline = this.getTimeline(timelineSysId);
+
+        if (!timeline) {
+            return false;
+        }
+
+        return timeline.getValue('active') == '1';
+    },
+
+    type: 'PatientTimelineService'
+};]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-26 09:26:55</sys_created_on>
+        <sys_id>7221aa732f36cb90a55a1d707fa4e337</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>PatientTimelineService</sys_name>
+        <sys_package display_value="CareSync 360" source="x_2130921_caresy_0">cbba01012fea8310a55a1d707fa4e3a1</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="CareSync 360">cbba01012fea8310a55a1d707fa4e3a1</sys_scope>
+        <sys_update_name>sys_script_include_7221aa732f36cb90a55a1d707fa4e337</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-26 09:26:55</sys_updated_on>
+    </sys_script_include>
+</record_update>

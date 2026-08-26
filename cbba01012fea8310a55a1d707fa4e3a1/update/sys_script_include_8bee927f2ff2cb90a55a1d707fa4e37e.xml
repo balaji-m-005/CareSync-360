@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_2130921_caresy_0.CareMilestoneService</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description>CareSync 360 reusable server-side service for Care Milestone-related operations.</description>
+        <mobile_callable>false</mobile_callable>
+        <name>CareMilestoneService</name>
+        <sandbox_callable>false</sandbox_callable>
+        <script><![CDATA[var CareMilestoneService = Class.create();
+
+CareMilestoneService.prototype = {
+
+    initialize: function() {
+        this.validationUtils = new ValidationUtils();
+    },
+
+    /**
+     * Check whether a Care Milestone exists.
+     *
+     * @param {String} milestoneSysId
+     * @return {Boolean}
+     */
+    milestoneExists: function(milestoneSysId) {
+
+        if (this.validationUtils.isEmpty(milestoneSysId)) {
+            return false;
+        }
+
+        var milestone = new GlideRecord(
+            'x_2130921_caresy_0_care_milestone'
+        );
+
+        if (!milestone.isValid()) {
+            gs.error(
+                'CareMilestoneService: Care Milestone table is invalid.'
+            );
+            return false;
+        }
+
+        return milestone.get(milestoneSysId);
+    },
+
+    /**
+     * Retrieve a Care Milestone.
+     *
+     * @param {String} milestoneSysId
+     * @return {GlideRecord|null}
+     */
+    getMilestone: function(milestoneSysId) {
+
+        if (this.validationUtils.isEmpty(milestoneSysId)) {
+            return null;
+        }
+
+        var milestone = new GlideRecord(
+            'x_2130921_caresy_0_care_milestone'
+        );
+
+        if (!milestone.isValid()) {
+            gs.error(
+                'CareMilestoneService: Care Milestone table is invalid.'
+            );
+            return null;
+        }
+
+        if (milestone.get(milestoneSysId)) {
+            return milestone;
+        }
+
+        return null;
+    },
+
+    /**
+     * Check whether a Care Milestone is currently active.
+     *
+     * @param {String} milestoneSysId
+     * @return {Boolean}
+     */
+    isMilestoneActive: function(milestoneSysId) {
+
+        var milestone = this.getMilestone(milestoneSysId);
+
+        if (!milestone) {
+            return false;
+        }
+
+        return milestone.getValue('active') == '1';
+    },
+
+    type: 'CareMilestoneService'
+};]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-26 09:16:53</sys_created_on>
+        <sys_id>8bee927f2ff2cb90a55a1d707fa4e37e</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>CareMilestoneService</sys_name>
+        <sys_package display_value="CareSync 360" source="x_2130921_caresy_0">cbba01012fea8310a55a1d707fa4e3a1</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="CareSync 360">cbba01012fea8310a55a1d707fa4e3a1</sys_scope>
+        <sys_update_name>sys_script_include_8bee927f2ff2cb90a55a1d707fa4e37e</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-26 09:16:53</sys_updated_on>
+    </sys_script_include>
+</record_update>

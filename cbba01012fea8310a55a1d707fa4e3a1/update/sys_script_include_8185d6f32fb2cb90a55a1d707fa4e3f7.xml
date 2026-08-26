@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_2130921_caresy_0.PatientService</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description>CareSync 360 reusable server-side service for Patient-related operations.</description>
+        <mobile_callable>false</mobile_callable>
+        <name>PatientService</name>
+        <sandbox_callable>false</sandbox_callable>
+        <script><![CDATA[var PatientService = Class.create();
+
+PatientService.prototype = {
+
+    initialize: function() {
+        this.validationUtils = new ValidationUtils();
+    },
+
+    /**
+     * Check whether a Patient record exists.
+     *
+     * @param {String} patientSysId
+     * @return {Boolean}
+     */
+    patientExists: function(patientSysId) {
+
+        if (this.validationUtils.isEmpty(patientSysId)) {
+            return false;
+        }
+
+        var patient = new GlideRecord('x_2130921_caresy_0_patient');
+
+        if (!patient.isValid()) {
+            gs.error('PatientService: Patient table is invalid.');
+            return false;
+        }
+
+        return patient.get(patientSysId);
+    },
+
+    /**
+     * Retrieve a Patient record.
+     *
+     * @param {String} patientSysId
+     * @return {GlideRecord|null}
+     */
+    getPatient: function(patientSysId) {
+
+        if (this.validationUtils.isEmpty(patientSysId)) {
+            return null;
+        }
+
+        var patient = new GlideRecord('x_2130921_caresy_0_patient');
+
+        if (!patient.isValid()) {
+            gs.error('PatientService: Patient table is invalid.');
+            return null;
+        }
+
+        if (patient.get(patientSysId)) {
+            return patient;
+        }
+
+        return null;
+    },
+
+    /**
+     * Check whether a Patient is active.
+     *
+     * @param {String} patientSysId
+     * @return {Boolean}
+     */
+    isPatientActive: function(patientSysId) {
+
+        var patient = this.getPatient(patientSysId);
+
+        if (!patient) {
+            return false;
+        }
+
+        return patient.getValue('active') == 'true';
+    },
+
+    type: 'PatientService'
+};]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-26 08:35:48</sys_created_on>
+        <sys_id>8185d6f32fb2cb90a55a1d707fa4e3f7</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>PatientService</sys_name>
+        <sys_package display_value="CareSync 360" source="x_2130921_caresy_0">cbba01012fea8310a55a1d707fa4e3a1</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="CareSync 360">cbba01012fea8310a55a1d707fa4e3a1</sys_scope>
+        <sys_update_name>sys_script_include_8185d6f32fb2cb90a55a1d707fa4e3f7</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-26 08:35:48</sys_updated_on>
+    </sys_script_include>
+</record_update>

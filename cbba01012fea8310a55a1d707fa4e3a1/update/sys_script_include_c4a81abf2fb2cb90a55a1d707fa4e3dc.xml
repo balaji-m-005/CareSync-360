@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_2130921_caresy_0.AdmissionService</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description>CareSync 360 reusable server-side service for Admission-related operations.</description>
+        <mobile_callable>false</mobile_callable>
+        <name>AdmissionService</name>
+        <sandbox_callable>false</sandbox_callable>
+        <script><![CDATA[var AdmissionService = Class.create();
+
+AdmissionService.prototype = {
+
+    initialize: function() {
+        this.validationUtils = new ValidationUtils();
+    },
+
+    /**
+     * Check whether an Admission record exists.
+     *
+     * @param {String} admissionSysId
+     * @return {Boolean}
+     */
+    admissionExists: function(admissionSysId) {
+
+        if (this.validationUtils.isEmpty(admissionSysId)) {
+            return false;
+        }
+
+        var admission = new GlideRecord(
+            'x_2130921_caresy_0_admission'
+        );
+
+        if (!admission.isValid()) {
+            gs.error(
+                'AdmissionService: Admission table is invalid.'
+            );
+            return false;
+        }
+
+        return admission.get(admissionSysId);
+    },
+
+    /**
+     * Retrieve an Admission record.
+     *
+     * @param {String} admissionSysId
+     * @return {GlideRecord|null}
+     */
+    getAdmission: function(admissionSysId) {
+
+        if (this.validationUtils.isEmpty(admissionSysId)) {
+            return null;
+        }
+
+        var admission = new GlideRecord(
+            'x_2130921_caresy_0_admission'
+        );
+
+        if (!admission.isValid()) {
+            gs.error(
+                'AdmissionService: Admission table is invalid.'
+            );
+            return null;
+        }
+
+        if (admission.get(admissionSysId)) {
+            return admission;
+        }
+
+        return null;
+    },
+
+    /**
+     * Check whether an Admission is currently active
+     * according to its admission status.
+     *
+     * @param {String} admissionSysId
+     * @return {Boolean}
+     */
+    isAdmissionActive: function(admissionSysId) {
+
+        var admission = this.getAdmission(admissionSysId);
+
+        if (!admission) {
+            return false;
+        }
+
+        var status = admission.getValue('admission_status');
+
+        return status == 'Admitted';
+    },
+
+    type: 'AdmissionService'
+};]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-26 08:49:37</sys_created_on>
+        <sys_id>c4a81abf2fb2cb90a55a1d707fa4e3dc</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>AdmissionService</sys_name>
+        <sys_package display_value="CareSync 360" source="x_2130921_caresy_0">cbba01012fea8310a55a1d707fa4e3a1</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="CareSync 360">cbba01012fea8310a55a1d707fa4e3a1</sys_scope>
+        <sys_update_name>sys_script_include_c4a81abf2fb2cb90a55a1d707fa4e3dc</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-26 08:49:37</sys_updated_on>
+    </sys_script_include>
+</record_update>

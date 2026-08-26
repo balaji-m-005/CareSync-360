@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_2130921_caresy_0.ClinicalTaskService</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description>CareSync 360 reusable server-side service for Clinical Task-related operations.</description>
+        <mobile_callable>false</mobile_callable>
+        <name>ClinicalTaskService</name>
+        <sandbox_callable>false</sandbox_callable>
+        <script><![CDATA[var ClinicalTaskService = Class.create();
+
+ClinicalTaskService.prototype = {
+
+    initialize: function() {
+        this.validationUtils = new ValidationUtils();
+    },
+
+    /**
+     * Check whether a Clinical Task exists.
+     *
+     * @param {String} taskSysId
+     * @return {Boolean}
+     */
+    taskExists: function(taskSysId) {
+
+        if (this.validationUtils.isEmpty(taskSysId)) {
+            return false;
+        }
+
+        var task = new GlideRecord(
+            'x_2130921_caresy_0_clinical_task'
+        );
+
+        if (!task.isValid()) {
+            gs.error(
+                'ClinicalTaskService: Clinical Task table is invalid.'
+            );
+            return false;
+        }
+
+        return task.get(taskSysId);
+    },
+
+    /**
+     * Retrieve a Clinical Task.
+     *
+     * @param {String} taskSysId
+     * @return {GlideRecord|null}
+     */
+    getTask: function(taskSysId) {
+
+        if (this.validationUtils.isEmpty(taskSysId)) {
+            return null;
+        }
+
+        var task = new GlideRecord(
+            'x_2130921_caresy_0_clinical_task'
+        );
+
+        if (!task.isValid()) {
+            gs.error(
+                'ClinicalTaskService: Clinical Task table is invalid.'
+            );
+            return null;
+        }
+
+        if (task.get(taskSysId)) {
+            return task;
+        }
+
+        return null;
+    },
+
+    /**
+     * Check whether a Clinical Task is currently active.
+     *
+     * @param {String} taskSysId
+     * @return {Boolean}
+     */
+    isTaskActive: function(taskSysId) {
+
+        var task = this.getTask(taskSysId);
+
+        if (!task) {
+            return false;
+        }
+
+        return task.getValue('active') == '1';
+    },
+
+    type: 'ClinicalTaskService'
+};]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-26 09:06:33</sys_created_on>
+        <sys_id>b28c96f72ff2cb90a55a1d707fa4e3d0</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>ClinicalTaskService</sys_name>
+        <sys_package display_value="CareSync 360" source="x_2130921_caresy_0">cbba01012fea8310a55a1d707fa4e3a1</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="CareSync 360">cbba01012fea8310a55a1d707fa4e3a1</sys_scope>
+        <sys_update_name>sys_script_include_b28c96f72ff2cb90a55a1d707fa4e3d0</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-26 09:06:33</sys_updated_on>
+    </sys_script_include>
+</record_update>

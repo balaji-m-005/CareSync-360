@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_2130921_caresy_0.AIInsightService</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description>CareSync 360 reusable server-side service for AI Insight-related operations.</description>
+        <mobile_callable>false</mobile_callable>
+        <name>AIInsightService</name>
+        <sandbox_callable>false</sandbox_callable>
+        <script><![CDATA[var AIInsightService = Class.create();
+
+AIInsightService.prototype = {
+
+    initialize: function() {
+        this.validationUtils = new ValidationUtils();
+    },
+
+    /**
+     * Check whether an AI Insight record exists.
+     *
+     * @param {String} insightSysId
+     * @return {Boolean}
+     */
+    insightExists: function(insightSysId) {
+
+        if (this.validationUtils.isEmpty(insightSysId)) {
+            return false;
+        }
+
+        var insight = new GlideRecord(
+            'x_2130921_caresy_0_ai_insight'
+        );
+
+        if (!insight.isValid()) {
+            gs.error(
+                'AIInsightService: AI Insight table is invalid.'
+            );
+            return false;
+        }
+
+        return insight.get(insightSysId);
+    },
+
+    /**
+     * Retrieve an AI Insight record.
+     *
+     * @param {String} insightSysId
+     * @return {GlideRecord|null}
+     */
+    getInsight: function(insightSysId) {
+
+        if (this.validationUtils.isEmpty(insightSysId)) {
+            return null;
+        }
+
+        var insight = new GlideRecord(
+            'x_2130921_caresy_0_ai_insight'
+        );
+
+        if (!insight.isValid()) {
+            gs.error(
+                'AIInsightService: AI Insight table is invalid.'
+            );
+            return null;
+        }
+
+        if (insight.get(insightSysId)) {
+            return insight;
+        }
+
+        return null;
+    },
+
+    /**
+     * Check whether an AI Insight record is active.
+     *
+     * @param {String} insightSysId
+     * @return {Boolean}
+     */
+    isInsightActive: function(insightSysId) {
+
+        var insight = this.getInsight(insightSysId);
+
+        if (!insight) {
+            return false;
+        }
+
+        return insight.getValue('active') == '1';
+    },
+
+    type: 'AIInsightService'
+};]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-26 09:33:29</sys_created_on>
+        <sys_id>bdb2aab32f36cb90a55a1d707fa4e386</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>AIInsightService</sys_name>
+        <sys_package display_value="CareSync 360" source="x_2130921_caresy_0">cbba01012fea8310a55a1d707fa4e3a1</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="CareSync 360">cbba01012fea8310a55a1d707fa4e3a1</sys_scope>
+        <sys_update_name>sys_script_include_bdb2aab32f36cb90a55a1d707fa4e386</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-26 09:33:29</sys_updated_on>
+    </sys_script_include>
+</record_update>
