@@ -1,0 +1,1147 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_hub_flow">
+    <sys_hub_flow action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <acls/>
+        <active>true</active>
+        <allow_high_security_roles>false</allow_high_security_roles>
+        <annotation/>
+        <attributes>browserActivatedIn=chrome,integrationActivatedIn=standalone,labelCacheCleanUpExecuted=true,timeFromCreateToActivate=1874000,viewActivatedIn=naturalLanguage</attributes>
+        <authored_on_release_version>29000</authored_on_release_version>
+        <callable_by_client_api>false</callable_by_client_api>
+        <category/>
+        <copied_from/>
+        <copied_from_name/>
+        <description>Generates clinical tasks for a care plan and returns the task generation result.</description>
+        <display_name_after_preview/>
+        <flow_priority>MEDIUM</flow_priority>
+        <generation_source/>
+        <internal_name>sf_clinicaltaskgeneration</internal_name>
+        <label_cache>[{"name":"subflow.care_plan","label":"Input➛Care Plan","reference":"x_2130921_caresy_0_care_plan","reference_display":"Care Plan","type":"reference","base_type":"reference","usedInstances":{"af4443fc-18f1-4885-aecb-3013f32fea92":["care_plan"]},"attributes":{"sourceUiUniqueId":"","sourceType":"","sourceId":"","uiUniqueId":"189d6da8-840d-4a9c-97ed-5f8cf8582c3f","uiTypeLabel":"Reference"}},{"name":"subflow.admission","label":"Input➛Admission","reference":"x_2130921_caresy_0_admission","reference_display":"Admission","type":"reference","base_type":"reference","usedInstances":{"af4443fc-18f1-4885-aecb-3013f32fea92":["admission"]},"attributes":{"sourceUiUniqueId":"","sourceType":"","sourceId":"","uiUniqueId":"6bb5f256-915c-4824-a82c-f6ca4350374c","uiTypeLabel":"Reference"}},{"name":"subflow.admission.patient","label":"Input➛Admission➛Patient","reference":"x_2130921_caresy_0_patient","reference_display":"Patient","type":"reference","base_type":"reference","parent_table_name":"x_2130921_caresy_0_admission","column_name":"patient","usedInstances":{"af4443fc-18f1-4885-aecb-3013f32fea92":["patient"]}}]</label_cache>
+        <master_snapshot>b6f25b842f4b4f90a55a1d707fa4e3ef</master_snapshot>
+        <master_snapshot_digest/>
+        <name>SF_ClinicalTaskGeneration</name>
+        <natlang/>
+        <outputs/>
+        <pre_compiled>false</pre_compiled>
+        <remote_trigger_id/>
+        <run_as>user</run_as>
+        <run_with_roles/>
+        <sc_callable>false</sc_callable>
+        <show_draft_actions>false</show_draft_actions>
+        <show_triggered_flows>false</show_triggered_flows>
+        <status>published</status>
+        <substatus/>
+        <sys_class_name>sys_hub_flow</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-27 07:11:08</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>08db43842f0b4f90a55a1d707fa4e332</sys_id>
+        <sys_mod_count>8</sys_mod_count>
+        <sys_name>SF_ClinicalTaskGeneration</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="CareSync 360" source="x_2130921_caresy_0">cbba01012fea8310a55a1d707fa4e3a1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="CareSync 360">cbba01012fea8310a55a1d707fa4e3a1</sys_scope>
+        <sys_update_name>sys_hub_flow_08db43842f0b4f90a55a1d707fa4e332</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-27 07:42:37</sys_updated_on>
+        <type>subflow</type>
+        <updation_source/>
+        <version>2</version>
+        <version_record>9f031f842f4b4f90a55a1d707fa4e3e6</version_record>
+    </sys_hub_flow>
+    <sys_translated_text action="delete_multiple" query="documentkey=08db43842f0b4f90a55a1d707fa4e332"/>
+    <sys_variable_value action="delete_multiple" query="document_key=08db43842f0b4f90a55a1d707fa4e332"/>
+    <sys_element_mapping action="delete_multiple" query="table=var__m_sys_hub_flow_output_08db43842f0b4f90a55a1d707fa4e332^id=08db43842f0b4f90a55a1d707fa4e332"/>
+    <sys_hub_flow_stage action="delete_multiple" query="flow=08db43842f0b4f90a55a1d707fa4e332"/>
+    <sys_flow_cat_variable_model action="delete_multiple" query="id=08db43842f0b4f90a55a1d707fa4e332^sys_idNOT INc0db43842f0b4f90a55a1d707fa4e333"/>
+    <sys_flow_cat_variable_model action="INSERT_OR_UPDATE">
+        <id>08db43842f0b4f90a55a1d707fa4e332</id>
+        <name>SF_ClinicalTaskGeneration</name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-27 07:11:08</sys_created_on>
+        <sys_id>c0db43842f0b4f90a55a1d707fa4e333</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-27 07:11:08</sys_updated_on>
+    </sys_flow_cat_variable_model>
+    <sys_flow_cat_variable action="delete_multiple" query="flow_catalog_model=c0db43842f0b4f90a55a1d707fa4e333"/>
+    <sys_hub_flow_input action="delete_multiple" query="model=08db43842f0b4f90a55a1d707fa4e332^sys_idNOT IN4a9c8f482f0b4f90a55a1d707fa4e347,a69c8f482f0b4f90a55a1d707fa4e39a"/>
+    <sys_hub_flow_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=reference,uiTypeLabel=Reference,uiUniqueId=6bb5f256-915c-4824-a82c-f6ca4350374c</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table>x_2130921_caresy_0_admission</choice_table>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>admission</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="reference">reference</internal_type>
+        <label>Admission</label>
+        <mandatory>true</mandatory>
+        <max_length>32</max_length>
+        <model display_value="SF_ClinicalTaskGeneration">08db43842f0b4f90a55a1d707fa4e332</model>
+        <model_id>08db43842f0b4f90a55a1d707fa4e332</model_id>
+        <model_table>sys_hub_flow</model_table>
+        <name>var__m_sys_hub_flow_input_08db43842f0b4f90a55a1d707fa4e332</name>
+        <next_element/>
+        <order>2</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_only_option/>
+        <read_roles/>
+        <reference display_value="" name="x_2130921_caresy_0_admission">x_2130921_caresy_0_admission</reference>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-27 07:14:33</sys_created_on>
+        <sys_id>4a9c8f482f0b4f90a55a1d707fa4e347</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="CareSync 360">cbba01012fea8310a55a1d707fa4e3a1</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-27 07:14:34</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=4a9c8f482f0b4f90a55a1d707fa4e347"/>
+    <sys_hub_flow_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=reference,uiTypeLabel=Reference,uiUniqueId=189d6da8-840d-4a9c-97ed-5f8cf8582c3f</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table>x_2130921_caresy_0_care_plan</choice_table>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>care_plan</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="reference">reference</internal_type>
+        <label>Care Plan</label>
+        <mandatory>true</mandatory>
+        <max_length>32</max_length>
+        <model display_value="SF_ClinicalTaskGeneration">08db43842f0b4f90a55a1d707fa4e332</model>
+        <model_id>08db43842f0b4f90a55a1d707fa4e332</model_id>
+        <model_table>sys_hub_flow</model_table>
+        <name>var__m_sys_hub_flow_input_08db43842f0b4f90a55a1d707fa4e332</name>
+        <next_element/>
+        <order>1</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_only_option/>
+        <read_roles/>
+        <reference display_value="" name="x_2130921_caresy_0_care_plan">x_2130921_caresy_0_care_plan</reference>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-27 07:14:35</sys_created_on>
+        <sys_id>a69c8f482f0b4f90a55a1d707fa4e39a</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="CareSync 360">cbba01012fea8310a55a1d707fa4e3a1</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-27 07:14:36</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=a69c8f482f0b4f90a55a1d707fa4e39a"/>
+    <sys_hub_flow_output action="delete_multiple" query="model=08db43842f0b4f90a55a1d707fa4e332^sys_idNOT IN2f9c8f482f0b4f90a55a1d707fa4e3df,4caccf482f0b4f90a55a1d707fa4e366"/>
+    <sys_hub_flow_output action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=boolean,uiTypeLabel=True/False,uiUniqueId=5556262c-13e8-4755-ade1-b197447b67f3</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value>false</default_value>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>success</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_link/>
+        <internal_type display_value="boolean">boolean</internal_type>
+        <label>Success</label>
+        <mandatory>false</mandatory>
+        <max_length>40</max_length>
+        <model display_value="SF_ClinicalTaskGeneration">08db43842f0b4f90a55a1d707fa4e332</model>
+        <model_id>08db43842f0b4f90a55a1d707fa4e332</model_id>
+        <model_table>sys_hub_flow</model_table>
+        <name>var__m_sys_hub_flow_output_08db43842f0b4f90a55a1d707fa4e332</name>
+        <next_element/>
+        <order>1</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_only_option/>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_output</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-27 07:14:39</sys_created_on>
+        <sys_id>2f9c8f482f0b4f90a55a1d707fa4e3df</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="CareSync 360">cbba01012fea8310a55a1d707fa4e3a1</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-27 07:42:19</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_output>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=2f9c8f482f0b4f90a55a1d707fa4e3df"/>
+    <sys_hub_flow_output action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=string,uiTypeLabel=String,uiUniqueId=17af0de8-4c27-4372-99bd-24ba4d2b8e10</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>message</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_link/>
+        <internal_type display_value="string">string</internal_type>
+        <label>Message</label>
+        <mandatory>false</mandatory>
+        <max_length>8000</max_length>
+        <model display_value="SF_ClinicalTaskGeneration">08db43842f0b4f90a55a1d707fa4e332</model>
+        <model_id>08db43842f0b4f90a55a1d707fa4e332</model_id>
+        <model_table>sys_hub_flow</model_table>
+        <name>var__m_sys_hub_flow_output_08db43842f0b4f90a55a1d707fa4e332</name>
+        <next_element/>
+        <order>2</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_only_option/>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_output</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-27 07:14:41</sys_created_on>
+        <sys_id>4caccf482f0b4f90a55a1d707fa4e366</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="CareSync 360">cbba01012fea8310a55a1d707fa4e3a1</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-27 07:42:19</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_output>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=4caccf482f0b4f90a55a1d707fa4e366"/>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=08db43842f0b4f90a55a1d707fa4e332"/>
+    <sys_hub_trigger_instance_v2 action="delete_multiple" query="flow=08db43842f0b4f90a55a1d707fa4e332"/>
+    <sys_hub_action_instance_v2 action="delete_multiple" query="flow=08db43842f0b4f90a55a1d707fa4e332^sys_idNOT INdfdc87882f0b4f90a55a1d707fa4e38b"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Create Record">2de05916c31332002841b63b12d3aee1</action_type>
+        <action_type_parent display_value="Create Record">02f0b88cc3c632002841b63b12d3aeff</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>2de05916c31332002841b63b12d3aee1</compiled_snapshot>
+        <display_text/>
+        <flow display_value="SF_ClinicalTaskGeneration">08db43842f0b4f90a55a1d707fa4e332</flow>
+        <generation_source/>
+        <order>1</order>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-27 07:15:44</sys_created_on>
+        <sys_id>dfdc87882f0b4f90a55a1d707fa4e38b</sys_id>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_scope display_value="CareSync 360">cbba01012fea8310a55a1d707fa4e3a1</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-27 07:54:07</sys_updated_on>
+        <ui_id>af4443fc-18f1-4885-aecb-3013f32fea92</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1VTW/bMAz9K4ZOHZAFdtIFTXoqEnQYsLbDmvXSNgZj0YkwWfYkOa0X5L+Psmw36Me2ArsUWE4R+Ui9R5H09ZYJziZsFGH4YRyNkmE0HA7CcHB0GC1Hw2U04ENAPGQ9piBDQlpYSozrQ49tQJbOeB8PomE4HkRxAhpNFYdxIoUSCcjYgvlOUC5MIaG6aiKmjTuYe3eyFpJrVGxyfdtjBWi6wKJmk+0j19/SlbBESdC54/sCfVsVz9o+78cG596Ra+74hD2G9xYVRyKSgjTYYxkoDjbXFZtYXZJBI/ALJasOsRbKUkLmsPdG/KRrj0KHS5GUJeh93TFuquXN6QwsXFLmxJa6gSbrXCRofE04plBKO923ecBFYUWufEgts4nOZZmpc18S1iVoH4cspSESWDidjnkjI71c53dfW5anQtUlaZwyp/fsTmCtFsvSOj5bhhIzShRnUBRCreJC5xtRBxOXrL+SdOinMr+jS41YqT4kjnifygr9U7LPavMVaOFUnFEaCt71mKnMVIIxD1qoiPGP0jHxyhoNsS+DC0m0KOwJXbDBhu6u184Bx3D8YmNFy4dGqlvf7M2A6/yYHk3dlGE45NutKZdOUb9z7HYL4JkwhpQ9BnUOAhVgBTF+EdJvAAR1wxW7lvXgE2PQGFdp7zEWbGm87wvVgUq/KLTItbCVt54hF2W2gLoa3uRaeEHPUJepo/pJCStoXtu5DqC7K1ihQg0WeZDmOnB6A6d3wUtqIrL7DCl/73PS5DzZB/+r96rqvXJd/rmr23V5KlBy80ybt7sSMyJnMfZt/2hfNs7gqnE2OzP6VzszGoX17w1tTi/uzS/OvW/kkxXqJXqb49w2rvv/OyQ1lw4IPHMt47s8UHgXfHSinHEuMjx4d3yjGhANMZ9BZb7NpweRs2ukd1VtjmOibWCDvHuN3W53+wvgjMMI4wgAAA==</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=dfdc87882f0b4f90a55a1d707fa4e38b"/>
+    <sys_hub_sub_flow_instance_v2 action="delete_multiple" query="flow=08db43842f0b4f90a55a1d707fa4e332"/>
+    <sys_hub_flow_logic_instance_v2 action="delete_multiple" query="flow=08db43842f0b4f90a55a1d707fa4e332^sys_idNOT INbaee07882f0b4f90a55a1d707fa4e33f"/>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">91f21b842f4b4f90a55a1d707fa4e3fa</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="SF_ClinicalTaskGeneration">08db43842f0b4f90a55a1d707fa4e332</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="Assign Subflow Outputs">df4e1945c3e232002841b63b12d3ae3e</logic_definition>
+        <order>2</order>
+        <outputs_assigned>success,message</outputs_assigned>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-27 07:24:42</sys_created_on>
+        <sys_id>baee07882f0b4f90a55a1d707fa4e33f</sys_id>
+        <sys_mod_count>6</sys_mod_count>
+        <sys_scope display_value="CareSync 360">cbba01012fea8310a55a1d707fa4e3a1</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-27 07:42:21</sys_updated_on>
+        <ui_id>668940bc-5b7e-4845-a9ed-acaf861a66c3</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/42QPQvCQAyG/0rJXATXbsXJXVzEId6lNTS9K5e7ShH/u1csWnDQKcnDmzcfd/ApDinqwdeq3DqoTndw2BNUoMkYUoUSRpQ0k23OLesgOB0XFEMOJZgriw00959LUBN4iLWJPGZNg6L0KN++fTbFlla+O2HHBqWIqF3RkqOAkWyxbNAkkWnzPfvftt/LZcxu/sNLMmJgvAgtpSXDyt4dZrZf6eyUT2KzRjcfukb87cMeT8OAIR9lAQAA</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_pill_compound action="delete_multiple" query="attached_to=08db43842f0b4f90a55a1d707fa4e332"/>
+    <sys_hub_flow_variable action="delete_multiple" query="model=08db43842f0b4f90a55a1d707fa4e332"/>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>admission</element>
+        <help/>
+        <hint/>
+        <label>Admission</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_08db43842f0b4f90a55a1d707fa4e332</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-27 07:14:35</sys_created_on>
+        <sys_id>6e9c8f482f0b4f90a55a1d707fa4e34d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="CareSync 360" source="x_2130921_caresy_0">cbba01012fea8310a55a1d707fa4e3a1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="CareSync 360">cbba01012fea8310a55a1d707fa4e3a1</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-27 07:14:35</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>care_plan</element>
+        <help/>
+        <hint/>
+        <label>Care Plan</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_08db43842f0b4f90a55a1d707fa4e332</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-27 07:14:36</sys_created_on>
+        <sys_id>ba9c8f482f0b4f90a55a1d707fa4e39f</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="CareSync 360" source="x_2130921_caresy_0">cbba01012fea8310a55a1d707fa4e3a1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="CareSync 360">cbba01012fea8310a55a1d707fa4e3a1</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-27 07:14:36</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_input_08db43842f0b4f90a55a1d707fa4e332"/>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>success</element>
+        <help/>
+        <hint/>
+        <label>Success</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_output_08db43842f0b4f90a55a1d707fa4e332</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-27 07:14:41</sys_created_on>
+        <sys_id>4caccf482f0b4f90a55a1d707fa4e364</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="CareSync 360" source="x_2130921_caresy_0">cbba01012fea8310a55a1d707fa4e3a1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="CareSync 360">cbba01012fea8310a55a1d707fa4e3a1</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-27 07:14:41</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>message</element>
+        <help/>
+        <hint/>
+        <label>Message</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_output_08db43842f0b4f90a55a1d707fa4e332</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-27 07:14:42</sys_created_on>
+        <sys_id>d4accf482f0b4f90a55a1d707fa4e36a</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="CareSync 360" source="x_2130921_caresy_0">cbba01012fea8310a55a1d707fa4e3a1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="CareSync 360">cbba01012fea8310a55a1d707fa4e3a1</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-27 07:14:42</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_output_08db43842f0b4f90a55a1d707fa4e332"/>
+    <sys_hub_flow_snapshot action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <acls/>
+        <active>true</active>
+        <allow_high_security_roles>false</allow_high_security_roles>
+        <annotation/>
+        <attributes>browserActivatedIn=chrome,integrationActivatedIn=standalone,labelCacheCleanUpExecuted=true,viewActivatedIn=naturalLanguage</attributes>
+        <authored_on_release_version>29000</authored_on_release_version>
+        <callable_by_client_api>false</callable_by_client_api>
+        <category/>
+        <copied_from/>
+        <copied_from_name/>
+        <description>Generates clinical tasks for a care plan and returns the task generation result.</description>
+        <flow_priority>MEDIUM</flow_priority>
+        <internal_name>sf_clinicaltaskgeneration</internal_name>
+        <label_cache>[{"name":"subflow.care_plan","label":"Input➛Care Plan","reference":"x_2130921_caresy_0_care_plan","reference_display":"Care Plan","type":"reference","base_type":"reference","usedInstances":{"af4443fc-18f1-4885-aecb-3013f32fea92":["care_plan"]},"attributes":{"sourceUiUniqueId":"","sourceType":"","sourceId":"","uiUniqueId":"189d6da8-840d-4a9c-97ed-5f8cf8582c3f","uiTypeLabel":"Reference"}},{"name":"subflow.admission","label":"Input➛Admission","reference":"x_2130921_caresy_0_admission","reference_display":"Admission","type":"reference","base_type":"reference","usedInstances":{"af4443fc-18f1-4885-aecb-3013f32fea92":["admission"]},"attributes":{"sourceUiUniqueId":"","sourceType":"","sourceId":"","uiUniqueId":"6bb5f256-915c-4824-a82c-f6ca4350374c","uiTypeLabel":"Reference"}},{"name":"subflow.admission.patient","label":"Input➛Admission➛Patient","reference":"x_2130921_caresy_0_patient","reference_display":"Patient","type":"reference","base_type":"reference","parent_table_name":"x_2130921_caresy_0_admission","column_name":"patient","usedInstances":{"af4443fc-18f1-4885-aecb-3013f32fea92":["patient"]}}]</label_cache>
+        <master>true</master>
+        <name>SF_ClinicalTaskGeneration</name>
+        <natlang/>
+        <outputs/>
+        <parent_flow display_value="SF_ClinicalTaskGeneration">08db43842f0b4f90a55a1d707fa4e332</parent_flow>
+        <remote_trigger_id/>
+        <run_as>user</run_as>
+        <run_with_roles/>
+        <sc_callable>false</sc_callable>
+        <status>published</status>
+        <sys_class_name>sys_hub_flow_snapshot</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-27 07:42:27</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>b6f25b842f4b4f90a55a1d707fa4e3ef</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_overrides/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="CareSync 360">cbba01012fea8310a55a1d707fa4e3a1</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-27 07:42:27</sys_updated_on>
+        <type>subflow</type>
+        <version>2</version>
+    </sys_hub_flow_snapshot>
+    <sys_translated_text action="delete_multiple" query="documentkey=b6f25b842f4b4f90a55a1d707fa4e3ef"/>
+    <sys_variable_value action="delete_multiple" query="document_key=b6f25b842f4b4f90a55a1d707fa4e3ef"/>
+    <sys_element_mapping action="delete_multiple" query="table=var__m_sys_hub_flow_output_b6f25b842f4b4f90a55a1d707fa4e3ef^id=b6f25b842f4b4f90a55a1d707fa4e3ef"/>
+    <sys_hub_flow_stage action="delete_multiple" query="flow=b6f25b842f4b4f90a55a1d707fa4e3ef"/>
+    <sys_flow_cat_variable_model action="delete_multiple" query="id=b6f25b842f4b4f90a55a1d707fa4e3ef^sys_idNOT IN76f25b842f4b4f90a55a1d707fa4e3f0"/>
+    <sys_flow_cat_variable_model action="INSERT_OR_UPDATE">
+        <id>b6f25b842f4b4f90a55a1d707fa4e3ef</id>
+        <name>SF_ClinicalTaskGeneration</name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-27 07:42:28</sys_created_on>
+        <sys_id>76f25b842f4b4f90a55a1d707fa4e3f0</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-27 07:42:28</sys_updated_on>
+    </sys_flow_cat_variable_model>
+    <sys_flow_cat_variable action="delete_multiple" query="flow_catalog_model=76f25b842f4b4f90a55a1d707fa4e3f0"/>
+    <sys_hub_flow_input action="delete_multiple" query="model=b6f25b842f4b4f90a55a1d707fa4e3ef^sys_idNOT IN9ff29b842f4b4f90a55a1d707fa4e383,cbf25b842f4b4f90a55a1d707fa4e3f1"/>
+    <sys_hub_flow_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=reference,uiTypeLabel=Reference,uiUniqueId=6bb5f256-915c-4824-a82c-f6ca4350374c</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table>x_2130921_caresy_0_admission</choice_table>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>admission</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="reference">reference</internal_type>
+        <label>Admission</label>
+        <mandatory>true</mandatory>
+        <max_length>32</max_length>
+        <model display_value="SF_ClinicalTaskGeneration">b6f25b842f4b4f90a55a1d707fa4e3ef</model>
+        <model_id>b6f25b842f4b4f90a55a1d707fa4e3ef</model_id>
+        <model_table>sys_hub_flow_snapshot</model_table>
+        <name>var__m_sys_hub_flow_input_b6f25b842f4b4f90a55a1d707fa4e3ef</name>
+        <next_element/>
+        <order>2</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_only_option/>
+        <read_roles/>
+        <reference display_value="" name="x_2130921_caresy_0_admission">x_2130921_caresy_0_admission</reference>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-27 07:42:29</sys_created_on>
+        <sys_id>9ff29b842f4b4f90a55a1d707fa4e383</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="CareSync 360">cbba01012fea8310a55a1d707fa4e3a1</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-27 07:42:30</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=9ff29b842f4b4f90a55a1d707fa4e383"/>
+    <sys_hub_flow_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=reference,uiTypeLabel=Reference,uiUniqueId=189d6da8-840d-4a9c-97ed-5f8cf8582c3f</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table>x_2130921_caresy_0_care_plan</choice_table>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>care_plan</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="reference">reference</internal_type>
+        <label>Care Plan</label>
+        <mandatory>true</mandatory>
+        <max_length>32</max_length>
+        <model display_value="SF_ClinicalTaskGeneration">b6f25b842f4b4f90a55a1d707fa4e3ef</model>
+        <model_id>b6f25b842f4b4f90a55a1d707fa4e3ef</model_id>
+        <model_table>sys_hub_flow_snapshot</model_table>
+        <name>var__m_sys_hub_flow_input_b6f25b842f4b4f90a55a1d707fa4e3ef</name>
+        <next_element/>
+        <order>1</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_only_option/>
+        <read_roles/>
+        <reference display_value="" name="x_2130921_caresy_0_care_plan">x_2130921_caresy_0_care_plan</reference>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-27 07:42:28</sys_created_on>
+        <sys_id>cbf25b842f4b4f90a55a1d707fa4e3f1</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="CareSync 360">cbba01012fea8310a55a1d707fa4e3a1</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-27 07:42:28</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=cbf25b842f4b4f90a55a1d707fa4e3f1"/>
+    <sys_hub_flow_output action="delete_multiple" query="model=b6f25b842f4b4f90a55a1d707fa4e3ef^sys_idNOT IN80039b842f4b4f90a55a1d707fa4e3a4,9803db842f4b4f90a55a1d707fa4e332"/>
+    <sys_hub_flow_output action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=boolean,uiTypeLabel=True/False,uiUniqueId=5556262c-13e8-4755-ade1-b197447b67f3</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value>false</default_value>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>success</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_link/>
+        <internal_type display_value="boolean">boolean</internal_type>
+        <label>Success</label>
+        <mandatory>false</mandatory>
+        <max_length>40</max_length>
+        <model display_value="SF_ClinicalTaskGeneration">b6f25b842f4b4f90a55a1d707fa4e3ef</model>
+        <model_id>b6f25b842f4b4f90a55a1d707fa4e3ef</model_id>
+        <model_table>sys_hub_flow_snapshot</model_table>
+        <name>var__m_sys_hub_flow_output_b6f25b842f4b4f90a55a1d707fa4e3ef</name>
+        <next_element/>
+        <order>1</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_only_option/>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_output</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-27 07:42:32</sys_created_on>
+        <sys_id>80039b842f4b4f90a55a1d707fa4e3a4</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="CareSync 360">cbba01012fea8310a55a1d707fa4e3a1</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-27 07:42:33</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_output>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=80039b842f4b4f90a55a1d707fa4e3a4"/>
+    <sys_hub_flow_output action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=string,uiTypeLabel=String,uiUniqueId=17af0de8-4c27-4372-99bd-24ba4d2b8e10</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>message</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_link/>
+        <internal_type display_value="string">string</internal_type>
+        <label>Message</label>
+        <mandatory>false</mandatory>
+        <max_length>8000</max_length>
+        <model display_value="SF_ClinicalTaskGeneration">b6f25b842f4b4f90a55a1d707fa4e3ef</model>
+        <model_id>b6f25b842f4b4f90a55a1d707fa4e3ef</model_id>
+        <model_table>sys_hub_flow_snapshot</model_table>
+        <name>var__m_sys_hub_flow_output_b6f25b842f4b4f90a55a1d707fa4e3ef</name>
+        <next_element/>
+        <order>2</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_only_option/>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_output</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-27 07:42:33</sys_created_on>
+        <sys_id>9803db842f4b4f90a55a1d707fa4e332</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="CareSync 360">cbba01012fea8310a55a1d707fa4e3a1</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-27 07:42:33</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_output>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=9803db842f4b4f90a55a1d707fa4e332"/>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=b6f25b842f4b4f90a55a1d707fa4e3ef"/>
+    <sys_hub_trigger_instance_v2 action="delete_multiple" query="flow=b6f25b842f4b4f90a55a1d707fa4e3ef"/>
+    <sys_hub_action_instance_v2 action="delete_multiple" query="flow=b6f25b842f4b4f90a55a1d707fa4e3ef^sys_idNOT IN8503db842f4b4f90a55a1d707fa4e38f"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Create Record">2de05916c31332002841b63b12d3aee1</action_type>
+        <action_type_parent display_value="Create Record">02f0b88cc3c632002841b63b12d3aeff</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>2de05916c31332002841b63b12d3aee1</compiled_snapshot>
+        <display_text/>
+        <flow display_value="SF_ClinicalTaskGeneration">b6f25b842f4b4f90a55a1d707fa4e3ef</flow>
+        <generation_source/>
+        <order>1</order>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-27 07:42:36</sys_created_on>
+        <sys_id>8503db842f4b4f90a55a1d707fa4e38f</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope display_value="CareSync 360">cbba01012fea8310a55a1d707fa4e3a1</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-27 07:42:36</sys_updated_on>
+        <ui_id>af4443fc-18f1-4885-aecb-3013f32fea92</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1VTW/bMAz9K4ZOHZAFdtIFTXoqEnQYsLbDmvXSNgZj0YkwWfYkOa0X5L+Psmw36Me2ArsUWE4R+Ui9R5H09ZYJziZsFGH4YRyNkmE0HA7CcHB0GC1Hw2U04ENAPGQ9piBDQlpYSozrQ49tQJbOeB8PomE4HkRxAhpNFYdxIoUSCcjYgvlOUC5MIaG6aiKmjTuYe3eyFpJrVGxyfdtjBWi6wKJmk+0j19/SlbBESdC54/sCfVsVz9o+78cG596Ra+74hD2G9xYVRyKSgjTYYxkoDjbXFZtYXZJBI/ALJasOsRbKUkLmsPdG/KRrj0KHS5GUJeh93TFuquXN6QwsXFLmxJa6gSbrXCRofE04plBKO923ecBFYUWufEgts4nOZZmpc18S1iVoH4cspSESWDidjnkjI71c53dfW5anQtUlaZwyp/fsTmCtFsvSOj5bhhIzShRnUBRCreJC5xtRBxOXrL+SdOinMr+jS41YqT4kjnifygr9U7LPavMVaOFUnFEaCt71mKnMVIIxD1qoiPGP0jHxyhoNsS+DC0m0KOwJXbDBhu6u184Bx3D8YmNFy4dGqlvf7M2A6/yYHk3dlGE45NutKZdOUb9z7HYL4JkwhpQ9BnUOAhVgBTF+EdJvAAR1wxW7lvXgE2PQGFdp7zEWbGm87wvVgUq/KLTItbCVt54hF2W2gLoa3uRaeEHPUJepo/pJCStoXtu5DqC7K1ihQg0WeZDmOnB6A6d3wUtqIrL7DCl/73PS5DzZB/+r96rqvXJd/rmr23V5KlBy80ybt7sSMyJnMfZt/2hfNs7gqnE2OzP6VzszGoX17w1tTi/uzS/OvW/kkxXqJXqb49w2rvv/OyQ1lw4IPHMt47s8UHgXfHSinHEuMjx4d3yjGhANMZ9BZb7NpweRs2ukd1VtjmOibWCDvHuN3W53+wvgjMMI4wgAAA==</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=8503db842f4b4f90a55a1d707fa4e38f"/>
+    <sys_hub_sub_flow_instance_v2 action="delete_multiple" query="flow=b6f25b842f4b4f90a55a1d707fa4e3ef"/>
+    <sys_hub_flow_logic_instance_v2 action="delete_multiple" query="flow=b6f25b842f4b4f90a55a1d707fa4e3ef^sys_idNOT INf803db842f4b4f90a55a1d707fa4e38d"/>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">91f21b842f4b4f90a55a1d707fa4e3fa</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="SF_ClinicalTaskGeneration">b6f25b842f4b4f90a55a1d707fa4e3ef</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="Assign Subflow Outputs">df4e1945c3e232002841b63b12d3ae3e</logic_definition>
+        <order>2</order>
+        <outputs_assigned>success,message</outputs_assigned>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-27 07:42:36</sys_created_on>
+        <sys_id>f803db842f4b4f90a55a1d707fa4e38d</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-27 07:42:36</sys_updated_on>
+        <ui_id>668940bc-5b7e-4845-a9ed-acaf861a66c3</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/81VXU/bMBT9K8jPSZekSdPyhkBISDCkteMFTdWNP4qFY4fYKXQV/33XxA2FbtKksWlPjY997XPOvUfdEtO5pnN2YU6slStNjm+3REPNyTGxHaXcWhKRNajOIyl+M2kbBZubALkWfyJC76RiLff13yLSQItXON6S4y2RGj80qEup77Hg4LBkiGZiRqcin2YiqXIxS6AoIGVlUgrI+ZgJrFJQcYVH5wOtA55u03igMkZx0AG4DHULZPrpHJT1fE3LPLs0IvzJcc04khB+LyI1aAbOtJsBaTmwa61egTvU1Eup4cnK7/honvhzgqMsyvu9YbkMnvWwOAMHc/SNuq7lO0eMRA29IYwL6JQ73cf6A9eNk0b3JQ4qtas2qqv1594NMlywa5EImgN89raBu93OIk/eeC+8uKBUzO/M45edkHOpX2wLm8pQUMMKnGtl1TlPeUs6uXjfjB76aTu44jU+u6yhaaReLZvWrOXLUyiuHq0ULkZCmUek6Md0BNQ7McJGwegc8bMX+AZa6W25wmuw2D/5VcuHjl/4GSuKYpJNMhqnYz6N87IoYmA8jat0VuZ5WU1KMSbPEbEbe6rA2ldDsZPLh85r7e0NLi37XvgS2srGnSCpNQ+GPEdDkGqcTljxvSCdKqklmnfkwN4frbjmLTjOjsIoi06pzegwbL9b9qdpzClQ+ss0TiZ7abwatB2IDWm0OBZ69S6M8x0Ygph9WBCnSfL/RvEv5myw+W3MBqP/ScTSEkTCfLpoVsb5uMzi2axicZZXkLOsmvI0+cCI+XnV/u+r78w6cBuaR6VFCQuPXeydYxucVUn3oUfT3nvxr9jzD7/JTBMcBwAA</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_pill_compound action="delete_multiple" query="attached_to=b6f25b842f4b4f90a55a1d707fa4e3ef"/>
+    <sys_hub_flow_variable action="delete_multiple" query="model=b6f25b842f4b4f90a55a1d707fa4e3ef"/>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>care_plan</element>
+        <help/>
+        <hint/>
+        <label>Care Plan</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_b6f25b842f4b4f90a55a1d707fa4e3ef</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-27 07:42:29</sys_created_on>
+        <sys_id>1bf29b842f4b4f90a55a1d707fa4e366</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="CareSync 360" source="x_2130921_caresy_0">cbba01012fea8310a55a1d707fa4e3a1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="CareSync 360">cbba01012fea8310a55a1d707fa4e3a1</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-27 07:42:29</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>admission</element>
+        <help/>
+        <hint/>
+        <label>Admission</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_b6f25b842f4b4f90a55a1d707fa4e3ef</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-27 07:42:30</sys_created_on>
+        <sys_id>a7f29b842f4b4f90a55a1d707fa4e39c</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="CareSync 360" source="x_2130921_caresy_0">cbba01012fea8310a55a1d707fa4e3a1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="CareSync 360">cbba01012fea8310a55a1d707fa4e3a1</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-27 07:42:30</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_input_b6f25b842f4b4f90a55a1d707fa4e3ef"/>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>success</element>
+        <help/>
+        <hint/>
+        <label>Success</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_output_b6f25b842f4b4f90a55a1d707fa4e3ef</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-27 07:42:33</sys_created_on>
+        <sys_id>d803db842f4b4f90a55a1d707fa4e321</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="CareSync 360" source="x_2130921_caresy_0">cbba01012fea8310a55a1d707fa4e3a1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="CareSync 360">cbba01012fea8310a55a1d707fa4e3a1</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-27 07:42:33</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>message</element>
+        <help/>
+        <hint/>
+        <label>Message</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_output_b6f25b842f4b4f90a55a1d707fa4e3ef</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-27 07:42:34</sys_created_on>
+        <sys_id>e803db842f4b4f90a55a1d707fa4e339</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="CareSync 360" source="x_2130921_caresy_0">cbba01012fea8310a55a1d707fa4e3a1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="CareSync 360">cbba01012fea8310a55a1d707fa4e3a1</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-27 07:42:34</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_output_b6f25b842f4b4f90a55a1d707fa4e3ef"/>
+    <sys_hub_flow action="UPDATE">
+        <sys_id>08db43842f0b4f90a55a1d707fa4e332</sys_id>
+        <latest_snapshot>b6f25b842f4b4f90a55a1d707fa4e3ef</latest_snapshot>
+        <compiler_build>glide-australia-02-11-2026__patch3-05-25-2026_06-12-2026_1106.zip</compiler_build>
+        <version_record/>
+    </sys_hub_flow>
+    <sys_flow_trigger_plan action="delete_multiple" query="plan_id=08db43842f0b4f90a55a1d707fa4e332"/>
+    <sys_flow_subflow_plan action="delete_multiple" query="plan_id=08db43842f0b4f90a55a1d707fa4e332^sys_idNOT INd103db842f4b4f90a55a1d707fa4e3da"/>
+    <sys_flow_subflow_plan action="INSERT_OR_UPDATE">
+        <plan>{"@class":"com.snc.process_flow.engine.serialization.plan_data.ChunkingPlanData","chunk_data":{"table":"sys_flow_subflow_plan","id":"d103db842f4b4f90a55a1d707fa4e3da","name":"plan","plan_signature":null},"plan_data":"CHUNKING_PLAN"}</plan>
+        <plan_id display_value="SF_ClinicalTaskGeneration">08db43842f0b4f90a55a1d707fa4e332</plan_id>
+        <snapshot>e1a5dfc82f4b4f90a55a1d707fa4e3c5</snapshot>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-27 07:42:37</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>d103db842f4b4f90a55a1d707fa4e3da</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_overrides/>
+        <sys_scope/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-27 07:42:37</sys_updated_on>
+    </sys_flow_subflow_plan>
+</record_update>

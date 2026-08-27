@@ -1,0 +1,1212 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_hub_flow">
+    <sys_hub_flow action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <acls/>
+        <active>true</active>
+        <allow_high_security_roles>false</allow_high_security_roles>
+        <annotation/>
+        <attributes>browserActivatedIn=chrome,integrationActivatedIn=standalone,labelCacheCleanUpExecuted=true,timeFromCreateToActivate=1236000,viewActivatedIn=naturalLanguage</attributes>
+        <authored_on_release_version>29000</authored_on_release_version>
+        <callable_by_client_api>false</callable_by_client_api>
+        <category/>
+        <copied_from/>
+        <copied_from_name/>
+        <description>Processes imaging/radiology clinical tasks and logs processing notifications.</description>
+        <display_name_after_preview/>
+        <flow_priority>MEDIUM</flow_priority>
+        <generation_source/>
+        <internal_name>fl_radiologyprocessing</internal_name>
+        <label_cache>[{"name":"3b3dba3d-e510-4251-a5cf-00862aa1ca8a.__status__.message","label":"2➛Error Status➛Message","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","usedInstances":{"4ec3a3a6-7504-4beb-83dd-deb4bf8565b0":["error_message"]},"attributes":{}},{"name":"trigger.run_start_date_time","label":"Trigger - Record Created or Updated➛Run Start Date/Time","type":"glide_date_time","base_type":"glide_date_time","usedInstances":{"2c21cf30-ecce-4f1b-86ae-2f48ee88418a":["sent_date"]},"attributes":{"test_input_hidden":"true"}},{"name":"trigger.current.admission","label":"Trigger - Record Created or Updated➛Clinical Task Record➛ Admission ","reference":"x_2130921_caresy_0_admission","reference_display":"Admission","type":"reference","base_type":"reference","parent_table_name":"x_2130921_caresy_0_clinical_task","column_name":"admission","usedInstances":{"2c21cf30-ecce-4f1b-86ae-2f48ee88418a":["admission"],"4ec3a3a6-7504-4beb-83dd-deb4bf8565b0":["admission"]}},{"name":"trigger.current.patient","label":"Trigger - Record Created or Updated➛Clinical Task Record➛Patient                    ","reference":"x_2130921_caresy_0_patient","reference_display":"Patient","type":"reference","base_type":"reference","parent_table_name":"x_2130921_caresy_0_clinical_task","column_name":"patient","usedInstances":{"2c21cf30-ecce-4f1b-86ae-2f48ee88418a":["patient"],"4ec3a3a6-7504-4beb-83dd-deb4bf8565b0":["patient"]}},{"name":"trigger.current","label":"Trigger - Record Created or Updated➛Clinical Task Record","reference":"x_2130921_caresy_0_clinical_task","reference_display":"Clinical Task","type":"reference","base_type":"reference","usedInstances":{"3289a5f4-1595-4d0d-8d53-0bf1c767e0fa":["record"],"a593bacc-5bbf-4c3f-b585-62a5eaca0bb8":["record"]},"attributes":{}}]</label_cache>
+        <master_snapshot>4c2cf7082f8f4f90a55a1d707fa4e30e</master_snapshot>
+        <master_snapshot_digest/>
+        <name>FL_RadiologyProcessing</name>
+        <natlang/>
+        <outputs/>
+        <pre_compiled>false</pre_compiled>
+        <remote_trigger_id>5c2cf7082f8f4f90a55a1d707fa4e373</remote_trigger_id>
+        <run_as>user</run_as>
+        <run_with_roles/>
+        <sc_callable>false</sc_callable>
+        <show_draft_actions>false</show_draft_actions>
+        <show_triggered_flows>false</show_triggered_flows>
+        <status>published</status>
+        <substatus/>
+        <sys_class_name>sys_hub_flow</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-27 10:21:36</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>8a67bb8c2f4f4f90a55a1d707fa4e3e2</sys_id>
+        <sys_mod_count>17</sys_mod_count>
+        <sys_name>FL_RadiologyProcessing</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="CareSync 360" source="x_2130921_caresy_0">cbba01012fea8310a55a1d707fa4e3a1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="CareSync 360">cbba01012fea8310a55a1d707fa4e3a1</sys_scope>
+        <sys_update_name>sys_hub_flow_8a67bb8c2f4f4f90a55a1d707fa4e3e2</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-27 10:42:14</sys_updated_on>
+        <type>flow</type>
+        <updation_source/>
+        <version>2</version>
+        <version_record>812c3b082f8f4f90a55a1d707fa4e345</version_record>
+    </sys_hub_flow>
+    <sys_translated_text action="delete_multiple" query="documentkey=8a67bb8c2f4f4f90a55a1d707fa4e3e2"/>
+    <sys_variable_value action="delete_multiple" query="document_key=8a67bb8c2f4f4f90a55a1d707fa4e3e2"/>
+    <sys_flow_record_trigger action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <condition table="x_2130921_caresy_0_clinical_task">active=true^task_type=Imaging^task_status=Pending<item endquery="false" field="active" goto="false" newquery="false" operator="=" or="false" value="true"/>
+            <item display_value="Imaging" endquery="false" field="task_type" goto="false" newquery="false" operator="=" or="false" value="Imaging"/>
+            <item display_value="Pending" endquery="false" field="task_status" goto="false" newquery="false" operator="=" or="false" value="Pending"/>
+        </condition>
+        <name/>
+        <on_delete>false</on_delete>
+        <on_insert>true</on_insert>
+        <on_update>true</on_update>
+        <published_version/>
+        <run_flow_in>background</run_flow_in>
+        <run_on_extended>false</run_on_extended>
+        <run_when_setting>both</run_when_setting>
+        <run_when_user_list/>
+        <run_when_user_setting>any</run_when_user_setting>
+        <sys_class_name>sys_flow_record_trigger</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-27 10:42:14</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>5c2cf7082f8f4f90a55a1d707fa4e373</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_overrides/>
+        <sys_scope display_value="CareSync 360">cbba01012fea8310a55a1d707fa4e3a1</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-27 10:42:14</sys_updated_on>
+        <table>x_2130921_caresy_0_clinical_task</table>
+        <trigger_definition/>
+    </sys_flow_record_trigger>
+    <sys_trigger_runner_mapping action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <data>{"run_flow_in":"background","run_when_user_list":[],"run_when_setting":"both","run_when_user_setting":"any","run_on_extended":"false"}</data>
+        <identifier>8a67bb8c2f4f4f90a55a1d707fa4e3e2</identifier>
+        <identifier_type>flow</identifier_type>
+        <runner>FDTriggerRunner</runner>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-27 10:42:14</sys_created_on>
+        <sys_id>582cf7082f8f4f90a55a1d707fa4e374</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-27 10:42:14</sys_updated_on>
+        <trigger display_value="">5c2cf7082f8f4f90a55a1d707fa4e373</trigger>
+    </sys_trigger_runner_mapping>
+    <sys_trigger_runner_mapping action="delete_multiple" query="identifier=8a67bb8c2f4f4f90a55a1d707fa4e3e2^sys_idNOT IN582cf7082f8f4f90a55a1d707fa4e374"/>
+    <sys_hub_flow_stage action="delete_multiple" query="flow=8a67bb8c2f4f4f90a55a1d707fa4e3e2"/>
+    <sys_flow_cat_variable_model action="delete_multiple" query="id=8a67bb8c2f4f4f90a55a1d707fa4e3e2^sys_idNOT INce67bb8c2f4f4f90a55a1d707fa4e3e3"/>
+    <sys_flow_cat_variable_model action="INSERT_OR_UPDATE">
+        <id>8a67bb8c2f4f4f90a55a1d707fa4e3e2</id>
+        <name>FL_RadiologyProcessing</name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-27 10:21:36</sys_created_on>
+        <sys_id>ce67bb8c2f4f4f90a55a1d707fa4e3e3</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-27 10:21:36</sys_updated_on>
+    </sys_flow_cat_variable_model>
+    <sys_flow_cat_variable action="delete_multiple" query="flow_catalog_model=ce67bb8c2f4f4f90a55a1d707fa4e3e3"/>
+    <sys_hub_flow_input action="delete_multiple" query="model=8a67bb8c2f4f4f90a55a1d707fa4e3e2^sys_idNOT IN03777f8c2f4f4f90a55a1d707fa4e3be,3a777f8c2f4f4f90a55a1d707fa4e36d,8b777f8c2f4f4f90a55a1d707fa4e3b2"/>
+    <sys_hub_flow_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>child_label=FDChangeDetails,child_name=FDChangeDetails,child_type=object,child_type_label=Object,co_type_name=FDCollection,element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,pwd2droppable=true,uiType=array.object,uiTypeLabel=Array.Object</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>changed_fields</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="string">string</internal_type>
+        <label>Changed Fields</label>
+        <mandatory>false</mandatory>
+        <max_length>4000</max_length>
+        <model display_value="FL_RadiologyProcessing">8a67bb8c2f4f4f90a55a1d707fa4e3e2</model>
+        <model_id>8a67bb8c2f4f4f90a55a1d707fa4e3e2</model_id>
+        <model_table>sys_hub_flow</model_table>
+        <name>var__m_sys_hub_flow_input_8a67bb8c2f4f4f90a55a1d707fa4e3e2</name>
+        <next_element/>
+        <order>100</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_only_option/>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-27 10:21:56</sys_created_on>
+        <sys_id>03777f8c2f4f4f90a55a1d707fa4e3be</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="CareSync 360">cbba01012fea8310a55a1d707fa4e3a1</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-27 10:21:56</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=03777f8c2f4f4f90a55a1d707fa4e3be"/>
+    <sys_hub_flow_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,test_input_hidden=true,uiType=table_name,uiTypeLabel=Table Name</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>table_name</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="table_name">table_name</internal_type>
+        <label>Table Name</label>
+        <mandatory>false</mandatory>
+        <max_length>200</max_length>
+        <model display_value="FL_RadiologyProcessing">8a67bb8c2f4f4f90a55a1d707fa4e3e2</model>
+        <model_id>8a67bb8c2f4f4f90a55a1d707fa4e3e2</model_id>
+        <model_table>sys_hub_flow</model_table>
+        <name>var__m_sys_hub_flow_input_8a67bb8c2f4f4f90a55a1d707fa4e3e2</name>
+        <next_element/>
+        <order>101</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_only_option/>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-27 10:21:56</sys_created_on>
+        <sys_id>3a777f8c2f4f4f90a55a1d707fa4e36d</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="CareSync 360">cbba01012fea8310a55a1d707fa4e3a1</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-27 10:41:58</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=3a777f8c2f4f4f90a55a1d707fa4e36d"/>
+    <sys_hub_flow_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=document_id,uiTypeLabel=Document ID</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent>table_name</dependent>
+        <dependent_on_field>table_name</dependent_on_field>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>current</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="document_id">document_id</internal_type>
+        <label>Record</label>
+        <mandatory>true</mandatory>
+        <max_length>200</max_length>
+        <model display_value="FL_RadiologyProcessing">8a67bb8c2f4f4f90a55a1d707fa4e3e2</model>
+        <model_id>8a67bb8c2f4f4f90a55a1d707fa4e3e2</model_id>
+        <model_table>sys_hub_flow</model_table>
+        <name>var__m_sys_hub_flow_input_8a67bb8c2f4f4f90a55a1d707fa4e3e2</name>
+        <next_element/>
+        <order>100</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_only_option/>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-27 10:21:56</sys_created_on>
+        <sys_id>8b777f8c2f4f4f90a55a1d707fa4e3b2</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="CareSync 360">cbba01012fea8310a55a1d707fa4e3a1</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-27 10:41:58</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>true</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=8b777f8c2f4f4f90a55a1d707fa4e3b2"/>
+    <sys_hub_flow_output action="delete_multiple" query="model=8a67bb8c2f4f4f90a55a1d707fa4e3e2"/>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=8a67bb8c2f4f4f90a55a1d707fa4e3e2"/>
+    <sys_hub_trigger_instance_v2 action="delete_multiple" query="flow=8a67bb8c2f4f4f90a55a1d707fa4e3e2^sys_idNOT IN2277fb0c2f4f4f90a55a1d707fa4e362"/>
+    <sys_hub_trigger_instance_v2 action="INSERT_OR_UPDATE">
+        <comment/>
+        <display_text/>
+        <flow display_value="FL_RadiologyProcessing">8a67bb8c2f4f4f90a55a1d707fa4e3e2</flow>
+        <generation_source/>
+        <name>Created or Updated</name>
+        <published_version/>
+        <remote_sys_id/>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-27 10:21:55</sys_created_on>
+        <sys_id>2277fb0c2f4f4f90a55a1d707fa4e362</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-27 10:42:11</sys_updated_on>
+        <trigger_definition display_value="Created or Updated">a45d9180c32222002841b63b12d3aea7</trigger_definition>
+        <trigger_inputs>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</trigger_inputs>
+        <trigger_outputs/>
+        <trigger_type>record_create_or_update</trigger_type>
+        <updation_source/>
+    </sys_hub_trigger_instance_v2>
+    <sys_hub_action_instance_v2 action="delete_multiple" query="flow=8a67bb8c2f4f4f90a55a1d707fa4e3e2^sys_idNOT IN1139bb802f8f4f90a55a1d707fa4e359,13e833802f8f4f90a55a1d707fa4e3ec,6cd73bcc2f4f4f90a55a1d707fa4e3f8,6e483b002f8f4f90a55a1d707fa4e3a7"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Create Record">2de05916c31332002841b63b12d3aee1</action_type>
+        <action_type_parent display_value="Create Record">02f0b88cc3c632002841b63b12d3aeff</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>2de05916c31332002841b63b12d3aee1</compiled_snapshot>
+        <display_text/>
+        <flow display_value="FL_RadiologyProcessing">8a67bb8c2f4f4f90a55a1d707fa4e3e2</flow>
+        <generation_source/>
+        <order>5</order>
+        <parent_ui_id>3b3dba3d-e510-4251-a5cf-00862aa1ca8a</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-27 10:29:28</sys_created_on>
+        <sys_id>1139bb802f8f4f90a55a1d707fa4e359</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_scope display_value="CareSync 360">cbba01012fea8310a55a1d707fa4e3a1</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-27 10:44:05</sys_updated_on>
+        <ui_id>4ec3a3a6-7504-4beb-83dd-deb4bf8565b0</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1VTW/bMAz9K4HOiWHHTZD2NrQIMKBrh7boZWsEWqITbfLHJLmtF+S/j7KVNO0abAOGAQXmm8j3yEdKpD+tmZLshE0TjCfHyVSkSZqO43g8O0qyaZolY5kC4hEbshIKJKSDTCPvDkN2D7rxxkc+TtL4eJxwAQZty2NeVk7lSoBTVcl1tSS0VLbW0N4G0sUeYnDeIcRKaWmwZCef7oasBkNpHBp2sn7h+l3RGjLUBL3xqg8U4dr6Vdv5Pndw0TsqI72eeMjw0WEpkYTkoC0OWQGlBFeZlp0405DBIMjLUrc7xEqVjgIyj3206julncUelyNVJrD37Y48NKw352fg4JoiC9eYABWrSgm0fU8k5tBod7pv6wGXte9xT+nKDOxKN0V50beE7QJs74csjSURWPs6vfJQRn69qh6utirnquxaEpy6EqB3J3DOqKxxXs+aocaCAvEC6lqVS16b6l51ZNJSREtNhyjX1QMltWpZRiC88IjaCtGc7Ged+RaM8lV8oDBE3gyZbe2pBmufaqEm8m+NV9JXFmrgfRs8RRhVu3eU4B6D3M1wOw0S4+ODDyvJnh5SNwB2bxJqes6U53MTx6lcr6n65RJNJBpDzXJRcG82C5CFspaqOwTdAQj8bJj82+xJp1qVZNWDG7BfF2IFZYm6d1231mHxnGgduMb2/jkojXJhm+wLiiD3CqSqaFTbwUdT0ROydEeDACzoCMuQ930BS+8T2/yO8g/qJ1LekaIFGlMZ/oy7XqdZKjNI5QgnSTw6Gk+SEUxEPorj2XQMkAiYQcSDWs6jQPc9626rj+NH7Oed8r/9/7b9f7iwfz1X24U9V6ilfWXQttsaC7p3h7wfvBcbOzgHt8EZtnbyt7Z2Mo277w3t7r64N7+69/7SB5b43Q/XdxIw1AgAAA==</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=1139bb802f8f4f90a55a1d707fa4e359"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Update Record">f9d01dd2c31332002841b63b12d3aea1</action_type>
+        <action_type_parent display_value="Update Record">baf174c8c3c232002841b63b12d3aee4</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>f9d01dd2c31332002841b63b12d3aea1</compiled_snapshot>
+        <display_text/>
+        <flow display_value="FL_RadiologyProcessing">8a67bb8c2f4f4f90a55a1d707fa4e3e2</flow>
+        <generation_source/>
+        <order>4</order>
+        <parent_ui_id>3b3dba3d-e510-4251-a5cf-00862aa1ca8a</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-27 10:28:15</sys_created_on>
+        <sys_id>13e833802f8f4f90a55a1d707fa4e3ec</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_scope display_value="CareSync 360">cbba01012fea8310a55a1d707fa4e3a1</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-27 10:44:05</sys_updated_on>
+        <ui_id>a593bacc-5bbf-4c3f-b585-62a5eaca0bb8</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+VVTW/iMBD9K8hnhBJCUeG2AiGt1G1XbcWlW1mDPYC1zsfaDoVF/PedJE5AUFEq9YI2t/my33uZl7xsmZJsyHoog3AQ9kUURlE3CLq3vXDWj2ZhV0aAGLI2SyBG6jQoUiMpXoHOi8R264xaLNB0RG4MJm63o6pUNtOwmfomyoil0pLqbPjy2mYZGDrPoWHD7VHpUkAaZqip9bFGdIzQbbIilqnIY8LFVZ2885NjX2l9H1OFhgo4YdBmuHaYSCQgc9AW2yyGRIJLzYYNnckpYRDkQ6I3TcdSJa4iGsPaqr90cy8o+uZIzIQXoQm5F6hKz8fg4IlOFi43jV6pEmgrTSTOIddudJirGh4yp9KkGnEw0/V0qvM4ua8UYc0BB+8jtwQCs4JngbyiNX9apm+PNciJSkpJPEWdCtBNBI7e+yx3BZwtQ42lxjFkmUoWPDPpSpXDBCXuLDQFnblO3+hOqxZJB0SBu0OqQmdC+XGZnoJRBYkfdAwN79rMbuxIg7V7KqQh/5MXSCpingIvVSgl4OUmFMPCqMx9o6tW6IHv2n7lZzfnNkwM9gt1cOZ+7de8G0bBoBtyAQbthgdcaJUokog7sL9PPTDy5dZzVf6cIS6AWxviuVyD9+F7T5zk7g5nW/dVwTvi5ssccXtNjvA0rt4SHxkh6J791B5sUrn79sAExaJz68Dl9lceBJH8SRcT19PlP9P5OR9cgLb2wUShlvYd+LUJMCaIDnlF58gIvtia+mLze/gyN4T9oHyuyBP/zV/i9R8oruxlGgkAAA==</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=13e833802f8f4f90a55a1d707fa4e3ec"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Update Record">f9d01dd2c31332002841b63b12d3aea1</action_type>
+        <action_type_parent display_value="Update Record">baf174c8c3c232002841b63b12d3aee4</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>f9d01dd2c31332002841b63b12d3aea1</compiled_snapshot>
+        <display_text/>
+        <flow display_value="FL_RadiologyProcessing">8a67bb8c2f4f4f90a55a1d707fa4e3e2</flow>
+        <generation_source/>
+        <order>1</order>
+        <parent_ui_id>98500ac6-4008-47bf-b870-d07f12178ba4</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-27 10:23:25</sys_created_on>
+        <sys_id>6cd73bcc2f4f4f90a55a1d707fa4e3f8</sys_id>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_scope display_value="CareSync 360">cbba01012fea8310a55a1d707fa4e3a1</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-27 10:44:05</sys_updated_on>
+        <ui_id>3289a5f4-1595-4d0d-8d53-0bf1c767e0fa</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+VVTU/jMBD9K5XPVZQ0gGhvq1ZISCysAPXCImtqT4u1jpO1HWi36n/fSeKkESAoEhdEbvNlv/cyL7nbMiXZhB2hjJNxciLSJE1HcTw6PUoWJ+kiGckUEBM2ZAYypE6LIreS4kfQZZXYbr1VqxXaSJTWovG7HVWlcoWGzTw0UUY8KC2pziZ390NWgKXzPFo22T4rHQpIwwI1tV63iJ4j9JuiimUuyoxwcdUmL8LkLFQG5zOq0FAFJ4mHDNcejUQCsgTtcMgyMBJ8bjds4m1JCYsgr4zedB0PyviGaAZrp/7RzUdx1bdEYiaCCF3Ig0BNejkDDzd0svCl7fTKlUDXaCJxCaX2036uabgqvMpNM+JhodvpXJeZuWwUYd0BvfdROgKBRcWzQt7QWt485E/XLcgzZWpJAkWdC9BdBJ7e+6L0FZwtQ421xhkUhTIrXtj8UdXDBCWLVpqCaKnzJ7rTqZWJQFS4I1IVojPKz+r0HKyqSPykY2h4N2Ru46YanNtTIQ3537JC0hALFHitQi0BrzehGhZWFf4HXfWIAfhuGFZ+cfzWhonxfqF6Z+7Xfs1HSRqPRwkXYNFteMyFVkaRRNyD+/PSA9NQHtw25Y8Z4gC4rSFu6zV4HX7wxIvcRX92cNkUgiOOP80Rp1/JEYHGl7fEe0aIR29+anubVO++65mgWnTuPPjS/S7jOJXnZvDL5isyhHtpgHe6P+aHA1C3fjhTqKV7hUZrBswIpkfe0HpmiFAczEOx+018miuSk7h+vpA3vs3f4v4/ipALuiIJAAA=</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=6cd73bcc2f4f4f90a55a1d707fa4e3f8"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Create Record">2de05916c31332002841b63b12d3aee1</action_type>
+        <action_type_parent display_value="Create Record">02f0b88cc3c632002841b63b12d3aeff</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>2de05916c31332002841b63b12d3aee1</compiled_snapshot>
+        <display_text/>
+        <flow display_value="FL_RadiologyProcessing">8a67bb8c2f4f4f90a55a1d707fa4e3e2</flow>
+        <generation_source/>
+        <order>2</order>
+        <parent_ui_id>98500ac6-4008-47bf-b870-d07f12178ba4</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-27 10:25:27</sys_created_on>
+        <sys_id>6e483b002f8f4f90a55a1d707fa4e3a7</sys_id>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_scope display_value="CareSync 360">cbba01012fea8310a55a1d707fa4e3a1</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-27 10:44:05</sys_updated_on>
+        <ui_id>2c21cf30-ecce-4f1b-86ae-2f48ee88418a</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1VUU/bMBD+K5GfqyppWQV9m4qQJjGYKOKF0ehiX1NvjpPZDpBV/e87x24pjGqbxAvS8ua773zffb673K6ZFGzKJhmmH06yCR9n4/EoTUfHR1kxGRfZSIwB8YgNmIYKCemgUJj3hwG7B9V642M+ysbpySjLORi0XZ7munZyKTk4Wetc1SWhhbSNgu4mBl3sIZLzHsFXUgmDmk1v7wasAUNpHBo2Xb9w/S1pBQUqgl571geKcF3zqu18Pza5CI7aCM8nHTB8dKgFEpElKIsDVoEW4GrTsakzLRkMgrjUqtshVlI7upB57KOVPyntcepxS6TKOAbf7phHwYJ5eQoO5nQzd62JUL6qJUcbNBG4hFa52b4tAC4br3EI6cuM0bVqK30RJGG7C7bvQ5bWEglsfJ2eeSxjOV/VD1dblmdS95JEp6o5qN0JnDOyaJ3ns2aosKKL8gqaRuoyb0x9L/tg4lINS0WH4VLVD5TUylIPgXviQ5IVhmdkP+3NN2Ckr+IzXUPBmwGznZ0psPapFhIx/9F6JqGyWEMeZPAh3MjGfaQE9xjpbgbbaRCYnhxsrKx4aqR+AOzeJDTUzpTna5umY7FeU/VliWbIW0NiuWF0bzYLEJW0lqo7BN0BCPxsmHxvhqCZkpqsKrkG+33BV6A1quCad9Zh9TzQOnCtjX5KsbBt8Q15JHsFQtY0qF3yxdTUQJZeKJk7MA7FoqIzlDHtpwpK7+Tb9I7SJ3QhNYRIml30wnrF6fHwZY2m7dmY4M2drNBL0j9GwPoJ+n1l/Ff3TdX9x3X756nYrtsziUrYV8Zku2uxomclbmFsXuzb6ExuojPu3Oytdm42SfvvHW3eUNy7X7x7/9gDK/juF9f/4ZySCAAA</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=6e483b002f8f4f90a55a1d707fa4e3a7"/>
+    <sys_hub_sub_flow_instance_v2 action="delete_multiple" query="flow=8a67bb8c2f4f4f90a55a1d707fa4e3e2"/>
+    <sys_hub_flow_logic_instance_v2 action="delete_multiple" query="flow=8a67bb8c2f4f4f90a55a1d707fa4e3e2^sys_idNOT INa3d8bf402f8f4f90a55a1d707fa4e39a,abd8bf402f8f4f90a55a1d707fa4e398"/>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">a41c37082f8f4f90a55a1d707fa4e3b5</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="FL_RadiologyProcessing">8a67bb8c2f4f4f90a55a1d707fa4e3e2</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="Top Level Catch">35d60003e6022010a5e40cdd1254dd23</logic_definition>
+        <order>3</order>
+        <outputs_assigned/>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-27 10:27:59</sys_created_on>
+        <sys_id>a3d8bf402f8f4f90a55a1d707fa4e39a</sys_id>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_scope display_value="CareSync 360">cbba01012fea8310a55a1d707fa4e3a1</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-27 10:42:12</sys_updated_on>
+        <ui_id>3b3dba3d-e510-4251-a5cf-00862aa1ca8a</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1YbW+jSAz+KyfUjy1H3tN8q9qL1NO1kS7ZfjkqNGFMMnsThoUhbTfKfz/PCwRIurvtZvvlIkUR2MZj+3nGHtg4IpdJLrOZuMoytoid0T+P5w6LlQyvN05MVuCMnCDIJJF5FgTOubMmPFfCje+sIc2YiH1n5Dst1/Odc98JxSrh8DyZf4ZQomajRBTM1Vm4Li70Q5/JmricxAt3KlMWL7SHs7XW+c52i3cryDKyeOfz22ZA03AJK2J8jLl4ugGVN6Sj8c3V9ex2cj+dXc0+TWtx+85tLGEBqc2PgnsWMeA0iEgIMjPGU6aWuSPJWAn1Yxvf952czV4S+IvMgavbkfor/PnKI/6lQGggYv5SWkSEZ1DqlyyWpaqUGs+lnDWcUohIzmWg8dp/mtciulapFioSSkQ1gDQVaWAoUhrKNN8ZrkhMiRTpa3GLlJqAtK5Vee454BAv5LJUdj31v8VfDXOs6w5YK/7Z6luPRy1+Vvf5ptrf2Wx/cfnb3y6/VwKgEPjG3nDPJGb+Q9V/UxmudNq/TXWnOX4xcvYpZl9yuKW7pAmN5oN5eHFJ+4OL7uWQXgyH1LsY0n7Yob1hNwLaALzOJNvkCpNQBLo0qmuWNo3GUtgChxXEMliRJEHmBEkq1qwKF7Ytd8FR5EaIRUA1GK4ph4uZEneH0QNJGZlrBJL3tJU45/wQq0U9vzds536vQagMMETOvhIV/1ikK2J48ud0co8mOFcoyxJOXh5O4+U0Xk7j5TReTuPlNF6OOF7CJeM0hVi/1zCKEwaF9v1GNd3Km03dGt+IsjBliVQMWqNeZ1kIkaAYwJ5H20t+ximaJCRFdxJSFNQT0C1KbwcERWkr/MHF7ATANQ8QHPWK2tgKq8F9J5xm9Dm7MfNaLYseWLmi5ijfC6QoUKG5NjWvIyCbzjQnnFHr3IFnCTEFWsZW7shSogg5QT6WAsVAsypyKGNf0XfXU3YRYCKhzby8DewRpEBLsBAmiaqfkUi1CaxS8HwV35vg1eHFtKKHXT2t5KZ+qkFFnuFCkKhkVHQ21Gi6FE9/F5GMWazztkouQsLLOyJxGsxzCZkBBuMPvuTKwKxrXQcmbEXO77DFTKwPJEtWLFjjShlGkyp35Wba212y4dDypX1Evnj/O8Y8NoAxc6gAxosGbdIj7d681Wl7LW/ebwHBi85g2AoH3csKcH8oItmRu0Ov9jXJAiiKJYoNr6p+JAiHHwfhcZGy27RanvrGLYGpHg1QXj8UoP6144DuvO89CDg/0HsOdQrVkWygECt3tDImW/tvgrr/NFvKa6Oxyd0ZPvz7WC1b8JfSgdcaDsKw0wfF316v15kPuh6hXY9SGlb4uwtvL17L27kQHEj8a4j7MbMqssU53H4K7YdPrYPMeVREMRzMDNgUQqY+EsyU7Lb4cq0UL4gZC6uiJ5H+q0i+k23/A0Cs7/IDFwAA</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">e01c37082f8f4f90a55a1d707fa4e3af</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="FL_RadiologyProcessing">8a67bb8c2f4f4f90a55a1d707fa4e3e2</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="Top Level Try">e9060aa2c3013010ace8b740ad40dd51</logic_definition>
+        <order>0</order>
+        <outputs_assigned/>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-27 10:27:59</sys_created_on>
+        <sys_id>abd8bf402f8f4f90a55a1d707fa4e398</sys_id>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_scope display_value="CareSync 360">cbba01012fea8310a55a1d707fa4e3a1</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-27 10:42:11</sys_updated_on>
+        <ui_id>98500ac6-4008-47bf-b870-d07f12178ba4</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/6tWyi8tKSgtKQ7JdywuzkzPU7KKjtVRyswDiUHYZYlFmYlJOalQbkpqcmZxZn5eCEjME0ldSmVeYm5mMrJQeX5RdlpOfjlCrBYAD1ouqHEAAAA=</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_pill_compound action="delete_multiple" query="attached_to=8a67bb8c2f4f4f90a55a1d707fa4e3e2"/>
+    <sys_hub_flow_variable action="delete_multiple" query="model=8a67bb8c2f4f4f90a55a1d707fa4e3e2"/>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>current</element>
+        <help/>
+        <hint/>
+        <label>Record</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_8a67bb8c2f4f4f90a55a1d707fa4e3e2</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-27 10:21:56</sys_created_on>
+        <sys_id>0b777f8c2f4f4f90a55a1d707fa4e3b9</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="CareSync 360" source="x_2130921_caresy_0">cbba01012fea8310a55a1d707fa4e3a1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="CareSync 360">cbba01012fea8310a55a1d707fa4e3a1</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-27 10:21:56</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>changed_fields</element>
+        <help/>
+        <hint/>
+        <label>Changed Fields</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_8a67bb8c2f4f4f90a55a1d707fa4e3e2</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-27 10:21:57</sys_created_on>
+        <sys_id>4f777f8c2f4f4f90a55a1d707fa4e3c5</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="CareSync 360" source="x_2130921_caresy_0">cbba01012fea8310a55a1d707fa4e3a1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="CareSync 360">cbba01012fea8310a55a1d707fa4e3a1</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-27 10:21:57</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>table_name</element>
+        <help/>
+        <hint/>
+        <label>Table Name</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_8a67bb8c2f4f4f90a55a1d707fa4e3e2</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-27 10:21:56</sys_created_on>
+        <sys_id>c3777f8c2f4f4f90a55a1d707fa4e3ae</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="CareSync 360" source="x_2130921_caresy_0">cbba01012fea8310a55a1d707fa4e3a1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="CareSync 360">cbba01012fea8310a55a1d707fa4e3a1</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-27 10:21:56</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_input_8a67bb8c2f4f4f90a55a1d707fa4e3e2"/>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_output_8a67bb8c2f4f4f90a55a1d707fa4e3e2"/>
+    <sys_hub_flow_snapshot action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <acls/>
+        <active>true</active>
+        <allow_high_security_roles>false</allow_high_security_roles>
+        <annotation/>
+        <attributes>browserActivatedIn=chrome,integrationActivatedIn=standalone,labelCacheCleanUpExecuted=true,viewActivatedIn=naturalLanguage</attributes>
+        <authored_on_release_version>29000</authored_on_release_version>
+        <callable_by_client_api>false</callable_by_client_api>
+        <category/>
+        <copied_from/>
+        <copied_from_name/>
+        <description>Processes imaging/radiology clinical tasks and logs processing notifications.</description>
+        <flow_priority>MEDIUM</flow_priority>
+        <internal_name>fl_radiologyprocessing</internal_name>
+        <label_cache>[{"name":"3b3dba3d-e510-4251-a5cf-00862aa1ca8a.__status__.message","label":"2➛Error Status➛Message","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","usedInstances":{"4ec3a3a6-7504-4beb-83dd-deb4bf8565b0":["error_message"]},"attributes":{}},{"name":"trigger.run_start_date_time","label":"Trigger - Record Created or Updated➛Run Start Date/Time","type":"glide_date_time","base_type":"glide_date_time","usedInstances":{"2c21cf30-ecce-4f1b-86ae-2f48ee88418a":["sent_date"]},"attributes":{"test_input_hidden":"true"}},{"name":"trigger.current.admission","label":"Trigger - Record Created or Updated➛Clinical Task Record➛ Admission ","reference":"x_2130921_caresy_0_admission","reference_display":"Admission","type":"reference","base_type":"reference","parent_table_name":"x_2130921_caresy_0_clinical_task","column_name":"admission","usedInstances":{"2c21cf30-ecce-4f1b-86ae-2f48ee88418a":["admission"],"4ec3a3a6-7504-4beb-83dd-deb4bf8565b0":["admission"]}},{"name":"trigger.current.patient","label":"Trigger - Record Created or Updated➛Clinical Task Record➛Patient                    ","reference":"x_2130921_caresy_0_patient","reference_display":"Patient","type":"reference","base_type":"reference","parent_table_name":"x_2130921_caresy_0_clinical_task","column_name":"patient","usedInstances":{"2c21cf30-ecce-4f1b-86ae-2f48ee88418a":["patient"],"4ec3a3a6-7504-4beb-83dd-deb4bf8565b0":["patient"]}},{"name":"trigger.current","label":"Trigger - Record Created or Updated➛Clinical Task Record","reference":"x_2130921_caresy_0_clinical_task","reference_display":"Clinical Task","type":"reference","base_type":"reference","usedInstances":{"3289a5f4-1595-4d0d-8d53-0bf1c767e0fa":["record"],"a593bacc-5bbf-4c3f-b585-62a5eaca0bb8":["record"]},"attributes":{}}]</label_cache>
+        <master>true</master>
+        <name>FL_RadiologyProcessing</name>
+        <natlang/>
+        <outputs/>
+        <parent_flow display_value="FL_RadiologyProcessing">8a67bb8c2f4f4f90a55a1d707fa4e3e2</parent_flow>
+        <remote_trigger_id/>
+        <run_as>user</run_as>
+        <run_with_roles/>
+        <sc_callable>false</sc_callable>
+        <status>published</status>
+        <sys_class_name>sys_hub_flow_snapshot</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-27 10:42:13</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>4c2cf7082f8f4f90a55a1d707fa4e30e</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_overrides/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="CareSync 360">cbba01012fea8310a55a1d707fa4e3a1</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-27 10:42:13</sys_updated_on>
+        <type>flow</type>
+        <version>2</version>
+    </sys_hub_flow_snapshot>
+    <sys_translated_text action="delete_multiple" query="documentkey=4c2cf7082f8f4f90a55a1d707fa4e30e"/>
+    <sys_variable_value action="delete_multiple" query="document_key=4c2cf7082f8f4f90a55a1d707fa4e30e"/>
+    <sys_hub_flow_stage action="delete_multiple" query="flow=4c2cf7082f8f4f90a55a1d707fa4e30e"/>
+    <sys_flow_cat_variable_model action="delete_multiple" query="id=4c2cf7082f8f4f90a55a1d707fa4e30e^sys_idNOT IN0c2cf7082f8f4f90a55a1d707fa4e30f"/>
+    <sys_flow_cat_variable_model action="INSERT_OR_UPDATE">
+        <id>4c2cf7082f8f4f90a55a1d707fa4e30e</id>
+        <name>FL_RadiologyProcessing</name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-27 10:42:13</sys_created_on>
+        <sys_id>0c2cf7082f8f4f90a55a1d707fa4e30f</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-27 10:42:13</sys_updated_on>
+    </sys_flow_cat_variable_model>
+    <sys_flow_cat_variable action="delete_multiple" query="flow_catalog_model=0c2cf7082f8f4f90a55a1d707fa4e30f"/>
+    <sys_hub_flow_input action="delete_multiple" query="model=4c2cf7082f8f4f90a55a1d707fa4e30e^sys_idNOT IN002cf7082f8f4f90a55a1d707fa4e331,482cf7082f8f4f90a55a1d707fa4e31d,802cf7082f8f4f90a55a1d707fa4e33d"/>
+    <sys_hub_flow_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>child_label=FDChangeDetails,child_name=FDChangeDetails,child_type=object,child_type_label=Object,element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,pwd2droppable=true,uiType=array.object,uiTypeLabel=Array.Object</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>changed_fields</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="string">string</internal_type>
+        <label>Changed Fields</label>
+        <mandatory>false</mandatory>
+        <max_length>4000</max_length>
+        <model display_value="FL_RadiologyProcessing">4c2cf7082f8f4f90a55a1d707fa4e30e</model>
+        <model_id>4c2cf7082f8f4f90a55a1d707fa4e30e</model_id>
+        <model_table>sys_hub_flow_snapshot</model_table>
+        <name>var__m_sys_hub_flow_input_4c2cf7082f8f4f90a55a1d707fa4e30e</name>
+        <next_element/>
+        <order>100</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_only_option/>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-27 10:42:13</sys_created_on>
+        <sys_id>002cf7082f8f4f90a55a1d707fa4e331</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="CareSync 360">cbba01012fea8310a55a1d707fa4e3a1</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-27 10:42:13</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=002cf7082f8f4f90a55a1d707fa4e331"/>
+    <sys_hub_flow_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=document_id,uiTypeLabel=Document ID</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent>table_name</dependent>
+        <dependent_on_field>table_name</dependent_on_field>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>current</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="document_id">document_id</internal_type>
+        <label>Record</label>
+        <mandatory>true</mandatory>
+        <max_length>200</max_length>
+        <model display_value="FL_RadiologyProcessing">4c2cf7082f8f4f90a55a1d707fa4e30e</model>
+        <model_id>4c2cf7082f8f4f90a55a1d707fa4e30e</model_id>
+        <model_table>sys_hub_flow_snapshot</model_table>
+        <name>var__m_sys_hub_flow_input_4c2cf7082f8f4f90a55a1d707fa4e30e</name>
+        <next_element/>
+        <order>100</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_only_option/>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-27 10:42:13</sys_created_on>
+        <sys_id>482cf7082f8f4f90a55a1d707fa4e31d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="CareSync 360">cbba01012fea8310a55a1d707fa4e3a1</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-27 10:42:13</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>true</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=482cf7082f8f4f90a55a1d707fa4e31d"/>
+    <sys_hub_flow_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,test_input_hidden=true,uiType=table_name,uiTypeLabel=Table Name</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>table_name</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="table_name">table_name</internal_type>
+        <label>Table Name</label>
+        <mandatory>false</mandatory>
+        <max_length>200</max_length>
+        <model display_value="FL_RadiologyProcessing">4c2cf7082f8f4f90a55a1d707fa4e30e</model>
+        <model_id>4c2cf7082f8f4f90a55a1d707fa4e30e</model_id>
+        <model_table>sys_hub_flow_snapshot</model_table>
+        <name>var__m_sys_hub_flow_input_4c2cf7082f8f4f90a55a1d707fa4e30e</name>
+        <next_element/>
+        <order>101</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_only_option/>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-27 10:42:13</sys_created_on>
+        <sys_id>802cf7082f8f4f90a55a1d707fa4e33d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="CareSync 360">cbba01012fea8310a55a1d707fa4e3a1</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-27 10:42:13</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=802cf7082f8f4f90a55a1d707fa4e33d"/>
+    <sys_hub_flow_output action="delete_multiple" query="model=4c2cf7082f8f4f90a55a1d707fa4e30e"/>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=4c2cf7082f8f4f90a55a1d707fa4e30e"/>
+    <sys_hub_trigger_instance_v2 action="delete_multiple" query="flow=4c2cf7082f8f4f90a55a1d707fa4e30e^sys_idNOT IN502cf7082f8f4f90a55a1d707fa4e359"/>
+    <sys_hub_trigger_instance_v2 action="INSERT_OR_UPDATE">
+        <comment/>
+        <display_text/>
+        <flow display_value="FL_RadiologyProcessing">4c2cf7082f8f4f90a55a1d707fa4e30e</flow>
+        <generation_source/>
+        <name>Created or Updated</name>
+        <published_version/>
+        <remote_sys_id/>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-27 10:42:14</sys_created_on>
+        <sys_id>502cf7082f8f4f90a55a1d707fa4e359</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-27 10:42:14</sys_updated_on>
+        <trigger_definition display_value="Created or Updated">a45d9180c32222002841b63b12d3aea7</trigger_definition>
+        <trigger_inputs>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</trigger_inputs>
+        <trigger_outputs/>
+        <trigger_type>record_create_or_update</trigger_type>
+        <updation_source/>
+    </sys_hub_trigger_instance_v2>
+    <sys_hub_action_instance_v2 action="delete_multiple" query="flow=4c2cf7082f8f4f90a55a1d707fa4e30e^sys_idNOT IN542cf7082f8f4f90a55a1d707fa4e354,582cf7082f8f4f90a55a1d707fa4e355,5c2cf7082f8f4f90a55a1d707fa4e356,d02cf7082f8f4f90a55a1d707fa4e356"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Update Record">f9d01dd2c31332002841b63b12d3aea1</action_type>
+        <action_type_parent display_value="Update Record">baf174c8c3c232002841b63b12d3aee4</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>f9d01dd2c31332002841b63b12d3aea1</compiled_snapshot>
+        <display_text/>
+        <flow display_value="FL_RadiologyProcessing">4c2cf7082f8f4f90a55a1d707fa4e30e</flow>
+        <generation_source/>
+        <order>1</order>
+        <parent_ui_id>98500ac6-4008-47bf-b870-d07f12178ba4</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-27 10:42:14</sys_created_on>
+        <sys_id>542cf7082f8f4f90a55a1d707fa4e354</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope display_value="CareSync 360">cbba01012fea8310a55a1d707fa4e3a1</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-27 10:42:14</sys_updated_on>
+        <ui_id>3289a5f4-1595-4d0d-8d53-0bf1c767e0fa</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+VVTU/jMBD9K5XPVZQ0gGhvq1ZISCysAPXCImtqT4u1jpO1HWi36n/fSeKkESAoEhdEbvNlv/cyL7nbMiXZhB2hjJNxciLSJE1HcTw6PUoWJ+kiGckUEBM2ZAYypE6LIreS4kfQZZXYbr1VqxXaSJTWovG7HVWlcoWGzTw0UUY8KC2pziZ390NWgKXzPFo22T4rHQpIwwI1tV63iJ4j9JuiimUuyoxwcdUmL8LkLFQG5zOq0FAFJ4mHDNcejUQCsgTtcMgyMBJ8bjds4m1JCYsgr4zedB0PyviGaAZrp/7RzUdx1bdEYiaCCF3Ig0BNejkDDzd0svCl7fTKlUDXaCJxCaX2036uabgqvMpNM+JhodvpXJeZuWwUYd0BvfdROgKBRcWzQt7QWt485E/XLcgzZWpJAkWdC9BdBJ7e+6L0FZwtQ421xhkUhTIrXtj8UdXDBCWLVpqCaKnzJ7rTqZWJQFS4I1IVojPKz+r0HKyqSPykY2h4N2Ru46YanNtTIQ3537JC0hALFHitQi0BrzehGhZWFf4HXfWIAfhuGFZ+cfzWhonxfqF6Z+7Xfs1HSRqPRwkXYNFteMyFVkaRRNyD+/PSA9NQHtw25Y8Z4gC4rSFu6zV4HX7wxIvcRX92cNkUgiOOP80Rp1/JEYHGl7fEe0aIR29+anubVO++65mgWnTuPPjS/S7jOJXnZvDL5isyhHtpgHe6P+aHA1C3fjhTqKV7hUZrBswIpkfe0HpmiFAczEOx+018miuSk7h+vpA3vs3f4v4/ipALuiIJAAA=</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=542cf7082f8f4f90a55a1d707fa4e354"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Create Record">2de05916c31332002841b63b12d3aee1</action_type>
+        <action_type_parent display_value="Create Record">02f0b88cc3c632002841b63b12d3aeff</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>2de05916c31332002841b63b12d3aee1</compiled_snapshot>
+        <display_text/>
+        <flow display_value="FL_RadiologyProcessing">4c2cf7082f8f4f90a55a1d707fa4e30e</flow>
+        <generation_source/>
+        <order>2</order>
+        <parent_ui_id>98500ac6-4008-47bf-b870-d07f12178ba4</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-27 10:42:14</sys_created_on>
+        <sys_id>582cf7082f8f4f90a55a1d707fa4e355</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope display_value="CareSync 360">cbba01012fea8310a55a1d707fa4e3a1</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-27 10:42:14</sys_updated_on>
+        <ui_id>2c21cf30-ecce-4f1b-86ae-2f48ee88418a</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1VUU/bMBD+K5GfqyppWQV9m4qQJjGYKOKF0ehiX1NvjpPZDpBV/e87x24pjGqbxAvS8ua773zffb673K6ZFGzKJhmmH06yCR9n4/EoTUfHR1kxGRfZSIwB8YgNmIYKCemgUJj3hwG7B9V642M+ysbpySjLORi0XZ7munZyKTk4Wetc1SWhhbSNgu4mBl3sIZLzHsFXUgmDmk1v7wasAUNpHBo2Xb9w/S1pBQUqgl571geKcF3zqu18Pza5CI7aCM8nHTB8dKgFEpElKIsDVoEW4GrTsakzLRkMgrjUqtshVlI7upB57KOVPyntcepxS6TKOAbf7phHwYJ5eQoO5nQzd62JUL6qJUcbNBG4hFa52b4tAC4br3EI6cuM0bVqK30RJGG7C7bvQ5bWEglsfJ2eeSxjOV/VD1dblmdS95JEp6o5qN0JnDOyaJ3ns2aosKKL8gqaRuoyb0x9L/tg4lINS0WH4VLVD5TUylIPgXviQ5IVhmdkP+3NN2Ckr+IzXUPBmwGznZ0psPapFhIx/9F6JqGyWEMeZPAh3MjGfaQE9xjpbgbbaRCYnhxsrKx4aqR+AOzeJDTUzpTna5umY7FeU/VliWbIW0NiuWF0bzYLEJW0lqo7BN0BCPxsmHxvhqCZkpqsKrkG+33BV6A1quCad9Zh9TzQOnCtjX5KsbBt8Q15JHsFQtY0qF3yxdTUQJZeKJk7MA7FoqIzlDHtpwpK7+Tb9I7SJ3QhNYRIml30wnrF6fHwZY2m7dmY4M2drNBL0j9GwPoJ+n1l/Ff3TdX9x3X756nYrtsziUrYV8Zku2uxomclbmFsXuzb6ExuojPu3Oytdm42SfvvHW3eUNy7X7x7/9gDK/juF9f/4ZySCAAA</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=582cf7082f8f4f90a55a1d707fa4e355"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Create Record">2de05916c31332002841b63b12d3aee1</action_type>
+        <action_type_parent display_value="Create Record">02f0b88cc3c632002841b63b12d3aeff</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>2de05916c31332002841b63b12d3aee1</compiled_snapshot>
+        <display_text/>
+        <flow display_value="FL_RadiologyProcessing">4c2cf7082f8f4f90a55a1d707fa4e30e</flow>
+        <generation_source/>
+        <order>5</order>
+        <parent_ui_id>3b3dba3d-e510-4251-a5cf-00862aa1ca8a</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-27 10:42:14</sys_created_on>
+        <sys_id>5c2cf7082f8f4f90a55a1d707fa4e356</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope display_value="CareSync 360">cbba01012fea8310a55a1d707fa4e3a1</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-27 10:42:14</sys_updated_on>
+        <ui_id>4ec3a3a6-7504-4beb-83dd-deb4bf8565b0</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1VTW/bMAz9K4HOiWHHTZD2NrQIMKBrh7boZWsEWqITbfLHJLmtF+S/j7KVNO0abAOGAQXmm8j3yEdKpD+tmZLshE0TjCfHyVSkSZqO43g8O0qyaZolY5kC4hEbshIKJKSDTCPvDkN2D7rxxkc+TtL4eJxwAQZty2NeVk7lSoBTVcl1tSS0VLbW0N4G0sUeYnDeIcRKaWmwZCef7oasBkNpHBp2sn7h+l3RGjLUBL3xqg8U4dr6Vdv5Pndw0TsqI72eeMjw0WEpkYTkoC0OWQGlBFeZlp0405DBIMjLUrc7xEqVjgIyj3206julncUelyNVJrD37Y48NKw352fg4JoiC9eYABWrSgm0fU8k5tBod7pv6wGXte9xT+nKDOxKN0V50beE7QJs74csjSURWPs6vfJQRn69qh6utirnquxaEpy6EqB3J3DOqKxxXs+aocaCAvEC6lqVS16b6l51ZNJSREtNhyjX1QMltWpZRiC88IjaCtGc7Ged+RaM8lV8oDBE3gyZbe2pBmufaqEm8m+NV9JXFmrgfRs8RRhVu3eU4B6D3M1wOw0S4+ODDyvJnh5SNwB2bxJqes6U53MTx6lcr6n65RJNJBpDzXJRcG82C5CFspaqOwTdAQj8bJj82+xJp1qVZNWDG7BfF2IFZYm6d1231mHxnGgduMb2/jkojXJhm+wLiiD3CqSqaFTbwUdT0ROydEeDACzoCMuQ930BS+8T2/yO8g/qJ1LekaIFGlMZ/oy7XqdZKjNI5QgnSTw6Gk+SEUxEPorj2XQMkAiYQcSDWs6jQPc9626rj+NH7Oed8r/9/7b9f7iwfz1X24U9V6ilfWXQttsaC7p3h7wfvBcbOzgHt8EZtnbyt7Z2Mo277w3t7r64N7+69/7SB5b43Q/XdxIw1AgAAA==</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=5c2cf7082f8f4f90a55a1d707fa4e356"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Update Record">f9d01dd2c31332002841b63b12d3aea1</action_type>
+        <action_type_parent display_value="Update Record">baf174c8c3c232002841b63b12d3aee4</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>f9d01dd2c31332002841b63b12d3aea1</compiled_snapshot>
+        <display_text/>
+        <flow display_value="FL_RadiologyProcessing">4c2cf7082f8f4f90a55a1d707fa4e30e</flow>
+        <generation_source/>
+        <order>4</order>
+        <parent_ui_id>3b3dba3d-e510-4251-a5cf-00862aa1ca8a</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-27 10:42:14</sys_created_on>
+        <sys_id>d02cf7082f8f4f90a55a1d707fa4e356</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope display_value="CareSync 360">cbba01012fea8310a55a1d707fa4e3a1</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-27 10:42:14</sys_updated_on>
+        <ui_id>a593bacc-5bbf-4c3f-b585-62a5eaca0bb8</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+VVTW/iMBD9K8hnhBJCUeG2AiGt1G1XbcWlW1mDPYC1zsfaDoVF/PedJE5AUFEq9YI2t/my33uZl7xsmZJsyHoog3AQ9kUURlE3CLq3vXDWj2ZhV0aAGLI2SyBG6jQoUiMpXoHOi8R264xaLNB0RG4MJm63o6pUNtOwmfomyoil0pLqbPjy2mYZGDrPoWHD7VHpUkAaZqip9bFGdIzQbbIilqnIY8LFVZ2885NjX2l9H1OFhgo4YdBmuHaYSCQgc9AW2yyGRIJLzYYNnckpYRDkQ6I3TcdSJa4iGsPaqr90cy8o+uZIzIQXoQm5F6hKz8fg4IlOFi43jV6pEmgrTSTOIddudJirGh4yp9KkGnEw0/V0qvM4ua8UYc0BB+8jtwQCs4JngbyiNX9apm+PNciJSkpJPEWdCtBNBI7e+yx3BZwtQ42lxjFkmUoWPDPpSpXDBCXuLDQFnblO3+hOqxZJB0SBu0OqQmdC+XGZnoJRBYkfdAwN79rMbuxIg7V7KqQh/5MXSCpingIvVSgl4OUmFMPCqMx9o6tW6IHv2n7lZzfnNkwM9gt1cOZ+7de8G0bBoBtyAQbthgdcaJUokog7sL9PPTDy5dZzVf6cIS6AWxviuVyD9+F7T5zk7g5nW/dVwTvi5ssccXtNjvA0rt4SHxkh6J791B5sUrn79sAExaJz68Dl9lceBJH8SRcT19PlP9P5OR9cgLb2wUShlvYd+LUJMCaIDnlF58gIvtia+mLze/gyN4T9oHyuyBP/zV/i9R8oruxlGgkAAA==</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=d02cf7082f8f4f90a55a1d707fa4e356"/>
+    <sys_hub_sub_flow_instance_v2 action="delete_multiple" query="flow=4c2cf7082f8f4f90a55a1d707fa4e30e"/>
+    <sys_hub_flow_logic_instance_v2 action="delete_multiple" query="flow=4c2cf7082f8f4f90a55a1d707fa4e30e^sys_idNOT IN102cf7082f8f4f90a55a1d707fa4e352,942cf7082f8f4f90a55a1d707fa4e350"/>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">a41c37082f8f4f90a55a1d707fa4e3b5</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="FL_RadiologyProcessing">4c2cf7082f8f4f90a55a1d707fa4e30e</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="Top Level Catch">35d60003e6022010a5e40cdd1254dd23</logic_definition>
+        <order>3</order>
+        <outputs_assigned/>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-27 10:42:14</sys_created_on>
+        <sys_id>102cf7082f8f4f90a55a1d707fa4e352</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-27 10:42:14</sys_updated_on>
+        <ui_id>3b3dba3d-e510-4251-a5cf-00862aa1ca8a</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1ZUW/iOBD+K6eoj5QLFArlrWoPqadtkQ52Xy5VZGyHetc4Wduh7SL++41jxyRAV9su1fUhUoWSGduZme/zN3GzDtJcZ7lWs/RSKbYQwejf+1bAhLHB9ToQaEmDURDHSiOdqzgOWsEK8dwY11GwolKxVETBKAo67TAKWlGA02XG6dNk/pViDZ61MRFqr07wqrwoJn1FK9TmSCzaUy2ZWBQrnKwKXxRsNnC3pEqhxRvnb3YDmuIHukR2jTFPH6+pyZvK0fj68mp2M7mbzi5nn6e1uKPgRmi6oNLlR2j7JGGUkzhBmGplB0+ZecwtysbGWExbR1EU5Gz2nNFPaE65uR2Zn3K9yKwIP5IiEqeCP/sRCeKKev8DE9q7vNWu7O1sZ1FCE5RzHRd47c/mtYiuTKqlC2ENqMZUylTGliJ+oJb5duASCYJ0Kl+KO5XEBlT4OpV5TzGnYqEfvLMXmt8N/NUwh7pugXXm362+W/GoxVf1NV9V+1uX7TuXv/vz8oceAIPAT/ZG+0RD5r9U/VeV4bJI+49poTTHL0bOPgv2Pac3ZJs0Isl8MMenF+R8cNq7GJLT4ZCEp0Nyjs9If9hLKNkBvM4kJ3LlEJzGRWmMavoxO8JSjqWcLqnQ8RJlGTAnzmS6YlW4QLbaCw6mdgJYxKQAo23L0YZMUXuL0RckGZoXCGRvkRWRc36I1Wk9v1ds5/P+DqEUhRA5+4FM/ONULpHlyd/TyR0Mgb5CmMo4ev7StJemvTTtpWkvTXtp2ssR2wt+YJxIKqrnGiO24MqQhHtNJbAtKDZ/QTRI1xgqyMAUp60w6wB1wG9IAyLjT0n7jQ0sCkuWacPIFViKqpVGeOKmVYitFIh/YuKbnVIJH45oObu2i5rQYADzURUM4XvBMmKXKT1XNvN6HfShxfYTL3AKRp1WQJ80FYQSn4PfJd5iSDIBjniDYYWNBXBV7Ac8sReacQmF9LCrkL+NXfWsObkGZoLA5ljnkpaVSRmmyhbG3kwyA411a8NcNzLl+VLc2ZwNMFY/KsA4y/UeYrmCSGhmsjXhu1yS6UP6+E8Z6piJojDOyVOMuL9DGiR8nmsTqEFYPasrjpTaRgMpx99zM8VG4h4W20Q2B1mzaXkuu+71SjrbZvXB2KzKoGpk9qHucvnWZ75XCn1gwb3UHZ+7R+Rz2DD6rYy+3yFwTbcbcW7E+UNSuRHaRmg/LDvvHZRhMuiiPur2552zbtgJ5+cdiuDibDDs4EHvogL1X4ae7rC0xbv2HcBBbl/idyCflMZSjgxORwJ9eEzQHWpXRyTCcfF2MlItdF1YfKmrx0Ow1w+G4H/pSFi0mLceBoP3eJWlwjyAVL41dfb1sFDMXYF76c2h3AGEDMLOcIDx2Tk1O6Df75/NB70QkV5ICMGVHbANYi8qx/x5mnKKxA71ZxDXn2OT0fvQ/4j9+NjkT1zWh6Ww9P7/evjii+fKcdvXBzPzD+iZsd2UX0WN4xk4wXDV9JjKb2bzbG2b/wAB0VttXx0AAA==</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">e01c37082f8f4f90a55a1d707fa4e3af</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="FL_RadiologyProcessing">4c2cf7082f8f4f90a55a1d707fa4e30e</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="Top Level Try">e9060aa2c3013010ace8b740ad40dd51</logic_definition>
+        <order>0</order>
+        <outputs_assigned/>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-27 10:42:14</sys_created_on>
+        <sys_id>942cf7082f8f4f90a55a1d707fa4e350</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-27 10:42:14</sys_updated_on>
+        <ui_id>98500ac6-4008-47bf-b870-d07f12178ba4</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/6tWyi8tKSgtKQ7JdywuzkzPU7KKjtVRyswDiUHYZYlFmYlJOalQbkpqcmZxZn5eCEjME0ldSmVeYm5mMrJQeX5RdlpOfjlCrBYAD1ouqHEAAAA=</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_pill_compound action="delete_multiple" query="attached_to=4c2cf7082f8f4f90a55a1d707fa4e30e"/>
+    <sys_hub_flow_variable action="delete_multiple" query="model=4c2cf7082f8f4f90a55a1d707fa4e30e"/>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>current</element>
+        <help/>
+        <hint/>
+        <label>Record</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_4c2cf7082f8f4f90a55a1d707fa4e30e</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-27 10:42:13</sys_created_on>
+        <sys_id>082cf7082f8f4f90a55a1d707fa4e32c</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="CareSync 360" source="x_2130921_caresy_0">cbba01012fea8310a55a1d707fa4e3a1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="CareSync 360">cbba01012fea8310a55a1d707fa4e3a1</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-27 10:42:13</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>table_name</element>
+        <help/>
+        <hint/>
+        <label>Table Name</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_4c2cf7082f8f4f90a55a1d707fa4e30e</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-27 10:42:13</sys_created_on>
+        <sys_id>442cf7082f8f4f90a55a1d707fa4e344</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="CareSync 360" source="x_2130921_caresy_0">cbba01012fea8310a55a1d707fa4e3a1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="CareSync 360">cbba01012fea8310a55a1d707fa4e3a1</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-27 10:42:13</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>changed_fields</element>
+        <help/>
+        <hint/>
+        <label>Changed Fields</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_4c2cf7082f8f4f90a55a1d707fa4e30e</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-27 10:42:13</sys_created_on>
+        <sys_id>882cf7082f8f4f90a55a1d707fa4e338</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="CareSync 360" source="x_2130921_caresy_0">cbba01012fea8310a55a1d707fa4e3a1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="CareSync 360">cbba01012fea8310a55a1d707fa4e3a1</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-27 10:42:13</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_input_4c2cf7082f8f4f90a55a1d707fa4e30e"/>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_output_4c2cf7082f8f4f90a55a1d707fa4e30e"/>
+    <sys_hub_flow action="UPDATE">
+        <sys_id>8a67bb8c2f4f4f90a55a1d707fa4e3e2</sys_id>
+        <latest_snapshot>4c2cf7082f8f4f90a55a1d707fa4e30e</latest_snapshot>
+        <compiler_build>glide-australia-02-11-2026__patch3-05-25-2026_06-12-2026_1106.zip</compiler_build>
+        <version_record/>
+    </sys_hub_flow>
+    <sys_flow_trigger_plan action="delete_multiple" query="plan_id=8a67bb8c2f4f4f90a55a1d707fa4e3e2^sys_idNOT IN502cf7082f8f4f90a55a1d707fa4e375"/>
+    <sys_flow_trigger_plan action="INSERT_OR_UPDATE">
+        <binding_strategy>com.snc.process_flow.engine.binding.OncePerRecord</binding_strategy>
+        <plan>{"@class":"com.snc.process_flow.engine.serialization.plan_data.ChunkingPlanData","chunk_data":{"table":"sys_flow_trigger_plan","id":"502cf7082f8f4f90a55a1d707fa4e375","name":"plan","plan_signature":null},"plan_data":"CHUNKING_PLAN"}</plan>
+        <plan_id>8a67bb8c2f4f4f90a55a1d707fa4e3e2</plan_id>
+        <snapshot>078c77482f8f4f90a55a1d707fa4e34f</snapshot>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-27 10:42:14</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>502cf7082f8f4f90a55a1d707fa4e375</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_overrides/>
+        <sys_scope/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-27 10:42:14</sys_updated_on>
+        <trigger display_value="">5c2cf7082f8f4f90a55a1d707fa4e373</trigger>
+    </sys_flow_trigger_plan>
+    <sys_flow_subflow_plan action="delete_multiple" query="plan_id=8a67bb8c2f4f4f90a55a1d707fa4e3e2"/>
+</record_update>
