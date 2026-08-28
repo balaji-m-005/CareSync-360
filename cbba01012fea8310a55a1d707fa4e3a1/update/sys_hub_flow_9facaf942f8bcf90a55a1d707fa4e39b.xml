@@ -1,0 +1,1212 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_hub_flow">
+    <sys_hub_flow action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <acls/>
+        <active>true</active>
+        <allow_high_security_roles>false</allow_high_security_roles>
+        <annotation/>
+        <attributes>browserActivatedIn=chrome,integrationActivatedIn=standalone,labelCacheCleanUpExecuted=true,timeFromCreateToActivate=2644000,viewActivatedIn=naturalLanguage</attributes>
+        <authored_on_release_version>29000</authored_on_release_version>
+        <callable_by_client_api>false</callable_by_client_api>
+        <category/>
+        <copied_from/>
+        <copied_from_name/>
+        <description>Coordinates clinical handoff tasks and records handoff processing notifications.</description>
+        <display_name_after_preview/>
+        <flow_priority>MEDIUM</flow_priority>
+        <generation_source/>
+        <internal_name>fl_handoffmanagement</internal_name>
+        <label_cache>[{"name":"trigger.current","label":"Trigger - Record Created or Updated➛Clinical Task Record","reference":"x_2130921_caresy_0_clinical_task","reference_display":"Clinical Task","type":"reference","base_type":"reference","usedInstances":{"45395496-8522-4635-9d13-116ecfab8c46":["record"],"3d613009-af5d-496f-a396-006be1e4f4b3":["record"]},"attributes":{}},{"name":"trigger.current.patient","label":"Trigger - Record Created or Updated➛Clinical Task Record➛Patient                    ","reference":"x_2130921_caresy_0_patient","reference_display":"Patient","type":"reference","base_type":"reference","parent_table_name":"x_2130921_caresy_0_clinical_task","column_name":"patient","usedInstances":{"02632b6b-3185-48bc-8eca-2169593b5a54":["patient"],"43751ec4-950c-47fb-86a6-de5bfa72e287":["patient"]}},{"name":"trigger.current.admission","label":"Trigger - Record Created or Updated➛Clinical Task Record➛ Admission ","reference":"x_2130921_caresy_0_admission","reference_display":"Admission","type":"reference","base_type":"reference","parent_table_name":"x_2130921_caresy_0_clinical_task","column_name":"admission","usedInstances":{"02632b6b-3185-48bc-8eca-2169593b5a54":["admission"],"43751ec4-950c-47fb-86a6-de5bfa72e287":["admission"]}},{"name":"trigger.run_start_date_time","label":"Trigger - Record Created or Updated➛Run Start Date/Time","type":"glide_date_time","base_type":"glide_date_time","usedInstances":{"02632b6b-3185-48bc-8eca-2169593b5a54":["sent_date"]},"attributes":{"test_input_hidden":"true"}},{"name":"ae8287e2-9a27-4209-8242-007d7a8eb9c5.__status__.message","label":"2 - Top Level Catch➛Error Status➛Message","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","usedInstances":{"43751ec4-950c-47fb-86a6-de5bfa72e287":["error_message"]},"attributes":{}}]</label_cache>
+        <master_snapshot>c5c6b3582f0fcf90a55a1d707fa4e397</master_snapshot>
+        <master_snapshot_digest/>
+        <name>FL_HandoffManagement</name>
+        <natlang/>
+        <outputs/>
+        <pre_compiled>false</pre_compiled>
+        <remote_trigger_id>35c6f3582f0fcf90a55a1d707fa4e36b</remote_trigger_id>
+        <run_as>user</run_as>
+        <run_with_roles/>
+        <sc_callable>false</sc_callable>
+        <show_draft_actions>false</show_draft_actions>
+        <show_triggered_flows>false</show_triggered_flows>
+        <status>published</status>
+        <substatus/>
+        <sys_class_name>sys_hub_flow</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-28 04:13:11</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>9facaf942f8bcf90a55a1d707fa4e39b</sys_id>
+        <sys_mod_count>17</sys_mod_count>
+        <sys_name>FL_HandoffManagement</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="CareSync 360" source="x_2130921_caresy_0">cbba01012fea8310a55a1d707fa4e3a1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="CareSync 360">cbba01012fea8310a55a1d707fa4e3a1</sys_scope>
+        <sys_update_name>sys_hub_flow_9facaf942f8bcf90a55a1d707fa4e39b</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-28 04:57:20</sys_updated_on>
+        <type>flow</type>
+        <updation_source/>
+        <version>2</version>
+        <version_record>afc637582f0fcf90a55a1d707fa4e36d</version_record>
+    </sys_hub_flow>
+    <sys_translated_text action="delete_multiple" query="documentkey=9facaf942f8bcf90a55a1d707fa4e39b"/>
+    <sys_variable_value action="delete_multiple" query="document_key=9facaf942f8bcf90a55a1d707fa4e39b"/>
+    <sys_flow_record_trigger action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <condition table="x_2130921_caresy_0_clinical_task">active=true^task_type=Handoff^task_status=Pending<item endquery="false" field="active" goto="false" newquery="false" operator="=" or="false" value="true"/>
+            <item display_value="Handoff" endquery="false" field="task_type" goto="false" newquery="false" operator="=" or="false" value="Handoff"/>
+            <item display_value="Pending" endquery="false" field="task_status" goto="false" newquery="false" operator="=" or="false" value="Pending"/>
+        </condition>
+        <name/>
+        <on_delete>false</on_delete>
+        <on_insert>true</on_insert>
+        <on_update>true</on_update>
+        <published_version/>
+        <run_flow_in>background</run_flow_in>
+        <run_on_extended>false</run_on_extended>
+        <run_when_setting>both</run_when_setting>
+        <run_when_user_list/>
+        <run_when_user_setting>any</run_when_user_setting>
+        <sys_class_name>sys_flow_record_trigger</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-28 04:57:20</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>35c6f3582f0fcf90a55a1d707fa4e36b</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_overrides/>
+        <sys_scope display_value="CareSync 360">cbba01012fea8310a55a1d707fa4e3a1</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-28 04:57:20</sys_updated_on>
+        <table>x_2130921_caresy_0_clinical_task</table>
+        <trigger_definition/>
+    </sys_flow_record_trigger>
+    <sys_trigger_runner_mapping action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <data>{"run_flow_in":"background","run_when_user_list":[],"run_when_setting":"both","run_when_user_setting":"any","run_on_extended":"false"}</data>
+        <identifier>9facaf942f8bcf90a55a1d707fa4e39b</identifier>
+        <identifier_type>flow</identifier_type>
+        <runner>FDTriggerRunner</runner>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-28 04:57:20</sys_created_on>
+        <sys_id>31c6f3582f0fcf90a55a1d707fa4e36c</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-28 04:57:20</sys_updated_on>
+        <trigger display_value="">35c6f3582f0fcf90a55a1d707fa4e36b</trigger>
+    </sys_trigger_runner_mapping>
+    <sys_trigger_runner_mapping action="delete_multiple" query="identifier=9facaf942f8bcf90a55a1d707fa4e39b^sys_idNOT IN31c6f3582f0fcf90a55a1d707fa4e36c"/>
+    <sys_hub_flow_stage action="delete_multiple" query="flow=9facaf942f8bcf90a55a1d707fa4e39b"/>
+    <sys_flow_cat_variable_model action="delete_multiple" query="id=9facaf942f8bcf90a55a1d707fa4e39b^sys_idNOT IN1face3542fcbcf90a55a1d707fa4e364"/>
+    <sys_flow_cat_variable_model action="INSERT_OR_UPDATE">
+        <id>9facaf942f8bcf90a55a1d707fa4e39b</id>
+        <name>FL_HandoffManagement</name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-28 04:13:12</sys_created_on>
+        <sys_id>1face3542fcbcf90a55a1d707fa4e364</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-28 04:13:12</sys_updated_on>
+    </sys_flow_cat_variable_model>
+    <sys_flow_cat_variable action="delete_multiple" query="flow_catalog_model=1face3542fcbcf90a55a1d707fa4e364"/>
+    <sys_hub_flow_input action="delete_multiple" query="model=9facaf942f8bcf90a55a1d707fa4e39b^sys_idNOT IN63bca7542fcbcf90a55a1d707fa4e33d,93bc67542fcbcf90a55a1d707fa4e37d,afbc67542fcbcf90a55a1d707fa4e3da"/>
+    <sys_hub_flow_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>child_label=FDChangeDetails,child_name=FDChangeDetails,child_type=object,child_type_label=Object,co_type_name=FDCollection,element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,pwd2droppable=true,uiType=array.object,uiTypeLabel=Array.Object</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>changed_fields</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="string">string</internal_type>
+        <label>Changed Fields</label>
+        <mandatory>false</mandatory>
+        <max_length>4000</max_length>
+        <model display_value="FL_HandoffManagement">9facaf942f8bcf90a55a1d707fa4e39b</model>
+        <model_id>9facaf942f8bcf90a55a1d707fa4e39b</model_id>
+        <model_table>sys_hub_flow</model_table>
+        <name>var__m_sys_hub_flow_input_9facaf942f8bcf90a55a1d707fa4e39b</name>
+        <next_element/>
+        <order>100</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_only_option/>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-28 04:13:29</sys_created_on>
+        <sys_id>63bca7542fcbcf90a55a1d707fa4e33d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="CareSync 360">cbba01012fea8310a55a1d707fa4e3a1</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-28 04:13:29</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=63bca7542fcbcf90a55a1d707fa4e33d"/>
+    <sys_hub_flow_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,test_input_hidden=true,uiType=table_name,uiTypeLabel=Table Name</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>table_name</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="table_name">table_name</internal_type>
+        <label>Table Name</label>
+        <mandatory>false</mandatory>
+        <max_length>200</max_length>
+        <model display_value="FL_HandoffManagement">9facaf942f8bcf90a55a1d707fa4e39b</model>
+        <model_id>9facaf942f8bcf90a55a1d707fa4e39b</model_id>
+        <model_table>sys_hub_flow</model_table>
+        <name>var__m_sys_hub_flow_input_9facaf942f8bcf90a55a1d707fa4e39b</name>
+        <next_element/>
+        <order>101</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_only_option/>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-28 04:13:28</sys_created_on>
+        <sys_id>93bc67542fcbcf90a55a1d707fa4e37d</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="CareSync 360">cbba01012fea8310a55a1d707fa4e3a1</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-28 04:57:14</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=93bc67542fcbcf90a55a1d707fa4e37d"/>
+    <sys_hub_flow_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=document_id,uiTypeLabel=Document ID</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent>table_name</dependent>
+        <dependent_on_field>table_name</dependent_on_field>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>current</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="document_id">document_id</internal_type>
+        <label>Record</label>
+        <mandatory>true</mandatory>
+        <max_length>200</max_length>
+        <model display_value="FL_HandoffManagement">9facaf942f8bcf90a55a1d707fa4e39b</model>
+        <model_id>9facaf942f8bcf90a55a1d707fa4e39b</model_id>
+        <model_table>sys_hub_flow</model_table>
+        <name>var__m_sys_hub_flow_input_9facaf942f8bcf90a55a1d707fa4e39b</name>
+        <next_element/>
+        <order>100</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_only_option/>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-28 04:13:29</sys_created_on>
+        <sys_id>afbc67542fcbcf90a55a1d707fa4e3da</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="CareSync 360">cbba01012fea8310a55a1d707fa4e3a1</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-28 04:57:14</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>true</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=afbc67542fcbcf90a55a1d707fa4e3da"/>
+    <sys_hub_flow_output action="delete_multiple" query="model=9facaf942f8bcf90a55a1d707fa4e39b"/>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=9facaf942f8bcf90a55a1d707fa4e39b"/>
+    <sys_hub_trigger_instance_v2 action="delete_multiple" query="flow=9facaf942f8bcf90a55a1d707fa4e39b^sys_idNOT INb2bc67542fcbcf90a55a1d707fa4e342"/>
+    <sys_hub_trigger_instance_v2 action="INSERT_OR_UPDATE">
+        <comment/>
+        <display_text/>
+        <flow display_value="FL_HandoffManagement">9facaf942f8bcf90a55a1d707fa4e39b</flow>
+        <generation_source/>
+        <name>Created or Updated</name>
+        <published_version/>
+        <remote_sys_id/>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-28 04:13:26</sys_created_on>
+        <sys_id>b2bc67542fcbcf90a55a1d707fa4e342</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-28 04:57:15</sys_updated_on>
+        <trigger_definition display_value="Created or Updated">a45d9180c32222002841b63b12d3aea7</trigger_definition>
+        <trigger_inputs>H4sIAAAAAAAA/9VZ23LbNhD9FQ6f2hmlw4sulvvkynbjGcfuyEr6kLocEAQlTChQIUDaaib/3gVBShQvsixRjuIH2wIg4Ozu2bML8vM3PUAuCfRzfYLcgOgdnTJBIoaCyXJBYFjIYYehuZybI+YhEUZL/VxEMenofhTOJ2S+CJCAxT4KOAyGkUci/dzs6AkKYvKw5Dce7ATfT7fJ9tSzafj87FimbQwt08EoInzpGA4OKKMYBY5A/Ass9SiHQ5afsm+MsmltoqbxjAZeRJh+/vmxoy9QBAcJCeJbaUqAVc6Gydqdso1KjNg3iTk8M7BtwY9hWGdd0+3brml5NiLIgHVlf5VsEjVuWzuEPAvCPOKtfFXxaESQd8+CZWHFM6f/wZ5nhpz1CdiCifLn6qOT+UcN41lIMblfCBoyNaLQqckwiOfsTqGWniU+igORexZGYg77kYUEysQKh/8wC5/G+YHXlKU2ZZNBCMFYfUJCRNSNBeEyAD4NIBSO8ggP4yhFP74a3Y8vnb8vJqP3V2NnfPUwGd+MJleX+vfULudrLHdUCDMsjjLn+4oO15QEMmwsnruApqNzHNGFuMCCJjkfv3fWHB+FzKOpVyo8x/kU3+R5bv02ohtGI9Vx4cSc7iiF909sGLYng/6v5LgjiaPG3sPpoe+rYS6QiLma+AvcQNl0b76PijamfB8YA88zm/iO3QLfi76rMU7UuLHon23Mz0aaqd81jB9E/kzm9uX+PPRIcLneTofJ6RSygbJFLKSPnhAT3BGhgzzPKXhPLo2leOSOc8IFiaTD5Nyni9vR+4u7P68efs/+Xo/vP+T/T+5fTCLlk2omvZxDUcxgC2cVz2ompQFYReKWcjD8M+jAA/kaq/C9Ayn0c6enJ8By/zY7YRwzLQQewC8NxxH4XGi5vPo3czTNQgUbBgSLAqf8j7z46QPlXObL2ogmDJmvSxBWpwNVtdxgBYUfiOWxTZGphiQp+bZUPvdXkDy2qXqYuGsZtts3BlI7TPjXN42B0UO+ZxuGe1ZQjyrERuyiRKMWVeR1GsJT2gY7sLLs7gyyUcybnSiVbPIxN13SJZOqUTvQzJagWRJaSXLtV2nuiqJq+HKTqdtMa7lPQV6C4BtebuMufcgOWukH4RPI/eE66SL8ZRqFMfPKSiWP0CjT1iu0XzJ3/no8zfTDiGzHs7nilNRyHZRVU8aWR9NJyzbJoN/tGyCPtlTG3nDoYmT5/qA/IKZZ0sk1uFrEJ6yPLxAxqWNyk1bWkiip494rVPIAgBXFfDXAw7UyI2mtUqq5n0MTn2aEOQA1cgKpehVpnAbUI/lcu5lfOTpZ53pb2X+bGZU+UXCHXq83GOAB3K4g9/0ucZHZtXpoOOjbxC/lfgXeNuiixltHvHPxJU+Pb9CFj2rqtB4+HJPAnAihruMHVnYGDXC6hXoyUCynMjZaqjZhpN2F7N3Nep32QKBKprfvI5X4XUDJsGtvisoNxazScgCSP2B8A4lsZBt8dnL3txKjkk1bj9OXIMtCQ9Nu0KZBv06b1hCbwZ9oh7JjLiWNWVnXquyaC0ltSjX2FnvQuUSZYtOxpStqyylm606xjucU++BOLM/LxkvrPmB/otqXtiEtFkAJgTihX9T1y1CDCQ3O1KivZU9Oiae5S03MCHg4gA4cztckmEMFfUu9qSJb8fuH4lIdf6UMwrCWtWmnV+FKvHmL2zfxbDz0mqpcd9DYgTeXutL0ida7V+dPUpeOW4ve6/Yt71lb9gr03WTHjgWtVavrq9phVtfWtZesPrxibXt2UIPi9GuRBD1RYTi8AoUMl644+Iivm2JGYdzBM8Sm6lVSfu41RIEgPNPUEk0tOWINCZ7Qkuvl2gYMl0mUPXGHAUgnpsTuSEBIQqJlxRNyUIsXniw3b1zOrC3lLH+Ly0UE35wuN7IdH++Fm+UOIYF7BrZN0668ru8VX9dvZkcz7obaZe1bu2Y0fc9dOD6LoqBzkirl6iW3NkcCzwjvaBDq9CVPKqQ04iJd/Zve4tUPk2qQ6kpbYwImTbnbWCq2JFFSTr+62lCTAUkpW4rVYeslb4v5ZivmW22Yb+9nfvfg4phnbW11zLzXbkXctwA+/g+KKJyrsycAAA==</trigger_inputs>
+        <trigger_outputs/>
+        <trigger_type>record_create_or_update</trigger_type>
+        <updation_source/>
+    </sys_hub_trigger_instance_v2>
+    <sys_hub_action_instance_v2 action="delete_multiple" query="flow=9facaf942f8bcf90a55a1d707fa4e39b^sys_idNOT IN2a11739c2fcbcf90a55a1d707fa4e344,64513b9c2fcbcf90a55a1d707fa4e396,8814fbd02f0fcf90a55a1d707fa4e308,c04337902f0fcf90a55a1d707fa4e340"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Update Record">f9d01dd2c31332002841b63b12d3aea1</action_type>
+        <action_type_parent display_value="Update Record">baf174c8c3c232002841b63b12d3aee4</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>f9d01dd2c31332002841b63b12d3aea1</compiled_snapshot>
+        <display_text/>
+        <flow display_value="FL_HandoffManagement">9facaf942f8bcf90a55a1d707fa4e39b</flow>
+        <generation_source/>
+        <order>1</order>
+        <parent_ui_id>cff25d12-50cf-47c4-93eb-c33a6e0fe8db</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-28 04:32:32</sys_created_on>
+        <sys_id>2a11739c2fcbcf90a55a1d707fa4e344</sys_id>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_scope display_value="CareSync 360">cbba01012fea8310a55a1d707fa4e3a1</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-28 05:00:25</sys_updated_on>
+        <ui_id>45395496-8522-4635-9d13-116ecfab8c46</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+VVXU/bMBT9K5GfqyhpCoK+TVRoSAwmQLwwZt3aN8WaY2e2A3RV//tuEqdUgBhIfUHLm++Xzzm5J7lZMSXZlE1QZvlhvi+KvCjGWTY+mOTz/WKej2UBiDkbMQMVUqVDYZ2k8z3opg2sVsGpxQJdKhrn0IT1mrJS+VrD8joWUUTcKS0pz6Y3tyNWg6N5AR2brp6l3gtIwxw1lV4MiJ4jDMu6PUsrmopwcTUET2PnLGaSkxllqKmFk2cjho8BjUQCUoL2OGIVGAnBuiWbBtdQwCHIc6OXm4o7ZUJPtIJHr/7QzZOsrSuRmIkowubIo0B9uJxBgEuaLELjNnpZJdD3mkgsodHhaDvWF5zXQVnTtwSY66Hb6qYyZ70ibDNg6300nkBg3fJskfe0yss7+3AxgDxWppMkUtRWgN6cINB7nzehhbNiqLHTuIK6VmbBa2fvVddMUKp0oemQlto+0J1eLUwKosWdkqqQHlN81oWvwamWxDcaQ83rEfNLf6TB+ycqpCH/3bRIemKRAu9U6CTg3Sa0zcKpOnyhq+4xAl+P4srP997aMHH4tFBbM5/W/pGP8yI7HOdcgEO/5BkXWhlFEvEA/tdLDxzFdHLVpz9miHfAHQxx1a3B6/CjJ17ETrd7k7M+ER2xtzNHHHwmR0Qan94S/zJCNn7zU7u1Sd3u+y0TtIvOfYDQ+B9NlhXyxCTfnV2QIfxPYtXdSpz65FdaGVuWibC0WMpAm0nIE0FBQJm+dMyux3/Mce/QZXDcsUIt/StCDXbDingF5L1wzywXk8l1TG5+RDvzXb6fdc8nct9/8z+6/QvozyH4hAkAAA==</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=2a11739c2fcbcf90a55a1d707fa4e344"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Create Record">2de05916c31332002841b63b12d3aee1</action_type>
+        <action_type_parent display_value="Create Record">02f0b88cc3c632002841b63b12d3aeff</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>2de05916c31332002841b63b12d3aee1</compiled_snapshot>
+        <display_text/>
+        <flow display_value="FL_HandoffManagement">9facaf942f8bcf90a55a1d707fa4e39b</flow>
+        <generation_source/>
+        <order>2</order>
+        <parent_ui_id>cff25d12-50cf-47c4-93eb-c33a6e0fe8db</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-28 04:33:29</sys_created_on>
+        <sys_id>64513b9c2fcbcf90a55a1d707fa4e396</sys_id>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_scope display_value="CareSync 360">cbba01012fea8310a55a1d707fa4e3a1</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-28 05:00:25</sys_updated_on>
+        <ui_id>02632b6b-3185-48bc-8eca-2169593b5a54</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1VwW7bMAz9FUPnILDjLmhzG1IUO3QtsBS9dI1BS3SiTZY9SW6bBfn3UZaSJl2DbUAvBeabyEfx8Ymk79ZMCjZh4wzTD2fZmOdZno/SdHR6kpXjvMxGIgfEEzZgGmokpINSYdEfBuwBVOeNT8Uoy9OzUVZwMGhXRVroxslKcnCy0YVqFoQW0rYKVrcx6GoPkVz2CL6UShjUbHJ3P2AtGErj0LDJ+oXrb0krKFER9MazPlKEW7Wv2i73Y5Or4GiM8HzSAcMnh1ogEalAWRywGrQA15gVmzjTkcEgiGutVjvEUmpHFzKPfbLyJ6U9TT2uQqqMY/DtjkUULJirc3Awo5u560yE8mUjOdqgicAKOuWm+7YAuG69xiGkLzNGN6qr9VWQhO0u2L4PWTpLJLD1dXrmsYxqtmwev2xZXkjdSxKdquGgdidwzsiyc57PmqHCmi4qamhbqRdFa5oH2QcTl3q4UHQYVqp5pKRWLvQQuCc+JFlheEH28958C0b6Kj7TNRS8GTC7slMF1j7XQiIWPzrPJFQWayiCDD6EG9m6j5TgASPdzWA7DQLTs6ONlZXPjdQPgN2bhJbamfJ87dI0F+s1Vb9YoBnyzpBYbhjdm80cRC2tpeqOQXcAAh8Mk+/NEDRVUpNVJTdgv8/5ErRGFVyzlXVYHwZaB66z0U8p5rYrvyGPZD9R+zZVlUwb6nGpw1jOHBiHYl6jtbDAQyTfpneUPlmCTehSagqR0MNSC86tV5weD1/WaLqejQnewskavST9YwSsn6DfV8Z/dd9U3X9ct3+eiu26vZCohH1lTLa7Fmt6VuIWxubFvo3O5DY6487N3mrnZuO0/97R5g3FvfvFu/ePPbKC738BjGVEF5IIAAA=</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=64513b9c2fcbcf90a55a1d707fa4e396"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Create Record">2de05916c31332002841b63b12d3aee1</action_type>
+        <action_type_parent display_value="Create Record">02f0b88cc3c632002841b63b12d3aeff</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>2de05916c31332002841b63b12d3aee1</compiled_snapshot>
+        <display_text/>
+        <flow display_value="FL_HandoffManagement">9facaf942f8bcf90a55a1d707fa4e39b</flow>
+        <generation_source/>
+        <order>5</order>
+        <parent_ui_id>ae8287e2-9a27-4209-8242-007d7a8eb9c5</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-28 04:45:29</sys_created_on>
+        <sys_id>8814fbd02f0fcf90a55a1d707fa4e308</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_scope display_value="CareSync 360">cbba01012fea8310a55a1d707fa4e3a1</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-28 05:00:25</sys_updated_on>
+        <ui_id>43751ec4-950c-47fb-86a6-de5bfa72e287</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1VTW/bMAz9K4HOiWE7ab5uQ4pgh64F1qKXrREYmU60ybInyW2zoP99tKWkSddgGzAMKDDfRD6K71Ek/WnLZMambJhgfDZJhqKf9PtpHKfjQbIc9pdJmvUBccC6TEOBhHSwVMjbQ5fdg6ob4yNPk348SRMuwKDd8Jjr0slcCnCy1FyVK0Jn0lYKNrch6PIA0bloEWItVWZQs+mnuy6rwFAah4ZNty9cv0tawRIVQW8a1idEuE31qu3iMLZz6R2lyRo+cZfho0OdIRHJQVnssgJ0Bq40GzZ1piaDQciutNrsEWupHV3IGuyjld8p7ThucDmSMoHetz/yUDBvzs/BwTXdLFxtAlSsSynQ+ppkmEOt3OzQ5gFXVVNjH9LKDNGlqgt96UvC9hfs3ocstSUSWDU6G+ZBRn69Lh8+7ljOpW5LEpyqFKD2J3DOyGXtGj5bhgoLuogXUFVSr3hlynvZBhOXIlopOkS5Kh8oqZUrHYFoiEdUVojmZD9vzbdgZKPiA11DwU9dZjd2psDaZy1URP6tbph4ZUED92VoQoSRlXtHCe4x0H3q7qYhw3hysrGS5XMjtQNgDyahonamPJ/rOO5n2y2pX63QRKI2VCwXBffT0wKyQlpL6k5B9wACHw1T05s+aKakJqvq3ID9uhBr0BqVd11vrMPiONA6cLX1/jlIhdnC1ssvKALd99TAZZ53ZiV1udR+MAOwQGthhcdAscvvKH+HXpP6ztLDdvI2KFqgMaXhR7HbLeA4HY8w7U0gHfUGaTzpjdNB2ovjUTaCMS4n4izigS3nUQhvata+lr+nGbGfd8r/8v/b8v/hwv71XO0W9lyiyuwrg7bb1ljQuzvkfvBebOzg7NwGZ9jayd/a2skwbr83tLu9uDe/ug/+0ieW+N0PwNTAKNQIAAA=</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=8814fbd02f0fcf90a55a1d707fa4e308"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Update Record">f9d01dd2c31332002841b63b12d3aea1</action_type>
+        <action_type_parent display_value="Update Record">baf174c8c3c232002841b63b12d3aee4</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>f9d01dd2c31332002841b63b12d3aea1</compiled_snapshot>
+        <display_text/>
+        <flow display_value="FL_HandoffManagement">9facaf942f8bcf90a55a1d707fa4e39b</flow>
+        <generation_source/>
+        <order>4</order>
+        <parent_ui_id>ae8287e2-9a27-4209-8242-007d7a8eb9c5</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-28 04:41:55</sys_created_on>
+        <sys_id>c04337902f0fcf90a55a1d707fa4e340</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_scope display_value="CareSync 360">cbba01012fea8310a55a1d707fa4e3a1</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-28 05:00:25</sys_updated_on>
+        <ui_id>3d613009-af5d-496f-a396-006be1e4f4b3</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+VVXU/bMBT9K5WfqyhpoIK+TVRokxhMgPrCwLq1b4o1x8lsB9pV/e+7TpxSAWIg8VItb75fPufknuRmzZRkE3aAMs2Os7HIszwfpeno6CCbj/N5NpI5IGZsyAyUSJUWRWUlnR9ANyGwXnurFgu0iWisReM3G8pK5WoNq1ksooi4V1pSnk1uboesBkvzPFo2WT9LvReQhjlqKr3sET1H6Fd1OMtKNCXh4qoPnsXOacwMvk0pQ00BTpYOGS49GokEpADtcMhKMBJ8ZVds4m1DAYsgL4xebSvulfEd0RKWTv2hmw/SUFcgMRNRhO2RR4G6cDEFD1c0WfjGbvWqlEDXaSKxgEb7k91YV3BRe1WZrsXDXPfdlW5Kc94pwrYDdt5H4wgE1oFnQN7RKq7uq8fLHuSpMq0kkaKuBOjtCTy993njA5w1Q42txiXUtTILXtvqQbXNBKVMFpoOSaGrR7rTqYVJQATcCakKySnFp214BlYFEt9pDDVvhsyt3IkG556okIb8dxOQdMQiBd6q0ErA200IzcKq2n+hqx4wAt8M48rPD9/aMHH8tFA7M5/WfslHWZ4ejzIuwKJb8ZQLrYwiibgH9+ulB05ienDdpT9miHfA7Q1x3a7B6/CjJ17EznZ7B+ddIjri8NMccbRPjog09t4S/zJCOnrzU7uzSe3uux0ThEXnzoNv3M8mTXP5gy4mrnfEqL2R+HSJr7QuVVEMREVLpQyEzKAApVEmL63yaXM/5rF3KNF77FShlu4VaXqDYUmEPPJOqmcmi8nBLCa3v55Pc1o2Tttnj/z23/yBbv8CkORafnYJAAA=</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=c04337902f0fcf90a55a1d707fa4e340"/>
+    <sys_hub_sub_flow_instance_v2 action="delete_multiple" query="flow=9facaf942f8bcf90a55a1d707fa4e39b"/>
+    <sys_hub_flow_logic_instance_v2 action="delete_multiple" query="flow=9facaf942f8bcf90a55a1d707fa4e39b^sys_idNOT INb132b3102f0fcf90a55a1d707fa4e3a9,b932b3102f0fcf90a55a1d707fa4e3aa"/>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">68c6b3582f0fcf90a55a1d707fa4e30d</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="FL_HandoffManagement">9facaf942f8bcf90a55a1d707fa4e39b</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="Top Level Try">e9060aa2c3013010ace8b740ad40dd51</logic_definition>
+        <order>0</order>
+        <outputs_assigned/>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-28 04:37:24</sys_created_on>
+        <sys_id>b132b3102f0fcf90a55a1d707fa4e3a9</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_scope display_value="CareSync 360">cbba01012fea8310a55a1d707fa4e3a1</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-28 04:57:15</sys_updated_on>
+        <ui_id>cff25d12-50cf-47c4-93eb-c33a6e0fe8db</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/6tWyi8tKSgtKQ7JdywuzkzPU7KKjtVRyswDiUHYZYlFmYlJOalQbkpqcmZxZn5eCEjME0ldSmVeYm5mMrJQeX5RdlpOfjlCrBYAD1ouqHEAAAA=</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">ecc6b3582f0fcf90a55a1d707fa4e338</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="FL_HandoffManagement">9facaf942f8bcf90a55a1d707fa4e39b</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="Top Level Catch">35d60003e6022010a5e40cdd1254dd23</logic_definition>
+        <order>3</order>
+        <outputs_assigned/>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-28 04:37:24</sys_created_on>
+        <sys_id>b932b3102f0fcf90a55a1d707fa4e3aa</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_scope display_value="CareSync 360">cbba01012fea8310a55a1d707fa4e3a1</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-28 04:57:15</sys_updated_on>
+        <ui_id>ae8287e2-9a27-4209-8242-007d7a8eb9c5</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1ZbW+jOBD+KyfUjylH3tN8q9qLlNO1lS7Z/XKskMFD4j0Hs2DSdqP89/UYA4G0vTab7t7pIlURzHiGmXkeZmy6sUQm40ymc3GZpmwRWeO/PrUsFqFMXW8sRq2x5YTDDumTTt9vdztO2/EHbSDqojsctYNh78JqWRFZgVrpeakkMks9T8nWhGco3LjWGpKUici1xq7Vth3XarlWIFYxh4c7/zMEUmk2KKKQX50F6+JCG30ma2JzEi3smUxYtNAeztZa51rbrbpbQZqSxYH222ZAs2AJK5L7mHBxfw1YH0jGk+vLq/n07nY2v5x/mNXidq1pJGEBicmPgn0WMuDUC0kAMs0Xzxg+5obEExRqs43rulbG5o8x/EF84Hg7xp/Cn4se1U8ChHoi4o/lipDwFEr9kkWyVJXS3HMpZw2nFEKScelpvPateS2iK0y1UJFAKlQ9SBKReDmVyoUyyaqFKxJRIkXyXNwioXlAWtfesXvwOEQLuSyVPQd/t+qvhrmqawWsEX9v9Y3HoxY/rft8U+1vTLbvXP7Oy+V3SgAQgRfeDftMqsxfVf03leFSp/3LTHea4xcjYx8i9iWDKa2SJjT0h35wfkEHw/PexYiej0bUOR/RQdCl/VEvBNoAvM4k0+SKJYHwdGmwa5ZrGo2lWAscVhBJb0XiWDHHixOxZrtwqbZlL7gS2aHCwqMaDDsvh60yJXaF0UeSMOJrBOJD2kqUcf4Uq0U9vze8zoN+g1ApqBA5+0ow/olIViTnye+zu1u1RM0VytKYk8ePp/FyGi+n8XIaL6fxchovRxwvwZJxmkBUnX+q8w023Z2Tzf4wqturs1RMEmUqIVEEbagydp0bY67K1jRO5UKjp1mpxNNSXARTaK7yaOqxyaYzXS1r3G5Z8CAhoqC86Pq3Kq6WEoTqTiFVChCb/Kmquin7qnz3HFwXgkokMDmXt56pR1EKwQK4i7HWuUQiPYxS8GwV3ebBYyXzl3SnkkZyvVfiLFUPghiTwehMqOFsKe7/LCKZsEjnbZRcBISXd0SqPulnEtQpd7PV8XtfMlyQP9e49vKw1YI0SFgssTWsofSSC9HDtrVHFTMk3o0teadvkmVWSJtcuSnD2YtPNhwawnSOSBjnRJk9yrwA9wY1Os76FxW939CzTXVYtNkZBrVO8cS0UnqcUxjZi4T8h7CbjD01sf8MIw9kVdlSfh6p3r3XHZNX/79e96kBTL4dLYB5xdfjwvA3pJbZeT/zUdkAKIpHFABi1Y8E4ejHQXhcpMyLu1ue+qtcArN7QlDy+tlA6Z87FegOfeh5wDpwapabK0qHTns0DILuAJBJ/X6/6w97DqE9h1IaVJSBCB9LdzZf7f2+pDvXG3ZgNY7PlfGvEwyv4PkroiuMq/D24jX89oXgQKL3IfiPmX2hKc7TbarQ/iv2ZdjB1oaraQ42hYDhN8U5yqbFP8RQ8agwY8Gu6F4kf+PLUMm23wB/NxwcWhsAAA==</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_pill_compound action="delete_multiple" query="attached_to=9facaf942f8bcf90a55a1d707fa4e39b"/>
+    <sys_hub_flow_variable action="delete_multiple" query="model=9facaf942f8bcf90a55a1d707fa4e39b"/>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>table_name</element>
+        <help/>
+        <hint/>
+        <label>Table Name</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_9facaf942f8bcf90a55a1d707fa4e39b</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-28 04:13:28</sys_created_on>
+        <sys_id>5bbc67542fcbcf90a55a1d707fa4e3d6</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="CareSync 360" source="x_2130921_caresy_0">cbba01012fea8310a55a1d707fa4e3a1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="CareSync 360">cbba01012fea8310a55a1d707fa4e3a1</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-28 04:13:28</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>changed_fields</element>
+        <help/>
+        <hint/>
+        <label>Changed Fields</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_9facaf942f8bcf90a55a1d707fa4e39b</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-28 04:13:30</sys_created_on>
+        <sys_id>e3bca7542fcbcf90a55a1d707fa4e351</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="CareSync 360" source="x_2130921_caresy_0">cbba01012fea8310a55a1d707fa4e3a1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="CareSync 360">cbba01012fea8310a55a1d707fa4e3a1</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-28 04:13:30</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>current</element>
+        <help/>
+        <hint/>
+        <label>Record</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_9facaf942f8bcf90a55a1d707fa4e39b</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-28 04:13:29</sys_created_on>
+        <sys_id>ebbca7542fcbcf90a55a1d707fa4e338</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="CareSync 360" source="x_2130921_caresy_0">cbba01012fea8310a55a1d707fa4e3a1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="CareSync 360">cbba01012fea8310a55a1d707fa4e3a1</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-28 04:13:29</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_input_9facaf942f8bcf90a55a1d707fa4e39b"/>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_output_9facaf942f8bcf90a55a1d707fa4e39b"/>
+    <sys_hub_flow_snapshot action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <acls/>
+        <active>true</active>
+        <allow_high_security_roles>false</allow_high_security_roles>
+        <annotation/>
+        <attributes>browserActivatedIn=chrome,integrationActivatedIn=standalone,labelCacheCleanUpExecuted=true,viewActivatedIn=naturalLanguage</attributes>
+        <authored_on_release_version>29000</authored_on_release_version>
+        <callable_by_client_api>false</callable_by_client_api>
+        <category/>
+        <copied_from/>
+        <copied_from_name/>
+        <description>Coordinates clinical handoff tasks and records handoff processing notifications.</description>
+        <flow_priority>MEDIUM</flow_priority>
+        <internal_name>fl_handoffmanagement</internal_name>
+        <label_cache>[{"name":"trigger.current","label":"Trigger - Record Created or Updated➛Clinical Task Record","reference":"x_2130921_caresy_0_clinical_task","reference_display":"Clinical Task","type":"reference","base_type":"reference","usedInstances":{"45395496-8522-4635-9d13-116ecfab8c46":["record"],"3d613009-af5d-496f-a396-006be1e4f4b3":["record"]},"attributes":{}},{"name":"trigger.current.patient","label":"Trigger - Record Created or Updated➛Clinical Task Record➛Patient                    ","reference":"x_2130921_caresy_0_patient","reference_display":"Patient","type":"reference","base_type":"reference","parent_table_name":"x_2130921_caresy_0_clinical_task","column_name":"patient","usedInstances":{"02632b6b-3185-48bc-8eca-2169593b5a54":["patient"],"43751ec4-950c-47fb-86a6-de5bfa72e287":["patient"]}},{"name":"trigger.current.admission","label":"Trigger - Record Created or Updated➛Clinical Task Record➛ Admission ","reference":"x_2130921_caresy_0_admission","reference_display":"Admission","type":"reference","base_type":"reference","parent_table_name":"x_2130921_caresy_0_clinical_task","column_name":"admission","usedInstances":{"02632b6b-3185-48bc-8eca-2169593b5a54":["admission"],"43751ec4-950c-47fb-86a6-de5bfa72e287":["admission"]}},{"name":"trigger.run_start_date_time","label":"Trigger - Record Created or Updated➛Run Start Date/Time","type":"glide_date_time","base_type":"glide_date_time","usedInstances":{"02632b6b-3185-48bc-8eca-2169593b5a54":["sent_date"]},"attributes":{"test_input_hidden":"true"}},{"name":"ae8287e2-9a27-4209-8242-007d7a8eb9c5.__status__.message","label":"2 - Top Level Catch➛Error Status➛Message","reference":"","reference_display":"","type":"string","base_type":"string","column_name":"","usedInstances":{"43751ec4-950c-47fb-86a6-de5bfa72e287":["error_message"]},"attributes":{}}]</label_cache>
+        <master>true</master>
+        <name>FL_HandoffManagement</name>
+        <natlang/>
+        <outputs/>
+        <parent_flow display_value="FL_HandoffManagement">9facaf942f8bcf90a55a1d707fa4e39b</parent_flow>
+        <remote_trigger_id/>
+        <run_as>user</run_as>
+        <run_with_roles/>
+        <sc_callable>false</sc_callable>
+        <status>published</status>
+        <sys_class_name>sys_hub_flow_snapshot</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-28 04:57:17</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>c5c6b3582f0fcf90a55a1d707fa4e397</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_overrides/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="CareSync 360">cbba01012fea8310a55a1d707fa4e3a1</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-28 04:57:17</sys_updated_on>
+        <type>flow</type>
+        <version>2</version>
+    </sys_hub_flow_snapshot>
+    <sys_translated_text action="delete_multiple" query="documentkey=c5c6b3582f0fcf90a55a1d707fa4e397"/>
+    <sys_variable_value action="delete_multiple" query="document_key=c5c6b3582f0fcf90a55a1d707fa4e397"/>
+    <sys_hub_flow_stage action="delete_multiple" query="flow=c5c6b3582f0fcf90a55a1d707fa4e397"/>
+    <sys_flow_cat_variable_model action="delete_multiple" query="id=c5c6b3582f0fcf90a55a1d707fa4e397^sys_idNOT IN05c6b3582f0fcf90a55a1d707fa4e398"/>
+    <sys_flow_cat_variable_model action="INSERT_OR_UPDATE">
+        <id>c5c6b3582f0fcf90a55a1d707fa4e397</id>
+        <name>FL_HandoffManagement</name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-28 04:57:17</sys_created_on>
+        <sys_id>05c6b3582f0fcf90a55a1d707fa4e398</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-28 04:57:17</sys_updated_on>
+    </sys_flow_cat_variable_model>
+    <sys_flow_cat_variable action="delete_multiple" query="flow_catalog_model=05c6b3582f0fcf90a55a1d707fa4e398"/>
+    <sys_hub_flow_input action="delete_multiple" query="model=c5c6b3582f0fcf90a55a1d707fa4e397^sys_idNOT IN89c6b3582f0fcf90a55a1d707fa4e399,8dc6b3582f0fcf90a55a1d707fa4e3ac,d1c6b3582f0fcf90a55a1d707fa4e3c5"/>
+    <sys_hub_flow_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=document_id,uiTypeLabel=Document ID</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent>table_name</dependent>
+        <dependent_on_field>table_name</dependent_on_field>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>current</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="document_id">document_id</internal_type>
+        <label>Record</label>
+        <mandatory>true</mandatory>
+        <max_length>200</max_length>
+        <model display_value="FL_HandoffManagement">c5c6b3582f0fcf90a55a1d707fa4e397</model>
+        <model_id>c5c6b3582f0fcf90a55a1d707fa4e397</model_id>
+        <model_table>sys_hub_flow_snapshot</model_table>
+        <name>var__m_sys_hub_flow_input_c5c6b3582f0fcf90a55a1d707fa4e397</name>
+        <next_element/>
+        <order>100</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_only_option/>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-28 04:57:17</sys_created_on>
+        <sys_id>89c6b3582f0fcf90a55a1d707fa4e399</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="CareSync 360">cbba01012fea8310a55a1d707fa4e3a1</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-28 04:57:17</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>true</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=89c6b3582f0fcf90a55a1d707fa4e399"/>
+    <sys_hub_flow_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>child_label=FDChangeDetails,child_name=FDChangeDetails,child_type=object,child_type_label=Object,element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,pwd2droppable=true,uiType=array.object,uiTypeLabel=Array.Object</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>changed_fields</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="string">string</internal_type>
+        <label>Changed Fields</label>
+        <mandatory>false</mandatory>
+        <max_length>4000</max_length>
+        <model display_value="FL_HandoffManagement">c5c6b3582f0fcf90a55a1d707fa4e397</model>
+        <model_id>c5c6b3582f0fcf90a55a1d707fa4e397</model_id>
+        <model_table>sys_hub_flow_snapshot</model_table>
+        <name>var__m_sys_hub_flow_input_c5c6b3582f0fcf90a55a1d707fa4e397</name>
+        <next_element/>
+        <order>100</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_only_option/>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-28 04:57:17</sys_created_on>
+        <sys_id>8dc6b3582f0fcf90a55a1d707fa4e3ac</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="CareSync 360">cbba01012fea8310a55a1d707fa4e3a1</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-28 04:57:17</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=8dc6b3582f0fcf90a55a1d707fa4e3ac"/>
+    <sys_hub_flow_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,test_input_hidden=true,uiType=table_name,uiTypeLabel=Table Name</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>table_name</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="table_name">table_name</internal_type>
+        <label>Table Name</label>
+        <mandatory>false</mandatory>
+        <max_length>200</max_length>
+        <model display_value="FL_HandoffManagement">c5c6b3582f0fcf90a55a1d707fa4e397</model>
+        <model_id>c5c6b3582f0fcf90a55a1d707fa4e397</model_id>
+        <model_table>sys_hub_flow_snapshot</model_table>
+        <name>var__m_sys_hub_flow_input_c5c6b3582f0fcf90a55a1d707fa4e397</name>
+        <next_element/>
+        <order>101</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_only_option/>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-28 04:57:18</sys_created_on>
+        <sys_id>d1c6b3582f0fcf90a55a1d707fa4e3c5</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="CareSync 360">cbba01012fea8310a55a1d707fa4e3a1</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-28 04:57:18</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=d1c6b3582f0fcf90a55a1d707fa4e3c5"/>
+    <sys_hub_flow_output action="delete_multiple" query="model=c5c6b3582f0fcf90a55a1d707fa4e397"/>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=c5c6b3582f0fcf90a55a1d707fa4e397"/>
+    <sys_hub_trigger_instance_v2 action="delete_multiple" query="flow=c5c6b3582f0fcf90a55a1d707fa4e397^sys_idNOT IN25c6f3582f0fcf90a55a1d707fa4e32b"/>
+    <sys_hub_trigger_instance_v2 action="INSERT_OR_UPDATE">
+        <comment/>
+        <display_text/>
+        <flow display_value="FL_HandoffManagement">c5c6b3582f0fcf90a55a1d707fa4e397</flow>
+        <generation_source/>
+        <name>Created or Updated</name>
+        <published_version/>
+        <remote_sys_id/>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-28 04:57:19</sys_created_on>
+        <sys_id>25c6f3582f0fcf90a55a1d707fa4e32b</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-28 04:57:19</sys_updated_on>
+        <trigger_definition display_value="Created or Updated">a45d9180c32222002841b63b12d3aea7</trigger_definition>
+        <trigger_inputs>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</trigger_inputs>
+        <trigger_outputs/>
+        <trigger_type>record_create_or_update</trigger_type>
+        <updation_source/>
+    </sys_hub_trigger_instance_v2>
+    <sys_hub_action_instance_v2 action="delete_multiple" query="flow=c5c6b3582f0fcf90a55a1d707fa4e397^sys_idNOT IN21c6f3582f0fcf90a55a1d707fa4e329,29c6f3582f0fcf90a55a1d707fa4e326,2dc6f3582f0fcf90a55a1d707fa4e327,a5c6f3582f0fcf90a55a1d707fa4e328"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Create Record">2de05916c31332002841b63b12d3aee1</action_type>
+        <action_type_parent display_value="Create Record">02f0b88cc3c632002841b63b12d3aeff</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>2de05916c31332002841b63b12d3aee1</compiled_snapshot>
+        <display_text/>
+        <flow display_value="FL_HandoffManagement">c5c6b3582f0fcf90a55a1d707fa4e397</flow>
+        <generation_source/>
+        <order>5</order>
+        <parent_ui_id>ae8287e2-9a27-4209-8242-007d7a8eb9c5</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-28 04:57:19</sys_created_on>
+        <sys_id>21c6f3582f0fcf90a55a1d707fa4e329</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope display_value="CareSync 360">cbba01012fea8310a55a1d707fa4e3a1</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-28 04:57:19</sys_updated_on>
+        <ui_id>43751ec4-950c-47fb-86a6-de5bfa72e287</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1VTW/bMAz9K4HOiWE7ab5uQ4pgh64F1qKXrREYmU60ybInyW2zoP99tKWkSddgGzAMKDDfRD6K71Ek/WnLZMambJhgfDZJhqKf9PtpHKfjQbIc9pdJmvUBccC6TEOBhHSwVMjbQ5fdg6ob4yNPk348SRMuwKDd8Jjr0slcCnCy1FyVK0Jn0lYKNrch6PIA0bloEWItVWZQs+mnuy6rwFAah4ZNty9cv0tawRIVQW8a1idEuE31qu3iMLZz6R2lyRo+cZfho0OdIRHJQVnssgJ0Bq40GzZ1piaDQciutNrsEWupHV3IGuyjld8p7ThucDmSMoHetz/yUDBvzs/BwTXdLFxtAlSsSynQ+ppkmEOt3OzQ5gFXVVNjH9LKDNGlqgt96UvC9hfs3ocstSUSWDU6G+ZBRn69Lh8+7ljOpW5LEpyqFKD2J3DOyGXtGj5bhgoLuogXUFVSr3hlynvZBhOXIlopOkS5Kh8oqZUrHYFoiEdUVojmZD9vzbdgZKPiA11DwU9dZjd2psDaZy1URP6tbph4ZUED92VoQoSRlXtHCe4x0H3q7qYhw3hysrGS5XMjtQNgDyahonamPJ/rOO5n2y2pX63QRKI2VCwXBffT0wKyQlpL6k5B9wACHw1T05s+aKakJqvq3ID9uhBr0BqVd11vrMPiONA6cLX1/jlIhdnC1ssvKALd99TAZZ53ZiV1udR+MAOwQGthhcdAscvvKH+HXpP6ztLDdvI2KFqgMaXhR7HbLeA4HY8w7U0gHfUGaTzpjdNB2ovjUTaCMS4n4izigS3nUQhvata+lr+nGbGfd8r/8v/b8v/hwv71XO0W9lyiyuwrg7bb1ljQuzvkfvBebOzg7NwGZ9jayd/a2skwbr83tLu9uDe/ug/+0ieW+N0PwNTAKNQIAAA=</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=21c6f3582f0fcf90a55a1d707fa4e329"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Update Record">f9d01dd2c31332002841b63b12d3aea1</action_type>
+        <action_type_parent display_value="Update Record">baf174c8c3c232002841b63b12d3aee4</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>f9d01dd2c31332002841b63b12d3aea1</compiled_snapshot>
+        <display_text/>
+        <flow display_value="FL_HandoffManagement">c5c6b3582f0fcf90a55a1d707fa4e397</flow>
+        <generation_source/>
+        <order>1</order>
+        <parent_ui_id>cff25d12-50cf-47c4-93eb-c33a6e0fe8db</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-28 04:57:19</sys_created_on>
+        <sys_id>29c6f3582f0fcf90a55a1d707fa4e326</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope display_value="CareSync 360">cbba01012fea8310a55a1d707fa4e3a1</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-28 04:57:19</sys_updated_on>
+        <ui_id>45395496-8522-4635-9d13-116ecfab8c46</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+VVXU/bMBT9K5GfqyhpCoK+TVRoSAwmQLwwZt3aN8WaY2e2A3RV//tuEqdUgBhIfUHLm++Xzzm5J7lZMSXZlE1QZvlhvi+KvCjGWTY+mOTz/WKej2UBiDkbMQMVUqVDYZ2k8z3opg2sVsGpxQJdKhrn0IT1mrJS+VrD8joWUUTcKS0pz6Y3tyNWg6N5AR2brp6l3gtIwxw1lV4MiJ4jDMu6PUsrmopwcTUET2PnLGaSkxllqKmFk2cjho8BjUQCUoL2OGIVGAnBuiWbBtdQwCHIc6OXm4o7ZUJPtIJHr/7QzZOsrSuRmIkowubIo0B9uJxBgEuaLELjNnpZJdD3mkgsodHhaDvWF5zXQVnTtwSY66Hb6qYyZ70ibDNg6300nkBg3fJskfe0yss7+3AxgDxWppMkUtRWgN6cINB7nzehhbNiqLHTuIK6VmbBa2fvVddMUKp0oemQlto+0J1eLUwKosWdkqqQHlN81oWvwamWxDcaQ83rEfNLf6TB+ycqpCH/3bRIemKRAu9U6CTg3Sa0zcKpOnyhq+4xAl+P4srP997aMHH4tFBbM5/W/pGP8yI7HOdcgEO/5BkXWhlFEvEA/tdLDxzFdHLVpz9miHfAHQxx1a3B6/CjJ17ETrd7k7M+ER2xtzNHHHwmR0Qan94S/zJCNn7zU7u1Sd3u+y0TtIvOfYDQ+B9NlhXyxCTfnV2QIfxPYtXdSpz65FdaGVuWibC0WMpAm0nIE0FBQJm+dMyux3/Mce/QZXDcsUIt/StCDXbDingF5L1wzywXk8l1TG5+RDvzXb6fdc8nct9/8z+6/QvozyH4hAkAAA==</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=29c6f3582f0fcf90a55a1d707fa4e326"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Create Record">2de05916c31332002841b63b12d3aee1</action_type>
+        <action_type_parent display_value="Create Record">02f0b88cc3c632002841b63b12d3aeff</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>2de05916c31332002841b63b12d3aee1</compiled_snapshot>
+        <display_text/>
+        <flow display_value="FL_HandoffManagement">c5c6b3582f0fcf90a55a1d707fa4e397</flow>
+        <generation_source/>
+        <order>2</order>
+        <parent_ui_id>cff25d12-50cf-47c4-93eb-c33a6e0fe8db</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-28 04:57:19</sys_created_on>
+        <sys_id>2dc6f3582f0fcf90a55a1d707fa4e327</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope display_value="CareSync 360">cbba01012fea8310a55a1d707fa4e3a1</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-28 04:57:19</sys_updated_on>
+        <ui_id>02632b6b-3185-48bc-8eca-2169593b5a54</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1VwW7bMAz9FUPnILDjLmhzG1IUO3QtsBS9dI1BS3SiTZY9SW6bBfn3UZaSJl2DbUAvBeabyEfx8Ymk79ZMCjZh4wzTD2fZmOdZno/SdHR6kpXjvMxGIgfEEzZgGmokpINSYdEfBuwBVOeNT8Uoy9OzUVZwMGhXRVroxslKcnCy0YVqFoQW0rYKVrcx6GoPkVz2CL6UShjUbHJ3P2AtGErj0LDJ+oXrb0krKFER9MazPlKEW7Wv2i73Y5Or4GiM8HzSAcMnh1ogEalAWRywGrQA15gVmzjTkcEgiGutVjvEUmpHFzKPfbLyJ6U9TT2uQqqMY/DtjkUULJirc3Awo5u560yE8mUjOdqgicAKOuWm+7YAuG69xiGkLzNGN6qr9VWQhO0u2L4PWTpLJLD1dXrmsYxqtmwev2xZXkjdSxKdquGgdidwzsiyc57PmqHCmi4qamhbqRdFa5oH2QcTl3q4UHQYVqp5pKRWLvQQuCc+JFlheEH28958C0b6Kj7TNRS8GTC7slMF1j7XQiIWPzrPJFQWayiCDD6EG9m6j5TgASPdzWA7DQLTs6ONlZXPjdQPgN2bhJbamfJ87dI0F+s1Vb9YoBnyzpBYbhjdm80cRC2tpeqOQXcAAh8Mk+/NEDRVUpNVJTdgv8/5ErRGFVyzlXVYHwZaB66z0U8p5rYrvyGPZD9R+zZVlUwb6nGpw1jOHBiHYl6jtbDAQyTfpneUPlmCTehSagqR0MNSC86tV5weD1/WaLqejQnewskavST9YwSsn6DfV8Z/dd9U3X9ct3+eiu26vZCohH1lTLa7Fmt6VuIWxubFvo3O5DY6487N3mrnZuO0/97R5g3FvfvFu/ePPbKC738BjGVEF5IIAAA=</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=2dc6f3582f0fcf90a55a1d707fa4e327"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Update Record">f9d01dd2c31332002841b63b12d3aea1</action_type>
+        <action_type_parent display_value="Update Record">baf174c8c3c232002841b63b12d3aee4</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>f9d01dd2c31332002841b63b12d3aea1</compiled_snapshot>
+        <display_text/>
+        <flow display_value="FL_HandoffManagement">c5c6b3582f0fcf90a55a1d707fa4e397</flow>
+        <generation_source/>
+        <order>4</order>
+        <parent_ui_id>ae8287e2-9a27-4209-8242-007d7a8eb9c5</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-28 04:57:19</sys_created_on>
+        <sys_id>a5c6f3582f0fcf90a55a1d707fa4e328</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope display_value="CareSync 360">cbba01012fea8310a55a1d707fa4e3a1</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-28 04:57:19</sys_updated_on>
+        <ui_id>3d613009-af5d-496f-a396-006be1e4f4b3</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+VVXU/bMBT9K5WfqyhpoIK+TVRokxhMgPrCwLq1b4o1x8lsB9pV/e+7TpxSAWIg8VItb75fPufknuRmzZRkE3aAMs2Os7HIszwfpeno6CCbj/N5NpI5IGZsyAyUSJUWRWUlnR9ANyGwXnurFgu0iWisReM3G8pK5WoNq1ksooi4V1pSnk1uboesBkvzPFo2WT9LvReQhjlqKr3sET1H6Fd1OMtKNCXh4qoPnsXOacwMvk0pQ00BTpYOGS49GokEpADtcMhKMBJ8ZVds4m1DAYsgL4xebSvulfEd0RKWTv2hmw/SUFcgMRNRhO2RR4G6cDEFD1c0WfjGbvWqlEDXaSKxgEb7k91YV3BRe1WZrsXDXPfdlW5Kc94pwrYDdt5H4wgE1oFnQN7RKq7uq8fLHuSpMq0kkaKuBOjtCTy993njA5w1Q42txiXUtTILXtvqQbXNBKVMFpoOSaGrR7rTqYVJQATcCakKySnFp214BlYFEt9pDDVvhsyt3IkG556okIb8dxOQdMQiBd6q0ErA200IzcKq2n+hqx4wAt8M48rPD9/aMHH8tFA7M5/WfslHWZ4ejzIuwKJb8ZQLrYwiibgH9+ulB05ienDdpT9miHfA7Q1x3a7B6/CjJ17EznZ7B+ddIjri8NMccbRPjog09t4S/zJCOnrzU7uzSe3uux0ThEXnzoNv3M8mTXP5gy4mrnfEqL2R+HSJr7QuVVEMREVLpQyEzKAApVEmL63yaXM/5rF3KNF77FShlu4VaXqDYUmEPPJOqmcmi8nBLCa3v55Pc1o2Tttnj/z23/yBbv8CkORafnYJAAA=</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=a5c6f3582f0fcf90a55a1d707fa4e328"/>
+    <sys_hub_sub_flow_instance_v2 action="delete_multiple" query="flow=c5c6b3582f0fcf90a55a1d707fa4e397"/>
+    <sys_hub_flow_logic_instance_v2 action="delete_multiple" query="flow=c5c6b3582f0fcf90a55a1d707fa4e397^sys_idNOT INe1c6f3582f0fcf90a55a1d707fa4e324,e9c6f3582f0fcf90a55a1d707fa4e322"/>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">ecc6b3582f0fcf90a55a1d707fa4e338</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="FL_HandoffManagement">c5c6b3582f0fcf90a55a1d707fa4e397</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="Top Level Catch">35d60003e6022010a5e40cdd1254dd23</logic_definition>
+        <order>3</order>
+        <outputs_assigned/>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-28 04:57:19</sys_created_on>
+        <sys_id>e1c6f3582f0fcf90a55a1d707fa4e324</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-28 04:57:19</sys_updated_on>
+        <ui_id>ae8287e2-9a27-4209-8242-007d7a8eb9c5</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1ZXW/iOBT9K6uoj5QNLRTKW0UXqatpkRZmXjZVZGKHesY4Gduh7VT897n+iCF8jNpuRtuHSBVN7rWde+85PjeGlyArVF4oOcuupKQLHgz/vW8FlGsbXL8EFAfDIEz7Z6iHznrzzvlZ2AnnFx2C4OK8P+gk/e5l0Ao4WhIYGcdSIVXIOAbbCrFCG1+iYEWEpBmPgmEUdNphFLSiIMmWOSNPk/lXkijwvGgTJvbqJFmVF2bSV7RCbYb4oj1VgvKFWeFkZXxRsF7D3ZJIiRbvnL/eDWiaPJAlsmuMWfZ4TXR9iBiOr69Gs5vJ3XR2Nfs8rcQdBTdckQURLj9M2icpJQzHKUqIknbwlOrH3KJ8rI1m2ksURUFBZ885+YTmhOnbof4o14v0ivAhCMJxxtmzH5EiJon3P1CuvMtb7creTncWxSRFBVOxwWt/NqtENNKpli6UKEA1JkJkIrZU8gOVKDYDl4hjpDJxLO5MYBuQ8XW25j3FjPCFevDObqg/1/BXwRzqugHWmf9r9d2KtRZfVtd8U+1vXba/ufxnvy5/6AHQCPxib7RPFGT+quq/qQxXJu0/pkZp6i9GQT9z+r0gN3iTNMLpvD9PTi/xRf+0eznAp4MBDk8H+CI5x71BNyV4B/Aqk5zIlUOSLDal0arpx+wISzmWMLIkXMVLlOfAnDgX2YpuwwWy1V4wMLVTwCLGBoy2LUcbMkXtDUZfkKBobhDI3yMrvGDsEKuzan5v2M4XvR1CSQIhMvoD6fjHmVgiy5O/p5M7GAJ9BVOZM/T8pWkvTXtp2kvTXpr20rSXGttL8kAZFoSb848712ixBVeOBNwrIoBtgdn8hmiQrjZsIQNTnLbCrAPUAb8mDYiMPyXtNzawyETQXGlGrsBiqlYa4YnrlhFbwRH7RPk3O2UrfDjKFfTaLqpDgwHUR2UYwvaCNQc++F96Rjbzah3UocX2Ezc4BcNOKyBPinBMsM/B7xJv0SSZAEe8QbPCxgK4SvoDntgN9biUQHqJq5C/jV31rDm9BmaCwBaJKgQpK5PRhEhbGHszyTU01q00c93IjBVLfmdz1sBY/dgCxlmu9xArJERCcp2tDt/lkk4fssd/ylDHlJvCOCfLEsT8HVIg4fNC6UA1wvJZjhiSchMNpBx/L/QUG4l7WGwTWR9kzbrluey61xvpbJvVB2OzLIOqkNmHusvlW5/5XinUgQX3Und8PquRz2HD6Pcy+n6HwBXdbsS5EecPSeVGaBuh/bDsvG+9+gv/Euq/ND3dYenI7wAOcvsSvwP5pDSWcqRxqgn0QZ2gO9RGNRKhXrydjGwXuiosvtTbx0OwVw+G4D92JDQt5r2HwaDWV1nDUoz7YWfQT5LzC6JZ2uv1zuf9bohwN8QYJxs6Eq4DwVu/SXX2ddMo664QHnvDKHfKK2Iod8omiL2o3A6ZZxkjiO9skRnE9edYZ/57tkmNfbvuTZK6rA9LZun9/3Xz6Avqyu0BX5+E6i+qZ9p2U/7Kqh3PwAmabJseM/FNb7KNbf0TNRtF168dAAA=</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">68c6b3582f0fcf90a55a1d707fa4e30d</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="FL_HandoffManagement">c5c6b3582f0fcf90a55a1d707fa4e397</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="Top Level Try">e9060aa2c3013010ace8b740ad40dd51</logic_definition>
+        <order>0</order>
+        <outputs_assigned/>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-28 04:57:19</sys_created_on>
+        <sys_id>e9c6f3582f0fcf90a55a1d707fa4e322</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-28 04:57:19</sys_updated_on>
+        <ui_id>cff25d12-50cf-47c4-93eb-c33a6e0fe8db</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/6tWyi8tKSgtKQ7JdywuzkzPU7KKjtVRyswDiUHYZYlFmYlJOalQbkpqcmZxZn5eCEjME0ldSmVeYm5mMrJQeX5RdlpOfjlCrBYAD1ouqHEAAAA=</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_pill_compound action="delete_multiple" query="attached_to=c5c6b3582f0fcf90a55a1d707fa4e397"/>
+    <sys_hub_flow_variable action="delete_multiple" query="model=c5c6b3582f0fcf90a55a1d707fa4e397"/>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>current</element>
+        <help/>
+        <hint/>
+        <label>Record</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_c5c6b3582f0fcf90a55a1d707fa4e397</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-28 04:57:17</sys_created_on>
+        <sys_id>09c6b3582f0fcf90a55a1d707fa4e3a8</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="CareSync 360" source="x_2130921_caresy_0">cbba01012fea8310a55a1d707fa4e3a1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="CareSync 360">cbba01012fea8310a55a1d707fa4e3a1</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-28 04:57:17</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>changed_fields</element>
+        <help/>
+        <hint/>
+        <label>Changed Fields</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_c5c6b3582f0fcf90a55a1d707fa4e397</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-28 04:57:18</sys_created_on>
+        <sys_id>5dc6b3582f0fcf90a55a1d707fa4e3c0</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="CareSync 360" source="x_2130921_caresy_0">cbba01012fea8310a55a1d707fa4e3a1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="CareSync 360">cbba01012fea8310a55a1d707fa4e3a1</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-28 04:57:18</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>table_name</element>
+        <help/>
+        <hint/>
+        <label>Table Name</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_c5c6b3582f0fcf90a55a1d707fa4e397</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-28 04:57:18</sys_created_on>
+        <sys_id>9dc6f3582f0fcf90a55a1d707fa4e316</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="CareSync 360" source="x_2130921_caresy_0">cbba01012fea8310a55a1d707fa4e3a1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="CareSync 360">cbba01012fea8310a55a1d707fa4e3a1</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-28 04:57:18</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_input_c5c6b3582f0fcf90a55a1d707fa4e397"/>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_output_c5c6b3582f0fcf90a55a1d707fa4e397"/>
+    <sys_hub_flow action="UPDATE">
+        <sys_id>9facaf942f8bcf90a55a1d707fa4e39b</sys_id>
+        <latest_snapshot>c5c6b3582f0fcf90a55a1d707fa4e397</latest_snapshot>
+        <compiler_build>glide-australia-02-11-2026__patch3-05-25-2026_06-12-2026_1106.zip</compiler_build>
+        <version_record/>
+    </sys_hub_flow>
+    <sys_flow_trigger_plan action="delete_multiple" query="plan_id=9facaf942f8bcf90a55a1d707fa4e39b^sys_idNOT IN39c6f3582f0fcf90a55a1d707fa4e36c"/>
+    <sys_flow_trigger_plan action="INSERT_OR_UPDATE">
+        <binding_strategy>com.snc.process_flow.engine.binding.OncePerRecord</binding_strategy>
+        <plan>{"@class":"com.snc.process_flow.engine.serialization.plan_data.ChunkingPlanData","chunk_data":{"table":"sys_flow_trigger_plan","id":"39c6f3582f0fcf90a55a1d707fa4e36c","name":"plan","plan_signature":null},"plan_data":"CHUNKING_PLAN"}</plan>
+        <plan_id>9facaf942f8bcf90a55a1d707fa4e39b</plan_id>
+        <snapshot>5e77bb982f0fcf90a55a1d707fa4e317</snapshot>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-28 04:57:20</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>39c6f3582f0fcf90a55a1d707fa4e36c</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_overrides/>
+        <sys_scope/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-28 04:57:20</sys_updated_on>
+        <trigger display_value="">35c6f3582f0fcf90a55a1d707fa4e36b</trigger>
+    </sys_flow_trigger_plan>
+    <sys_flow_subflow_plan action="delete_multiple" query="plan_id=9facaf942f8bcf90a55a1d707fa4e39b"/>
+</record_update>

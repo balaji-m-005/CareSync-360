@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_hub_flow">
+    <sys_hub_flow action="DELETE">
+        <access>public</access>
+        <acls/>
+        <active>false</active>
+        <allow_high_security_roles>false</allow_high_security_roles>
+        <annotation/>
+        <attributes>labelCacheCleanUpExecuted=true</attributes>
+        <authored_on_release_version>29000</authored_on_release_version>
+        <callable_by_client_api>false</callable_by_client_api>
+        <category/>
+        <compiler_build/>
+        <copied_from/>
+        <copied_from_name/>
+        <description>Reusable service for creating and managing CareSync 360 escalations.</description>
+        <display_name_after_preview/>
+        <flow_priority>MEDIUM</flow_priority>
+        <generation_source/>
+        <internal_name>sf_escalationservice</internal_name>
+        <label_cache>null</label_cache>
+        <latest_snapshot/>
+        <master_snapshot/>
+        <master_snapshot_digest/>
+        <name>SF_EscalationService</name>
+        <natlang/>
+        <outputs/>
+        <pre_compiled>false</pre_compiled>
+        <remote_trigger_id/>
+        <run_as>user</run_as>
+        <run_with_roles/>
+        <sc_callable>false</sc_callable>
+        <show_draft_actions>false</show_draft_actions>
+        <show_triggered_flows>false</show_triggered_flows>
+        <status>draft</status>
+        <substatus/>
+        <sys_class_name>sys_hub_flow</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-28 10:08:06</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>ceedbce02f4703d0a55a1d707fa4e318</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>SF_EscalationService</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="CareSync 360" source="x_2130921_caresy_0">cbba01012fea8310a55a1d707fa4e3a1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="CareSync 360">cbba01012fea8310a55a1d707fa4e3a1</sys_scope>
+        <sys_update_name>sys_hub_flow_ceedbce02f4703d0a55a1d707fa4e318</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-28 10:08:06</sys_updated_on>
+        <type>flow</type>
+        <updation_source/>
+        <version>2</version>
+        <version_record/>
+    </sys_hub_flow>
+    <sys_translated_text action="DELETE" query="documentkey=ceedbce02f4703d0a55a1d707fa4e318"/>
+    <sys_variable_value action="DELETE" query="document_key=ceedbce02f4703d0a55a1d707fa4e318"/>
+    <sys_hub_flow_stage action="DELETE" query="flow=ceedbce02f4703d0a55a1d707fa4e318"/>
+    <sys_flow_cat_variable_model action="DELETE" query="id=ceedbce02f4703d0a55a1d707fa4e318^sys_idNOT IN0aedbce02f4703d0a55a1d707fa4e3af"/>
+    <sys_flow_cat_variable_model action="DELETE">
+        <id>ceedbce02f4703d0a55a1d707fa4e318</id>
+        <name>SF_EscalationService</name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-28 10:08:06</sys_created_on>
+        <sys_id>0aedbce02f4703d0a55a1d707fa4e3af</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-28 10:08:06</sys_updated_on>
+    </sys_flow_cat_variable_model>
+    <sys_flow_cat_variable action="DELETE" query="flow_catalog_model=0aedbce02f4703d0a55a1d707fa4e3af"/>
+    <sys_hub_flow_input action="DELETE" query="model=ceedbce02f4703d0a55a1d707fa4e318"/>
+    <sys_hub_flow_output action="DELETE" query="model=ceedbce02f4703d0a55a1d707fa4e318"/>
+    <sys_hub_alias_mapping action="DELETE" query="source_id=ceedbce02f4703d0a55a1d707fa4e318"/>
+    <sys_hub_trigger_instance_v2 action="DELETE" query="flow=ceedbce02f4703d0a55a1d707fa4e318"/>
+    <sys_hub_action_instance_v2 action="DELETE" query="flow=ceedbce02f4703d0a55a1d707fa4e318"/>
+    <sys_hub_sub_flow_instance_v2 action="DELETE" query="flow=ceedbce02f4703d0a55a1d707fa4e318"/>
+    <sys_hub_flow_logic_instance_v2 action="DELETE" query="flow=ceedbce02f4703d0a55a1d707fa4e318"/>
+    <sys_hub_pill_compound action="DELETE" query="attached_to=ceedbce02f4703d0a55a1d707fa4e318"/>
+    <sys_hub_flow_variable action="DELETE" query="model=ceedbce02f4703d0a55a1d707fa4e318"/>
+    <sys_choice action="DELETE" query="name=var__m_sys_hub_flow_input_ceedbce02f4703d0a55a1d707fa4e318"/>
+    <sys_choice action="DELETE" query="name=var__m_sys_hub_flow_output_ceedbce02f4703d0a55a1d707fa4e318"/>
+    <sys_flow_trigger_plan action="DELETE" query="plan_id=ceedbce02f4703d0a55a1d707fa4e318"/>
+    <sys_flow_subflow_plan action="DELETE" query="plan_id=ceedbce02f4703d0a55a1d707fa4e318"/>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="CareSync 360">cbba01012fea8310a55a1d707fa4e3a1</application>
+        <file_path/>
+        <instance_id>ad8bc6ab93390f10c4e8ddd548373c98</instance_id>
+        <instance_name>dev425408</instance_name>
+        <name>sys_hub_flow_ceedbce02f4703d0a55a1d707fa4e318</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_hub_flow"><sys_hub_flow action="INSERT_OR_UPDATE"><access>public</access><acls/><active>false</active><allow_high_security_roles>false</allow_high_security_roles><annotation/><attributes>labelCacheCleanUpExecuted=true</attributes><authored_on_release_version>29000</authored_on_release_version><callable_by_client_api>false</callable_by_client_api><category/><compiler_build/><copied_from/><copied_from_name/><description>Reusable service for creating and managing CareSync 360 escalations.</description><display_name_after_preview/><flow_priority>MEDIUM</flow_priority><generation_source/><internal_name>sf_escalationservice</internal_name><label_cache>null</label_cache><latest_snapshot/><master_snapshot/><master_snapshot_digest/><name>SF_EscalationService</name><natlang/><outputs/><pre_compiled>false</pre_compiled><remote_trigger_id/><run_as>user</run_as><run_with_roles/><sc_callable>false</sc_callable><show_draft_actions>false</show_draft_actions><show_triggered_flows>false</show_triggered_flows><status>draft</status><substatus/><sys_class_name>sys_hub_flow</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2026-08-28 10:08:06</sys_created_on><sys_domain>global</sys_domain><sys_domain_path>/</sys_domain_path><sys_id>ceedbce02f4703d0a55a1d707fa4e318</sys_id><sys_mod_count>0</sys_mod_count><sys_name>SF_EscalationService</sys_name><sys_overrides/><sys_package display_value="CareSync 360" source="x_2130921_caresy_0">cbba01012fea8310a55a1d707fa4e3a1</sys_package><sys_policy/><sys_scope display_value="CareSync 360">cbba01012fea8310a55a1d707fa4e3a1</sys_scope><sys_update_name>sys_hub_flow_ceedbce02f4703d0a55a1d707fa4e318</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2026-08-28 10:08:06</sys_updated_on><type>flow</type><updation_source/><version>2</version><version_record/></sys_hub_flow><sys_translated_text action="delete_multiple" query="documentkey=ceedbce02f4703d0a55a1d707fa4e318"/><sys_variable_value action="delete_multiple" query="document_key=ceedbce02f4703d0a55a1d707fa4e318"/><sys_hub_flow_stage action="delete_multiple" query="flow=ceedbce02f4703d0a55a1d707fa4e318"/><sys_flow_cat_variable_model action="delete_multiple" query="id=ceedbce02f4703d0a55a1d707fa4e318^sys_idNOT IN0aedbce02f4703d0a55a1d707fa4e3af"/><sys_flow_cat_variable_model action="INSERT_OR_UPDATE"><id>ceedbce02f4703d0a55a1d707fa4e318</id><name>SF_EscalationService</name><sys_created_by>admin</sys_created_by><sys_created_on>2026-08-28 10:08:06</sys_created_on><sys_id>0aedbce02f4703d0a55a1d707fa4e3af</sys_id><sys_mod_count>0</sys_mod_count><sys_scope/><sys_updated_by>admin</sys_updated_by><sys_updated_on>2026-08-28 10:08:06</sys_updated_on></sys_flow_cat_variable_model><sys_flow_cat_variable action="delete_multiple" query="flow_catalog_model=0aedbce02f4703d0a55a1d707fa4e3af"/><sys_hub_flow_input action="delete_multiple" query="model=ceedbce02f4703d0a55a1d707fa4e318"/><sys_hub_flow_output action="delete_multiple" query="model=ceedbce02f4703d0a55a1d707fa4e318"/><sys_hub_alias_mapping action="delete_multiple" query="source_id=ceedbce02f4703d0a55a1d707fa4e318"/><sys_hub_trigger_instance_v2 action="delete_multiple" query="flow=ceedbce02f4703d0a55a1d707fa4e318"/><sys_hub_action_instance_v2 action="delete_multiple" query="flow=ceedbce02f4703d0a55a1d707fa4e318"/><sys_hub_sub_flow_instance_v2 action="delete_multiple" query="flow=ceedbce02f4703d0a55a1d707fa4e318"/><sys_hub_flow_logic_instance_v2 action="delete_multiple" query="flow=ceedbce02f4703d0a55a1d707fa4e318"/><sys_hub_pill_compound action="delete_multiple" query="attached_to=ceedbce02f4703d0a55a1d707fa4e318"/><sys_hub_flow_variable action="delete_multiple" query="model=ceedbce02f4703d0a55a1d707fa4e318"/><sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_input_ceedbce02f4703d0a55a1d707fa4e318"/><sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_output_ceedbce02f4703d0a55a1d707fa4e318"/><sys_flow_trigger_plan action="delete_multiple" query="plan_id=ceedbce02f4703d0a55a1d707fa4e318"/><sys_flow_subflow_plan action="delete_multiple" query="plan_id=ceedbce02f4703d0a55a1d707fa4e318"/></record_update>]]></payload>
+        <payload_hash>-1794825733</payload_hash>
+        <record_name>SF_EscalationService</record_name>
+        <reverted_from/>
+        <source>aad899cd2f2e8310a55a1d707fa4e3fd</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-28 10:08:07</sys_created_on>
+        <sys_id>d6edbce02f4703d0a55a1d707fa4e3b6</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>1a047d74c240000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-28 10:08:07</sys_updated_on>
+        <type>Flow</type>
+        <update_guid>96edbce0234703d0c2de8ae249f415b5</update_guid>
+        <update_guid_history>96edbce0234703d0c2de8ae249f415b5:-1794825733</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-28 10:09:57</sys_created_on>
+        <sys_db_object display_value="" name="sys_hub_flow">sys_hub_flow</sys_db_object>
+        <sys_id>2e16a1380de34ee190bf762a88b85f19</sys_id>
+        <sys_metadata>ceedbce02f4703d0a55a1d707fa4e318</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>SF_EscalationService</sys_name>
+        <sys_package display_value="CareSync 360" source="x_2130921_caresy_0">cbba01012fea8310a55a1d707fa4e3a1</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="CareSync 360">cbba01012fea8310a55a1d707fa4e3a1</sys_scope>
+        <sys_scope_delete display_value="">7d5d093a5556490eb41eedeb8cf49ea4</sys_scope_delete>
+        <sys_update_name>sys_hub_flow_ceedbce02f4703d0a55a1d707fa4e318</sys_update_name>
+        <sys_update_version display_value="sys_hub_flow_ceedbce02f4703d0a55a1d707fa4e318">d6edbce02f4703d0a55a1d707fa4e3b6</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-28 10:09:57</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

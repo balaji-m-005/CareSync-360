@@ -21,14 +21,15 @@
         </element>
         <element choice="1" label="Task Type" mandatory="true" max_length="255" name="task_type" type="choice">
             <choice>
-                <element inactive_on_update="false" label="Follow-up" sequence="6" value="Follow-up"/>
+                <element inactive_on_update="false" label="Follow-up" sequence="7" value="Follow-up"/>
                 <element inactive_on_update="false" label="Imaging" sequence="4" value="Imaging"/>
                 <element inactive_on_update="false" label="Vital Check" sequence="2" value="Vital Check"/>
                 <element inactive_on_update="false" label="Medication" sequence="1" value="Medication"/>
                 <element inactive_on_update="false" label="Assessment" sequence="0" value="Assessment"/>
-                <element inactive_on_update="false" label="Other" sequence="7" value="Other"/>
+                <element inactive_on_update="false" label="Other" sequence="8" value="Other"/>
                 <element inactive_on_update="false" label="Procedure" sequence="5" value="Procedure"/>
                 <element inactive_on_update="false" label="Laboratory" sequence="3" value="Laboratory"/>
+                <element inactive_on_update="false" label="Handoff" sequence="6" value="Handoff"/>
             </choice>
         </element>
         <element label=" Admission " mandatory="true" max_length="32" name="admission" reference="x_2130921_caresy_0_admission" type="reference"/>

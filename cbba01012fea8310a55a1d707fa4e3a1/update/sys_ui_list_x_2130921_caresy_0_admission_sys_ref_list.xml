@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_ui_list parent="" relationship="" sys_domain="global" table="x_2130921_caresy_0_admission" version="2" view="sys_ref_list">
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>number</element>
+            <list_id display_value="x_2130921_caresy_0_admission" element="NULL" name="x_2130921_caresy_0_admission" parent="NULL" relationship="NULL" sys_domain="global" view="4308d271082003100a22e9371c04a404">918b68ec2f8303d0a55a1d707fa4e37d</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>0</position>
+            <sum>false</sum>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-28 08:47:46</sys_created_on>
+            <sys_id>998b68ec2f8303d0a55a1d707fa4e37e</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-28 08:47:46</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>patient</element>
+            <list_id display_value="x_2130921_caresy_0_admission" element="NULL" name="x_2130921_caresy_0_admission" parent="NULL" relationship="NULL" sys_domain="global" view="4308d271082003100a22e9371c04a404">918b68ec2f8303d0a55a1d707fa4e37d</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>1</position>
+            <sum>false</sum>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-28 08:47:46</sys_created_on>
+            <sys_id>198b68ec2f8303d0a55a1d707fa4e37f</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-28 08:47:46</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>department</element>
+            <list_id display_value="x_2130921_caresy_0_admission" element="NULL" name="x_2130921_caresy_0_admission" parent="NULL" relationship="NULL" sys_domain="global" view="4308d271082003100a22e9371c04a404">918b68ec2f8303d0a55a1d707fa4e37d</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>2</position>
+            <sum>false</sum>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-28 08:47:46</sys_created_on>
+            <sys_id>9d8b68ec2f8303d0a55a1d707fa4e37f</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-28 08:47:46</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>ward</element>
+            <list_id display_value="x_2130921_caresy_0_admission" element="NULL" name="x_2130921_caresy_0_admission" parent="NULL" relationship="NULL" sys_domain="global" view="4308d271082003100a22e9371c04a404">918b68ec2f8303d0a55a1d707fa4e37d</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>3</position>
+            <sum>false</sum>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-28 08:47:46</sys_created_on>
+            <sys_id>158b68ec2f8303d0a55a1d707fa4e380</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-28 08:47:46</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>bed</element>
+            <list_id display_value="x_2130921_caresy_0_admission" element="NULL" name="x_2130921_caresy_0_admission" parent="NULL" relationship="NULL" sys_domain="global" view="4308d271082003100a22e9371c04a404">918b68ec2f8303d0a55a1d707fa4e37d</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>4</position>
+            <sum>false</sum>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-28 08:47:46</sys_created_on>
+            <sys_id>998b68ec2f8303d0a55a1d707fa4e380</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-28 08:47:46</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>admission_date</element>
+            <list_id display_value="x_2130921_caresy_0_admission" element="NULL" name="x_2130921_caresy_0_admission" parent="NULL" relationship="NULL" sys_domain="global" view="4308d271082003100a22e9371c04a404">918b68ec2f8303d0a55a1d707fa4e37d</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>5</position>
+            <sum>false</sum>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-28 08:47:46</sys_created_on>
+            <sys_id>118b68ec2f8303d0a55a1d707fa4e381</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-28 08:47:46</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>admission_status</element>
+            <list_id display_value="x_2130921_caresy_0_admission" element="NULL" name="x_2130921_caresy_0_admission" parent="NULL" relationship="NULL" sys_domain="global" view="4308d271082003100a22e9371c04a404">918b68ec2f8303d0a55a1d707fa4e37d</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>6</position>
+            <sum>false</sum>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-28 08:47:46</sys_created_on>
+            <sys_id>958b68ec2f8303d0a55a1d707fa4e381</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-28 08:47:46</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>admission_notes</element>
+            <list_id display_value="x_2130921_caresy_0_admission" element="NULL" name="x_2130921_caresy_0_admission" parent="NULL" relationship="NULL" sys_domain="global" view="4308d271082003100a22e9371c04a404">918b68ec2f8303d0a55a1d707fa4e37d</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>7</position>
+            <sum>false</sum>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-28 08:47:46</sys_created_on>
+            <sys_id>1d8b68ec2f8303d0a55a1d707fa4e381</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-28 08:47:46</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>admission_type</element>
+            <list_id display_value="x_2130921_caresy_0_admission" element="NULL" name="x_2130921_caresy_0_admission" parent="NULL" relationship="NULL" sys_domain="global" view="4308d271082003100a22e9371c04a404">918b68ec2f8303d0a55a1d707fa4e37d</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>8</position>
+            <sum>false</sum>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-28 08:47:46</sys_created_on>
+            <sys_id>918b68ec2f8303d0a55a1d707fa4e382</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-28 08:47:46</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>discharge_date</element>
+            <list_id display_value="x_2130921_caresy_0_admission" element="NULL" name="x_2130921_caresy_0_admission" parent="NULL" relationship="NULL" sys_domain="global" view="4308d271082003100a22e9371c04a404">918b68ec2f8303d0a55a1d707fa4e37d</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>9</position>
+            <sum>false</sum>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-28 08:47:46</sys_created_on>
+            <sys_id>198b68ec2f8303d0a55a1d707fa4e382</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-28 08:47:46</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>expected_discharge_date</element>
+            <list_id display_value="x_2130921_caresy_0_admission" element="NULL" name="x_2130921_caresy_0_admission" parent="NULL" relationship="NULL" sys_domain="global" view="4308d271082003100a22e9371c04a404">918b68ec2f8303d0a55a1d707fa4e37d</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>10</position>
+            <sum>false</sum>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-28 08:47:46</sys_created_on>
+            <sys_id>9d8b68ec2f8303d0a55a1d707fa4e382</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-28 08:47:46</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>reason_for_admission</element>
+            <list_id display_value="x_2130921_caresy_0_admission" element="NULL" name="x_2130921_caresy_0_admission" parent="NULL" relationship="NULL" sys_domain="global" view="4308d271082003100a22e9371c04a404">918b68ec2f8303d0a55a1d707fa4e37d</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>11</position>
+            <sum>false</sum>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-28 08:47:46</sys_created_on>
+            <sys_id>158b68ec2f8303d0a55a1d707fa4e383</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-28 08:47:46</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>active</element>
+            <list_id display_value="x_2130921_caresy_0_admission" element="NULL" name="x_2130921_caresy_0_admission" parent="NULL" relationship="NULL" sys_domain="global" view="4308d271082003100a22e9371c04a404">918b68ec2f8303d0a55a1d707fa4e37d</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>12</position>
+            <sum>false</sum>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-28 08:47:46</sys_created_on>
+            <sys_id>998b68ec2f8303d0a55a1d707fa4e383</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-28 08:47:46</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element/>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <name>x_2130921_caresy_0_admission</name>
+            <parent/>
+            <position/>
+            <relationship/>
+            <sum>false</sum>
+            <sys_class_name>sys_ui_list</sys_class_name>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-28 08:47:46</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>918b68ec2f8303d0a55a1d707fa4e37d</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>x_2130921_caresy_0_admission</sys_name>
+            <sys_package display_value="CareSync 360" source="x_2130921_caresy_0">cbba01012fea8310a55a1d707fa4e3a1</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="CareSync 360">cbba01012fea8310a55a1d707fa4e3a1</sys_scope>
+            <sys_update_name>sys_ui_list_x_2130921_caresy_0_admission_sys_ref_list</sys_update_name>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-28 08:47:46</sys_updated_on>
+            <sys_user/>
+            <view display_value="Reference List" name="sys_ref_list">4308d271082003100a22e9371c04a404</view>
+            <view_name/>
+        </sys_ui_list>
+    </sys_ui_list>
+</record_update>
