@@ -23,7 +23,7 @@
         </element>
         <element label="Recipient" max_length="32" name="recipient" reference="sys_user" type="reference"/>
         <element label="Sent Date" max_length="255" name="sent_date" type="glide_date_time"/>
-        <element label="Message" mandatory="true" max_length="40" name="message" type="string"/>
+        <element label="Message" mandatory="true" max_length="100" name="message" type="string"/>
         <element default="True" function_definition="True" label="Active" mandatory="true" max_length="255" name="active" type="boolean"/>
         <element choice="1" label="Notification Type" mandatory="true" max_length="255" name="notification_type" type="choice">
             <choice>
@@ -36,7 +36,7 @@
                 <element inactive_on_update="false" label="Clinical Task" sequence="2" value="Clinical Task"/>
             </choice>
         </element>
-        <element label="Subject" mandatory="true" max_length="40" name="subject" type="string"/>
+        <element label="Subject" mandatory="true" max_length="100" name="subject" type="string"/>
         <index name="index">
             <element name="admission"/>
         </index>
