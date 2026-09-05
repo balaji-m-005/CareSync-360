@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_search_filter">
+    <sys_search_filter action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <ais_search_source display_value="Patient Handoff">84a295382f8783d0a55a1d707fa4e3ef</ais_search_source>
+        <label>Patient Handoff</label>
+        <name>Patient Handoff</name>
+        <order>900</order>
+        <search_context_config display_value="CareSync 360 Workspace AI Search Configuration">16d1d9743f8783d0f5ae6fb88e8befff</search_context_config>
+        <sys_class_name>sys_search_filter</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-29 06:17:06</sys_created_on>
+        <sys_id>44a2d5382f8783d0a55a1d707fa4e31f</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Patient Handoff</sys_name>
+        <sys_package display_value="CareSync 360" source="x_2130921_caresy_0">cbba01012fea8310a55a1d707fa4e3a1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="CareSync 360">cbba01012fea8310a55a1d707fa4e3a1</sys_scope>
+        <sys_update_name>sys_search_filter_44a2d5382f8783d0a55a1d707fa4e31f</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-29 06:17:06</sys_updated_on>
+    </sys_search_filter>
+</record_update>

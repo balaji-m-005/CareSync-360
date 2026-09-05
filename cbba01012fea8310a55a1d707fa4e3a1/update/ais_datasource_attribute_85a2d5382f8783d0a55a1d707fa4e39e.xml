@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="ais_datasource_attribute">
+    <ais_datasource_attribute action="INSERT_OR_UPDATE">
+        <attribute display_value="index_attachments">2dd8f14753320010ffaaddeeff7b1293</attribute>
+        <datasource display_value="Patient Timeline Table">05a2d5382f8783d0a55a1d707fa4e39d</datasource>
+        <source>x_2130921_caresy_0_patient_timeline</source>
+        <sys_class_name>ais_datasource_attribute</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-29 06:17:10</sys_created_on>
+        <sys_id>85a2d5382f8783d0a55a1d707fa4e39e</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="CareSync 360" source="x_2130921_caresy_0">cbba01012fea8310a55a1d707fa4e3a1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="CareSync 360">cbba01012fea8310a55a1d707fa4e3a1</sys_scope>
+        <sys_update_name>ais_datasource_attribute_85a2d5382f8783d0a55a1d707fa4e39e</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-29 06:17:10</sys_updated_on>
+        <value>false</value>
+    </ais_datasource_attribute>
+</record_update>

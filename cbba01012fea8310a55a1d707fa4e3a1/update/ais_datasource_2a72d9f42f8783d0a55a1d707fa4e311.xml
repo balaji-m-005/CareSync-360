@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="ais_datasource">
+    <ais_datasource action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <conflict>false</conflict>
+        <filter/>
+        <force_late_binding>false</force_late_binding>
+        <name>Bed Table</name>
+        <retention_policy/>
+        <source>x_2130921_caresy_0_bed</source>
+        <sys_class_name>ais_datasource</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-29 06:16:28</sys_created_on>
+        <sys_id>2a72d9f42f8783d0a55a1d707fa4e311</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name>Bed Table</sys_name>
+        <sys_package display_value="CareSync 360" source="x_2130921_caresy_0">cbba01012fea8310a55a1d707fa4e3a1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="CareSync 360">cbba01012fea8310a55a1d707fa4e3a1</sys_scope>
+        <sys_update_name>ais_datasource_2a72d9f42f8783d0a55a1d707fa4e311</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-29 06:16:32</sys_updated_on>
+        <type>internal</type>
+    </ais_datasource>
+</record_update>

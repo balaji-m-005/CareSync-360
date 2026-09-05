@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_ui_section caption="" section_id="af03d5782f8783d0a55a1d707fa4e3b2" sys_domain="global" table="x_2130921_caresy_0_department" version="3" view="workspace-caresync-360-workspace-0">
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>number</element>
+            <position>0</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-29 06:18:59</sys_created_on>
+            <sys_id>270319782f8783d0a55a1d707fa4e342</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_2130921_caresy_0_department" sys_domain="global" view="0ed1d974348783d07ab0d4b2270789fd">af03d5782f8783d0a55a1d707fa4e3b2</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-29 06:18:59</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>department_name</element>
+            <position>1</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-29 06:18:59</sys_created_on>
+            <sys_id>af0319782f8783d0a55a1d707fa4e340</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_2130921_caresy_0_department" sys_domain="global" view="0ed1d974348783d07ab0d4b2270789fd">af03d5782f8783d0a55a1d707fa4e3b2</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-29 06:18:59</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>department_code</element>
+            <position>2</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-29 06:18:59</sys_created_on>
+            <sys_id>eb03d5782f8783d0a55a1d707fa4e3b6</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_2130921_caresy_0_department" sys_domain="global" view="0ed1d974348783d07ab0d4b2270789fd">af03d5782f8783d0a55a1d707fa4e3b2</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-29 06:18:59</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>description</element>
+            <position>3</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-29 06:18:59</sys_created_on>
+            <sys_id>6703d5782f8783d0a55a1d707fa4e3b5</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_2130921_caresy_0_department" sys_domain="global" view="0ed1d974348783d07ab0d4b2270789fd">af03d5782f8783d0a55a1d707fa4e3b2</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-29 06:18:59</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>department_head</element>
+            <position>4</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-29 06:18:59</sys_created_on>
+            <sys_id>6b0319782f8783d0a55a1d707fa4e341</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_2130921_caresy_0_department" sys_domain="global" view="0ed1d974348783d07ab0d4b2270789fd">af03d5782f8783d0a55a1d707fa4e3b2</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-29 06:18:59</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>location</element>
+            <position>5</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-29 06:18:59</sys_created_on>
+            <sys_id>e30319782f8783d0a55a1d707fa4e340</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_2130921_caresy_0_department" sys_domain="global" view="0ed1d974348783d07ab0d4b2270789fd">af03d5782f8783d0a55a1d707fa4e3b2</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-29 06:18:59</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>active</element>
+            <position>6</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-29 06:18:59</sys_created_on>
+            <sys_id>2303d5782f8783d0a55a1d707fa4e3b6</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_2130921_caresy_0_department" sys_domain="global" view="0ed1d974348783d07ab0d4b2270789fd">af03d5782f8783d0a55a1d707fa4e3b2</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-29 06:18:59</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_section action="INSERT_OR_UPDATE">
+            <caption/>
+            <header>false</header>
+            <name>x_2130921_caresy_0_department</name>
+            <roles/>
+            <sys_class_name>sys_ui_section</sys_class_name>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-29 06:18:59</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>af03d5782f8783d0a55a1d707fa4e3b2</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>x_2130921_caresy_0_department</sys_name>
+            <sys_overrides/>
+            <sys_package display_value="CareSync 360" source="x_2130921_caresy_0">cbba01012fea8310a55a1d707fa4e3a1</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="CareSync 360">cbba01012fea8310a55a1d707fa4e3a1</sys_scope>
+            <sys_update_name>sys_ui_section_af03d5782f8783d0a55a1d707fa4e3b2</sys_update_name>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-29 06:18:59</sys_updated_on>
+            <sys_user/>
+            <title>true</title>
+            <view display_value="Workspace CareSync 360 Workspace 0" name="workspace-caresync-360-workspace-0">0ed1d974348783d07ab0d4b2270789fd</view>
+            <view_name/>
+        </sys_ui_section>
+    </sys_ui_section>
+</record_update>

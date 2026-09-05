@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?><database>
-    <element attributes="enforce_dot_walk_cross_scope_access=true" db_object_id="394bc8fe2f26c310a55a1d707fa4e308" label="Care Milestone" max_length="40" name="x_2130921_caresy_0_care_milestone" type="collection">
+    <element attributes="enforce_dot_walk_cross_scope_access=true" db_object_id="394bc8fe2f26c310a55a1d707fa4e308" label="Care Milestone" max_length="40" name="x_2130921_caresy_0_care_milestone" text_index="true" type="collection">
         <element label="Admission" mandatory="true" max_length="32" name="admission" reference="x_2130921_caresy_0_admission" type="reference"/>
         <element label="Milestone Name" mandatory="true" max_length="100" name="milestone_name" type="string"/>
         <element choice="1" default="Medium" function_definition="Medium" label="Priority" mandatory="true" max_length="255" name="priority" type="choice">

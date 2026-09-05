@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_ui_list parent="" relationship="" sys_domain="global" table="x_2130921_caresy_0_care_plan" version="2" view="workspace-caresync-360-workspace-0">
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>number</element>
+            <list_id display_value="x_2130921_caresy_0_care_plan" element="NULL" name="x_2130921_caresy_0_care_plan" parent="NULL" relationship="NULL" sys_domain="global" view="0ed1d974348783d07ab0d4b2270789fd">a50395782f8783d0a55a1d707fa4e385</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>0</position>
+            <sum>false</sum>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-29 06:18:50</sys_created_on>
+            <sys_id>650395782f8783d0a55a1d707fa4e386</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-29 06:18:50</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>active</element>
+            <list_id display_value="x_2130921_caresy_0_care_plan" element="NULL" name="x_2130921_caresy_0_care_plan" parent="NULL" relationship="NULL" sys_domain="global" view="0ed1d974348783d07ab0d4b2270789fd">a50395782f8783d0a55a1d707fa4e385</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>1</position>
+            <sum>false</sum>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-29 06:18:50</sys_created_on>
+            <sys_id>e90395782f8783d0a55a1d707fa4e386</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-29 06:18:50</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>admission</element>
+            <list_id display_value="x_2130921_caresy_0_care_plan" element="NULL" name="x_2130921_caresy_0_care_plan" parent="NULL" relationship="NULL" sys_domain="global" view="0ed1d974348783d07ab0d4b2270789fd">a50395782f8783d0a55a1d707fa4e385</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>2</position>
+            <sum>false</sum>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-29 06:18:50</sys_created_on>
+            <sys_id>610395782f8783d0a55a1d707fa4e387</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-29 06:18:50</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>care_plan_name</element>
+            <list_id display_value="x_2130921_caresy_0_care_plan" element="NULL" name="x_2130921_caresy_0_care_plan" parent="NULL" relationship="NULL" sys_domain="global" view="0ed1d974348783d07ab0d4b2270789fd">a50395782f8783d0a55a1d707fa4e385</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>3</position>
+            <sum>false</sum>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-29 06:18:51</sys_created_on>
+            <sys_id>e50395782f8783d0a55a1d707fa4e387</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-29 06:18:51</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>care_plan_status</element>
+            <list_id display_value="x_2130921_caresy_0_care_plan" element="NULL" name="x_2130921_caresy_0_care_plan" parent="NULL" relationship="NULL" sys_domain="global" view="0ed1d974348783d07ab0d4b2270789fd">a50395782f8783d0a55a1d707fa4e385</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>4</position>
+            <sum>false</sum>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-29 06:18:51</sys_created_on>
+            <sys_id>6d0395782f8783d0a55a1d707fa4e387</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-29 06:18:51</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>care_plan_type</element>
+            <list_id display_value="x_2130921_caresy_0_care_plan" element="NULL" name="x_2130921_caresy_0_care_plan" parent="NULL" relationship="NULL" sys_domain="global" view="0ed1d974348783d07ab0d4b2270789fd">a50395782f8783d0a55a1d707fa4e385</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>5</position>
+            <sum>false</sum>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-29 06:18:51</sys_created_on>
+            <sys_id>e10395782f8783d0a55a1d707fa4e388</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-29 06:18:51</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>end_date</element>
+            <list_id display_value="x_2130921_caresy_0_care_plan" element="NULL" name="x_2130921_caresy_0_care_plan" parent="NULL" relationship="NULL" sys_domain="global" view="0ed1d974348783d07ab0d4b2270789fd">a50395782f8783d0a55a1d707fa4e385</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>6</position>
+            <sum>false</sum>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-29 06:18:51</sys_created_on>
+            <sys_id>690395782f8783d0a55a1d707fa4e388</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-29 06:18:51</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>notes</element>
+            <list_id display_value="x_2130921_caresy_0_care_plan" element="NULL" name="x_2130921_caresy_0_care_plan" parent="NULL" relationship="NULL" sys_domain="global" view="0ed1d974348783d07ab0d4b2270789fd">a50395782f8783d0a55a1d707fa4e385</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>7</position>
+            <sum>false</sum>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-29 06:18:51</sys_created_on>
+            <sys_id>ed0395782f8783d0a55a1d707fa4e388</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-29 06:18:51</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>patient</element>
+            <list_id display_value="x_2130921_caresy_0_care_plan" element="NULL" name="x_2130921_caresy_0_care_plan" parent="NULL" relationship="NULL" sys_domain="global" view="0ed1d974348783d07ab0d4b2270789fd">a50395782f8783d0a55a1d707fa4e385</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>8</position>
+            <sum>false</sum>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-29 06:18:51</sys_created_on>
+            <sys_id>650395782f8783d0a55a1d707fa4e389</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-29 06:18:51</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>primary_goal</element>
+            <list_id display_value="x_2130921_caresy_0_care_plan" element="NULL" name="x_2130921_caresy_0_care_plan" parent="NULL" relationship="NULL" sys_domain="global" view="0ed1d974348783d07ab0d4b2270789fd">a50395782f8783d0a55a1d707fa4e385</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>9</position>
+            <sum>false</sum>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-29 06:18:51</sys_created_on>
+            <sys_id>e90395782f8783d0a55a1d707fa4e389</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-29 06:18:51</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element/>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <name>x_2130921_caresy_0_care_plan</name>
+            <parent/>
+            <position/>
+            <relationship/>
+            <sum>false</sum>
+            <sys_class_name>sys_ui_list</sys_class_name>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-29 06:18:50</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>a50395782f8783d0a55a1d707fa4e385</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>x_2130921_caresy_0_care_plan</sys_name>
+            <sys_package display_value="CareSync 360" source="x_2130921_caresy_0">cbba01012fea8310a55a1d707fa4e3a1</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="CareSync 360">cbba01012fea8310a55a1d707fa4e3a1</sys_scope>
+            <sys_update_name>sys_ui_list_x_2130921_caresy_0_care_plan_workspace-caresync-360-workspace-0</sys_update_name>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-29 06:18:50</sys_updated_on>
+            <sys_user/>
+            <view display_value="Workspace CareSync 360 Workspace 0" name="workspace-caresync-360-workspace-0">0ed1d974348783d07ab0d4b2270789fd</view>
+            <view_name/>
+        </sys_ui_list>
+    </sys_ui_list>
+</record_update>

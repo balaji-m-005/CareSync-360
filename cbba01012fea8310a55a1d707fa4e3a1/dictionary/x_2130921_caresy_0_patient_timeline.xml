@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?><database>
-    <element attributes="enforce_dot_walk_cross_scope_access=true" db_object_id="9a8a5cfe2fa6c310a55a1d707fa4e39d" label="Patient Timeline" max_length="40" name="x_2130921_caresy_0_patient_timeline" type="collection">
+    <element attributes="enforce_dot_walk_cross_scope_access=true" db_object_id="9a8a5cfe2fa6c310a55a1d707fa4e39d" label="Patient Timeline" max_length="40" name="x_2130921_caresy_0_patient_timeline" text_index="true" type="collection">
         <element label="Admission" max_length="32" name="admission" reference="x_2130921_caresy_0_admission" type="reference"/>
         <element label="Description" max_length="40" name="description" type="string"/>
         <element label="Patient" mandatory="true" max_length="32" name="patient" reference="x_2130921_caresy_0_patient" type="reference"/>

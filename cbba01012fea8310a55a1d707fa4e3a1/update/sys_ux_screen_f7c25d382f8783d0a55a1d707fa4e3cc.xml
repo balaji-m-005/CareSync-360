@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_ux_screen">
+    <sys_ux_screen action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <app_config display_value="CareSync 360 Workspace App Config">2ad11d74d68783d06ebdbe50bae96939</app_config>
+        <description/>
+        <disable_auto_reflow>false</disable_auto_reflow>
+        <disable_interoperable>false</disable_interoperable>
+        <event_mappings/>
+        <macroponent display_value="Care Plan Record Page">eac25d382f8783d0a55a1d707fa4e376</macroponent>
+        <macroponent_config/>
+        <name>Care Plan Record Page</name>
+        <order>100</order>
+        <parent_macroponent display_value="Workspace App Shell">c276387cc331101080d6d3658940ddd2</parent_macroponent>
+        <required_translations>[ ]</required_translations>
+        <rollback_screen/>
+        <screen_condition>table=x_2130921_caresy_0_care_plan</screen_condition>
+        <screen_type display_value="Record">0ed1d974a78783d0eef3cad6db3291fc</screen_type>
+        <sys_class_name>sys_ux_screen</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-29 06:17:54</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>f7c25d382f8783d0a55a1d707fa4e3cc</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Care Plan Record Page</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="CareSync 360" source="x_2130921_caresy_0">cbba01012fea8310a55a1d707fa4e3a1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="CareSync 360">cbba01012fea8310a55a1d707fa4e3a1</sys_scope>
+        <sys_update_name>sys_ux_screen_f7c25d382f8783d0a55a1d707fa4e3cc</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-29 06:17:54</sys_updated_on>
+    </sys_ux_screen>
+    <sys_translated_text action="delete_multiple" query="documentkey=f7c25d382f8783d0a55a1d707fa4e3cc"/>
+</record_update>

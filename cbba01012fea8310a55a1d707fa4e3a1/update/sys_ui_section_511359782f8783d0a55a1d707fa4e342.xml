@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_ui_section caption="" section_id="511359782f8783d0a55a1d707fa4e342" sys_domain="global" table="x_2130921_caresy_0_patient_handoff" version="3" view="workspace-caresync-360-workspace-0">
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>number</element>
+            <position>0</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-29 06:19:06</sys_created_on>
+            <sys_id>111359782f8783d0a55a1d707fa4e39f</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_2130921_caresy_0_patient_handoff" sys_domain="global" view="0ed1d974348783d07ab0d4b2270789fd">511359782f8783d0a55a1d707fa4e342</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-29 06:19:06</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>patient</element>
+            <position>1</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-29 06:19:06</sys_created_on>
+            <sys_id>191359782f8783d0a55a1d707fa4e344</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_2130921_caresy_0_patient_handoff" sys_domain="global" view="0ed1d974348783d07ab0d4b2270789fd">511359782f8783d0a55a1d707fa4e342</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-29 06:19:06</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>admission</element>
+            <position>2</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-29 06:19:06</sys_created_on>
+            <sys_id>d11359782f8783d0a55a1d707fa4e3a5</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_2130921_caresy_0_patient_handoff" sys_domain="global" view="0ed1d974348783d07ab0d4b2270789fd">511359782f8783d0a55a1d707fa4e342</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-29 06:19:06</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>handoff_type</element>
+            <position>3</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-29 06:19:06</sys_created_on>
+            <sys_id>1d1359782f8783d0a55a1d707fa4e3a1</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_2130921_caresy_0_patient_handoff" sys_domain="global" view="0ed1d974348783d07ab0d4b2270789fd">511359782f8783d0a55a1d707fa4e342</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-29 06:19:06</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>from_department</element>
+            <position>4</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-29 06:19:06</sys_created_on>
+            <sys_id>551359782f8783d0a55a1d707fa4e39e</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_2130921_caresy_0_patient_handoff" sys_domain="global" view="0ed1d974348783d07ab0d4b2270789fd">511359782f8783d0a55a1d707fa4e342</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-29 06:19:06</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>to_department</element>
+            <position>5</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-29 06:19:06</sys_created_on>
+            <sys_id>991359782f8783d0a55a1d707fa4e39d</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_2130921_caresy_0_patient_handoff" sys_domain="global" view="0ed1d974348783d07ab0d4b2270789fd">511359782f8783d0a55a1d707fa4e342</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-29 06:19:06</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>from_ward</element>
+            <position>6</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-29 06:19:06</sys_created_on>
+            <sys_id>191359782f8783d0a55a1d707fa4e3a4</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_2130921_caresy_0_patient_handoff" sys_domain="global" view="0ed1d974348783d07ab0d4b2270789fd">511359782f8783d0a55a1d707fa4e342</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-29 06:19:06</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>to_ward</element>
+            <position>7</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-29 06:19:06</sys_created_on>
+            <sys_id>511359782f8783d0a55a1d707fa4e3a1</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_2130921_caresy_0_patient_handoff" sys_domain="global" view="0ed1d974348783d07ab0d4b2270789fd">511359782f8783d0a55a1d707fa4e342</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-29 06:19:06</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>from_bed</element>
+            <position>8</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-29 06:19:06</sys_created_on>
+            <sys_id>951359782f8783d0a55a1d707fa4e3a0</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_2130921_caresy_0_patient_handoff" sys_domain="global" view="0ed1d974348783d07ab0d4b2270789fd">511359782f8783d0a55a1d707fa4e342</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-29 06:19:06</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>to_bed</element>
+            <position>9</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-29 06:19:06</sys_created_on>
+            <sys_id>dd1359782f8783d0a55a1d707fa4e39c</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_2130921_caresy_0_patient_handoff" sys_domain="global" view="0ed1d974348783d07ab0d4b2270789fd">511359782f8783d0a55a1d707fa4e342</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-29 06:19:06</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>handoff_date</element>
+            <position>10</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-29 06:19:06</sys_created_on>
+            <sys_id>5d1359782f8783d0a55a1d707fa4e3a3</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_2130921_caresy_0_patient_handoff" sys_domain="global" view="0ed1d974348783d07ab0d4b2270789fd">511359782f8783d0a55a1d707fa4e342</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-29 06:19:06</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>handed_over_by</element>
+            <position>11</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-29 06:19:06</sys_created_on>
+            <sys_id>911359782f8783d0a55a1d707fa4e3a3</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_2130921_caresy_0_patient_handoff" sys_domain="global" view="0ed1d974348783d07ab0d4b2270789fd">511359782f8783d0a55a1d707fa4e342</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-29 06:19:06</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>received_by</element>
+            <position>12</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-29 06:19:06</sys_created_on>
+            <sys_id>d91359782f8783d0a55a1d707fa4e39f</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_2130921_caresy_0_patient_handoff" sys_domain="global" view="0ed1d974348783d07ab0d4b2270789fd">511359782f8783d0a55a1d707fa4e342</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-29 06:19:06</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>handoff_status</element>
+            <position>13</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-29 06:19:06</sys_created_on>
+            <sys_id>151359782f8783d0a55a1d707fa4e39c</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_2130921_caresy_0_patient_handoff" sys_domain="global" view="0ed1d974348783d07ab0d4b2270789fd">511359782f8783d0a55a1d707fa4e342</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-29 06:19:06</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>handoff_notes</element>
+            <position>14</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-29 06:19:07</sys_created_on>
+            <sys_id>ad1359782f8783d0a55a1d707fa4e3a5</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_2130921_caresy_0_patient_handoff" sys_domain="global" view="0ed1d974348783d07ab0d4b2270789fd">511359782f8783d0a55a1d707fa4e342</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-29 06:19:07</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>active</element>
+            <position>15</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-29 06:19:06</sys_created_on>
+            <sys_id>d51359782f8783d0a55a1d707fa4e3a2</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_2130921_caresy_0_patient_handoff" sys_domain="global" view="0ed1d974348783d07ab0d4b2270789fd">511359782f8783d0a55a1d707fa4e342</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-29 06:19:06</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_section action="INSERT_OR_UPDATE">
+            <caption/>
+            <header>false</header>
+            <name>x_2130921_caresy_0_patient_handoff</name>
+            <roles/>
+            <sys_class_name>sys_ui_section</sys_class_name>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-29 06:19:06</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>511359782f8783d0a55a1d707fa4e342</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>x_2130921_caresy_0_patient_handoff</sys_name>
+            <sys_overrides/>
+            <sys_package display_value="CareSync 360" source="x_2130921_caresy_0">cbba01012fea8310a55a1d707fa4e3a1</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="CareSync 360">cbba01012fea8310a55a1d707fa4e3a1</sys_scope>
+            <sys_update_name>sys_ui_section_511359782f8783d0a55a1d707fa4e342</sys_update_name>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-29 06:19:06</sys_updated_on>
+            <sys_user/>
+            <title>true</title>
+            <view display_value="Workspace CareSync 360 Workspace 0" name="workspace-caresync-360-workspace-0">0ed1d974348783d07ab0d4b2270789fd</view>
+            <view_name/>
+        </sys_ui_section>
+    </sys_ui_section>
+</record_update>

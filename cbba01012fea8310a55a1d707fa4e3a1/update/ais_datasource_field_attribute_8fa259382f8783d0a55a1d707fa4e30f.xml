@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="ais_datasource_field_attribute">
+    <ais_datasource_field_attribute action="INSERT_OR_UPDATE">
+        <attribute display_value="map_to">f734a634c7320010d1cfd9795cc26094</attribute>
+        <datasource display_value="Ward Table">22a219382f8783d0a55a1d707fa4e35a</datasource>
+        <field>sys_updated_on</field>
+        <source>x_2130921_caresy_0_ward</source>
+        <sys_class_name>ais_datasource_field_attribute</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-29 06:17:18</sys_created_on>
+        <sys_id>8fa259382f8783d0a55a1d707fa4e30f</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_2130921_caresy_0_ward.sys_updated_on</sys_name>
+        <sys_package display_value="CareSync 360" source="x_2130921_caresy_0">cbba01012fea8310a55a1d707fa4e3a1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="CareSync 360">cbba01012fea8310a55a1d707fa4e3a1</sys_scope>
+        <sys_update_name>ais_datasource_field_attribute_8fa259382f8783d0a55a1d707fa4e30f</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-29 06:17:18</sys_updated_on>
+        <value>sort_by_date</value>
+    </ais_datasource_field_attribute>
+</record_update>

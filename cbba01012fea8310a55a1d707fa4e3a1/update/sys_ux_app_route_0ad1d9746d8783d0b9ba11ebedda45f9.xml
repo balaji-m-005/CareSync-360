@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ux_app_route">
+    <sys_ux_app_route action="INSERT_OR_UPDATE">
+        <app_config display_value="CareSync 360 Workspace App Config">2ad11d74d68783d06ebdbe50bae96939</app_config>
+        <description/>
+        <extension_point/>
+        <fields>uuid</fields>
+        <icon/>
+        <interoperable>false</interoperable>
+        <name>KPI Details</name>
+        <optional_parameters>scoreDate,breakdowns,domain,aggregate,startDate,endDate</optional_parameters>
+        <order>0</order>
+        <parent_macroponent display_value="Workspace App Shell">c276387cc331101080d6d3658940ddd2</parent_macroponent>
+        <parent_macroponent_composition_element_id/>
+        <route_type>ac_kpi_details</route_type>
+        <screen_type display_value="KPI Details">02d1d974e38783d0a908ed0b3291c7fa</screen_type>
+        <sys_class_name>sys_ux_app_route</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-29 06:13:52</sys_created_on>
+        <sys_id>0ad1d9746d8783d0b9ba11ebedda45f9</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>KPI Details</sys_name>
+        <sys_package display_value="CareSync 360" source="x_2130921_caresy_0">cbba01012fea8310a55a1d707fa4e3a1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="CareSync 360">cbba01012fea8310a55a1d707fa4e3a1</sys_scope>
+        <sys_update_name>sys_ux_app_route_0ad1d9746d8783d0b9ba11ebedda45f9</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-29 06:13:52</sys_updated_on>
+    </sys_ux_app_route>
+    <sys_translated_text action="delete_multiple" query="documentkey=0ad1d9746d8783d0b9ba11ebedda45f9"/>
+</record_update>

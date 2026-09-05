@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?><database>
-    <element attributes="enforce_dot_walk_cross_scope_access=true" db_object_id="28a6b2622faa8310a55a1d707fa4e301" label="Care Plan" max_length="40" name="x_2130921_caresy_0_care_plan" type="collection">
+    <element attributes="enforce_dot_walk_cross_scope_access=true" db_object_id="28a6b2622faa8310a55a1d707fa4e301" label="Care Plan" max_length="40" name="x_2130921_caresy_0_care_plan" text_index="true" type="collection">
         <element label="Patient" mandatory="true" max_length="32" name="patient" reference="x_2130921_caresy_0_patient" type="reference"/>
         <element attributes="ignore_filter_on_new=true" default="javascript:global.getNextObjNumberPadded();" label="Care Plan Number" mandatory="true" max_length="40" name="number" type="string"/>
         <element label="End Date" max_length="255" name="end_date" type="glide_date"/>

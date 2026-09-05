@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="m2m_search_context_config_search_source">
+    <m2m_search_context_config_search_source action="INSERT_OR_UPDATE">
+        <order>400</order>
+        <search_context_config display_value="CareSync 360 Workspace - Workspace Search">1ed1d974a88783d0c334e588aec0fffe</search_context_config>
+        <source display_value="CareSync 360 Workspace - x_2130921_caresy_0_care_m">835211f42f8783d0a55a1d707fa4e38c</source>
+        <sys_class_name>m2m_search_context_config_search_source</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-29 06:15:58</sys_created_on>
+        <sys_id>a75211f42f8783d0a55a1d707fa4e3b2</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="CareSync 360" source="x_2130921_caresy_0">cbba01012fea8310a55a1d707fa4e3a1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="CareSync 360">cbba01012fea8310a55a1d707fa4e3a1</sys_scope>
+        <sys_update_name>m2m_search_context_config_search_source_a75211f42f8783d0a55a1d707fa4e3b2</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-29 06:15:58</sys_updated_on>
+    </m2m_search_context_config_search_source>
+</record_update>

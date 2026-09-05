@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_search_context_config">
+    <sys_search_context_config action="INSERT_OR_UPDATE">
+        <attachment_limit/>
+        <collapse_attachment>false</collapse_attachment>
+        <enable_exact_match>true</enable_exact_match>
+        <evam_definition display_value="AI Search For Next Search">f78b729b53d801109fa9ddeeff7b1201</evam_definition>
+        <filter_genius_results_by_search_source>false</filter_genius_results_by_search_source>
+        <genius_results_limit>1</genius_results_limit>
+        <hit_highlighting>false</hit_highlighting>
+        <log_signals_server_side>false</log_signals_server_side>
+        <name>CareSync 360 Workspace AI Search Configuration</name>
+        <search_engine>ai_search</search_engine>
+        <search_profile display_value="caresync-360 Search Profile">e6d11d74e88783d06523ea8bbedf183a</search_profile>
+        <search_results_limit>10</search_results_limit>
+        <show_disabled_facets>false</show_disabled_facets>
+        <show_tab_counts>true</show_tab_counts>
+        <spell_check>true</spell_check>
+        <suggestions_to_show_limit>10</suggestions_to_show_limit>
+        <sys_class_name>sys_search_context_config</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-29 06:14:16</sys_created_on>
+        <sys_id>16d1d9743f8783d0f5ae6fb88e8befff</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>CareSync 360 Workspace AI Search Configuration</sys_name>
+        <sys_package display_value="CareSync 360" source="x_2130921_caresy_0">cbba01012fea8310a55a1d707fa4e3a1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="CareSync 360">cbba01012fea8310a55a1d707fa4e3a1</sys_scope>
+        <sys_update_name>sys_search_context_config_16d1d9743f8783d0f5ae6fb88e8befff</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-29 06:14:16</sys_updated_on>
+        <ts_index_group/>
+        <view/>
+    </sys_search_context_config>
+    <sys_translated_text action="delete_multiple" query="documentkey=16d1d9743f8783d0f5ae6fb88e8befff"/>
+</record_update>

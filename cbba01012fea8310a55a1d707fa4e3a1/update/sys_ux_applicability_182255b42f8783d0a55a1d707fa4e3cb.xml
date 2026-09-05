@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_ux_applicability">
+    <sys_ux_applicability action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <api_name>x_2130921_caresy_0.Audience for app caresync-360</api_name>
+        <description/>
+        <name>Audience for app caresync-360</name>
+        <role_names/>
+        <roles>27ba41012fea8310a55a1d707fa4e33c,503b8f122f6e0310a55a1d707fa4e3ff,ee4a560b2fa68710a55a1d707fa4e3c2,498d6a922f6a0310a55a1d707fa4e3e1,5b9b84322f66c310a55a1d707fa4e354,4cc676622faa8310a55a1d707fa4e3fc,a23cb26e2faa8310a55a1d707fa4e30f,8cfcb99e2fa20310a55a1d707fa4e39c,0c18d2c32fa68710a55a1d707fa4e3d2,dd8504f22f26c310a55a1d707fa4e3b1,f0851a4f2f668710a55a1d707fa4e337,54cf447a2f66c310a55a1d707fa4e3e6,edaadcfe2fa6c310a55a1d707fa4e309,f372cf9e2fea0310a55a1d707fa4e3f2,8cca41012fea8310a55a1d707fa4e362,d4d052d62f660310a55a1d707fa4e31d</roles>
+        <sys_class_name>sys_ux_applicability</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-29 06:14:56</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>182255b42f8783d0a55a1d707fa4e3cb</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Audience for app caresync-360</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="CareSync 360" source="x_2130921_caresy_0">cbba01012fea8310a55a1d707fa4e3a1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="CareSync 360">cbba01012fea8310a55a1d707fa4e3a1</sys_scope>
+        <sys_update_name>sys_ux_applicability_182255b42f8783d0a55a1d707fa4e3cb</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-29 06:14:56</sys_updated_on>
+    </sys_ux_applicability>
+</record_update>

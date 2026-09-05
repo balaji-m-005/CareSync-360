@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="ais_search_source">
+    <ais_search_source action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <condition/>
+        <datasource display_value="">x_2130921_caresy_0_ward</datasource>
+        <has_dynamic_filters>false</has_dynamic_filters>
+        <name>Ward</name>
+        <sys_class_name>ais_search_source</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-29 06:17:17</sys_created_on>
+        <sys_id>baa219382f8783d0a55a1d707fa4e39a</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Ward</sys_name>
+        <sys_package display_value="CareSync 360" source="x_2130921_caresy_0">cbba01012fea8310a55a1d707fa4e3a1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="CareSync 360">cbba01012fea8310a55a1d707fa4e3a1</sys_scope>
+        <sys_update_name>ais_search_source_baa219382f8783d0a55a1d707fa4e39a</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-29 06:17:17</sys_updated_on>
+    </ais_search_source>
+</record_update>
