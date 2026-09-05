@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="par_dashboard_widget">
+    <par_dashboard_widget action="INSERT_OR_UPDATE">
+        <canvas display_value="">cc23d9782f8783d0a55a1d707fa4e3a9</canvas>
+        <component display_value="Vertical bar">23051643b7e03010097cb81cde11a910</component>
+        <component_props>{"configVersion":"23.0.0-ci-SNAPSHOT","chartVariation":"stacked","yAxisPosition":"bottom","yAxisShowGrid":true,"xAxisWrapLabels":false,"xAxisMaxLabelSize":100,"showClosestSeriesOnHover":true,"xAxisTruncationType":"end","yAxisStyle":"clean","showLegend":true,"showLegendValue":false,"legendPosition":"bottom","legendHorizontalAlignment":"center","legendExpandToFit":false,"showDataLabels":false,"dataLabelPosition":"middle","showStackedValues":"none","showOverlappingLabels":false,"showPercentageOfTotalInTooltip":true,"yAxisHidden":false,"xAxisHidden":false,"rangesConfig":{},"colorConfig":{"type":"default"},"newReporting":false,"enableAddZerosAtApi":true,"additionalGroupByConfig":[],"dataSources":[{"isDatabaseView":false,"allowRealTime":true,"label":"Patient Handoff","sourceType":"table","tableOrViewName":"x_2130921_caresy_0_patient_handoff","preferredVisualizations":["d24d53f60350de7a652caf3188a46ed2"],"id":"dGFibGV4XzIxMzA5MjFfY2FyZXN5XzBfcGF0aWVudF9oYW5kb2ZmMTc4ODYwMDcyNTk1Nw==","dataCategories":["trend","group","simple"]}],"showHeader":true,"showTotalAggregate":false,"showSubAggregate":false,"showFirstGroupAggregate":false,"showSecondGroupAggregate":false,"hideMatrixAggregate":false,"lineClamp":1,"headerTitleAlignment":"start","wrapTitle":false,"showLoadingIndicator":false,"showHeaderSeparator":false,"contextMenuActions":[],"headerTitle":"Patient Handoffs by Department","headingLevel":2,"showBorder":true,"bareBorder":false,"telemetry":null,"showDataPassthrough":false,"showAdditionalGroupBySelector":false,"allowAdditionalGroupByPerMetric":false,"metrics":[{"dataSource":"dGFibGV4XzIxMzA5MjFfY2FyZXN5XzBfcGF0aWVudF9oYW5kb2ZmMTc4ODYwMDcyNTk1Nw==","id":"ZEdGaWJHVjRYekl4TXpBNU1qRmZZMkZ5WlhONVh6QmZjR0YwYVdWdWRGOW9ZVzVrYjJabU1UYzRPRFl3TURjeU5UazFOdz09MTc4ODYwMDc1NzY0NA==","aggregateFunction":"COUNT","numberFormat":{"customFormat":false},"axisId":"primary","label":"Patient Handoffs by Department"}],"groupBy":[{"groupBy":[{"dataSource":"dGFibGV4XzIxMzA5MjFfY2FyZXN5XzBfcGF0aWVudF9oYW5kb2ZmMTc4ODYwMDcyNTk1Nw==","groupByField":"to_department","isRange":false,"isChoice":false,"isPaBucket":false}],"maxNumberOfGroups":10,"numberOfGroupsBasedOn":"NO_OF_GROUP_BASED_ON_PER_METRIC","showOthers":false,"disableRanges":false}],"filterPerMetric":[],"sortBy":"value","sortByOrder":"desc","trendBy":null,"showChange":false,"showChangePercentage":false,"showTarget":false,"showForecast":false,"showForecastRange":false,"showTrend":false,"showConfidenceBand":false,"showGapPercentage":false,"showSparkline":false,"showMetricLabel":false,"showThreshold":false,"showComment":false,"followFilters":true,"showFilterIcon":true,"enableRealTimeUpdate":false,"enableDrilldown":true,"enableClickAndStay":false,"showDataTable":false,"enableCustomEmptyState":false,"componentId":"au0hwgif","emptyStateIllustration":"no-data","emptyStateHeading":"No data available.","emptyStateHeadingLevel":3,"emptyStateContent":"There are no scores available for the selected criteria. Contact your admin for more info.","emptyStateAlignment":"vertical-centered","refreshFrequency":null,"hideDevSettings":false,"configPropModifiers":{},"filterConfigurations":"@state.parFilters","showMaximumRange":false,"allowChangeDateRange":false,"showDateRangeByDefault":false,"applyDateRange":false,"numberOfPeriods":3,"showAbsolutePeriod":false,"autoAggregatePeriods":false,"scoreType":null,"showChangeFrom":"previous","useCurrentDateForEnd":false,"period":"M","useDataCache":false,"cacheExpirationTime":0,"showCacheTime":true,"dateFormat":"default","showRefresh":true,"showExportOptions":true,"showFilterAsSeparateSeries":false,"userInfo":"@context.session.user","colors":{}}</component_props>
+        <h>12</h>
+        <name/>
+        <required_translations>[{"comment":"","message":"Patient Handoff","code":"PAR_DASHBOARD.cc23d9782f8783d0a55a1d707fa4e3a9.7da24a832f0bc314a55a1d707fa4e34c"},{"comment":"","message":"Patient Handoffs by Department","code":"PAR_DASHBOARD.cc23d9782f8783d0a55a1d707fa4e3a9.7da24a832f0bc314a55a1d707fa4e34c"},{"comment":"","message":"Patient Handoffs by Department","code":"PAR_DASHBOARD.cc23d9782f8783d0a55a1d707fa4e3a9.7da24a832f0bc314a55a1d707fa4e34c"},{"comment":"","message":"No data available.","code":"PAR_DASHBOARD.cc23d9782f8783d0a55a1d707fa4e3a9.7da24a832f0bc314a55a1d707fa4e34c"},{"comment":"","message":"There are no scores available for the selected criteria. Contact your admin for more info.","code":"PAR_DASHBOARD.cc23d9782f8783d0a55a1d707fa4e3a9.7da24a832f0bc314a55a1d707fa4e34c"}]</required_translations>
+        <stored_component/>
+        <sys_class_name>par_dashboard_widget</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-09-05 09:33:16</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>7da24a832f0bc314a55a1d707fa4e34c</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name/>
+        <sys_overrides/>
+        <sys_package display_value="CareSync 360" source="x_2130921_caresy_0">cbba01012fea8310a55a1d707fa4e3a1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="CareSync 360">cbba01012fea8310a55a1d707fa4e3a1</sys_scope>
+        <sys_update_name>par_dashboard_widget_7da24a832f0bc314a55a1d707fa4e34c</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-09-05 09:36:27</sys_updated_on>
+        <visualization/>
+        <w>12</w>
+        <widget_props/>
+        <x>36</x>
+        <y>24</y>
+    </par_dashboard_widget>
+</record_update>

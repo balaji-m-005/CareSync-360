@@ -2,10 +2,10 @@
     <par_dashboard_widget action="INSERT_OR_UPDATE">
         <canvas display_value="">cc23d9782f8783d0a55a1d707fa4e3a9</canvas>
         <component display_value="List">7ff373544303121093711347efb8f23c</component>
-        <component_props>{"dataSources":[{"allowRealTime":true,"dataCategories":["trend","group","simple"],"filterQuery":"active=true","id":"bf3351b82f8783d0a55a1d707fa4e3cd","isDatabaseView":false,"preferredVisualizations":[],"sourceType":"table","tableOrViewName":"x_2130921_caresy_0_patient"}],"additionalGroupByConfig":[],"allowAdditionalGroupByPerMetric":false,"componentId":"","contextMenuActions":[],"description":"","emptyStateAlignment":"vertical-centered","emptyStateContent":"There are no scores available for the selected criteria. Contact your admin for more info.","emptyStateHeading":"No data available.","emptyStateHeadingLevel":3,"emptyStateIllustration":"no-data","enableCustomEmptyState":false,"enableDrilldown":true,"enableRealTimeUpdate":false,"filterConfigurations":"@state.parFilters","headingLevel":2,"metrics":[{"aggregateFunction":"COUNT","axisId":"primary","dataSource":"dGFibGVpbmNpZGVudDE3MzYzNjA0MzU5NjM=","id":"ZEdGaWJHVnBibU5wWkdWdWRERTNNell6TmpBME16VTVOak09MTczNjM2MDQzNjgwMQ==","numberFormat":{"customFormat":false}}],"showAdditionalGroupBySelector":false,"showFilterIcon":true,"showHeaderSeparator":false,"showHeader":true,"showLoadingIndicator":false,"wrapTitle":false,"parFilter":"","parFilterConfig":[],"allowListPagination":true,"columnLimit":0,"limit":10,"maxCharLimit":4000,"columnPreferenceKey":"","bareBorder":false,"wrapCellContent":"useLineBreaksUserPref","showPersonalization":false,"hideDotwalk":false,"showColumnReorder":false,"showColumnGrouping":false,"showColumnResizing":false,"showColumnFiltering":false,"showColumnSorting":true,"followFilters":true,"groupByField":"","showLinks":true,"showViewAll":true,"showInlineEditing":false,"table":"x_2130921_caresy_0_patient","headerTitle":"My Work","columns":"","showRecordCount":true}</component_props>
+        <component_props>{"dataSources":[{"allowRealTime":true,"dataCategories":["trend","group","simple"],"filterQuery":"active=true","id":"bf3351b82f8783d0a55a1d707fa4e3cd","isDatabaseView":false,"sourceType":"table","tableOrViewName":"x_2130921_caresy_0_patient"}],"allowAdditionalGroupByPerMetric":false,"emptyStateAlignment":"vertical-centered","emptyStateContent":"There are no scores available for the selected criteria. Contact your admin for more info.","emptyStateHeading":"No data available.","emptyStateHeadingLevel":3,"emptyStateIllustration":"no-data","enableCustomEmptyState":false,"enableDrilldown":true,"enableRealTimeUpdate":false,"filterConfigurations":"@state.parFilters","headingLevel":2,"metrics":[{"aggregateFunction":"COUNT","axisId":"primary","dataSource":"dGFibGVpbmNpZGVudDE3MzYzNjA0MzU5NjM=","id":"ZEdGaWJHVnBibU5wWkdWdWRERTNNell6TmpBME16VTVOak09MTczNjM2MDQzNjgwMQ==","numberFormat":{"customFormat":false}}],"showAdditionalGroupBySelector":false,"showFilterIcon":true,"showHeaderSeparator":false,"showHeader":true,"showLoadingIndicator":false,"wrapTitle":false,"allowListPagination":true,"columnLimit":0,"limit":10,"maxCharLimit":4000,"bareBorder":false,"wrapCellContent":"useLineBreaksUserPref","showPersonalization":false,"hideDotwalk":false,"showColumnReorder":false,"showColumnGrouping":false,"showColumnResizing":false,"showColumnFiltering":false,"showColumnSorting":true,"followFilters":true,"showLinks":true,"showViewAll":true,"showInlineEditing":false,"table":"x_2130921_caresy_0_patient","headerTitle":"My Work","showRecordCount":true,"showExportOption":true,"sortByOrder":"ORDERBY","lineClamp":1,"showBorder":true,"headerTitleAlignment":"start"}</component_props>
         <h>18</h>
         <name/>
-        <required_translations>[{"comment":"","message":"My Work","code":"PAR_DASHBOARD.cc23d9782f8783d0a55a1d707fa4e3a9.fc33dd782f8783d0a55a1d707fa4e39d"},{"comment":"","message":"My Work","code":"PAR_DASHBOARD.cc23d9782f8783d0a55a1d707fa4e3a9.fc33dd782f8783d0a55a1d707fa4e39d"}]</required_translations>
+        <required_translations>[{"comment":"","message":"No data available.","code":"PAR_DASHBOARD.cc23d9782f8783d0a55a1d707fa4e3a9.fc33dd782f8783d0a55a1d707fa4e39d"},{"comment":"","message":"There are no scores available for the selected criteria. Contact your admin for more info.","code":"PAR_DASHBOARD.cc23d9782f8783d0a55a1d707fa4e3a9.fc33dd782f8783d0a55a1d707fa4e39d"},{"comment":"","message":"My Work","code":"PAR_DASHBOARD.cc23d9782f8783d0a55a1d707fa4e3a9.fc33dd782f8783d0a55a1d707fa4e39d"}]</required_translations>
         <stored_component/>
         <sys_class_name>par_dashboard_widget</sys_class_name>
         <sys_created_by>admin</sys_created_by>
@@ -13,19 +13,19 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>fc33dd782f8783d0a55a1d707fa4e39d</sys_id>
-        <sys_mod_count>1</sys_mod_count>
+        <sys_mod_count>5</sys_mod_count>
         <sys_name/>
         <sys_overrides/>
         <sys_package display_value="CareSync 360" source="x_2130921_caresy_0">cbba01012fea8310a55a1d707fa4e3a1</sys_package>
         <sys_policy/>
         <sys_scope display_value="CareSync 360">cbba01012fea8310a55a1d707fa4e3a1</sys_scope>
         <sys_update_name>par_dashboard_widget_fc33dd782f8783d0a55a1d707fa4e39d</sys_update_name>
-        <sys_updated_by>system</sys_updated_by>
-        <sys_updated_on>2026-08-29 06:19:49</sys_updated_on>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-09-05 09:43:47</sys_updated_on>
         <visualization/>
         <w>48</w>
         <widget_props/>
         <x>0</x>
-        <y>12</y>
+        <y>48</y>
     </par_dashboard_widget>
 </record_update>
