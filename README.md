@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="Architecture/CareSync%20360%20Logo.png" alt="CareSync 360 Logo" width="220"/>
+<img src="./Architecture/CareSync%20360%20Logo.png" alt="CareSync 360 Logo" width="220">
 
 # CareSync 360
 
@@ -48,7 +48,7 @@ The project demonstrates an end-to-end ServiceNow application development lifecy
 CareSync 360 uses a modular ServiceNow architecture connecting the presentation, application, automation, security, integration, and data layers.
 
 <p align="center">
-  <img src="Architecture/caresync360-architecture.png" alt="CareSync 360 System Architecture" width="900"/>
+  <img src="./Architecture/caresync360-architecture.png" alt="CareSync 360 System Architecture" width="900">
 </p>
 
 📄 **[View Complete CareSync 360 Documentation](Architecture/CareSync%20360%20Final%20Documentation.docx)**
