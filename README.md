@@ -306,7 +306,7 @@ It demonstrates experience across:
 
 ### Senthilbalaji M
 
-**ServiceNow Developer | RF & Antenna Engineer | Hardware & Embedded Designer**
+**ServiceNow Developer | PCB & Hardware Designer | RF & Antenna Engineer | Embedded Designer**
 
 ### ServiceNow Certifications
 
