@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ws_operation">
+    <sys_ws_operation action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <consumes>application/json,application/xml,text/xml</consumes>
+        <consumes_customized>false</consumes_customized>
+        <default_operation_uri/>
+        <enforce_acl/>
+        <http_method>GET</http_method>
+        <name>Get Clinical Tasks</name>
+        <operation_script><![CDATA[(function process(/*RESTAPIRequest*/ request, /*RESTAPIResponse*/ response) {
+
+    var tasks = [];
+
+    var gr = new GlideRecordSecure('x_2130921_caresy_0_clinical_task');
+    gr.orderByDesc('due_date');
+    gr.query();
+
+    while (gr.next()) {
+
+        tasks.push({
+            sys_id: gr.getUniqueValue(),
+
+            task_number: gr.getValue('number'),
+
+            patient_sys_id: gr.getValue('patient'),
+            patient: gr.getDisplayValue('patient'),
+
+            admission_sys_id: gr.getValue('admission'),
+            admission: gr.getDisplayValue('admission'),
+
+            care_plan_sys_id: gr.getValue('care_plan'),
+            care_plan: gr.getDisplayValue('care_plan'),
+
+            task_name: gr.getValue('task_name'),
+            task_type: gr.getDisplayValue('task_type'),
+
+            assigned_to_sys_id: gr.getValue('assigned_to'),
+            assigned_to: gr.getDisplayValue('assigned_to'),
+
+            due_date: gr.getValue('due_date'),
+
+            task_status: gr.getDisplayValue('task_status'),
+            priority: gr.getDisplayValue('priority'),
+
+            description: gr.getValue('description'),
+            completion_date: gr.getValue('completion_date'),
+
+            active: gr.getValue('active') == '1'
+        });
+    }
+
+    response.setStatus(200);
+
+    response.setBody({
+        success: true,
+        count: tasks.length,
+        clinical_tasks: tasks
+    });
+
+})(request, response);]]></operation_script>
+        <operation_uri>/api/x_2130921_caresy_0/caresync_360_api/clinical-tasks</operation_uri>
+        <produces>application/json,application/xml,text/xml</produces>
+        <produces_customized>false</produces_customized>
+        <relative_path>/clinical-tasks</relative_path>
+        <request_example/>
+        <requires_acl_authorization>true</requires_acl_authorization>
+        <requires_authentication>true</requires_authentication>
+        <requires_snc_internal_role>true</requires_snc_internal_role>
+        <short_description/>
+        <support_trailing_slash>false</support_trailing_slash>
+        <sys_class_name>sys_ws_operation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-09-06 02:29:09</sys_created_on>
+        <sys_id>1f0b65df2f434714a55a1d707fa4e354</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Get Clinical Tasks</sys_name>
+        <sys_package display_value="CareSync 360" source="x_2130921_caresy_0">cbba01012fea8310a55a1d707fa4e3a1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="CareSync 360">cbba01012fea8310a55a1d707fa4e3a1</sys_scope>
+        <sys_update_name>sys_ws_operation_1f0b65df2f434714a55a1d707fa4e354</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-09-06 02:29:09</sys_updated_on>
+        <web_service_definition display_value="CareSync 360 API">f3213a872f4fc314a55a1d707fa4e389</web_service_definition>
+        <web_service_version/>
+    </sys_ws_operation>
+</record_update>

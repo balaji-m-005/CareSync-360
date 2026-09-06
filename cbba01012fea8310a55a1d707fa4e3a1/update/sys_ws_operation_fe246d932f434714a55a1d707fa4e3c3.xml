@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ws_operation">
+    <sys_ws_operation action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <consumes>application/json,application/xml,text/xml</consumes>
+        <consumes_customized>false</consumes_customized>
+        <default_operation_uri/>
+        <enforce_acl/>
+        <http_method>POST</http_method>
+        <name>Create Patient</name>
+        <operation_script><![CDATA[(function process(/*RESTAPIRequest*/ request, /*RESTAPIResponse*/ response) {
+
+    var body = request.body.data;
+
+    if (!body) {
+        response.setStatus(400);
+        response.setBody({
+            success: false,
+            message: 'Request body is required'
+        });
+        return;
+    }
+
+    // Basic mandatory field validation
+    var requiredFields = [
+        'first_name',
+        'last_name',
+        'date_of_birth',
+        'gender',
+        'phone_number',
+        'patient_status'
+    ];
+
+    var missingFields = [];
+
+    for (var i = 0; i < requiredFields.length; i++) {
+        var field = requiredFields[i];
+
+        if (body[field] === undefined ||
+            body[field] === null ||
+            body[field] === '') {
+            missingFields.push(field);
+        }
+    }
+
+    if (missingFields.length > 0) {
+        response.setStatus(400);
+        response.setBody({
+            success: false,
+            message: 'Mandatory fields are missing',
+            missing_fields: missingFields
+        });
+        return;
+    }
+
+    var gr = new GlideRecordSecure('x_2130921_caresy_0_patient');
+    gr.initialize();
+
+    gr.setValue('first_name', body.first_name);
+    gr.setValue('last_name', body.last_name);
+    gr.setValue('date_of_birth', body.date_of_birth);
+    gr.setValue('gender', body.gender);
+    gr.setValue('phone_number', body.phone_number);
+    gr.setValue('patient_status', body.patient_status);
+
+    if (body.blood_group !== undefined)
+        gr.setValue('blood_group', body.blood_group);
+
+    if (body.email !== undefined)
+        gr.setValue('email', body.email);
+
+    if (body.address !== undefined)
+        gr.setValue('address', body.address);
+
+    if (body.emergency_contact_name !== undefined)
+        gr.setValue('emergency_contact_name', body.emergency_contact_name);
+
+    if (body.emergency_contact_phone !== undefined)
+        gr.setValue('emergency_contact_phone', body.emergency_contact_phone);
+
+    if (body.emergency_contact_relationship !== undefined)
+        gr.setValue(
+            'emergency_contact_relationship',
+            body.emergency_contact_relationship
+        );
+
+    if (body.registration_date !== undefined)
+        gr.setValue('registration_date', body.registration_date);
+
+    if (body.active !== undefined)
+        gr.setValue('active', body.active);
+
+    var newSysId = gr.insert();
+
+    if (!newSysId) {
+        response.setStatus(500);
+        response.setBody({
+            success: false,
+            message: 'Patient could not be created'
+        });
+        return;
+    }
+
+    gr.get(newSysId);
+
+    response.setStatus(201);
+    response.setBody({
+        success: true,
+        message: 'Patient created successfully',
+        patient: {
+            sys_id: gr.getUniqueValue(),
+            patient_number: gr.getValue('number'),
+            first_name: gr.getValue('first_name'),
+            last_name: gr.getValue('last_name'),
+            date_of_birth: gr.getValue('date_of_birth'),
+            gender: gr.getDisplayValue('gender'),
+            blood_group: gr.getDisplayValue('blood_group'),
+            phone_number: gr.getValue('phone_number'),
+            email: gr.getValue('email'),
+            patient_status: gr.getDisplayValue('patient_status'),
+            registration_date: gr.getValue('registration_date'),
+            active: gr.getValue('active') == '1'
+        }
+    });
+
+})(request, response);]]></operation_script>
+        <operation_uri>/api/x_2130921_caresy_0/caresync_360_api/patients</operation_uri>
+        <produces>application/json,application/xml,text/xml</produces>
+        <produces_customized>false</produces_customized>
+        <relative_path>/patients</relative_path>
+        <request_example/>
+        <requires_acl_authorization>true</requires_acl_authorization>
+        <requires_authentication>true</requires_authentication>
+        <requires_snc_internal_role>true</requires_snc_internal_role>
+        <short_description/>
+        <support_trailing_slash>false</support_trailing_slash>
+        <sys_class_name>sys_ws_operation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-09-06 02:00:43</sys_created_on>
+        <sys_id>fe246d932f434714a55a1d707fa4e3c3</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Create Patient</sys_name>
+        <sys_package display_value="CareSync 360" source="x_2130921_caresy_0">cbba01012fea8310a55a1d707fa4e3a1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="CareSync 360">cbba01012fea8310a55a1d707fa4e3a1</sys_scope>
+        <sys_update_name>sys_ws_operation_fe246d932f434714a55a1d707fa4e3c3</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-09-06 02:00:43</sys_updated_on>
+        <web_service_definition display_value="CareSync 360 API">f3213a872f4fc314a55a1d707fa4e389</web_service_definition>
+        <web_service_version/>
+    </sys_ws_operation>
+</record_update>

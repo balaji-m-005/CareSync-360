@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ws_operation">
+    <sys_ws_operation action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <consumes>application/json,application/xml,text/xml</consumes>
+        <consumes_customized>false</consumes_customized>
+        <default_operation_uri/>
+        <enforce_acl/>
+        <http_method>GET</http_method>
+        <name>Get Patient Timeline Events</name>
+        <operation_script><![CDATA[(function process(/*RESTAPIRequest*/ request, /*RESTAPIResponse*/ response) {
+
+    var events = [];
+
+    var gr = new GlideRecordSecure('x_2130921_caresy_0_patient_timeline');
+    gr.orderByDesc('event_date');
+    gr.query();
+
+    while (gr.next()) {
+
+        events.push({
+            sys_id: gr.getUniqueValue(),
+
+            timeline_number: gr.getValue('number'),
+
+            patient_sys_id: gr.getValue('patient'),
+            patient: gr.getDisplayValue('patient'),
+
+            admission_sys_id: gr.getValue('admission'),
+            admission: gr.getDisplayValue('admission'),
+
+            event_type: gr.getDisplayValue('event_type'),
+            event_date: gr.getValue('event_date'),
+
+            event_title: gr.getValue('event_title'),
+            description: gr.getValue('description'),
+
+            status: gr.getDisplayValue('status'),
+
+            active: gr.getValue('active') == '1'
+        });
+    }
+
+    response.setStatus(200);
+
+    response.setBody({
+        success: true,
+        count: events.length,
+        patient_timeline_events: events
+    });
+
+})(request, response);]]></operation_script>
+        <operation_uri>/api/x_2130921_caresy_0/caresync_360_api/patient-timeline-events</operation_uri>
+        <produces>application/json,application/xml,text/xml</produces>
+        <produces_customized>false</produces_customized>
+        <relative_path>/patient-timeline-events</relative_path>
+        <request_example/>
+        <requires_acl_authorization>true</requires_acl_authorization>
+        <requires_authentication>true</requires_authentication>
+        <requires_snc_internal_role>true</requires_snc_internal_role>
+        <short_description/>
+        <support_trailing_slash>false</support_trailing_slash>
+        <sys_class_name>sys_ws_operation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-09-06 02:53:48</sys_created_on>
+        <sys_id>8a80799b2f834714a55a1d707fa4e33a</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Get Patient Timeline Events</sys_name>
+        <sys_package display_value="CareSync 360" source="x_2130921_caresy_0">cbba01012fea8310a55a1d707fa4e3a1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="CareSync 360">cbba01012fea8310a55a1d707fa4e3a1</sys_scope>
+        <sys_update_name>sys_ws_operation_8a80799b2f834714a55a1d707fa4e33a</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-09-06 02:53:48</sys_updated_on>
+        <web_service_definition display_value="CareSync 360 API">f3213a872f4fc314a55a1d707fa4e389</web_service_definition>
+        <web_service_version/>
+    </sys_ws_operation>
+</record_update>

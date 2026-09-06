@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ws_operation">
+    <sys_ws_operation action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <consumes>application/json,application/xml,text/xml</consumes>
+        <consumes_customized>false</consumes_customized>
+        <default_operation_uri/>
+        <enforce_acl/>
+        <http_method>GET</http_method>
+        <name>Get AI Insights</name>
+        <operation_script><![CDATA[(function process(/*RESTAPIRequest*/ request, /*RESTAPIResponse*/ response) {
+
+    var insights = [];
+
+    var gr = new GlideRecordSecure('x_2130921_caresy_0_ai_insight');
+    gr.orderByDesc('generated_date');
+    gr.query();
+
+    while (gr.next()) {
+
+        insights.push({
+            sys_id: gr.getUniqueValue(),
+
+            ai_insight_number: gr.getValue('number'),
+
+            patient_sys_id: gr.getValue('patient'),
+            patient: gr.getDisplayValue('patient'),
+
+            admission_sys_id: gr.getValue('admission'),
+            admission: gr.getDisplayValue('admission'),
+
+            care_plan_sys_id: gr.getValue('care_plan'),
+            care_plan: gr.getDisplayValue('care_plan'),
+
+            insight_type: gr.getDisplayValue('insight_type'),
+            severity: gr.getDisplayValue('severity'),
+
+            insight_title: gr.getValue('insight_title'),
+            insight: gr.getValue('insight'),
+            recommendation: gr.getValue('recommendation'),
+
+            confidence_score: gr.getValue('confidence_score'),
+
+            generated_date: gr.getValue('generated_date'),
+
+            insight_status: gr.getDisplayValue('insight_status'),
+
+            reviewed_by_sys_id: gr.getValue('reviewed_by'),
+            reviewed_by: gr.getDisplayValue('reviewed_by'),
+
+            review_notes: gr.getValue('review_notes'),
+
+            active: gr.getValue('active') == '1'
+        });
+    }
+
+    response.setStatus(200);
+
+    response.setBody({
+        success: true,
+        count: insights.length,
+        ai_insights: insights
+    });
+
+})(request, response);]]></operation_script>
+        <operation_uri>/api/x_2130921_caresy_0/caresync_360_api/ai-insights</operation_uri>
+        <produces>application/json,application/xml,text/xml</produces>
+        <produces_customized>false</produces_customized>
+        <relative_path>/ai-insights</relative_path>
+        <request_example/>
+        <requires_acl_authorization>true</requires_acl_authorization>
+        <requires_authentication>true</requires_authentication>
+        <requires_snc_internal_role>true</requires_snc_internal_role>
+        <short_description/>
+        <support_trailing_slash>false</support_trailing_slash>
+        <sys_class_name>sys_ws_operation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-09-06 02:49:06</sys_created_on>
+        <sys_id>168f255b2f834714a55a1d707fa4e3f7</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Get AI Insights</sys_name>
+        <sys_package display_value="CareSync 360" source="x_2130921_caresy_0">cbba01012fea8310a55a1d707fa4e3a1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="CareSync 360">cbba01012fea8310a55a1d707fa4e3a1</sys_scope>
+        <sys_update_name>sys_ws_operation_168f255b2f834714a55a1d707fa4e3f7</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-09-06 02:49:06</sys_updated_on>
+        <web_service_definition display_value="CareSync 360 API">f3213a872f4fc314a55a1d707fa4e389</web_service_definition>
+        <web_service_version/>
+    </sys_ws_operation>
+</record_update>

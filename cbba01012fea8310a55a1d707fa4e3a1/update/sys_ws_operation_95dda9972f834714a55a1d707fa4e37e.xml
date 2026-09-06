@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ws_operation">
+    <sys_ws_operation action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <consumes>application/json,application/xml,text/xml</consumes>
+        <consumes_customized>false</consumes_customized>
+        <default_operation_uri/>
+        <enforce_acl/>
+        <http_method>GET</http_method>
+        <name>Get Beds</name>
+        <operation_script><![CDATA[(function process(/*RESTAPIRequest*/ request, /*RESTAPIResponse*/ response) {
+
+    var beds = [];
+
+    var gr = new GlideRecordSecure('x_2130921_caresy_0_bed');
+    gr.orderBy('number');
+    gr.query();
+
+    while (gr.next()) {
+
+        beds.push({
+            sys_id: gr.getUniqueValue(),
+
+            bed_number: gr.getValue('number'),
+            bed_name: gr.getValue('bed_name'),
+
+            ward_sys_id: gr.getValue('ward'),
+            ward: gr.getDisplayValue('ward'),
+
+            department_sys_id: gr.getValue('department'),
+            department: gr.getDisplayValue('department'),
+
+            location_sys_id: gr.getValue('location'),
+            location: gr.getDisplayValue('location'),
+
+            bed_status: gr.getDisplayValue('bed_status'),
+            bed_type: gr.getDisplayValue('bed_type'),
+
+            floor: gr.getValue('floor'),
+
+            active: gr.getValue('active') == '1'
+        });
+    }
+
+    response.setStatus(200);
+
+    response.setBody({
+        success: true,
+        count: beds.length,
+        beds: beds
+    });
+
+})(request, response);]]></operation_script>
+        <operation_uri>/api/x_2130921_caresy_0/caresync_360_api/beds</operation_uri>
+        <produces>application/json,application/xml,text/xml</produces>
+        <produces_customized>false</produces_customized>
+        <relative_path>/beds</relative_path>
+        <request_example/>
+        <requires_acl_authorization>true</requires_acl_authorization>
+        <requires_authentication>true</requires_authentication>
+        <requires_snc_internal_role>true</requires_snc_internal_role>
+        <short_description/>
+        <support_trailing_slash>false</support_trailing_slash>
+        <sys_class_name>sys_ws_operation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-09-06 02:41:34</sys_created_on>
+        <sys_id>95dda9972f834714a55a1d707fa4e37e</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Get Beds</sys_name>
+        <sys_package display_value="CareSync 360" source="x_2130921_caresy_0">cbba01012fea8310a55a1d707fa4e3a1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="CareSync 360">cbba01012fea8310a55a1d707fa4e3a1</sys_scope>
+        <sys_update_name>sys_ws_operation_95dda9972f834714a55a1d707fa4e37e</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-09-06 02:41:34</sys_updated_on>
+        <web_service_definition display_value="CareSync 360 API">f3213a872f4fc314a55a1d707fa4e389</web_service_definition>
+        <web_service_version/>
+    </sys_ws_operation>
+</record_update>

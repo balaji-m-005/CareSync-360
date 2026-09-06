@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ws_operation">
+    <sys_ws_operation action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <consumes>application/json,application/xml,text/xml</consumes>
+        <consumes_customized>false</consumes_customized>
+        <default_operation_uri/>
+        <enforce_acl/>
+        <http_method>GET</http_method>
+        <name>Get Patient</name>
+        <operation_script><![CDATA[(function process(/*RESTAPIRequest*/ request, /*RESTAPIResponse*/ response) {
+
+    var sysId = request.pathParams.sys_id;
+
+    var gr = new GlideRecordSecure('x_2130921_caresy_0_patient');
+
+    if (!gr.get(sysId)) {
+        response.setStatus(404);
+        response.setBody({
+            success: false,
+            message: 'Patient not found'
+        });
+        return;
+    }
+
+    var patient = {
+        sys_id: gr.getUniqueValue(),
+        patient_number: gr.getValue('number'),
+        first_name: gr.getValue('first_name'),
+        last_name: gr.getValue('last_name'),
+        date_of_birth: gr.getValue('date_of_birth'),
+        gender: gr.getDisplayValue('gender'),
+        blood_group: gr.getDisplayValue('blood_group'),
+        phone_number: gr.getValue('phone_number'),
+        email: gr.getValue('email'),
+        address: gr.getValue('address'),
+        emergency_contact_name: gr.getValue('emergency_contact_name'),
+        emergency_contact_phone: gr.getValue('emergency_contact_phone'),
+        emergency_contact_relationship:
+            gr.getDisplayValue('emergency_contact_relationship'),
+        patient_status: gr.getDisplayValue('patient_status'),
+        registration_date: gr.getValue('registration_date'),
+        active: gr.getValue('active') == '1'
+    };
+
+    response.setStatus(200);
+    response.setBody({
+        success: true,
+        patient: patient
+    });
+
+})(request, response);]]></operation_script>
+        <operation_uri>/api/x_2130921_caresy_0/caresync_360_api/patients/{sys_id}</operation_uri>
+        <produces>application/json,application/xml,text/xml</produces>
+        <produces_customized>false</produces_customized>
+        <relative_path>/patients/{sys_id}</relative_path>
+        <request_example/>
+        <requires_acl_authorization>true</requires_acl_authorization>
+        <requires_authentication>true</requires_authentication>
+        <requires_snc_internal_role>true</requires_snc_internal_role>
+        <short_description/>
+        <support_trailing_slash>false</support_trailing_slash>
+        <sys_class_name>sys_ws_operation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-09-06 01:54:18</sys_created_on>
+        <sys_id>9fc2ed132f434714a55a1d707fa4e351</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Get Patient</sys_name>
+        <sys_package display_value="CareSync 360" source="x_2130921_caresy_0">cbba01012fea8310a55a1d707fa4e3a1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="CareSync 360">cbba01012fea8310a55a1d707fa4e3a1</sys_scope>
+        <sys_update_name>sys_ws_operation_9fc2ed132f434714a55a1d707fa4e351</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-09-06 01:54:18</sys_updated_on>
+        <web_service_definition display_value="CareSync 360 API">f3213a872f4fc314a55a1d707fa4e389</web_service_definition>
+        <web_service_version/>
+    </sys_ws_operation>
+</record_update>

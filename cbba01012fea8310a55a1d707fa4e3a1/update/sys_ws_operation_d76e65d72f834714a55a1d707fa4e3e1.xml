@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ws_operation">
+    <sys_ws_operation action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <consumes>application/json,application/xml,text/xml</consumes>
+        <consumes_customized>false</consumes_customized>
+        <default_operation_uri/>
+        <enforce_acl/>
+        <http_method>GET</http_method>
+        <name>Get Patient Handoffs</name>
+        <operation_script><![CDATA[(function process(/*RESTAPIRequest*/ request, /*RESTAPIResponse*/ response) {
+
+    var handoffs = [];
+
+    var gr = new GlideRecordSecure('x_2130921_caresy_0_patient_handoff');
+    gr.orderByDesc('handoff_date');
+    gr.query();
+
+    while (gr.next()) {
+
+        handoffs.push({
+            sys_id: gr.getUniqueValue(),
+
+            handoff_number: gr.getValue('number'),
+
+            patient_sys_id: gr.getValue('patient'),
+            patient: gr.getDisplayValue('patient'),
+
+            admission_sys_id: gr.getValue('admission'),
+            admission: gr.getDisplayValue('admission'),
+
+            handoff_type: gr.getDisplayValue('handoff_type'),
+
+            from_department_sys_id: gr.getValue('from_department'),
+            from_department: gr.getDisplayValue('from_department'),
+
+            to_department_sys_id: gr.getValue('to_department'),
+            to_department: gr.getDisplayValue('to_department'),
+
+            from_ward_sys_id: gr.getValue('from_ward'),
+            from_ward: gr.getDisplayValue('from_ward'),
+
+            to_ward_sys_id: gr.getValue('to_ward'),
+            to_ward: gr.getDisplayValue('to_ward'),
+
+            from_bed_sys_id: gr.getValue('from_bed'),
+            from_bed: gr.getDisplayValue('from_bed'),
+
+            to_bed_sys_id: gr.getValue('to_bed'),
+            to_bed: gr.getDisplayValue('to_bed'),
+
+            handoff_date: gr.getValue('handoff_date'),
+
+            handed_over_by_sys_id: gr.getValue('handed_over_by'),
+            handed_over_by: gr.getDisplayValue('handed_over_by'),
+
+            received_by_sys_id: gr.getValue('received_by'),
+            received_by: gr.getDisplayValue('received_by'),
+
+            handoff_status: gr.getDisplayValue('handoff_status'),
+
+            handoff_notes: gr.getValue('handoff_notes'),
+
+            active: gr.getValue('active') == '1'
+        });
+    }
+
+    response.setStatus(200);
+
+    response.setBody({
+        success: true,
+        count: handoffs.length,
+        patient_handoffs: handoffs
+    });
+
+})(request, response);]]></operation_script>
+        <operation_uri>/api/x_2130921_caresy_0/caresync_360_api/patient-handoffs</operation_uri>
+        <produces>application/json,application/xml,text/xml</produces>
+        <produces_customized>false</produces_customized>
+        <relative_path>/patient-handoffs</relative_path>
+        <request_example/>
+        <requires_acl_authorization>true</requires_acl_authorization>
+        <requires_authentication>true</requires_authentication>
+        <requires_snc_internal_role>true</requires_snc_internal_role>
+        <short_description/>
+        <support_trailing_slash>false</support_trailing_slash>
+        <sys_class_name>sys_ws_operation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-09-06 02:45:10</sys_created_on>
+        <sys_id>d76e65d72f834714a55a1d707fa4e3e1</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Get Patient Handoffs</sys_name>
+        <sys_package display_value="CareSync 360" source="x_2130921_caresy_0">cbba01012fea8310a55a1d707fa4e3a1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="CareSync 360">cbba01012fea8310a55a1d707fa4e3a1</sys_scope>
+        <sys_update_name>sys_ws_operation_d76e65d72f834714a55a1d707fa4e3e1</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-09-06 02:45:10</sys_updated_on>
+        <web_service_definition display_value="CareSync 360 API">f3213a872f4fc314a55a1d707fa4e389</web_service_definition>
+        <web_service_version/>
+    </sys_ws_operation>
+</record_update>
