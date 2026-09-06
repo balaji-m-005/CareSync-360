@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="./Architecture/CareSync%20360%20Logo.png" alt="CareSync 360 Logo" width="220">
+<img src="Architecture/CareSync 360 Logo.png" alt="CareSync 360 Logo" width="220">
 
 # CareSync 360
 
@@ -20,25 +20,25 @@
 
 The application centralizes key patient-care processes including patient registration, admissions, care planning, clinical tasks, bed management, patient handoffs, AI-assisted insights, patient timeline tracking, workflow automation, security, integrations, and reporting.
 
-The project demonstrates an end-to-end ServiceNow application development lifecycle — from requirements and architecture through implementation, REST API development, testing, and release preparation.
+The project demonstrates an end-to-end ServiceNow application development lifecycle — from requirements and architecture through implementation, REST API development, testing, documentation, and release preparation.
 
 ---
 
-## ✨ Core Features
+## ✨ Key Features
 
-- 👤 Patient registration and management
+- 👤 Patient registration and patient profile management
 - 🏥 Patient admission and discharge management
-- 🛏️ Department, ward, and bed management
+- 🏢 Department, ward, and bed management
+- 🛏️ Hospital bed allocation and availability tracking
 - 📋 Care plan management
 - ✅ Clinical task management
 - 🔄 Patient handoff management
+- 🤖 AI-assisted clinical insights
 - 🕒 Patient timeline tracking
-- 🧠 AI insight management
-- ⚙️ Automated workflows using Flow Designer
-- 🔔 Automated notifications
-- 🔐 Role-based security and ACLs
-- 📊 Reports and dashboards
+- ⚙️ Automated healthcare workflows
+- 🔐 Role-based access control using ServiceNow ACLs
 - 🔌 Scripted REST API integration
+- 📊 Reports and dashboards
 - 🖥️ ServiceNow workspace experience
 
 ---
@@ -47,9 +47,13 @@ The project demonstrates an end-to-end ServiceNow application development lifecy
 
 CareSync 360 uses a modular ServiceNow architecture connecting the presentation, application, automation, security, integration, and data layers.
 
-<p align="center">
-  <img src="./Architecture/caresync360-architecture.png" alt="CareSync 360 System Architecture" width="900">
-</p>
+<div align="center">
+
+<img src="Architecture/caresync360-architecture.png" alt="CareSync 360 System Architecture" width="900">
+
+</div>
+
+<br>
 
 📄 **[View Complete CareSync 360 Documentation](Architecture/CareSync%20360%20Final%20Documentation.docx)**
 
@@ -67,145 +71,190 @@ Patient Admission
 Department / Ward / Bed Allocation
         │
         ▼
-Care Plan
+Care Plan Creation
         │
         ▼
-Clinical Tasks
+Clinical Task Management
         │
         ▼
 Patient Handoff
         │
         ▼
-AI Insights / Patient Timeline
+AI-Assisted Insights
         │
         ▼
-Discharge & Care Completion
+Patient Timeline Tracking
+        │
+        ▼
+Patient Discharge
 ```
 
 ---
 
-## 🛠️ ServiceNow Technology Stack
+## 🧩 Core Application Modules
 
-| Area | Implementation |
+| Module | Purpose |
 |---|---|
-| Platform | ServiceNow |
-| Application Model | Scoped Application |
-| Data Layer | Custom Tables & Reference Relationships |
-| Server-Side Logic | Business Rules, Script Includes, GlideRecord |
-| Client-Side Logic | Client Scripts |
-| Automation | Flow Designer |
-| Security | Roles & Access Control Lists (ACLs) |
-| Integration | Scripted REST APIs |
-| API Testing | REST API Explorer |
-| User Experience | Forms, Lists & Workspace |
-| Notifications | ServiceNow Notifications |
-| Analytics | Reports & Dashboards |
-| Configuration Management | Update Sets |
-| Source Control | GitHub |
+| Patients | Stores and manages patient information |
+| Admissions | Manages patient hospital admissions |
+| Departments | Maintains hospital department information |
+| Wards | Manages wards associated with departments |
+| Beds | Tracks hospital beds and their availability |
+| Care Plans | Manages patient-specific care plans |
+| Clinical Tasks | Tracks clinical activities and tasks |
+| Patient Handoffs | Supports patient transfer and handoff workflows |
+| AI Insights | Stores AI-assisted clinical insights and recommendations |
+| Patient Timeline | Maintains chronological patient-care events |
+| Reports | Provides operational and patient-care visibility |
+| Administration | Supports application configuration and management |
 
 ---
 
-## 🗃️ Application Modules
+## ⚙️ ServiceNow Development
 
-CareSync 360 includes modules supporting the major areas of the patient-care lifecycle.
+The application demonstrates practical implementation of core ServiceNow development capabilities:
 
-Key functional areas include:
-
-`Patients` • `Admissions` • `Care Plans` • `Clinical Tasks` • `Departments` • `Wards` • `Beds` • `Patient Handoffs` • `AI Insights` • `Patient Timeline` • `Reports`
+- Scoped Application Development
+- Custom Tables and Fields
+- Reference Relationships
+- Application Menus and Modules
+- Business Rules
+- Client Scripts
+- UI Policies
+- Script Includes
+- Flow Designer
+- ACL Security
+- Roles and User Access
+- GlideRecord
+- Scripted REST APIs
+- REST API Explorer
+- Reports and Dashboards
+- Workspace Configuration
+- Update Sets
+- Source Control Integration
+- Application Testing
 
 ---
 
-## 🔌 REST API
+## 🔌 REST API Integration
 
-CareSync 360 contains custom **Scripted REST APIs** for exposing application data and supporting external integrations.
+CareSync 360 includes custom **Scripted REST APIs** for exposing application data to external systems.
 
-API functionality was developed and validated using ServiceNow's **REST API Explorer**.
+API resources were implemented and tested for major healthcare entities, including:
 
-Major API resources include:
+```text
+Patients
+Admissions
+Departments
+Wards
+Beds
+Care Plans
+Clinical Tasks
+Patient Handoffs
+AI Insights
+Patient Timeline
+```
 
-- Patients
-- Admissions
-- Care Plans
-- Clinical Tasks
-- Beds
-- Patient Handoffs
-- AI Insights
-- Patient Timeline
+The APIs use structured JSON responses containing information such as:
 
-📄 **[View REST API Documentation](CareSync%20360%20%E2%80%93%20Project%20Documentation/CareSync_360_API_Documentation_9.docx)**
+```json
+{
+  "result": {
+    "success": true,
+    "count": 1
+  }
+}
+```
+
+API functionality was validated using the **ServiceNow REST API Explorer**.
 
 ---
 
 ## 🔐 Security
 
-CareSync 360 implements role-based application security using ServiceNow security capabilities.
+CareSync 360 implements role-based security using **ServiceNow Access Control Lists (ACLs)**.
 
-The security model includes:
+Security controls are applied across application tables and operations to control:
 
-- Custom application roles
-- Table-level ACLs
-- Record access restrictions
-- Role-based module access
-- Controlled CRUD operations
-- REST API authorization
-- Scoped application security
+```text
+Create
+Read
+Write
+Delete
+```
 
----
-
-## ⚙️ Automation
-
-ServiceNow **Flow Designer** is used to automate key patient-care and operational processes.
-
-Automation is integrated with application records to reduce manual activities and maintain consistent workflow execution across the patient-care lifecycle.
+The security implementation helps ensure that application data and functionality are accessible only to authorized users and roles.
 
 ---
 
-## 📊 Reports & Analytics
+## ⚡ Automation
 
-The application includes reporting capabilities for monitoring patient-care and operational information.
+ServiceNow automation is used to support patient-care processes and reduce manual operations.
 
-Reporting areas include:
+The project incorporates:
 
-- Patient information
+- Flow Designer
+- Business Rules
+- Automated record processing
+- Patient timeline event generation
+- Admission workflow automation
+- Bed allocation processing
+- Patient-care lifecycle automation
+
+---
+
+## 📊 Reporting
+
+CareSync 360 provides reporting capabilities for monitoring patient-care and hospital operations.
+
+Reports can be used to analyze:
+
+- Patient registrations
 - Admissions
+- Patient status
+- Bed availability
 - Care plans
 - Clinical tasks
-- Bed availability
 - Patient handoffs
 - AI insights
-- Patient timeline information
-- Operational metrics
+- Patient timeline events
+- Operational healthcare information
 
 ---
 
-## 🧪 Testing & Validation
+## 🛠️ Technology Stack
 
-CareSync 360 underwent structured functional and end-to-end testing.
-
-Testing covered:
-
-`Tables` • `Forms` • `References` • `Roles` • `ACLs` • `Business Rules` • `Client Scripts` • `Script Includes` • `Flows` • `Notifications` • `Workspace` • `Reports` • `REST APIs`
-
-The implemented application components were validated through the complete patient-care workflow.
+| Technology | Usage |
+|---|---|
+| ServiceNow | Enterprise application platform |
+| JavaScript | Server-side and client-side development |
+| GlideRecord | ServiceNow database operations |
+| Flow Designer | Workflow automation |
+| Scripted REST API | External integration layer |
+| REST API Explorer | API testing |
+| ACL | Application security |
+| ServiceNow Workspace | User experience |
+| Reports & Dashboards | Analytics and visualization |
+| GitHub | Source control and project repository |
 
 ---
 
-# 📚 Project Documentation
+## 📚 Project Documentation
 
-Complete engineering and application documentation is maintained within this repository.
+The repository contains detailed documentation covering the complete project lifecycle.
 
 | # | Document | Description |
-|---:|---|---|
-| 01 | **[Product Requirements Document (PRD)](CareSync%20360%20%E2%80%93%20Project%20Documentation/CareSync_360_PRD_1.docx)** | Product objectives, scope, requirements and expected capabilities |
-| 02 | **[Business Requirements Document (BRD)](CareSync%20360%20%E2%80%93%20Project%20Documentation/CareSync_360_BRD_2.docx)** | Business requirements and application objectives |
-| 03 | **[Functional Requirements Specification (FRS)](CareSync%20360%20%E2%80%93%20Project%20Documentation/CareSync_360_FRS_3.docx)** | Functional behavior and application requirements |
-| 04 | **[Technical Requirements Document (TRD)](CareSync%20360%20%E2%80%93%20Project%20Documentation/CareSync_360_TRD_4.docx)** | Technical architecture and implementation requirements |
-| 05 | **[Application Functional Design (AFD)](CareSync%20360%20%E2%80%93%20Project%20Documentation/CareSync_360_AFD_5.docx)** | Functional design of the CareSync 360 application |
-| 06 | **[UI/UX Design Brief](CareSync%20360%20%E2%80%93%20Project%20Documentation/CareSync_360_UIUX_Design_Brief_6.docx)** | User experience and interface design guidance |
-| 07 | **[Backend Schema Design](CareSync%20360%20%E2%80%93%20Project%20Documentation/CareSync_360_Backend_Schema_Design_7.docx)** | Backend tables, fields, references and data architecture |
-| 08 | **[Entity Relationship Diagram (ERD)](CareSync%20360%20%E2%80%93%20Project%20Documentation/CareSync_360_ERD_8.docx)** | Application entities and database relationships |
-| 09 | **[REST API Documentation](CareSync%20360%20%E2%80%93%20Project%20Documentation/CareSync_360_API_Documentation_9.docx)** | REST resources, integration design and API details |
-| 10 | **[Implementation Plan](CareSync%20360%20%E2%80%93%20Project%20Documentation/CareSync_360_Implementation_Plan_10.docx)** | Application implementation and delivery plan |
+|---|---|---|
+| 1 | **[Product Requirements Document (PRD)](CareSync%20360%20%E2%80%93%20Project%20Documentation/CareSync_360_PRD_1.docx)** | Product objectives, scope, and requirements |
+| 2 | **[Business Requirements Document (BRD)](CareSync%20360%20%E2%80%93%20Project%20Documentation/CareSync_360_BRD_2.docx)** | Business requirements and project objectives |
+| 3 | **[Functional Requirements Specification (FRS)](CareSync%20360%20%E2%80%93%20Project%20Documentation/CareSync_360_FRS_3.docx)** | Functional requirements and expected behavior |
+| 4 | **[Technical Requirements Document (TRD)](CareSync%20360%20%E2%80%93%20Project%20Documentation/CareSync_360_TRD_4.docx)** | Technical design and implementation requirements |
+| 5 | **[Application Functional Design (AFD)](CareSync%20360%20%E2%80%93%20Project%20Documentation/CareSync_360_AFD_5.docx)** | Application functional design |
+| 6 | **[UI/UX Design Brief](CareSync%20360%20%E2%80%93%20Project%20Documentation/CareSync_360_UIUX_Design_Brief_6.docx)** | User interface and user experience design |
+| 7 | **[Backend Schema Design](CareSync%20360%20%E2%80%93%20Project%20Documentation/CareSync_360_Backend_Schema_Design_7.docx)** | Backend database and table structure |
+| 8 | **[Entity Relationship Diagram (ERD)](CareSync%20360%20%E2%80%93%20Project%20Documentation/CareSync_360_ERD_8.docx)** | Entity relationships and data model |
+| 9 | **[API Documentation](CareSync%20360%20%E2%80%93%20Project%20Documentation/CareSync_360_API_Documentation_9.docx)** | REST API design and endpoints |
+| 10 | **[Implementation Plan](CareSync%20360%20%E2%80%93%20Project%20Documentation/CareSync_360_Implementation_Plan_10.docx)** | Implementation phases and development plan |
 | 11 | **[Final Project Documentation](Architecture/CareSync%20360%20Final%20Documentation.docx)** | Consolidated CareSync 360 project documentation |
 
 ---
@@ -221,109 +270,118 @@ CareSync-360/
 │   └── caresync360-architecture.png
 │
 ├── CareSync 360 – Project Documentation/
-│   ├── CareSync_360_PRD_1.docx
-│   ├── CareSync_360_BRD_2.docx
-│   ├── CareSync_360_FRS_3.docx
-│   ├── CareSync_360_TRD_4.docx
 │   ├── CareSync_360_AFD_5.docx
-│   ├── CareSync_360_UIUX_Design_Brief_6.docx
+│   ├── CareSync_360_API_Documentation_9.docx
+│   ├── CareSync_360_BRD_2.docx
 │   ├── CareSync_360_Backend_Schema_Design_7.docx
 │   ├── CareSync_360_ERD_8.docx
-│   ├── CareSync_360_API_Documentation_9.docx
-│   └── CareSync_360_Implementation_Plan_10.docx
+│   ├── CareSync_360_FRS_3.docx
+│   ├── CareSync_360_Implementation_Plan_10.docx
+│   ├── CareSync_360_PRD_1.docx
+│   ├── CareSync_360_TRD_4.docx
+│   └── CareSync_360_UIUX_Design_Brief_6.docx
 │
 ├── cbba01012fea8310a55a1d707fa4e3a1/
 │   └── ServiceNow application source files
 │
-├── sn_source_control.properties
+├── README.md
 │
-└── README.md
+└── sn_source_control.properties
 ```
-
-> The ServiceNow-generated application source files and `sn_source_control.properties` are retained for application source-control compatibility.
 
 ---
 
-## 🚀 Development Lifecycle
+## 🧪 Testing
 
-The project followed a structured ServiceNow development lifecycle covering:
+The CareSync 360 application was validated through functional and technical testing covering:
+
+- Application modules
+- Database tables
+- Reference relationships
+- CRUD operations
+- Business Rules
+- Client-side functionality
+- Flow Designer automation
+- ACL security
+- Role-based access
+- Scripted REST APIs
+- REST API responses
+- Patient lifecycle workflows
+- Reports and dashboards
+- Source control integration
+
+Testing confirmed that the major application components and workflows operate as expected.
+
+---
+
+## 🚀 Project Lifecycle
+
+The CareSync 360 project follows a structured development lifecycle:
 
 ```text
-Requirements & Planning
-        ↓
-Application Architecture
-        ↓
-Data Model & Tables
-        ↓
-Roles & Security
-        ↓
-Forms & User Experience
-        ↓
-Business Logic
-        ↓
-Flow Automation
-        ↓
-Notifications
-        ↓
-Workspace
-        ↓
-Reports & Dashboards
-        ↓
+Requirements
+     ↓
+Functional Design
+     ↓
+Technical Design
+     ↓
+Database Design
+     ↓
+Application Development
+     ↓
+Security Configuration
+     ↓
+Workflow Automation
+     ↓
 REST API Development
-        ↓
-Functional & End-to-End Testing
-        ↓
+     ↓
+Reports & Dashboards
+     ↓
+Testing
+     ↓
+Documentation
+     ↓
 Release Preparation
-        ↓
-Documentation & Source Control
 ```
 
 ---
 
-## 🎯 Project Purpose
+## 🎯 Project Objective
 
-CareSync 360 was developed as a **portfolio and learning project** to demonstrate practical end-to-end ServiceNow application development using a healthcare-oriented use case.
-
-It demonstrates experience across:
-
-- ServiceNow application architecture
-- Data modeling
-- Business logic
-- Workflow automation
-- Platform security
-- REST integrations
-- Workspace development
-- Reporting
-- Testing
-- Technical documentation
-- Source control
-
-> **Disclaimer:** CareSync 360 is an educational and portfolio project. It is not intended for use as a production clinical system or for making medical decisions.
+The objective of CareSync 360 is to demonstrate how the **ServiceNow platform** can be used to build a structured healthcare workflow application that integrates patient management, clinical operations, automation, security, reporting, and external API capabilities within a single scoped application.
 
 ---
 
 ## 👨‍💻 Developer
 
-### Senthilbalaji M
+**Senthilbalaji M**
 
-**ServiceNow Developer | PCB & Hardware Designer | RF & Antenna Engineer | Embedded Designer**
+ServiceNow Developer | Electronics & Communication Engineer
 
-### ServiceNow Certifications
+**ServiceNow Certifications**
 
-- **Certified System Administrator (CSA)**
-- **Certified Application Developer (CAD)**
+- Certified System Administrator (CSA)
+- Certified Application Developer (CAD)
 
 ---
 
-## 🔗 Connect
+## 📌 Project Status
 
-<p align="left">
+```text
+Application Development      ✅ Completed
+Database Configuration       ✅ Completed
+Security & ACLs              ✅ Completed
+Workflow Automation          ✅ Completed
+REST API Development         ✅ Completed
+Reports & Dashboards         ✅ Completed
+Functional Testing           ✅ Completed
+Technical Testing            ✅ Completed
+Documentation                ✅ Completed
+Source Control               ✅ Completed
+Release Preparation          ✅ Completed
+```
 
-<a href="https://www.linkedin.com/in/senthilbalajim/">
-<img src="https://img.shields.io/badge/LinkedIn-Senthilbalaji%20M-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white"/>
-</a>
-
-</p>
+**Current Status: Completed**
 
 ---
 
@@ -331,8 +389,8 @@ It demonstrates experience across:
 
 ### CareSync 360
 
-**Integrated • Secure • Automated • Patient-Centric**
+**Integrated Patient Care Management on ServiceNow**
 
-*Built on ServiceNow*
+*Designed and developed as a complete ServiceNow application development project.*
 
 </div>
